@@ -69,6 +69,9 @@ def main():
 	# Write predictions and accuracy to output files
 	createOutputFiles(predictions, accuracy, output_path)
 
+	# Save model to output file to load again
+	vgg_model.save('vgg_model.h5')
+
 
 # Allows for script to be run as program
 if __name__=="__main__":
