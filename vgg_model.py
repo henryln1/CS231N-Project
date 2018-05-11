@@ -6,7 +6,8 @@
 # Import needed libraries and functions
 import tensorflow as tf
 import numpy as np
-
+from load_data import *
+from data_batch import Data
 
 # TODO: load functions that read and process input data
 # Inputs: 
@@ -16,7 +17,19 @@ import numpy as np
 # Image frame sets have shape (FR, W, H, D) where FR = # frames per image set, also known as depth in TF (10), W = width, H = height, D = color dimensions, also known as channels in TF (3)
 # Number of classes: C = 10
 def load_data(path):
-	pass
+	train_path_image_dict = read_all_images("train")
+	train_Data = Data(train_path_image_dict)
+	validation_path_image_dict = read_all_images("validation")
+	val_Data = Data(validation_path_image_dict)
+
+	x_train, y_train = train_Data.create_batch()
+	x_val, y_val = val_Data.create_batch()
+	x_test = None
+	y_test = None
+	print("shape of x train: ", x_train.shape)
+	print("shape of y_train: ", y_train.shape)
+	print("shape of x val: ", x_val.shape)
+	print("shape of y_val: ", y_val.shape)
 	return x_train, y_train, x_val, y_val, x_test, y_test
 
 
@@ -43,45 +56,45 @@ def vgg_model_init(input_shape, num_classes):
 	pool_size = 2 # 2x2 max pool
 	pool_stride = 2
 
-    initializer = tf.variance_scaling_initializer(scale=2.0) # initializer for weights
-    activation = tf.nn.relu # ReLU for each Conv layer
+	initializer = tf.variance_scaling_initializer(scale=2.0) # initializer for weights
+	activation = tf.nn.relu # ReLU for each Conv layer
 
-    reg_strength = 0.001
-    regularization = tf.contrib.layers.l2_regularizer(reg_strength) # L2 regularization for FC layer
+	reg_strength = 0.001
+	regularization = tf.contrib.layers.l2_regularizer(reg_strength) # L2 regularization for FC layer
 
-    loss = tf.nn.sparse_softmax_cross_entropy_with_logits # NOTE: not sure if this loss function works with the Keras compile/fit model methods, may have to manually implement train method like in homework
+	#loss = tf.nn..ftmax_cross_entropy_with_logits # NOTE: not sure if this loss function works with the Keras compile/fit model methods, may have to manually implement train method like in homework
 
-    optimizer = tf.train.AdamOptimizer() # optimizer used is Adam
-
-
-    # Define architecture as sequential layers
-    layers = [
-
-    	# Conv Layer Set 1: 2 Conv layers (16 filters), 1 Pool layer
-    	tf.layers.Conv3D(input_shape=input_shape, filters=num_filters[0], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-    	tf.layers.Conv3D(filters=num_filters[0], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-    	tf.layers.MaxPooling2D(pool_size=pool_size, strides=pool_stride, padding='valid'),
-
-    	# Conv Layer Set 2: 2 Conv layers (32 filters), 1 Pool layer
-    	tf.layers.Conv3D(filters=num_filters[1], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-    	tf.layers.Conv3D(filters=num_filters[1], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-    	tf.layers.MaxPooling2D(pool_size=pool_size, strides=pool_stride, padding='valid'),
-
-    	# Conv Layer Set 3: 3 Conv layers (64 filters), 1 Pool layer
-    	tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-    	tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-    	tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-    	tf.layers.MaxPooling2D(pool_size=pool_size, strides=pool_stride, padding='valid'),
-
-    	# FC Layer
-        tf.layers.Flatten(),
-        tf.layers.Dense(num_classes, kernel_initializer=initializer, kernel_regularizer=regularization)
-    ]
+	optimizer = tf.train.AdamOptimizer() # optimizer used is Adam
 
 
-    # Initialize model and compile
+	# Define architecture as sequential layers
+	layers = [
+
+		# Conv Layer Set 1: 2 Conv layers (16 filters), 1 Pool layer
+		tf.layers.Conv3D(input_shape=input_shape, filters=num_filters[0], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		tf.layers.Conv3D(filters=num_filters[0], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		tf.layers.MaxPooling3D(pool_size=pool_size, strides=pool_stride, padding='valid'),
+
+		# Conv Layer Set 2: 2 Conv layers (32 filters), 1 Pool layer
+		tf.layers.Conv3D(filters=num_filters[1], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		tf.layers.Conv3D(filters=num_filters[1], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		tf.layers.MaxPooling3D(pool_size=pool_size, strides=pool_stride, padding='valid'),
+
+		# Conv Layer Set 3: 3 Conv layers (64 filters), 1 Pool layer
+		tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		tf.layers.MaxPooling3D(pool_size=pool_size, strides=pool_stride, padding='valid'),
+
+		# FC Layer
+		tf.layers.Flatten(),
+		tf.layers.Dense(10, kernel_initializer=initializer, kernel_regularizer=regularization)
+	]
+
+
+	# Initialize model and compile
 	vgg_model = tf.keras.Sequential(layers)
-	vgg_model.compile(loss=loss, optimizer=optimizer)
+	vgg_model.compile(loss='sparse_categorical_crossentropy', optimizer=optimizer)
 
 	return vgg_model
 
@@ -95,14 +108,17 @@ def vgg_model_init(input_shape, num_classes):
 # Returns:
 #	model: trained model, ready to predict with
 #	history: history object from model.fit method
-def train(model, x_train, y_train, x_val=None, y_val=None, batch_size=None, num_epochs):
+def train(model, x_train, y_train, num_epochs, x_val=None, y_val=None, batch_size=None):
 
 	# Define validation data
 	val_data = None
 
-	if x_val != None and y_val != None:
-		val_data = (x_val, y_val)
-
+	#if x_val != None and y_val != None:
+#		val_data = (x_val, y_val)
+	print("shape of x train: ", x_train.shape)
+	print("shape of y_train: ", y_train.shape)
+	print("shape of x val: ", x_val.shape)
+	print("shape of y_val: ", y_val.shape)
 	# Use model.fit method to train model
 	history = model.fit(x_train, y_train, batch_size=batch_size, epochs=num_epochs, validation_data=val_data) # NOTE: not entirely sure validation_data param can be set to None
 

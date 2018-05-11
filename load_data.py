@@ -3,7 +3,7 @@ import numpy as np
 
 
 #global variables
-dance_data_directory_name = 'dance_data'
+dance_data_directory_name = 'tiny_dance_data'
 directory_path = '../' + dance_data_directory_name + '/'
 classes = ['ballet', 'break', 'flamenco', 'foxtrot', 'latin', 'quickstep', 'square', 'swing', 'tango', 'waltz']
 
@@ -46,16 +46,17 @@ def find_label(file_path):
 
 def read_all_images(dataset = "train"): #dataset should be train, validation, or test
 	#takes in the dataset name and returns a dictionary of image path name to image as a np array
-	text_file_path = directory_path + dataset + 'txt'
-	image_paths = read_text_file(text_file_path)
+	#text_file_path = directory_path + dataset + '.txt'
+	image_paths = read_text_file(dataset + '.txt')
 
 	path_image_dict = {}
+	i = 0
 	for image_path in image_paths:
+		print(i)
 		image_array = read_image_file(image_path)
 		path_image_dict[image_path] = image_array
-
+		i += 1
 	return path_image_dict
-
 
 
 

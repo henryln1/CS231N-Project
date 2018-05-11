@@ -10,7 +10,7 @@ import vgg_model as vgg
 # Define various parameters
 data_path = ''
 num_classes = 10
-batch_size = 32
+batch_size = 64
 num_epochs = 10
 output_path = None
 
@@ -61,7 +61,7 @@ def main():
 	vgg_model = vgg.vgg_model_init(input_shape, num_classes)
 
 	# Train model
-	vgg_model, history = vgg.train(vgg_model, x_train, y_train, x_val=x_val, y_val=y_val, batch_size=batch_size, num_epochs=num_epochs)
+	vgg_model, history = vgg.train(vgg_model, x_train, y_train, num_epochs=num_epochs, x_val=x_val, y_val=y_val, batch_size=batch_size)
 
 	# Predict on test set and record accuracy
 	test_predictions, test_acc = vgg.predict(vgg_model, x_test, y_test)

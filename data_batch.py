@@ -47,20 +47,20 @@ class Data(object):
 
 
 
-	def get_random_image():
+	def get_random_image(self):
 		random_path = random.choice(list(self.path_image_dict))
 		array = self.path_image_dict[random_path]
 		label = self.path_label_dict[random_path]
 		return array, label
 
-	def get_random_image_set(image_set_size):
+	def get_random_image_set(self, image_set_size):
 
 		random_video = random.choice(list(self.video_label_dict))
 		label = self.video_label_dict[random_video]
 
 		relevant_frames = [x for x in self.path_image_dict if random_video in x] #extract all the keys for the chosen video
 		relevant_frames.sort()
-		random_start = random.randInt(0, self.max_frame_count - image_set_size) #do I need to subtract 1?
+		random_start = random.randint(0, self.max_frame_count - image_set_size) #do I need to subtract 1?
 
 		relevant_frames = relevant_frames[random_start: random_start + image_set_size]
 
@@ -72,7 +72,7 @@ class Data(object):
 		#array should be a 4-D tensor
 		return array, label
 
-	def create_batch(batch_size):
+	def create_batch(self, batch_size = 64):
 		if self.batch_type == 4:
 			images = []
 			labels = []
@@ -84,10 +84,19 @@ class Data(object):
 			batch_labels = np.asarray(labels)
 
 		elif self.batch_type == 5:
-			batch = None
-			batch_labels = None
+			images = []
+			labels = []
+			for i in range(batch_size):
 
-		#batch should be 4 of 5-D tensor, batch_labels should be 1-D, batch_size X 1
+				image_set, label = self.get_random_image_set(image_set_size = 10)
+				images.append(image_set)
+				labels.append(label)
+
+			batch = np.stack(images, axis = 0)
+			batch_labels = np.asarray(labels)
+			
+
+		#batch should be 4 or 5-D tensor, batch_labels should be 1-D, batch_size X 1
 		return batch, batch_labels	
 
 
