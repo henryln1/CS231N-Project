@@ -91,13 +91,13 @@ def vgg_model_init(input_shape, num_classes):
 
 		# FC Layer
 		tf.layers.Flatten(),
-		tf.layers.Dense(10, kernel_initializer=initializer, kernel_regularizer=regularization)
+		tf.layers.Dense(num_classes, kernel_initializer=initializer, kernel_regularizer=regularization)
 	]
 
 
 	# Initialize model and compile
 	vgg_model = tf.keras.Sequential(layers)
-	vgg_model.compile(loss='sparse_categorical_crossentropy', optimizer=optimizer)
+	vgg_model.compile(loss='mean_squared_error', optimizer=optimizer)
 
 	return vgg_model
 
