@@ -72,7 +72,7 @@ class Data(object):
 		#array should be a 4-D tensor
 		return array, label
 
-	def create_batch(self, batch_size = 64):
+	def create_batch(self, batch_size = 16):
 		if self.batch_type == 4:
 			images = []
 			labels = []

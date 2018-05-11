@@ -5,7 +5,10 @@
 
 # Imported needed libraries and classes
 import vgg_model as vgg
+import tensorflow as tf
 
+
+#device = '/gpu:0'
 
 # Define various parameters
 data_path = ''

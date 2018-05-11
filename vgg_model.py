@@ -9,6 +9,9 @@ import numpy as np
 from load_data import *
 from data_batch import Data
 
+
+#device = '/gpu:0'
+
 # TODO: load functions that read and process input data
 # Inputs: 
 #	path: name of path to data
@@ -120,7 +123,7 @@ def train(model, x_train, y_train, num_epochs, x_val=None, y_val=None, batch_siz
 	print("shape of x val: ", x_val.shape)
 	print("shape of y_val: ", y_val.shape)
 	# Use model.fit method to train model
-	history = model.fit(x_train, y_train, batch_size=batch_size, epochs=num_epochs, validation_data=val_data) # NOTE: not entirely sure validation_data param can be set to None
+	history = model.fit(x_train, y_train, batch_size=batch_size, epochs=num_epochs) #, validation_data=val_data) # NOTE: not entirely sure validation_data param can be set to None
 
 	return model, history
 
