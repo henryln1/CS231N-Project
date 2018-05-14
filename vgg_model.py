@@ -94,13 +94,13 @@ def vgg_model_init(inputs):
 
 		# Conv Layer Set 1: 2 Conv layers (16 filters), 1 Pool layer
 		tf.layers.Conv3D(input_shape=input_shape, filters=num_filters[0], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-		# tf.layers.Conv3D(filters=num_filters[0], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-		# tf.layers.MaxPooling3D(pool_size=pool_size, strides=pool_stride, padding='valid'),
+		tf.layers.Conv3D(filters=num_filters[0], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		tf.layers.MaxPooling3D(pool_size=pool_size, strides=pool_stride, padding='valid'),
 
-		# # Conv Layer Set 2: 2 Conv layers (32 filters), 1 Pool layer
-		# tf.layers.Conv3D(filters=num_filters[1], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-		# tf.layers.Conv3D(filters=num_filters[1], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-		# tf.layers.MaxPooling3D(pool_size=pool_size, strides=pool_stride, padding='valid'),
+		# Conv Layer Set 2: 2 Conv layers (32 filters), 1 Pool layer
+		tf.layers.Conv3D(filters=num_filters[1], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		tf.layers.Conv3D(filters=num_filters[1], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		tf.layers.MaxPooling3D(pool_size=pool_size, strides=pool_stride, padding='valid'),
 
 		# # Conv Layer Set 3: 3 Conv layers (64 filters), 1 Pool layer
 		# tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
@@ -269,7 +269,7 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 				print()
 			t += 1
 			print("end of one thing")
-		save_path = saver.save(sess, "model_checkpoints/first_model")
+			save_path = saver.save(sess, "model_checkpoints/first_model_" + str(epoch))
 
 
 
