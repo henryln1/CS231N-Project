@@ -52,7 +52,7 @@ def read_all_images(dataset = "train"): #dataset should be train, validation, or
 	path_image_dict = {}
 	i = 0
 	for image_path in image_paths:
-		print(i)
+		#print(i)
 		image_array = read_image_file(image_path)
 		path_image_dict[image_path] = image_array
 		i += 1

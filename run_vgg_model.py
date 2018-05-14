@@ -7,7 +7,7 @@
 import vgg_model as vgg
 import tensorflow as tf
 
-
+from load_data import *
 #device = '/gpu:0'
 
 # Define various parameters
@@ -55,25 +55,31 @@ def createOutputFiles(predictions, accuracy, output_path):
 # Main function
 def main():
 
-	# Load data
-	x_train, y_train, x_val, y_val, x_test, y_test = vgg.load_data(data_path)
-	N, FR, W, H, D = x_train.shape
-	input_shape = (FR, W, H, D)
 
-	# Initialize VGG model
-	vgg_model = vgg.vgg_model_init(input_shape, num_classes)
+	vgg.train_part34(vgg.vgg_model_init, vgg.optimizer_init_fn, num_epochs = 10)
+	
 
-	# Train model
-	vgg_model, history = vgg.train(vgg_model, x_train, y_train, num_epochs=num_epochs, x_val=x_val, y_val=y_val, batch_size=batch_size)
 
-	# Predict on test set and record accuracy
-	test_predictions, test_acc = vgg.predict(vgg_model, x_test, y_test)
 
-	# Write predictions and accuracy to output files
-	createOutputFiles(predictions, accuracy, output_path)
+	# # Load data
+	# x_train, y_train, x_val, y_val, x_test, y_test = vgg.load_data(data_path)
+	# N, FR, W, H, D = x_train.shape
+	# input_shape = (FR, W, H, D)
 
-	# Save model to output file to load again
-	vgg_model.save('vgg_model.h5')
+	# # Initialize VGG model
+	# vgg_model = vgg.vgg_model_init(input_shape, num_classes)
+
+	# # Train model
+	# vgg_model, history = vgg.train(vgg_model, x_train, y_train, num_epochs=num_epochs, x_val=x_val, y_val=y_val, batch_size=batch_size)
+
+	# # Predict on test set and record accuracy
+	# test_predictions, test_acc = vgg.predict(vgg_model, x_test, y_test)
+
+	# # Write predictions and accuracy to output files
+	# createOutputFiles(predictions, accuracy, output_path)
+
+	# # Save model to output file to load again
+	# vgg_model.save('vgg_model.h5')
 
 
 # Allows for script to be run as program

@@ -72,7 +72,7 @@ class Data(object):
 		#array should be a 4-D tensor
 		return array, label
 
-	def create_batch(self, batch_size = 16):
+	def create_batch(self, batch_size = 4):
 		if self.batch_type == 4:
 			images = []
 			labels = []
@@ -88,7 +88,7 @@ class Data(object):
 			labels = []
 			for i in range(batch_size):
 
-				image_set, label = self.get_random_image_set(image_set_size = 10)
+				image_set, label = self.get_random_image_set(image_set_size = 8)
 				images.append(image_set)
 				labels.append(label)
 

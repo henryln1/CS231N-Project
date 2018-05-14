@@ -10,6 +10,8 @@ from load_data import *
 from data_batch import Data
 
 
+device = '/cpu:0'
+
 #device = '/gpu:0'
 
 # TODO: load functions that read and process input data
@@ -35,6 +37,14 @@ def load_data(path):
 	print("shape of y_val: ", y_val.shape)
 	return x_train, y_train, x_val, y_val, x_test, y_test
 
+def load_data_new(path):
+	train_path_image_dict = read_all_images("train")
+	train_Data = Data(train_path_image_dict)
+	validation_path_image_dict = read_all_images("validation")
+	val_Data = Data(validation_path_image_dict)
+
+	return train_Data, val_Data
+
 
 # Function that initializes the VGGNet-inspired model
 # Inputs:
@@ -47,12 +57,20 @@ def load_data(path):
 #	Structure: 2 Conv (16 filters), Pool, 2 Conv (32 filters), Pool, 3 Conv (64 filters), Pool, FC
 #	TODO: Should incoporate Batch Norm + Dropout
 #	Loss: softmax
-def vgg_model_init(input_shape, num_classes):
+def vgg_model_init(inputs):
 
 	# Define hyperparams, weight initializer, activation, regularization, loss function, and optimizer
-	FR, W, H, D = input_shape
+	#FR, W, H, D = input_shape
 
-	num_filters = [16, 32, 64] # number of filters in each set of conv layers
+	FR = 8
+	W = 720
+	H = 1280
+	D = 3
+	num_classes = 10
+
+	input_shape = (FR, W, H, D)
+
+	num_filters = [4, 8, 16] # number of filters in each set of conv layers
 	filter_size = 3 # 3x3 filters
 	filter_stride = 1
 
@@ -67,39 +85,45 @@ def vgg_model_init(input_shape, num_classes):
 
 	#loss = tf.nn..ftmax_cross_entropy_with_logits # NOTE: not sure if this loss function works with the Keras compile/fit model methods, may have to manually implement train method like in homework
 
-	optimizer = tf.train.AdamOptimizer() # optimizer used is Adam
+	#optimizer = tf.train.AdamOptimizer() # optimizer used is Adam
 
+	print("num classes:", num_classes)
 
 	# Define architecture as sequential layers
 	layers = [
 
 		# Conv Layer Set 1: 2 Conv layers (16 filters), 1 Pool layer
 		tf.layers.Conv3D(input_shape=input_shape, filters=num_filters[0], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-		tf.layers.Conv3D(filters=num_filters[0], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-		tf.layers.MaxPooling3D(pool_size=pool_size, strides=pool_stride, padding='valid'),
+		# tf.layers.Conv3D(filters=num_filters[0], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		# tf.layers.MaxPooling3D(pool_size=pool_size, strides=pool_stride, padding='valid'),
 
-		# Conv Layer Set 2: 2 Conv layers (32 filters), 1 Pool layer
-		tf.layers.Conv3D(filters=num_filters[1], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-		tf.layers.Conv3D(filters=num_filters[1], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-		tf.layers.MaxPooling3D(pool_size=pool_size, strides=pool_stride, padding='valid'),
+		# # Conv Layer Set 2: 2 Conv layers (32 filters), 1 Pool layer
+		# tf.layers.Conv3D(filters=num_filters[1], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		# tf.layers.Conv3D(filters=num_filters[1], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		# tf.layers.MaxPooling3D(pool_size=pool_size, strides=pool_stride, padding='valid'),
 
-		# Conv Layer Set 3: 3 Conv layers (64 filters), 1 Pool layer
-		tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-		tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-		tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-		tf.layers.MaxPooling3D(pool_size=pool_size, strides=pool_stride, padding='valid'),
+		# # Conv Layer Set 3: 3 Conv layers (64 filters), 1 Pool layer
+		# tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		# tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		# tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		# tf.layers.MaxPooling3D(pool_size=pool_size, strides=pool_stride, padding='valid'),
 
 		# FC Layer
 		tf.layers.Flatten(),
-		tf.layers.Dense(num_classes, kernel_initializer=initializer, kernel_regularizer=regularization)
+		tf.layers.Dense(units = num_classes, kernel_initializer=initializer, kernel_regularizer=regularization)
 	]
 
 
 	# Initialize model and compile
 	vgg_model = tf.keras.Sequential(layers)
-	vgg_model.compile(loss='mean_squared_error', optimizer=optimizer)
+	#vgg_model.compile(loss='mean_squared_error', optimizer=optimizer)
 
-	return vgg_model
+	#return vgg_model
+	return vgg_model(inputs)
+
+def optimizer_init_fn():
+	optimizer = tf.train.AdamOptimizer()
+	return optimizer
 
 
 # Function to train given compiled model on training data
@@ -126,6 +150,127 @@ def train(model, x_train, y_train, num_epochs, x_val=None, y_val=None, batch_siz
 	history = model.fit(x_train, y_train, batch_size=batch_size, epochs=num_epochs) #, validation_data=val_data) # NOTE: not entirely sure validation_data param can be set to None
 
 	return model, history
+
+
+
+# def better_train_sess(model_init_fn, optimizer, num_epochs, image_set_size):
+
+
+
+def check_accuracy(sess, val_data, x, scores, is_training=None):
+	"""
+	Check accuracy on a classification model.
+	
+	Inputs:
+	- sess: A TensorFlow Session that will be used to run the graph
+	- dset: A Dataset object on which to check accuracy
+	- x: A TensorFlow placeholder Tensor where input images should be fed
+	- scores: A TensorFlow Tensor representing the scores output from the
+	  model; this is the Tensor we will ask TensorFlow to evaluate.
+	  
+	Returns: Nothing, but prints the accuracy of the model
+	"""
+	number_batches_check = 10
+	num_correct, num_samples = 0, 0
+	for i in range(number_batches_check):
+		x_batch, y_batch = val_data.create_batch()
+		feed_dict = {x: x_batch, is_training: 0}
+		scores_np = sess.run(scores, feed_dict=feed_dict)
+		y_pred = scores_np.argmax(axis=1)
+		num_samples += x_batch.shape[0]
+		num_correct += (y_pred == y_batch).sum()
+	acc = float(num_correct) / num_samples
+	print('Got %d / %d correct (%.2f%%)' % (num_correct, num_samples, 100 * acc))
+
+def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
+	"""
+	Simple training loop for use with models defined using tf.keras. It trains
+	a model for one epoch on the CIFAR-10 training set and periodically checks
+	accuracy on the CIFAR-10 validation set.
+	
+	Inputs:
+	- model_init_fn: A function that takes no parameters; when called it
+	  constructs the model we want to train: model = model_init_fn()
+	- optimizer_init_fn: A function which takes no parameters; when called it
+	  constructs the Optimizer object we will use to optimize the model:
+	  optimizer = optimizer_init_fn()
+	- num_epochs: The number of epochs to train for
+	
+	Returns: Nothing, but prints progress during trainingn
+	"""
+	tf.reset_default_graph()    
+	with tf.device(device):
+		# Construct the computational graph we will use to train the model. We
+		# use the model_init_fn to construct the model, declare placeholders for
+		# the data and labels
+		x = tf.placeholder(tf.float32, [None, 8, 720, 1280, 3])
+		y = tf.placeholder(tf.int32, [None])
+		
+		# We need a place holder to explicitly specify if the model is in the training
+		# phase or not. This is because a number of layers behaves differently in
+		# training and in testing, e.g., dropout and batch normalization.
+		# We pass this variable to the computation graph through feed_dict as shown below.
+		is_training = tf.placeholder(tf.bool, name='is_training')
+		
+		# Use the model function to build the forward pass.
+		scores = model_init_fn(x)
+
+		# Compute the loss like we did in Part II
+		loss = tf.nn.sparse_softmax_cross_entropy_with_logits(labels=y, logits=scores)
+		loss = tf.reduce_mean(loss)
+
+		# Use the optimizer_fn to construct an Optimizer, then use the optimizer
+		# to set up the training step. Asking TensorFlow to evaluate the
+		# train_op returned by optimizer.minimize(loss) will cause us to make a
+		# single update step using the current minibatch of data.
+		
+		# Note that we use tf.control_dependencies to force the model to run
+		# the tf.GraphKeys.UPDATE_OPS at each training step. tf.GraphKeys.UPDATE_OPS
+		# holds the operators that update the states of the network.
+		# For example, the tf.layers.batch_normalization function adds the running mean
+		# and variance update operators to tf.GraphKeys.UPDATE_OPS.
+		optimizer = optimizer_init_fn()
+		update_ops = tf.get_collection(tf.GraphKeys.UPDATE_OPS)
+		with tf.control_dependencies(update_ops):
+			train_op = optimizer.minimize(loss)
+
+	# Now we can run the computational graph many times to train the model.
+	# When we call sess.run we ask it to evaluate train_op, which causes the
+	# model to update.
+	#x_train, y_train, x_val, y_val, x_test, y_test = load_data(None)
+
+	train_data, val_data = load_data_new(None)
+
+	saver = tf.train.Saver()
+
+	print_every = 1
+
+	with tf.Session() as sess:
+		sess.run(tf.global_variables_initializer())
+		t = 0
+		for epoch in range(num_epochs):
+			print('Starting epoch %d' % epoch)
+			# for x_np, y_np in train_dset:
+			#     feed_dict = {x: x_np, y: y_np, is_training:1}
+			#     loss_np, _ = sess.run([loss, train_op], feed_dict=feed_dict)
+			#     if t % print_every == 0:
+			#         print('Iteration %d, loss = %.4f' % (t, loss_np))
+			#         check_accuracy(sess, val_dset, x, scores, is_training=is_training)
+			#         print()
+			#     t += 1
+			x_np, y_np = train_data.create_batch()
+			print("loaded batch")
+			feed_dict = {x: x_np, y: y_np, is_training:1}
+			loss_np, _ = sess.run([loss, train_op], feed_dict=feed_dict)
+			print("sess is running?")
+			if t % print_every == 0:
+				print('Iteration %d, loss = %.4f' % (t, loss_np))
+				check_accuracy(sess, val_data, x, scores, is_training=is_training)
+				print()
+			t += 1
+			print("end of one thing")
+		save_path = saver.save(sess, "model_checkpoints/first_model")
+
 
 
 # Function to use given model to predict on given data and return metrics (accuracy for now) on predictions
