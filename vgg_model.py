@@ -97,10 +97,10 @@ def vgg_model_init(inputs):
 		tf.layers.Conv3D(filters=num_filters[0], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
 		tf.layers.MaxPooling3D(pool_size=pool_size, strides=pool_stride, padding='valid'),
 
-		# Conv Layer Set 2: 2 Conv layers (32 filters), 1 Pool layer
-		tf.layers.Conv3D(filters=num_filters[1], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-		tf.layers.Conv3D(filters=num_filters[1], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-		tf.layers.MaxPooling3D(pool_size=pool_size, strides=pool_stride, padding='valid'),
+		# # Conv Layer Set 2: 2 Conv layers (32 filters), 1 Pool layer
+		# tf.layers.Conv3D(filters=num_filters[1], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		# tf.layers.Conv3D(filters=num_filters[1], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		# tf.layers.MaxPooling3D(pool_size=pool_size, strides=pool_stride, padding='valid'),
 
 		# # Conv Layer Set 3: 3 Conv layers (64 filters), 1 Pool layer
 		# tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
@@ -170,7 +170,7 @@ def check_accuracy(sess, val_data, x, scores, is_training=None):
 	  
 	Returns: Nothing, but prints the accuracy of the model
 	"""
-	number_batches_check = 10
+	number_batches_check = 2
 	num_correct, num_samples = 0, 0
 	for i in range(number_batches_check):
 		x_batch, y_batch = val_data.create_batch()
