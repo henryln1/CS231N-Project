@@ -61,10 +61,10 @@ def vgg_model_init(inputs):
 
 	# Define hyperparams, weight initializer, activation, regularization, loss function, and optimizer
 	#FR, W, H, D = input_shape
-
-	FR = 8
-	W = 720
-	H = 1280
+	resize_height, resize_width = 288, 512
+	FR = 5
+	W = resize_height
+	H = resize_width
 	D = 3
 	num_classes = 10
 
@@ -157,7 +157,7 @@ def train(model, x_train, y_train, num_epochs, x_val=None, y_val=None, batch_siz
 
 
 
-def check_accuracy(sess, val_data, x, scores, is_training=None):
+def check_accuracy(sess, x, scores, is_training=None):
 	"""
 	Check accuracy on a classification model.
 	
@@ -169,11 +169,17 @@ def check_accuracy(sess, val_data, x, scores, is_training=None):
 	  model; this is the Tensor we will ask TensorFlow to evaluate.
 	  
 	Returns: Nothing, but prints the accuracy of the model
+
+
 	"""
-	number_batches_check = 2
+
+	batch_size = 4
+	image_set_size = 5
+	skip_frames = 5
+	number_batches_check = 15
 	num_correct, num_samples = 0, 0
 	for i in range(number_batches_check):
-		x_batch, y_batch = val_data.create_batch()
+		x_batch, y_batch = load_batch(batch_size, image_set_size, skip_frames, dataset = 'validation')
 		feed_dict = {x: x_batch, is_training: 0}
 		scores_np = sess.run(scores, feed_dict=feed_dict)
 		y_pred = scores_np.argmax(axis=1)
@@ -198,12 +204,17 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 	
 	Returns: Nothing, but prints progress during trainingn
 	"""
+
+	batch_size = 4
+	image_set_size = 5
+	skip_frames = 5
+	resize_height, resize_width = 288, 512
 	tf.reset_default_graph()    
 	with tf.device(device):
 		# Construct the computational graph we will use to train the model. We
 		# use the model_init_fn to construct the model, declare placeholders for
 		# the data and labels
-		x = tf.placeholder(tf.float32, [None, 8, 720, 1280, 3])
+		x = tf.placeholder(tf.float32, [None, image_set_size, 288, 512, 3])
 		y = tf.placeholder(tf.int32, [None])
 		
 		# We need a place holder to explicitly specify if the model is in the training
@@ -239,11 +250,15 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 	# model to update.
 	#x_train, y_train, x_val, y_val, x_test, y_test = load_data(None)
 
-	train_data, val_data = load_data_new(None)
+	#train_data, val_data = load_data_new(None)
+
+
 
 	saver = tf.train.Saver()
 
-	print_every = 1
+	print_every = 10
+
+	num_epochs = 50
 
 	with tf.Session() as sess:
 		sess.run(tf.global_variables_initializer())
@@ -258,17 +273,17 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 			#         check_accuracy(sess, val_dset, x, scores, is_training=is_training)
 			#         print()
 			#     t += 1
-			x_np, y_np = train_data.create_batch()
-			print("loaded batch")
+			x_np, y_np = load_batch(batch_size, image_set_size, skip_frames)
+			#print("loaded batch")
 			feed_dict = {x: x_np, y: y_np, is_training:1}
 			loss_np, _ = sess.run([loss, train_op], feed_dict=feed_dict)
-			print("sess is running?")
+			#print("sess is running?")
 			if t % print_every == 0:
 				print('Iteration %d, loss = %.4f' % (t, loss_np))
-				check_accuracy(sess, val_data, x, scores, is_training=is_training)
+				check_accuracy(sess, x, scores, is_training=is_training)
 				print()
 			t += 1
-			print("end of one thing")
+			#print("end of one thing")
 			save_path = saver.save(sess, "model_checkpoints/first_model_" + str(epoch))
 
 
