@@ -92,38 +92,7 @@ def vgg_model_init(inputs):
 
 	print("num classes:", num_classes)
 
-	# Define architecture as sequential layers
-	# layers = [
-
-	# 	# Conv Layer Set 1: 2 Conv layers (16 filters), 1 Pool layer
-	# 	tf.layers.Conv3D(input_shape=input_shape, filters=num_filters[0], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-	# 	tf.layers.Conv3D(filters=num_filters[0], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-	# 	#tf.layers.BatchNormalization(),
-	# 	tf.layers.MaxPooling3D(pool_size=pool_size, strides=pool_stride, padding='valid'),
-	# 	# # Conv Layer Set 2: 2 Conv layers (32 filters), 1 Pool layer
-	# 	tf.layers.Conv3D(filters=num_filters[1], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-	# 	tf.layers.Conv3D(filters=num_filters[1], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-	# 	#tf.layers.BatchNormalization(),
-	# 	tf.layers.MaxPooling3D(pool_size=pool_size, strides=pool_stride, padding='valid'),
-
-	# 	# # Conv Layer Set 3: 3 Conv layers (64 filters), 1 Pool layer
-	# 	tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-	# 	tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-	# 	tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-	# 	#tf.layers.BatchNormalization(),		
-	# 	tf.layers.MaxPooling3D(pool_size=pool_size, strides=pool_stride, padding='valid'),
-
-	# 	#conv layer set 4:
-	# 	# tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-	# 	# tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-	# 	# tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-	# 	# tf.layers.MaxPooling3D(pool_size=pool_size, strides=pool_stride, padding='valid'),
-
-	# 	# FC Layer
-	# 	tf.layers.Flatten(),
-	# 	tf.layers.Dense(units = num_classes, kernel_initializer=initializer, kernel_regularizer=regularization)
-	# ]
-
+	#Define architecture as sequential layers
 	layers = [
 
 		# Conv Layer Set 1: 2 Conv layers (16 filters), 1 Pool layer
@@ -145,17 +114,56 @@ def vgg_model_init(inputs):
 		tf.layers.MaxPooling3D(pool_size=[1, pool_size, pool_size], strides=[1, pool_stride, pool_stride], padding='valid'),
 
 		#conv layer set 4:
-		# tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-		# tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-		# tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-		# tf.layers.MaxPooling3D(pool_size=pool_size, strides=pool_stride, padding='valid'),
+		tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		tf.layers.MaxPooling3D(pool_size=[1, pool_size, pool_size], strides=[1, pool_stride, pool_stride], padding='valid'),
+
 
 		# FC Layer
-		#tf.layers.Flatten(shape = ()),
-		#tf.layers.Dense(units = num_classes, kernel_initializer=initializer, kernel_regularizer=regularization)
-		tf.keras.layers.Reshape((image_set_size, 18 * 32 * 256)),
-		tf.keras.layers.LSTM(units = num_classes)
+		tf.layers.Flatten(),
+		tf.layers.Dense(units = 128, kernel_initializer=initializer, kernel_regularizer=regularization),
+
+		tf.layers.Dense(units = num_classes, kernel_initializer=initializer, kernel_regularizer=regularization)
 	]
+
+
+
+
+	#LSTM VERSION 
+
+	# layers = [
+
+	# 	# Conv Layer Set 1: 2 Conv layers (16 filters), 1 Pool layer
+	# 	tf.layers.Conv3D(input_shape=input_shape, filters=num_filters[0], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+	# 	tf.layers.Conv3D(filters=num_filters[0], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+	# 	#tf.layers.BatchNormalization(),
+	# 	tf.layers.MaxPooling3D(pool_size=[1, pool_size, pool_size], strides=[1, pool_stride, pool_stride], padding='valid'),
+	# 	# # Conv Layer Set 2: 2 Conv layers (32 filters), 1 Pool layer
+	# 	tf.layers.Conv3D(filters=num_filters[1], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+	# 	tf.layers.Conv3D(filters=num_filters[1], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+	# 	#tf.layers.BatchNormalization(),
+	# 	tf.layers.MaxPooling3D(pool_size=[1, pool_size, pool_size], strides=[1, pool_stride, pool_stride], padding='valid'),
+
+	# 	# # Conv Layer Set 3: 3 Conv layers (64 filters), 1 Pool layer
+	# 	tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+	# 	tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+	# 	tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+	# 	#tf.layers.BatchNormalization(),		
+	# 	tf.layers.MaxPooling3D(pool_size=[1, pool_size, pool_size], strides=[1, pool_stride, pool_stride], padding='valid'),
+
+	# 	#conv layer set 4:
+	# 	# tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+	# 	# tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+	# 	# tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+	# 	# tf.layers.MaxPooling3D(pool_size=pool_size, strides=pool_stride, padding='valid'),
+
+	# 	# FC Layer
+	# 	#tf.layers.Flatten(shape = ()),
+	# 	#tf.layers.Dense(units = num_classes, kernel_initializer=initializer, kernel_regularizer=regularization)
+	# 	tf.keras.layers.Reshape((image_set_size, 18 * 32 * 256)),
+	# 	tf.keras.layers.LSTM(units = num_classes)
+	# ]
 
 
 
@@ -321,7 +329,7 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 
 	saver = tf.train.Saver()
 
-	print_every = 50
+	print_every = 5
 
 	num_epochs = 500
 
