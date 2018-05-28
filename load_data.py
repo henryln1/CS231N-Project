@@ -108,7 +108,7 @@ def load_batch(batch_size, image_set_size, skip_frames, dataset = "train"):
 	for video in video_ids:
 		#print("current video id: ", video)
 		image_set = []
-		random_start_between_0_100 = random.randint(0, 300 - 1 - image_set_size * skip_frames)
+		random_start_between_0_100 = random.randint(0, 100)#200 - 1 - image_set_size * skip_frames)
 		#print("product", image_set_size * skip_frames)
 		for i in range(1, (image_set_size) * skip_frames, skip_frames):
 			#print("current image frame: ", i)
