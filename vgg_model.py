@@ -63,7 +63,7 @@ def vgg_model_init(inputs):
 
 	# Define hyperparams, weight initializer, activation, regularization, loss function, and optimizer
 	#FR, W, H, D = input_shape
-	resize_height, resize_width = 288, 512
+	resize_height, resize_width = 144, 256
 	image_set_size = 8
 	FR = image_set_size
 	W = resize_height
@@ -98,18 +98,26 @@ def vgg_model_init(inputs):
 		# Conv Layer Set 1: 2 Conv layers (16 filters), 1 Pool layer
 		tf.layers.Conv3D(input_shape=input_shape, filters=num_filters[0], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
 		tf.layers.Conv3D(filters=num_filters[0], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		#tf.layers.BatchNormalization(),
 		tf.layers.MaxPooling3D(pool_size=pool_size, strides=pool_stride, padding='valid'),
-
 		# # Conv Layer Set 2: 2 Conv layers (32 filters), 1 Pool layer
 		tf.layers.Conv3D(filters=num_filters[1], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
 		tf.layers.Conv3D(filters=num_filters[1], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		#tf.layers.BatchNormalization(),
 		tf.layers.MaxPooling3D(pool_size=pool_size, strides=pool_stride, padding='valid'),
 
 		# # Conv Layer Set 3: 3 Conv layers (64 filters), 1 Pool layer
 		tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
 		tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
 		tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		#tf.layers.BatchNormalization(),		
 		tf.layers.MaxPooling3D(pool_size=pool_size, strides=pool_stride, padding='valid'),
+
+		#conv layer set 4:
+		# tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		# tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		# tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		# tf.layers.MaxPooling3D(pool_size=pool_size, strides=pool_stride, padding='valid'),
 
 		# FC Layer
 		tf.layers.Flatten(),
@@ -160,7 +168,7 @@ def train(model, x_train, y_train, num_epochs, x_val=None, y_val=None, batch_siz
 
 
 
-def check_accuracy(sess, x, scores, is_training=None):
+def check_accuracy(sess, x, scores, dataset = 'validation', is_training=None):
 	"""
 	Check accuracy on a classification model.
 	
@@ -176,13 +184,13 @@ def check_accuracy(sess, x, scores, is_training=None):
 
 	"""
 
-	batch_size = 8
+	batch_size = 16
 	image_set_size = 8
 	skip_frames = 5
 	number_batches_check = 10
 	num_correct, num_samples = 0, 0
 	for i in range(number_batches_check):
-		x_batch, y_batch = load_batch(batch_size, image_set_size, skip_frames, dataset = 'validation')
+		x_batch, y_batch = load_batch(batch_size, image_set_size, skip_frames, dataset = dataset)
 		feed_dict = {x: x_batch, is_training: 0}
 		scores_np = sess.run(scores, feed_dict=feed_dict)
 		y_pred = scores_np.argmax(axis=1)
@@ -208,16 +216,16 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 	Returns: Nothing, but prints progress during trainingn
 	"""
 
-	batch_size = 8
+	batch_size = 16
 	image_set_size = 8
 	skip_frames = 5
-	resize_height, resize_width = 288, 512
+	resize_height, resize_width = 144, 256
 	tf.reset_default_graph()    
 	with tf.device(device):
 		# Construct the computational graph we will use to train the model. We
 		# use the model_init_fn to construct the model, declare placeholders for
 		# the data and labels
-		x = tf.placeholder(tf.float32, [None, image_set_size, 288, 512, 3])
+		x = tf.placeholder(tf.float32, [None, image_set_size, resize_height, resize_width, 3])
 		y = tf.placeholder(tf.int32, [None])
 		
 		# We need a place holder to explicitly specify if the model is in the training
@@ -274,7 +282,7 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 
 	saver = tf.train.Saver()
 
-	print_every = 5
+	print_every = 50
 
 	num_epochs = 500
 
@@ -307,7 +315,11 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 				check_accuracy(sess, x, scores, is_training=is_training)
 				new_time = time.time()
 				print("Validation Check took: ", new_time - curr_time, " seconds.")
-				print()
+				#print()
+				curr_time = time.time()
+				check_accuracy(sess, x, scores, is_training=is_training, dataset = 'training')
+				new_time = time.time()
+				print("Training Check took: ", new_time - curr_time, " seconds.")
 			t += 1
 			#print("end of one thing")
 			save_path = saver.save(sess, "model_checkpoints/first_model_" + str(epoch))

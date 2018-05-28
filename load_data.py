@@ -78,7 +78,7 @@ def load_batch(batch_size, image_set_size, skip_frames, dataset = "train"):
 	dataset: which dataset are we drawing this batch from
 	"""
 	print("loading batch...")
-	resize_height, resize_width = 288, 512
+	resize_height, resize_width = 144, 256
 
 	image_paths = read_text_file(dataset + '.txt') #a list of all the possible image files
 
@@ -108,7 +108,7 @@ def load_batch(batch_size, image_set_size, skip_frames, dataset = "train"):
 	for video in video_ids:
 		#print("current video id: ", video)
 		image_set = []
-		random_start_between_0_100 = random.randint(0, 100)
+		random_start_between_0_100 = random.randint(0, 300 - 1 - image_set_size * skip_frames)
 		#print("product", image_set_size * skip_frames)
 		for i in range(1, (image_set_size) * skip_frames, skip_frames):
 			#print("current image frame: ", i)
