@@ -73,7 +73,7 @@ def vgg_model_init(inputs):
 
 	input_shape = (FR, W, H, D)
 
-	num_filters = [4, 8, 16] # number of filters in each set of conv layers
+	num_filters = [64, 128, 256] # number of filters in each set of conv layers
 	filter_size = 3 # 3x3 filters
 	filter_stride = 1
 
@@ -106,10 +106,10 @@ def vgg_model_init(inputs):
 		tf.layers.MaxPooling3D(pool_size=pool_size, strides=pool_stride, padding='valid'),
 
 		# # Conv Layer Set 3: 3 Conv layers (64 filters), 1 Pool layer
-		# tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-		# tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-		# tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-		# tf.layers.MaxPooling3D(pool_size=pool_size, strides=pool_stride, padding='valid'),
+		tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		tf.layers.MaxPooling3D(pool_size=pool_size, strides=pool_stride, padding='valid'),
 
 		# FC Layer
 		tf.layers.Flatten(),
@@ -255,6 +255,21 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 
 	#train_data, val_data = load_data_new(None)
 
+
+
+	total_parameters = 0
+	for variable in tf.trainable_variables():
+		# shape is an array of tf.Dimension
+		shape = variable.get_shape()
+		#print(shape)
+		#print(len(shape))
+		variable_parameters = 1
+		for dim in shape:
+		#	print(dim)
+			variable_parameters *= dim.value
+		#print(variable_parameters)
+		total_parameters += variable_parameters
+	print("Total parameters: ", total_parameters)
 
 
 	saver = tf.train.Saver()
