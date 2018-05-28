@@ -77,10 +77,19 @@ def load_batch(batch_size, image_set_size, skip_frames, dataset = "train"):
 	skip_frames: how many frames we skip (do we want every 5 frames, 10 frames, etc.)
 	dataset: which dataset are we drawing this batch from
 	"""
-	#print("loading batch...")
+	print("loading batch...")
 	resize_height, resize_width = 288, 512
 
 	image_paths = read_text_file(dataset + '.txt') #a list of all the possible image files
+
+	# start_frames = []
+	# for i in range(1, 51):
+	# 	curr_string = '0' + str(i)
+	# 	if len(curr_string) < 3:
+	# 		curr_string = '0' + curr_string
+	# 	curr_string += '.jpg'
+	# 	#print(curr_string)
+	# 	start_frames += [x for x in image_paths if curr_string in x]
 	start_frames = [x for x in image_paths if '001.jpg' in x]
 	#print("Number of start frames: ", len(start_frames))
 	random_start_frames = random.sample(start_frames, batch_size)
@@ -99,13 +108,16 @@ def load_batch(batch_size, image_set_size, skip_frames, dataset = "train"):
 	for video in video_ids:
 		#print("current video id: ", video)
 		image_set = []
+		random_start_between_0_100 = random.randint(0, 100)
+		#print("product", image_set_size * skip_frames)
 		for i in range(1, (image_set_size) * skip_frames, skip_frames):
 			#print("current image frame: ", i)
-			buffer_zeros_curr = buffer_zeros + str(i)
+			buffer_zeros_curr = buffer_zeros + str(i + random_start_between_0_100)
 			#print("buffer: ", )
 			current_frame = buffer_zeros_curr[-4:]
 			#print("current frame: ", current_frame)
 			image_frame_id = video + current_frame + '.jpg'
+			#print("Current Image Name: ", image_frame_id)
 			image_file = read_image_file(image_frame_id)
 			resized_image = scipy.misc.imresize(image_file, (resize_height, resize_width))
 			image_set.append(resized_image)
@@ -119,6 +131,7 @@ def load_batch(batch_size, image_set_size, skip_frames, dataset = "train"):
 	X_train = np.stack(list_image_sets, axis = 0)
 	#print("shape of X_train: ", X_train.shape)
 	#print("shape of Y_train: ", Y_train.shape)
+	#print("batch loaded")
 	return X_train, Y_train
 
 

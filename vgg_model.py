@@ -9,6 +9,8 @@ import numpy as np
 from load_data import *
 from data_batch import Data
 
+import time
+
 
 device = '/cpu:0'
 
@@ -62,7 +64,8 @@ def vgg_model_init(inputs):
 	# Define hyperparams, weight initializer, activation, regularization, loss function, and optimizer
 	#FR, W, H, D = input_shape
 	resize_height, resize_width = 288, 512
-	FR = 5
+	image_set_size = 8
+	FR = image_set_size
 	W = resize_height
 	H = resize_width
 	D = 3
@@ -98,9 +101,9 @@ def vgg_model_init(inputs):
 		tf.layers.MaxPooling3D(pool_size=pool_size, strides=pool_stride, padding='valid'),
 
 		# # Conv Layer Set 2: 2 Conv layers (32 filters), 1 Pool layer
-		# tf.layers.Conv3D(filters=num_filters[1], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-		# tf.layers.Conv3D(filters=num_filters[1], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-		# tf.layers.MaxPooling3D(pool_size=pool_size, strides=pool_stride, padding='valid'),
+		tf.layers.Conv3D(filters=num_filters[1], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		tf.layers.Conv3D(filters=num_filters[1], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		tf.layers.MaxPooling3D(pool_size=pool_size, strides=pool_stride, padding='valid'),
 
 		# # Conv Layer Set 3: 3 Conv layers (64 filters), 1 Pool layer
 		# tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
@@ -173,10 +176,10 @@ def check_accuracy(sess, x, scores, is_training=None):
 
 	"""
 
-	batch_size = 4
-	image_set_size = 5
+	batch_size = 8
+	image_set_size = 8
 	skip_frames = 5
-	number_batches_check = 15
+	number_batches_check = 10
 	num_correct, num_samples = 0, 0
 	for i in range(number_batches_check):
 		x_batch, y_batch = load_batch(batch_size, image_set_size, skip_frames, dataset = 'validation')
@@ -205,8 +208,8 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 	Returns: Nothing, but prints progress during trainingn
 	"""
 
-	batch_size = 4
-	image_set_size = 5
+	batch_size = 8
+	image_set_size = 8
 	skip_frames = 5
 	resize_height, resize_width = 288, 512
 	tf.reset_default_graph()    
@@ -256,15 +259,16 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 
 	saver = tf.train.Saver()
 
-	print_every = 10
+	print_every = 5
 
-	num_epochs = 50
+	num_epochs = 500
 
 	with tf.Session() as sess:
 		sess.run(tf.global_variables_initializer())
-		t = 0
+		t = 1
 		for epoch in range(num_epochs):
 			print('Starting epoch %d' % epoch)
+			curr_time = time.time()
 			# for x_np, y_np in train_dset:
 			#     feed_dict = {x: x_np, y: y_np, is_training:1}
 			#     loss_np, _ = sess.run([loss, train_op], feed_dict=feed_dict)
@@ -274,13 +278,20 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 			#         print()
 			#     t += 1
 			x_np, y_np = load_batch(batch_size, image_set_size, skip_frames)
-			#print("loaded batch")
+			print("loaded batch")
 			feed_dict = {x: x_np, y: y_np, is_training:1}
 			loss_np, _ = sess.run([loss, train_op], feed_dict=feed_dict)
 			#print("sess is running?")
+
+			new_time = time.time()
+
+			print("Epoch took: ", new_time - curr_time, " seconds.")
 			if t % print_every == 0:
 				print('Iteration %d, loss = %.4f' % (t, loss_np))
+				curr_time = time.time()
 				check_accuracy(sess, x, scores, is_training=is_training)
+				new_time = time.time()
+				print("Validation Check took: ", new_time - curr_time, " seconds.")
 				print()
 			t += 1
 			#print("end of one thing")
