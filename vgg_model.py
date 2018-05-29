@@ -12,9 +12,9 @@ from data_batch import Data
 import time
 
 
-device = '/cpu:0'
+#device = '/cpu:0'
 
-#device = '/gpu:0'
+device = '/gpu:0'
 
 # TODO: load functions that read and process input data
 # Inputs: 
@@ -236,7 +236,7 @@ def check_accuracy(sess, x, scores, dataset = 'validation', is_training=None):
 
 	"""
 
-	batch_size = 8
+	batch_size = 2
 	image_set_size = 20
 	skip_frames = 8
 	number_batches_check = 10
@@ -268,9 +268,9 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 	Returns: Nothing, but prints progress during trainingn
 	"""
 
-	batch_size = 8
+	batch_size = 2
 	image_set_size = 20
-	skip_frames = 5
+	skip_frames = 8
 	resize_height, resize_width = 144, 256
 	tf.reset_default_graph()    
 	with tf.device(device):
