@@ -138,7 +138,24 @@ def load_batch(batch_size, image_set_size, skip_frames, dataset = "train"):
 
 
 
+def load_single_frame_batch(batch_size, dataset = "train"):
 
+	print("loading batch...")
+	resize_height, resize_width = 144, 256
+	image_paths = read_text_file(dataset + '.txt')
+	random_images = random.sample(image_paths, batch_size)
+	list_frames = []
+	Y_train = []
+	for image in random_images:
+		image_file = read_image_file(image)
+		resized_image = scipy.misc.imresize(image_file, (resize_height, resize_width))
+		list_frames.append(resized_image)
+		Y_train.append(find_label(image))
+	X_train = np.stack(list_frames, axis = 0)
+	Y_train = np.asarray(Y_train)
+	#print("Shape of X_train: ", X_train.shape)
+	#print("Shape of Y_train: ", Y_train.shape)
+	#print("Y_train: ", Y_train)
 
-
+	return X_train, Y_train
 

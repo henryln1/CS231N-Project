@@ -64,7 +64,7 @@ def vgg_model_init(inputs):
 	# Define hyperparams, weight initializer, activation, regularization, loss function, and optimizer
 	#FR, W, H, D = input_shape
 	resize_height, resize_width = 144, 256
-	image_set_size = 20
+	image_set_size = 8
 	FR = image_set_size
 	W = resize_height
 	H = resize_width
@@ -154,15 +154,15 @@ def vgg_model_init(inputs):
 		tf.layers.MaxPooling3D(pool_size=[1, pool_size, pool_size], strides=[1, pool_stride, pool_stride], padding='valid'),
 
 		#conv layer set 4:
-		tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-		tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-		tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-		tf.layers.MaxPooling3D(pool_size=[1, pool_size, pool_size], strides=[1, pool_stride, pool_stride], padding='valid'),
+		# tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		# tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		# tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		# tf.layers.MaxPooling3D(pool_size=[1, pool_size, pool_size], strides=[1, pool_stride, pool_stride], padding='valid'),
 
 		# FC Layer
 		#tf.layers.Flatten(shape = ()),
 		#tf.layers.Dense(units = num_classes, kernel_initializer=initializer, kernel_regularizer=regularization)
-		tf.keras.layers.Reshape((image_set_size, 9 * 16 * 256)),
+		tf.keras.layers.Reshape((image_set_size, 18 * 32 * 256)),
 		#tf.keras.layers.LSTM(units = image_set_size * 18 * 32 * 256),
 		#tf.keras.layers.Reshape((image_set_size, 18 * 32 * 256)),
 		tf.keras.layers.LSTM(units = num_classes),
@@ -184,7 +184,7 @@ def vgg_model_init(inputs):
 
 
 def optimizer_init_fn():
-	learning_rate = 0.01
+	learning_rate = 0.1
 	optimizer = tf.train.AdamOptimizer(learning_rate = learning_rate)
 	return optimizer
 
@@ -236,8 +236,8 @@ def check_accuracy(sess, x, scores, dataset = 'validation', is_training=None):
 
 	"""
 
-	batch_size = 2
-	image_set_size = 20
+	batch_size = 16
+	image_set_size = 8
 	skip_frames = 8
 	number_batches_check = 10
 	num_correct, num_samples = 0, 0
@@ -268,8 +268,8 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 	Returns: Nothing, but prints progress during trainingn
 	"""
 
-	batch_size = 2
-	image_set_size = 20
+	batch_size = 16
+	image_set_size = 8
 	skip_frames = 8
 	resize_height, resize_width = 144, 256
 	tf.reset_default_graph()    
@@ -361,8 +361,9 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 			new_time = time.time()
 
 			print("Epoch took: ", new_time - curr_time, " seconds.")
+			print("Loss: ", loss_np)
 			if t % print_every == 0:
-				print('Iteration %d, loss = %.4f' % (t, loss_np))
+				#print('Iteration %d, loss = %.4f' % (t, loss_np))
 				curr_time = time.time()
 				check_accuracy(sess, x, scores, is_training=is_training)
 				new_time = time.time()
