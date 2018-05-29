@@ -64,7 +64,7 @@ def vgg_model_init(inputs):
 	# Define hyperparams, weight initializer, activation, regularization, loss function, and optimizer
 	#FR, W, H, D = input_shape
 	resize_height, resize_width = 144, 256
-	image_set_size = 8
+	image_set_size = 20
 	FR = image_set_size
 	W = resize_height
 	H = resize_width
