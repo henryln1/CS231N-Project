@@ -132,6 +132,7 @@ def vgg_model_init(inputs):
 
 	#LSTM VERSION 
 
+	lstm_layer_output_size = 300
 	layers = [
 
 		# Conv Layer Set 1: 2 Conv layers (16 filters), 1 Pool layer
@@ -162,6 +163,7 @@ def vgg_model_init(inputs):
 		#tf.layers.Flatten(shape = ()),
 		#tf.layers.Dense(units = num_classes, kernel_initializer=initializer, kernel_regularizer=regularization)
 		tf.keras.layers.Reshape((image_set_size, 18 * 32 * 256)),
+		tf.keras.layers.LSTM(units = lstm_layer_output_size)
 		tf.keras.layers.LSTM(units = num_classes)
 	]
 
@@ -232,9 +234,9 @@ def check_accuracy(sess, x, scores, dataset = 'validation', is_training=None):
 
 	"""
 
-	batch_size = 32
-	image_set_size = 8
-	skip_frames = 5
+	batch_size = 8
+	image_set_size = 20
+	skip_frames = 8
 	number_batches_check = 10
 	num_correct, num_samples = 0, 0
 	for i in range(number_batches_check):
@@ -264,8 +266,8 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 	Returns: Nothing, but prints progress during trainingn
 	"""
 
-	batch_size = 32
-	image_set_size = 8
+	batch_size = 8
+	image_set_size = 20
 	skip_frames = 5
 	resize_height, resize_width = 144, 256
 	tf.reset_default_graph()    
