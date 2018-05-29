@@ -90,7 +90,7 @@ def load_batch(batch_size, image_set_size, skip_frames, dataset = "train"):
 	# 	curr_string += '.jpg'
 	# 	#print(curr_string)
 	# 	start_frames += [x for x in image_paths if curr_string in x]
-	start_frames = [x for x in image_paths if '001.jpg' in x]
+	start_frames = [x for x in image_paths if '300.jpg' in x]
 	#print("Number of start frames: ", len(start_frames))
 	random_start_frames = random.sample(start_frames, batch_size)
 	#print("Random Start Frames: ", random_start_frames)
@@ -126,11 +126,13 @@ def load_batch(batch_size, image_set_size, skip_frames, dataset = "train"):
 		image_set_array = np.stack(image_set, axis = 0) #want to take a bunch of H x W x 3 arrays and stack them on top of each other
 		#print("Shape of image set array: ", image_set_array.shape)
 		list_image_sets.append(image_set)
-
+		print("video id: ", video)
 	Y_train = np.asarray(Y_train)
+	print("Y_train", Y_train)
+	print("Y_train shape: ", Y_train.shape)
 	X_train = np.stack(list_image_sets, axis = 0)
 	#print("shape of X_train: ", X_train.shape)
-	#print("shape of Y_train: ", Y_train.shape)
+	print("shape of Y_train: ", Y_train.shape)
 	#print("batch loaded")
 	return X_train, Y_train
 
