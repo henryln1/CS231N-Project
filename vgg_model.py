@@ -12,7 +12,7 @@ from data_batch import Data
 import time
 
 
-device = '/gpu:0'
+device = '/cpu:0'
 
 #device = '/gpu:0'
 
@@ -154,17 +154,19 @@ def vgg_model_init(inputs):
 		tf.layers.MaxPooling3D(pool_size=[1, pool_size, pool_size], strides=[1, pool_stride, pool_stride], padding='valid'),
 
 		#conv layer set 4:
-		# tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-		# tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-		# tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-		# tf.layers.MaxPooling3D(pool_size=pool_size, strides=pool_stride, padding='valid'),
+		tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
+		tf.layers.MaxPooling3D(pool_size=[1, pool_size, pool_size], strides=[1, pool_stride, pool_stride], padding='valid'),
 
 		# FC Layer
 		#tf.layers.Flatten(shape = ()),
 		#tf.layers.Dense(units = num_classes, kernel_initializer=initializer, kernel_regularizer=regularization)
 		tf.keras.layers.Reshape((image_set_size, 18 * 32 * 256)),
-		tf.keras.layers.LSTM(units = lstm_layer_output_size)
-		tf.keras.layers.LSTM(units = num_classes)
+		#tf.keras.layers.LSTM(units = image_set_size * 18 * 32 * 256),
+		#tf.keras.layers.Reshape((image_set_size, 18 * 32 * 256)),
+		tf.keras.layers.LSTM(units = num_classes),
+		tf.layers.Dense(units = num_classes, kernel_initializer=initializer, kernel_regularizer=regularization)
 	]
 
 
