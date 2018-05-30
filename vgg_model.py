@@ -12,9 +12,9 @@ from data_batch import Data
 import time
 
 
-#device = '/cpu:0'
+device = '/cpu:0'
 
-device = '/gpu:0'
+#device = '/gpu:0'
 
 # TODO: load functions that read and process input data
 # Inputs: 
@@ -179,17 +179,180 @@ def vgg_model_init(inputs):
 	return vgg_model(inputs)
 
 
-def vgg_model_session_form(x):
-	'''
-	Implementing our model not using sequential and then including batch normalization
-	
-	x should be shape batch size x image set size x H x W x 3
-	'''
+def vgg_model_single_image_init(inputs):
+	resize_height, resize_width = 144, 256
+	#image_set_size = 8
+	#FR = image_set_size
+	W = resize_height
+	H = resize_width
+	D = 3
+	num_classes = 10
 
-	
+	input_shape = (W, H, D)
+
+	num_filters = [64, 128, 256] # number of filters in each set of conv layers
+	filter_size = 3 # 3x3 filters
+	filter_stride = 1
+
+	pool_size = 2 # 2x2 max pool
+	pool_stride = 2
+
+	initializer = tf.variance_scaling_initializer(scale=2.0) # initializer for weights
+	activation = tf.nn.relu # ReLU for each Conv layer
+
+	reg_strength = 0.001
+	regularization = tf.contrib.layers.l2_regularizer(reg_strength) # L2 regularization for FC layer
+
+	dense_layer_unit_count = 128
+	layers = [
+	tf.keras.layers.Conv2D(input_shape = input_shape, filters = num_filters[0], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer),
+	tf.keras.layers.Conv2D(filters = num_filters[0], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer),
+	tf.keras.layers.MaxPooling2D(pool_size = pool_size, strides = pool_stride, padding = 'valid'),
+
+
+	tf.keras.layers.Conv2D(filters = num_filters[1], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer),
+	tf.keras.layers.Conv2D(filters = num_filters[1], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer),
+	tf.keras.layers.MaxPooling2D(pool_size = pool_size, strides = pool_stride, padding = 'valid'),
+
+
+	tf.keras.layers.Conv2D(filters = num_filters[2], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer),
+	tf.keras.layers.Conv2D(filters = num_filters[2], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer),
+	tf.keras.layers.Conv2D(filters = num_filters[2], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer),
+
+	tf.keras.layers.MaxPooling2D(pool_size = pool_size, strides = pool_stride, padding = 'valid'),
+	tf.layers.Flatten(),
+	#tf.keras.layers.Dense(units = 128, kernel_initializer=initializer, kernel_regularizer=regularization),
+	tf.keras.layers.Dense(units = num_classes, kernel_initializer=initializer, kernel_regularizer=regularization)
+
+	]
+
+	vgg_model = tf.keras.Sequential(layers)
+
+	return vgg_model(inputs)
 
 
 
+
+def check_accuracy_single_frame(sess, x, scores, dataset = 'validation', is_training = None):
+
+	batch_size = 64
+	number_batches_to_check = 4
+	num_correct, num_samples = 0, 0
+
+	for i in range(number_batches_to_check):
+		x_batch, y_batch = load_single_frame_batch(batch_size, dataset = dataset)
+		feed_dict = {x: x_batch, is_training: 0}
+		scores_np = sess.run(scores, feed_dict=feed_dict)
+		y_pred = scores_np.argmax(axis=1)
+		num_samples += x_batch.shape[0]
+		num_correct += (y_pred == y_batch).sum()
+
+	acc = num_correct / num_samples
+	print('Got %d / %d correct (%.2f%%)' % (num_correct, num_samples, 100 * acc))
+
+	return
+
+
+
+def train_part34_single_image(model_init_fn, optimizer_init_fn, num_epochs=10):
+
+	batch_size = 64
+	resize_height, resize_width = 144, 256
+
+	learning_rate = 1e-5
+	tf.reset_default_graph()
+	#is_training = tf.placeholder(tf.bool, name='is_training')
+	with tf.device(device):
+		# Construct the computational graph we will use to train the model. We
+		# use the model_init_fn to construct the model, declare placeholders for
+		# the data and labels
+		x = tf.placeholder(tf.float32, [None, resize_height, resize_width, 3])
+		y = tf.placeholder(tf.int32, [None])
+		
+		# We need a place holder to explicitly specify if the model is in the training
+		# phase or not. This is because a number of layers behaves differently in
+		# training and in testing, e.g., dropout and batch normalization.
+		# We pass this variable to the computation graph through feed_dict as shown below.
+		#params = init_fn()
+		# Use the model function to build the forward pass.
+		is_training = tf.placeholder(tf.bool, name='is_training')
+		scores = model_init_fn(x)
+		# Compute the loss like we did in Part II
+
+		#loss = tf.nn.sparse_softmax_cross_entropy_with_logits(labels=y, logits=scores)
+		#loss = tf.reduce_mean(loss)
+		scores = model_init_fn(x)
+
+		# Compute the loss like we did in Part II
+		loss = tf.nn.sparse_softmax_cross_entropy_with_logits(labels=y, logits=scores)
+		loss = tf.reduce_mean(loss)
+
+		# Use the optimizer_fn to construct an Optimizer, then use the optimizer
+		# to set up the training step. Asking TensorFlow to evaluate the
+		# train_op returned by optimizer.minimize(loss) will cause us to make a
+		# single update step using the current minibatch of data.
+		
+		# Note that we use tf.control_dependencies to force the model to run
+		# the tf.GraphKeys.UPDATE_OPS at each training step. tf.GraphKeys.UPDATE_OPS
+		# holds the operators that update the states of the network.
+		# For example, the tf.layers.batch_normalization function adds the running mean
+		# and variance update operators to tf.GraphKeys.UPDATE_OPS.
+		optimizer = optimizer_init_fn()
+		update_ops = tf.get_collection(tf.GraphKeys.UPDATE_OPS)
+		with tf.control_dependencies(update_ops):
+			train_op = optimizer.minimize(loss)
+
+	total_parameters = 0
+	for variable in tf.trainable_variables():
+		# shape is an array of tf.Dimension
+		shape = variable.get_shape()
+		#print(shape)
+		#print(len(shape))
+		variable_parameters = 1
+		for dim in shape:
+		#	print(dim)
+			variable_parameters *= dim.value
+		#print(variable_parameters)
+		total_parameters += variable_parameters
+	print("Total parameters: ", total_parameters)
+
+
+	saver = tf.train.Saver()
+
+	#print_ever = 100
+
+	iterations_per_epoch = 25
+
+	with tf.Session() as sess:
+		sess.run(tf.global_variables_initializer())
+
+		for epoch in range(num_epochs):
+			print("Starting epoch: ", epoch)
+			for i in range(iterations_per_epoch):
+				print("Iteration ", epoch * iterations_per_epoch + i)
+				curr_time = time.time()
+
+				x_np, y_np = load_single_frame_batch(batch_size)
+				feed_dict = {x: x_np, y: y_np, is_training:1}
+				loss_np, _ = sess.run([loss, train_op], feed_dict=feed_dict)	
+
+				new_time = time.time()
+				print("Iteration took: ", new_time - curr_time, " seconds.")
+				print("Loss: ", loss_np)
+			curr_time = time.time()
+			check_accuracy_single_frame(sess, x, scores, is_training = is_training)
+			new_time = time.time()
+			print("Validation Check took: ", new_time - curr_time)
+			curr_time = time.time()
+			check_accuracy_single_frame(sess, x, scores, dataset = 'train', is_training = is_training)
+			new_time = time.time()
+			print("Training Check took: ", new_time - curr_time)
+		#if epoch % 200 == 0:
+			save_path = saver.save(sess, "model_checkpoints/model_single_frames_" + str(epoch))
+
+
+
+	return
 
 def optimizer_init_fn():
 	learning_rate = 1e-5

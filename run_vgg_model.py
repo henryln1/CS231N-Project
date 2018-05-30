@@ -82,6 +82,9 @@ def main():
 	# vgg_model.save('vgg_model.h5')
 
 
+def main2():
+	vgg.train_part34_single_image(vgg.vgg_model_single_image_init, vgg.optimizer_init_fn, num_epochs = 100)
+
 # Allows for script to be run as program
 if __name__=="__main__":
-	main()
+	main2()
