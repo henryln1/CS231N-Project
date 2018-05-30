@@ -179,12 +179,20 @@ def vgg_model_init(inputs):
 	return vgg_model(inputs)
 
 
+def vgg_model_session_form(x):
+	'''
+	Implementing our model not using sequential and then including batch normalization
+	
+	x should be shape batch size x image set size x H x W x 3
+	'''
+
+	
 
 
 
 
 def optimizer_init_fn():
-	learning_rate = 0.1
+	learning_rate = 1e-5
 	optimizer = tf.train.AdamOptimizer(learning_rate = learning_rate)
 	return optimizer
 
