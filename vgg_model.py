@@ -8,14 +8,17 @@ import tensorflow as tf
 import numpy as np
 from load_data import *
 from data_batch import Data
-
+from random import shuffle
 from sklearn.metrics import f1_score
+import os
 import time
 
 
 device = '/cpu:0'
 
 #device = '/gpu:0'
+
+#device = "/device:GPU:0"
 
 # TODO: load functions that read and process input data
 # Inputs: 
@@ -84,7 +87,7 @@ def vgg_model_init(inputs):
 	initializer = tf.variance_scaling_initializer(scale=2.0) # initializer for weights
 	activation = tf.nn.relu # ReLU for each Conv layer
 
-	reg_strength = 0.01
+	reg_strength = 1.0
 	regularization = tf.contrib.layers.l2_regularizer(reg_strength) # L2 regularization for FC layer
 
 	#loss = tf.nn..ftmax_cross_entropy_with_logits # NOTE: not sure if this loss function works with the Keras compile/fit model methods, may have to manually implement train method like in homework
@@ -201,7 +204,7 @@ def vgg_model_single_image_init(inputs):
 	initializer = tf.variance_scaling_initializer(scale=2.0) # initializer for weights
 	activation = tf.nn.relu # ReLU for each Conv layer
 
-	reg_strength = 0.01
+	reg_strength = 1.0
 	regularization = tf.contrib.layers.l2_regularizer(reg_strength) # L2 regularization for FC layer
 
 	dense_layer_unit_count = 128
@@ -223,7 +226,7 @@ def vgg_model_single_image_init(inputs):
 	#tf.keras.layers.Dropout(rate = 0.1),
 	tf.keras.layers.MaxPooling2D(pool_size = pool_size, strides = pool_stride, padding = 'valid'),
 	tf.layers.Flatten(),
-	#tf.keras.layers.Dense(units = 128, kernel_initializer=initializer, kernel_regularizer=regularization),
+	#tf.keras.layers.Dense(units = 32, kernel_initializer=initializer, kernel_regularizer=regularization),
 	tf.keras.layers.Dense(units = num_classes, kernel_initializer=initializer, kernel_regularizer=regularization),
 	#tf.keras.layers.Dropout(rate = 0.5)
 	]
@@ -238,7 +241,7 @@ def vgg_model_single_image_init(inputs):
 def check_accuracy_single_frame(sess, x, scores, dataset = 'validation', is_training = None):
 
 	batch_size = 128
-	number_batches_to_check = 10
+	number_batches_to_check = 15
 	num_correct, num_samples = 0, 0
 
 	all_y_pred = []
@@ -268,14 +271,15 @@ def check_accuracy_single_frame(sess, x, scores, dataset = 'validation', is_trai
 def train_part34_single_image(model_init_fn, optimizer_init_fn, num_epochs=10):
 
 
-	model_run_name = 'single_frames_model_batch_128'
+	model_run_name = 'single_frames_model_batch_128_reg_strength_1'
 	train_model_dir = 'model_checkpoints/' + model_run_name
-
+	if not os.path.exists(train_model_dir):
+		os.makedirs(train_model_dir)
 	batch_size = 128
 	resize_height, resize_width = 144, 256
 
 	learning_rate = 1e-5
-	regularization_strength = 0.01
+	regularization_strength = 1.0
 	tf.reset_default_graph()
 	#is_training = tf.placeholder(tf.bool, name='is_training')
 	with tf.device(device):
@@ -581,9 +585,10 @@ def check_accuracy_entire_dataset(sess, x, scores, dataset, is_training = None):
 	all_y_pred = []
 	all_y_actual = []
 	num_correct, num_total = 0, 0
-
+	shuffle(image_names)
 	batch_size = 100
 
+	image_names = images_names[:200]
 	for i in range(len(image_names) // 100 - 1):
 		image_file_names = image_names[i * 100 : (i + 1) * 100]
 		x_batch, y_batch = load_single_frame_batch(batch_size, image_names = image_file_names, dataset = dataset)
@@ -600,7 +605,7 @@ def check_accuracy_entire_dataset(sess, x, scores, dataset, is_training = None):
 
 	acc = num_correct / num_total
 	print("F1 Score: ", F1_score)
-	print('Got %d / %d correct (%.2f%%)' % (num_correct, num_samples, 100 * acc))
+	print('Got %d / %d correct (%.2f%%)' % (num_correct, num_total, 100 * acc))
 	return 
 
 
@@ -612,12 +617,12 @@ def official_evaluation(model_init_fn, model_location, dataset, is_training = No
 		# Construct the computational graph we will use to train the model. We
 		# use the model_init_fn to construct the model, declare placeholders for
 		# the data and labels
-		x = tf.placeholder(tf.float32, [None, resize_height, resize_width, 3])
-		y = tf.placeholder(tf.int32, [None])
-		scores = model_init_fn(x)
-		is_training = tf.placeholder(tf.bool, name='is_training')
-		loss = tf.nn.sparse_softmax_cross_entropy_with_logits(labels=y, logits=scores)
-		loss = tf.reduce_mean(loss)
+		# x = tf.placeholder(tf.float32, [None, resize_height, resize_width, 3])
+		# y = tf.placeholder(tf.int32, [None])
+		# scores = model_init_fn(x)
+		# is_training = tf.placeholder(tf.bool, name='is_training')
+		# loss = tf.nn.sparse_softmax_cross_entropy_with_logits(labels=y, logits=scores)
+		# loss = tf.reduce_mean(loss)
 
 		# Use the optimizer_fn to construct an Optimizer, then use the optimizer
 		# to set up the training step. Asking TensorFlow to evaluate the
@@ -637,8 +642,13 @@ def official_evaluation(model_init_fn, model_location, dataset, is_training = No
 	#saver = tf.train.Saver()
 	with tf.Session() as sess:
 		saver = tf.train.import_meta_graph(model_location + '.meta')
-		tf.initialize_all_variables().run()
-		saver.restore(sess, model_location)
+		#tf.initialize_all_variables().run()
+		saver.restore(sess,tf.train.latest_checkpoint(model_location))
+		graph = tf.get_default_graph()
+		x = graph.get_tensor_by_name("x:0")
+		y = graph.get_tensor_by_name("y:0")
+		loss = graph.get_tensor_by_name("loss:0")
+		train_op = graph.get_tensor_by_name("train_op:0")
 		x_np, y_np = load_single_frame_batch(batch_size)
 		feed_dict = {x: x_np, y: y_np, is_training:1}
 		loss_np, _ = sess.run([loss, train_op], feed_dict=feed_dict)	

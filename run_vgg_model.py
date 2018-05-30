@@ -99,9 +99,9 @@ def main2():
 def main3():
 	#model_location = 'model_checkpoints/first_model_test/first_model_20'
 	model_location = 'model_checkpoints/model_single_frames_batch_size_128_5100'
-	dataset = 'validation'
+	dataset = 'train'
 	model_init = vgg.vgg_model_single_image_init
 	vgg.official_evaluation(model_init, model_location , dataset = dataset)
 # Allows for script to be run as program
 if __name__=="__main__":
-	main3()
+	main2()
