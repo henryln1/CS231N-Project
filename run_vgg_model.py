@@ -8,6 +8,7 @@ import vgg_model as vgg
 import tensorflow as tf
 
 from load_data import *
+
 #device = '/gpu:0'
 
 # Define various parameters
@@ -52,9 +53,16 @@ def createOutputFiles(predictions, accuracy, output_path):
 	acc_output.close()
 
 
+
+
+
 # Main function
 def main():
 
+	# if not os.path.exists(FLAGS.train_dir):
+ #            os.makedirs(FLAGS.train_dir)
+ #        file_handler = logging.FileHandler(os.path.join(FLAGS.train_dir, "log.txt"))
+ #        logging.getLogger().addHandler(file_handler)
 
 	vgg.train_part34(vgg.vgg_model_init, vgg.optimizer_init_fn, num_epochs = 10)
 	
@@ -85,6 +93,15 @@ def main():
 def main2():
 	vgg.train_part34_single_image(vgg.vgg_model_single_image_init, vgg.optimizer_init_fn, num_epochs = 100)
 
+	#model_location = 
+	#run_official_evaluation(model_location, 'validation')
+
+def main3():
+	#model_location = 'model_checkpoints/first_model_test/first_model_20'
+	model_location = 'model_checkpoints/model_single_frames_batch_size_128_5100'
+	dataset = 'validation'
+	model_init = vgg.vgg_model_single_image_init
+	vgg.official_evaluation(model_init, model_location , dataset = dataset)
 # Allows for script to be run as program
 if __name__=="__main__":
-	main2()
+	main3()

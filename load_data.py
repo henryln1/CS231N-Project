@@ -138,12 +138,15 @@ def load_batch(batch_size, image_set_size, skip_frames, dataset = "train"):
 
 
 
-def load_single_frame_batch(batch_size, dataset = "train"):
+def load_single_frame_batch(batch_size, image_names = None, dataset = "train"):
 
 	print("loading batch...")
 	resize_height, resize_width = 144, 256
-	image_paths = read_text_file(dataset + '.txt')
-	random_images = random.sample(image_paths, batch_size)
+	if image_names == None:
+		image_paths = read_text_file(dataset + '.txt')
+		random_images = random.sample(image_paths, batch_size)
+	else:
+		random_images = image_names
 	list_frames = []
 	Y_train = []
 	for image in random_images:

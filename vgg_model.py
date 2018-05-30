@@ -213,19 +213,19 @@ def vgg_model_single_image_init(inputs):
 
 	tf.keras.layers.Conv2D(filters = num_filters[1], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer),
 	tf.keras.layers.Conv2D(filters = num_filters[1], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer),
-	tf.keras.layers.Dropout(rate = 0.1),
+	#tf.keras.layers.Dropout(rate = 0.1),
 	tf.keras.layers.MaxPooling2D(pool_size = pool_size, strides = pool_stride, padding = 'valid'),
 
 
 	tf.keras.layers.Conv2D(filters = num_filters[2], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer),
 	tf.keras.layers.Conv2D(filters = num_filters[2], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer),
 	tf.keras.layers.Conv2D(filters = num_filters[2], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer),
-	tf.keras.layers.Dropout(rate = 0.1),
+	#tf.keras.layers.Dropout(rate = 0.1),
 	tf.keras.layers.MaxPooling2D(pool_size = pool_size, strides = pool_stride, padding = 'valid'),
 	tf.layers.Flatten(),
 	#tf.keras.layers.Dense(units = 128, kernel_initializer=initializer, kernel_regularizer=regularization),
 	tf.keras.layers.Dense(units = num_classes, kernel_initializer=initializer, kernel_regularizer=regularization),
-	tf.keras.layers.Dropout(rate = 0.5)
+	#tf.keras.layers.Dropout(rate = 0.5)
 	]
 
 	vgg_model = tf.keras.Sequential(layers)
@@ -266,6 +266,10 @@ def check_accuracy_single_frame(sess, x, scores, dataset = 'validation', is_trai
 
 
 def train_part34_single_image(model_init_fn, optimizer_init_fn, num_epochs=10):
+
+
+	model_run_name = 'single_frames_model_batch_128'
+	train_model_dir = 'model_checkpoints/' + model_run_name
 
 	batch_size = 128
 	resize_height, resize_width = 144, 256
@@ -339,7 +343,12 @@ def train_part34_single_image(model_init_fn, optimizer_init_fn, num_epochs=10):
 	iterations_per_epoch = 100
 
 	with tf.Session() as sess:
+
+		# if not os.path.exists(train_model_dir):
+  #       	os.makedirs(train_model_dir)
 		sess.run(tf.global_variables_initializer())
+		# else:
+		# 	saver.restore(sess, "/tmp/model.ckpt")
 
 		for epoch in range(num_epochs):
 			print("Starting epoch: ", epoch)
@@ -363,7 +372,7 @@ def train_part34_single_image(model_init_fn, optimizer_init_fn, num_epochs=10):
 			new_time = time.time()
 			print("Training Check took: ", new_time - curr_time)
 		#if epoch % 200 == 0:
-			save_path = saver.save(sess, "model_checkpoints/model_single_frames_batch_size_128_" + str((epoch + 1) * 100))
+			save_path = saver.save(sess, train_model_dir + "training_iteration_" + str((epoch + 1) * 100))
 
 
 
@@ -563,6 +572,85 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 			#print("end of one thing")
 			if epoch % 200 == 0:
 				save_path = saver.save(sess, "model_checkpoints/first_model_lstm_" + str(epoch))
+
+
+def check_accuracy_entire_dataset(sess, x, scores, dataset, is_training = None):
+
+	image_names = read_text_file(dataset + '.txt')
+
+	all_y_pred = []
+	all_y_actual = []
+	num_correct, num_total = 0, 0
+
+	batch_size = 100
+
+	for i in range(len(image_names) // 100 - 1):
+		image_file_names = image_names[i * 100 : (i + 1) * 100]
+		x_batch, y_batch = load_single_frame_batch(batch_size, image_names = image_file_names, dataset = dataset)
+		feed_dict = {x: x_batch, is_training: 0}
+		scores_np = sess.run(scores, feed_dict=feed_dict)
+		y_pred = scores_np.argmax(axis=1)
+		num_total += x_batch.shape[0]
+		num_correct += (y_pred == y_batch).sum()
+
+		all_y_pred += y_pred.tolist()
+		all_y_actual += y_batch.tolist()
+	F1_score = f1_score(all_y_actual, all_y_pred, average = 'micro')
+
+
+	acc = num_correct / num_total
+	print("F1 Score: ", F1_score)
+	print('Got %d / %d correct (%.2f%%)' % (num_correct, num_samples, 100 * acc))
+	return 
+
+
+def official_evaluation(model_init_fn, model_location, dataset, is_training = None):
+	tf.reset_default_graph()
+	resize_height, resize_width = 144, 256
+	batch_size = 128
+	with tf.device(device):
+		# Construct the computational graph we will use to train the model. We
+		# use the model_init_fn to construct the model, declare placeholders for
+		# the data and labels
+		x = tf.placeholder(tf.float32, [None, resize_height, resize_width, 3])
+		y = tf.placeholder(tf.int32, [None])
+		scores = model_init_fn(x)
+		is_training = tf.placeholder(tf.bool, name='is_training')
+		loss = tf.nn.sparse_softmax_cross_entropy_with_logits(labels=y, logits=scores)
+		loss = tf.reduce_mean(loss)
+
+		# Use the optimizer_fn to construct an Optimizer, then use the optimizer
+		# to set up the training step. Asking TensorFlow to evaluate the
+		# train_op returned by optimizer.minimize(loss) will cause us to make a
+		# single update step using the current minibatch of data.
+		
+		# Note that we use tf.control_dependencies to force the model to run
+		# the tf.GraphKeys.UPDATE_OPS at each training step. tf.GraphKeys.UPDATE_OPS
+		# holds the operators that update the states of the network.
+		# For example, the tf.layers.batch_normalization function adds the running mean
+		# and variance update operators to tf.GraphKeys.UPDATE_OPS.
+		optimizer = optimizer_init_fn()
+		update_ops = tf.get_collection(tf.GraphKeys.UPDATE_OPS)
+		with tf.control_dependencies(update_ops):
+			train_op = optimizer.minimize(loss)
+
+	#saver = tf.train.Saver()
+	with tf.Session() as sess:
+		saver = tf.train.import_meta_graph(model_location + '.meta')
+		tf.initialize_all_variables().run()
+		saver.restore(sess, model_location)
+		x_np, y_np = load_single_frame_batch(batch_size)
+		feed_dict = {x: x_np, y: y_np, is_training:1}
+		loss_np, _ = sess.run([loss, train_op], feed_dict=feed_dict)	
+
+		print("Model restored")
+		check_accuracy_entire_dataset(sess, x, scores, dataset, is_training)
+
+		
+
+
+
+
 
 
 
