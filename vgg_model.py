@@ -9,6 +9,7 @@ import numpy as np
 from load_data import *
 from data_batch import Data
 
+from sklearn.metrics import f1_score
 import time
 
 
@@ -83,7 +84,7 @@ def vgg_model_init(inputs):
 	initializer = tf.variance_scaling_initializer(scale=2.0) # initializer for weights
 	activation = tf.nn.relu # ReLU for each Conv layer
 
-	reg_strength = 0.001
+	reg_strength = 0.01
 	regularization = tf.contrib.layers.l2_regularizer(reg_strength) # L2 regularization for FC layer
 
 	#loss = tf.nn..ftmax_cross_entropy_with_logits # NOTE: not sure if this loss function works with the Keras compile/fit model methods, may have to manually implement train method like in homework
@@ -200,7 +201,7 @@ def vgg_model_single_image_init(inputs):
 	initializer = tf.variance_scaling_initializer(scale=2.0) # initializer for weights
 	activation = tf.nn.relu # ReLU for each Conv layer
 
-	reg_strength = 0.001
+	reg_strength = 0.01
 	regularization = tf.contrib.layers.l2_regularizer(reg_strength) # L2 regularization for FC layer
 
 	dense_layer_unit_count = 128
@@ -212,18 +213,19 @@ def vgg_model_single_image_init(inputs):
 
 	tf.keras.layers.Conv2D(filters = num_filters[1], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer),
 	tf.keras.layers.Conv2D(filters = num_filters[1], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer),
+	tf.keras.layers.Dropout(rate = 0.1),
 	tf.keras.layers.MaxPooling2D(pool_size = pool_size, strides = pool_stride, padding = 'valid'),
 
 
 	tf.keras.layers.Conv2D(filters = num_filters[2], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer),
 	tf.keras.layers.Conv2D(filters = num_filters[2], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer),
 	tf.keras.layers.Conv2D(filters = num_filters[2], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer),
-
+	tf.keras.layers.Dropout(rate = 0.1),
 	tf.keras.layers.MaxPooling2D(pool_size = pool_size, strides = pool_stride, padding = 'valid'),
 	tf.layers.Flatten(),
 	#tf.keras.layers.Dense(units = 128, kernel_initializer=initializer, kernel_regularizer=regularization),
-	tf.keras.layers.Dense(units = num_classes, kernel_initializer=initializer, kernel_regularizer=regularization)
-
+	tf.keras.layers.Dense(units = num_classes, kernel_initializer=initializer, kernel_regularizer=regularization),
+	tf.keras.layers.Dropout(rate = 0.5)
 	]
 
 	vgg_model = tf.keras.Sequential(layers)
@@ -235,10 +237,12 @@ def vgg_model_single_image_init(inputs):
 
 def check_accuracy_single_frame(sess, x, scores, dataset = 'validation', is_training = None):
 
-	batch_size = 64
-	number_batches_to_check = 4
+	batch_size = 128
+	number_batches_to_check = 10
 	num_correct, num_samples = 0, 0
 
+	all_y_pred = []
+	all_y_actual = []
 	for i in range(number_batches_to_check):
 		x_batch, y_batch = load_single_frame_batch(batch_size, dataset = dataset)
 		feed_dict = {x: x_batch, is_training: 0}
@@ -247,7 +251,14 @@ def check_accuracy_single_frame(sess, x, scores, dataset = 'validation', is_trai
 		num_samples += x_batch.shape[0]
 		num_correct += (y_pred == y_batch).sum()
 
+		all_y_pred += y_pred.tolist()
+		all_y_actual += y_batch.tolist()
+
+	F1_score = f1_score(all_y_actual, all_y_pred, average = 'micro')
+
+
 	acc = num_correct / num_samples
+	print("F1 Score: ", F1_score)
 	print('Got %d / %d correct (%.2f%%)' % (num_correct, num_samples, 100 * acc))
 
 	return
@@ -256,10 +267,11 @@ def check_accuracy_single_frame(sess, x, scores, dataset = 'validation', is_trai
 
 def train_part34_single_image(model_init_fn, optimizer_init_fn, num_epochs=10):
 
-	batch_size = 64
+	batch_size = 128
 	resize_height, resize_width = 144, 256
 
 	learning_rate = 1e-5
+	regularization_strength = 0.01
 	tf.reset_default_graph()
 	#is_training = tf.placeholder(tf.bool, name='is_training')
 	with tf.device(device):
@@ -287,6 +299,9 @@ def train_part34_single_image(model_init_fn, optimizer_init_fn, num_epochs=10):
 		loss = tf.nn.sparse_softmax_cross_entropy_with_logits(labels=y, logits=scores)
 		loss = tf.reduce_mean(loss)
 
+		#regularization
+		reg_losses = tf.get_collection(tf.GraphKeys.REGULARIZATION_LOSSES)
+		loss += regularization_strength * sum(reg_losses)
 		# Use the optimizer_fn to construct an Optimizer, then use the optimizer
 		# to set up the training step. Asking TensorFlow to evaluate the
 		# train_op returned by optimizer.minimize(loss) will cause us to make a
@@ -321,7 +336,7 @@ def train_part34_single_image(model_init_fn, optimizer_init_fn, num_epochs=10):
 
 	#print_ever = 100
 
-	iterations_per_epoch = 25
+	iterations_per_epoch = 100
 
 	with tf.Session() as sess:
 		sess.run(tf.global_variables_initializer())
@@ -348,7 +363,7 @@ def train_part34_single_image(model_init_fn, optimizer_init_fn, num_epochs=10):
 			new_time = time.time()
 			print("Training Check took: ", new_time - curr_time)
 		#if epoch % 200 == 0:
-			save_path = saver.save(sess, "model_checkpoints/model_single_frames_" + str(epoch))
+			save_path = saver.save(sess, "model_checkpoints/model_single_frames_batch_size_128_" + str((epoch + 1) * 100))
 
 
 
