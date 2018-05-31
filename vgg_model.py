@@ -17,7 +17,7 @@ import time
 
 device = '/cpu:0'
 
-device = '/gpu:0'
+#device = '/gpu:0'
 
 resize_height, resize_width = 144, 256
 #image_set_size = 8
@@ -208,7 +208,7 @@ def vgg_model_single_image_init(inputs):
 	initializer = tf.variance_scaling_initializer(scale=2.0) # initializer for weights
 	activation = tf.nn.relu # ReLU for each Conv layer
 
-	reg_strength = 1.0
+	reg_strength = 0.1
 	regularization = tf.contrib.layers.l2_regularizer(reg_strength) # L2 regularization for FC layer
 
 	dense_layer_unit_count = 128
