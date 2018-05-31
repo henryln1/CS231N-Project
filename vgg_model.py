@@ -441,7 +441,7 @@ def train_part34_single_image(model_init_fn, optimizer_init_fn, num_epochs=10):
 				curr_time = time.time()
 
 				#x_np, y_np = load_single_frame_batch(batch_size)
-				x_np, y_np = 
+				x_np, y_np = load_batch_multiple_frames_into_single(batch_size)
 
 
 				feed_dict = {x: x_np, y: y_np, is_training:1}
