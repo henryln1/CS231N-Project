@@ -98,7 +98,7 @@ def vgg_model_init(inputs):
 	initializer = tf.variance_scaling_initializer(scale=2.0) # initializer for weights
 	activation = tf.nn.relu # ReLU for each Conv layer
 
-	reg_strength = 1.0
+	reg_strength = 0.1
 	regularization = tf.contrib.layers.l2_regularizer(reg_strength) # L2 regularization for FC layer
 
 	#loss = tf.nn..ftmax_cross_entropy_with_logits # NOTE: not sure if this loss function works with the Keras compile/fit model methods, may have to manually implement train method like in homework
@@ -358,8 +358,8 @@ def train_part34_single_image(model_init_fn, optimizer_init_fn, num_epochs=10):
 	batch_size = 128
 	resize_height, resize_width = 144, 256
 
-	learning_rate = 1e-5
-	regularization_strength = 1.0
+	learning_rate = 1e-6
+	regularization_strength = 0.1
 	tf.reset_default_graph()
 	#is_training = tf.placeholder(tf.bool, name='is_training')
 	with tf.device(device):
@@ -467,7 +467,7 @@ def train_part34_single_image(model_init_fn, optimizer_init_fn, num_epochs=10):
 
 
 def optimizer_init_fn():
-	learning_rate = 1e-5
+	learning_rate = 1e-6
 	optimizer = tf.train.AdamOptimizer(learning_rate = learning_rate)
 	return optimizer
 
