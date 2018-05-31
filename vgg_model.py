@@ -16,6 +16,14 @@ import time
 
 device = '/cpu:0'
 
+resize_height, resize_width = 144, 256
+#image_set_size = 8
+#FR = image_set_size
+W = resize_height
+H = resize_width
+D = 3
+num_classes = 10
+
 #device = '/gpu:0'
 
 #device = "/device:GPU:0"
@@ -184,13 +192,6 @@ def vgg_model_init(inputs):
 
 
 def vgg_model_single_image_init(inputs):
-	resize_height, resize_width = 144, 256
-	#image_set_size = 8
-	#FR = image_set_size
-	W = resize_height
-	H = resize_width
-	D = 3
-	num_classes = 10
 
 	input_shape = (W, H, D)
 
@@ -236,6 +237,77 @@ def vgg_model_single_image_init(inputs):
 	return vgg_model(inputs)
 
 
+def vgg_model_single_image_init_non_seq(inputs):
+	resize_height, resize_width = 144, 256
+	#image_set_size = 8
+	#FR = image_set_size
+	W = resize_height
+	H = resize_width
+	D = 3
+	num_classes = 10
+
+	input_shape = (W, H, D)
+
+	num_filters = [64, 128, 256] # number of filters in each set of conv layers
+	filter_size = 3 # 3x3 filters
+	filter_stride = 1
+
+	pool_size = 2 # 2x2 max pool
+	pool_stride = 2
+
+	initializer = tf.variance_scaling_initializer(scale=2.0) # initializer for weights
+	activation = tf.nn.relu # ReLU for each Conv layer
+
+	reg_strength = 0.1
+	regularization = tf.contrib.layers.l2_regularizer(reg_strength) # L2 regularization for FC layer
+
+	conv1 = tf.layers.conv2d(inputs, filters = num_filters[0], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer)
+	bn1 = tf.layers.batch_normalization(conv1, training=True)
+	conv2 = tf.layers.conv2d(bn1, filters = num_filters[0], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer)
+	bn2 = tf.layers.batch_normalization(conv2, training=True)
+	pool1 = tf.layers.max_pooling2d(bn2, pool_size = pool_size, strides = pool_stride, padding = 'valid')
+	drop1 = tf.layers.dropout(pool1, rate=0.2)
+
+	conv3 = tf.layers.conv2d(drop1, filters = num_filters[1], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer)
+	bn3 = tf.layers.batch_normalization(conv3, training=True)
+	conv4 = tf.layers.conv2d(bn3, filters = num_filters[1], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer)
+	bn4 = tf.layers.batch_normalization(conv4, training=True)
+	pool2 = tf.layers.max_pooling2d(bn4, pool_size = pool_size, strides = pool_stride, padding = 'valid')
+	drop2 = tf.layers.dropout(pool2, rate=0.2)
+
+	conv5 = tf.layers.conv2d(drop2, filters = num_filters[2], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer)
+	bn5 = tf.layers.batch_normalization(conv5, training=True)
+	conv6 = tf.layers.conv2d(bn5, filters = num_filters[2], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer)
+	bn6 = tf.layers.batch_normalization(conv6, training=True)
+	conv7 = tf.layers.conv2d(bn6, filters = num_filters[2], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer)
+	bn7 = tf.layers.batch_normalization(conv7, training=True)
+	pool3 = tf.layers.max_pooling2d(bn7, pool_size = pool_size, strides = pool_stride, padding = 'valid')
+	drop3 = tf.layers.dropout(pool3, rate=0.2)
+	
+	flat1 = tf.layers.flatten(drop3)
+	output = tf.layers.dense(flat1, units = num_classes, kernel_initializer=initializer, kernel_regularizer=regularization)
+
+	return output
+
+
+# def train_part34_single_image_non_seq():
+
+# 	x = tf.placeholder(tf.float32, [None, W, H, D])
+# 	y = tf.placeholder(tf.int32, [None])
+
+# 	scores = vgg_model_single_image_init_non_seq(x)
+
+# 	optimizer = optimizer_init_fn()
+
+# 	loss = tf.nn.sparse_softmax_cross_entropy_with_logits(labels=y, logits=scores)
+# 	loss = tf.reduce_mean(loss)
+
+# 	#regularization
+# 	reg_losses = tf.get_collection(tf.GraphKeys.REGULARIZATION_LOSSES)
+# 	loss += regularization_strength * sum(reg_losses)
+
+# 	train_step = optimizer.minimize(loss)
+# 	extra_step = tf.get_collection(tf.GraphKeys.UPDATE_OPS, 'vgg')
 
 
 def check_accuracy_single_frame(sess, x, scores, dataset = 'validation', is_training = None):
@@ -301,7 +373,7 @@ def train_part34_single_image(model_init_fn, optimizer_init_fn, num_epochs=10):
 
 		#loss = tf.nn.sparse_softmax_cross_entropy_with_logits(labels=y, logits=scores)
 		#loss = tf.reduce_mean(loss)
-		scores = model_init_fn(x)
+		# scores = model_init_fn(x)
 
 		# Compute the loss like we did in Part II
 		loss = tf.nn.sparse_softmax_cross_entropy_with_logits(labels=y, logits=scores)
@@ -381,6 +453,7 @@ def train_part34_single_image(model_init_fn, optimizer_init_fn, num_epochs=10):
 
 
 	return
+
 
 def optimizer_init_fn():
 	learning_rate = 1e-5

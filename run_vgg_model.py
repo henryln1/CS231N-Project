@@ -91,8 +91,9 @@ def main():
 
 
 def main2():
-	vgg.train_part34_single_image(vgg.vgg_model_single_image_init, vgg.optimizer_init_fn, num_epochs = 100)
-
+	#vgg.train_part34_single_image(vgg.vgg_model_single_image_init, vgg.optimizer_init_fn, num_epochs = 100)
+	vgg.train_part34_single_image(vgg.vgg_model_single_image_init_non_seq, vgg.optimizer_init_fn, num_epochs = 100)
+	
 	#model_location = 
 	#run_official_evaluation(model_location, 'validation')
 
