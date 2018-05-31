@@ -315,8 +315,8 @@ def vgg_model_single_image_init_non_seq(inputs):
 
 def check_accuracy_single_frame(sess, x, scores, dataset = 'validation', is_training = None):
 
-	batch_size = 128
-	number_batches_to_check = 15
+	batch_size = 50
+	number_batches_to_check = 10
 	num_correct, num_samples = 0, 0
 
 	all_y_pred = []
