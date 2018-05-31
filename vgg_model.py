@@ -17,6 +17,8 @@ import time
 
 device = '/cpu:0'
 
+device = '/gpu:0'
+
 resize_height, resize_width = 144, 256
 #image_set_size = 8
 #FR = image_set_size
@@ -320,7 +322,9 @@ def check_accuracy_single_frame(sess, x, scores, dataset = 'validation', is_trai
 	all_y_pred = []
 	all_y_actual = []
 	for i in range(number_batches_to_check):
-		x_batch, y_batch = load_single_frame_batch(batch_size, dataset = dataset)
+		#x_batch, y_batch = load_single_frame_batch(batch_size, dataset = dataset)
+		
+		x_batch, y_batch = load_batch_multiple_frames_into_single(batch_size, dataset = dataset)
 		feed_dict = {x: x_batch, is_training: 0}
 		scores_np = sess.run(scores, feed_dict=feed_dict)
 		y_pred = scores_np.argmax(axis=1)
@@ -347,7 +351,7 @@ def check_accuracy_single_frame(sess, x, scores, dataset = 'validation', is_trai
 def train_part34_single_image(model_init_fn, optimizer_init_fn, num_epochs=10):
 
 
-	model_run_name = 'single_frames_model_batch_128_reg_strength_1'
+	model_run_name = 'single_frames_model_batch_128_reg_strength_0.1_diff_frames'
 	train_model_dir = 'model_checkpoints/' + model_run_name
 	if not os.path.exists(train_model_dir):
 		os.makedirs(train_model_dir)
@@ -436,7 +440,10 @@ def train_part34_single_image(model_init_fn, optimizer_init_fn, num_epochs=10):
 				print("Iteration ", epoch * iterations_per_epoch + i)
 				curr_time = time.time()
 
-				x_np, y_np = load_single_frame_batch(batch_size)
+				#x_np, y_np = load_single_frame_batch(batch_size)
+				x_np, y_np = 
+
+
 				feed_dict = {x: x_np, y: y_np, is_training:1}
 				loss_np, _ = sess.run([loss, train_op], feed_dict=feed_dict)	
 

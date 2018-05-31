@@ -82,14 +82,6 @@ def load_batch(batch_size, image_set_size, skip_frames, dataset = "train"):
 
 	image_paths = read_text_file(dataset + '.txt') #a list of all the possible image files
 
-	# start_frames = []
-	# for i in range(1, 51):
-	# 	curr_string = '0' + str(i)
-	# 	if len(curr_string) < 3:
-	# 		curr_string = '0' + curr_string
-	# 	curr_string += '.jpg'
-	# 	#print(curr_string)
-	# 	start_frames += [x for x in image_paths if curr_string in x]
 	start_frames = [x for x in image_paths if '300.jpg' in x]
 	#print("Number of start frames: ", len(start_frames))
 	random_start_frames = random.sample(start_frames, batch_size)
@@ -133,6 +125,68 @@ def load_batch(batch_size, image_set_size, skip_frames, dataset = "train"):
 	X_train = np.stack(list_image_sets, axis = 0)
 	#print("shape of X_train: ", X_train.shape)
 	#print("shape of Y_train: ", Y_train.shape)
+	#print("batch loaded")
+	return X_train, Y_train
+
+
+def load_batch_multiple_frames_into_single(batch_size, image_set_size = 2, skip_frames = 30, dataset = "train"):
+	"""
+	batch size: Number of randomly chosen image sets we want
+	image set size: the number of frames we want per randomly chosen video
+	skip_frames: how many frames we skip (do we want every 5 frames, 10 frames, etc.)
+	dataset: which dataset are we drawing this batch from
+	"""
+	print("loading batch...")
+	resize_height, resize_width = 144, 256
+
+	image_paths = read_text_file(dataset + '.txt') #a list of all the possible image files
+
+	start_frames = [x for x in image_paths if '300.jpg' in x]
+	#print("Number of start frames: ", len(start_frames))
+	random_start_frames = random.sample(start_frames, batch_size)
+	#print("Random Start Frames: ", random_start_frames)
+
+	video_ids = [x[:-8] for x in random_start_frames]
+	#print("Video IDs: ", video_ids)
+
+	buffer_zeros = '000000'
+ 
+	if image_set_size * skip_frames > 300:
+		print("Warning: Your image set size and skip frame variables may exceed the 300 frames per video. Please double check your numbers")
+
+	list_image_sets = [] #list that contains each image set, each image set is a image_set_size x H x W x 3 array
+	Y_train = []
+	for video in video_ids:
+		#print("current video id: ", video)
+		image_set = []
+		random_start_between_0_100 = random.randint(0, 100)#200 - 1 - image_set_size * skip_frames)
+		#print("product", image_set_size * skip_frames)
+		for i in range(1, (image_set_size) * skip_frames, skip_frames):
+			#print("current image frame: ", i)
+			buffer_zeros_curr = buffer_zeros + str(i + random_start_between_0_100)
+			#print("buffer: ", )
+			current_frame = buffer_zeros_curr[-4:]
+			#print("current frame: ", current_frame)
+			image_frame_id = video + current_frame + '.jpg'
+			#print("Current Image Name: ", image_frame_id)
+			image_file = read_image_file(image_frame_id)
+			resized_image = scipy.misc.imresize(image_file, (resize_height, resize_width))
+			image_set.append(resized_image)
+			if i == 1:
+				Y_train.append(find_label(image_frame_id))
+		#image_set_array = np.stack(image_set, axis = 0) #want to take a bunch of H x W x 3 arrays and stack them on top of each other
+
+		if image_set_size == 2:
+			image_set_array = image_set[1] - image_set[0]
+
+		list_image_sets.append(image_set_array)
+		#print("video id: ", video)
+	Y_train = np.asarray(Y_train)
+	#print("Y_train", Y_train)
+	#print("Y_train shape: ", Y_train.shape)
+	X_train = np.stack(list_image_sets, axis = 0)
+	print("shape of X_train: ", X_train.shape)
+	print("shape of Y_train: ", Y_train.shape)
 	#print("batch loaded")
 	return X_train, Y_train
 
