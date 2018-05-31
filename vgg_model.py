@@ -10,6 +10,7 @@ from load_data import *
 from data_batch import Data
 from random import shuffle
 from sklearn.metrics import f1_score
+from sklearn.metrics import precision_recall_fscore_support
 import os
 import time
 
@@ -329,11 +330,14 @@ def check_accuracy_single_frame(sess, x, scores, dataset = 'validation', is_trai
 		all_y_pred += y_pred.tolist()
 		all_y_actual += y_batch.tolist()
 
-	F1_score = f1_score(all_y_actual, all_y_pred, average = 'micro')
+	#F1_score = f1_score(all_y_actual, all_y_pred, average = 'micro')
+	precision, recall, F1_score, support = precision_recall_fscore_support(all_y_actual, all_y_pred, average='micro')
 
 
 	acc = num_correct / num_samples
 	print("F1 Score: ", F1_score)
+	print("Precision: ", precision)
+	print("Recall: ", recall)
 	print('Got %d / %d correct (%.2f%%)' % (num_correct, num_samples, 100 * acc))
 
 	return
