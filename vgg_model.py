@@ -15,9 +15,9 @@ import os
 import time
 
 
-device = '/cpu:0'
+#device = '/cpu:0'
 
-#device = '/gpu:0'
+device = '/gpu:0'
 
 resize_height, resize_width = 144, 256
 image_set_size = 8
@@ -647,10 +647,10 @@ def check_accuracy(sess, x, scores, dataset = 'validation', is_training=None):
 
 	"""
 
-	batch_size = 16
-	image_set_size = 8
+	batch_size = 4
+	image_set_size = 12
 	skip_frames = 8
-	number_batches_check = 10
+	number_batches_check = 25
 	num_correct, num_samples = 0, 0
 	for i in range(number_batches_check):
 		x_batch, y_batch = load_batch(batch_size, image_set_size, skip_frames, dataset = dataset)
@@ -679,8 +679,8 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 	Returns: Nothing, but prints progress during trainingn
 	"""
 
-	batch_size = 16
-	image_set_size = 8
+	batch_size = 4
+	image_set_size = 12
 	skip_frames = 8
 	resize_height, resize_width = 144, 256
 	tf.reset_default_graph()    
@@ -745,7 +745,7 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 
 	saver = tf.train.Saver()
 
-	print_every = 5
+	print_every = 50
 
 	num_epochs = 5000
 
@@ -787,7 +787,7 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 			t += 1
 			#print("end of one thing")
 			if epoch % 200 == 0:
-				save_path = saver.save(sess, "model_checkpoints/first_model_lstm_" + str(epoch))
+				save_path = saver.save(sess, "model_checkpoints/conv3d_" + str(epoch))
 
 
 def check_accuracy_entire_dataset(sess, x, scores, dataset, is_training = None):
