@@ -20,8 +20,8 @@ device = '/cpu:0'
 #device = '/gpu:0'
 
 resize_height, resize_width = 144, 256
-#image_set_size = 8
-#FR = image_set_size
+image_set_size = 8
+FR = image_set_size
 W = resize_height
 H = resize_width
 D = 3
@@ -106,43 +106,6 @@ def vgg_model_init(inputs):
 	#optimizer = tf.train.AdamOptimizer() # optimizer used is Adam
 
 	print("num classes:", num_classes)
-
-	#Define architecture as sequential layers
-	# layers = [
-
-	# 	# Conv Layer Set 1: 2 Conv layers (16 filters), 1 Pool layer
-	# 	tf.layers.Conv3D(input_shape=input_shape, filters=num_filters[0], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-	# 	tf.layers.Conv3D(filters=num_filters[0], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-	# 	#tf.layers.BatchNormalization(),
-	# 	tf.layers.MaxPooling3D(pool_size=[1, pool_size, pool_size], strides=[1, pool_stride, pool_stride], padding='valid'),
-	# 	# # Conv Layer Set 2: 2 Conv layers (32 filters), 1 Pool layer
-	# 	tf.layers.Conv3D(filters=num_filters[1], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-	# 	tf.layers.Conv3D(filters=num_filters[1], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-	# 	#tf.layers.BatchNormalization(),
-	# 	tf.layers.MaxPooling3D(pool_size=[1, pool_size, pool_size], strides=[1, pool_stride, pool_stride], padding='valid'),
-
-	# 	# # Conv Layer Set 3: 3 Conv layers (64 filters), 1 Pool layer
-	# 	tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-	# 	tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-	# 	tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-	# 	#tf.layers.BatchNormalization(),		
-	# 	tf.layers.MaxPooling3D(pool_size=[1, pool_size, pool_size], strides=[1, pool_stride, pool_stride], padding='valid'),
-
-	# 	#conv layer set 4:
-	# 	tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-	# 	tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-	# 	tf.layers.Conv3D(filters=num_filters[2], kernel_size=[FR, filter_size, filter_size], strides=filter_stride, padding='same', activation=activation, kernel_initializer=initializer),
-	# 	tf.layers.MaxPooling3D(pool_size=[1, pool_size, pool_size], strides=[1, pool_stride, pool_stride], padding='valid'),
-
-
-	# 	# FC Layer
-	# 	tf.layers.Flatten(),
-	# 	tf.layers.Dense(units = 128, kernel_initializer=initializer, kernel_regularizer=regularization),
-
-	# 	tf.layers.Dense(units = num_classes, kernel_initializer=initializer, kernel_regularizer=regularization)
-	# ]
-
-
 
 
 	#LSTM VERSION 
@@ -291,6 +254,171 @@ def vgg_model_single_image_init_non_seq(inputs):
 	output = tf.layers.dense(flat1, units = num_classes, kernel_initializer=initializer, kernel_regularizer=regularization)
 
 	return output
+
+
+
+def vgg_model_single_image_init_non_seq_lstm(inputs):
+
+	'''
+	inputs is a 5-D tensor that we must shape into 4-D before convolutions
+	rehshape back into 5-D and then into 3-D for lstm layer
+
+	'''
+	resize_height, resize_width = 144, 256
+	#image_set_size = 8
+	#FR = image_set_size
+	W = resize_height
+	H = resize_width
+	D = 3
+	num_classes = 10
+	#batch_size = inputs.get_shape()[0]
+	input_shape = (W, H, D)
+
+	num_filters = [64, 128, 256] # number of filters in each set of conv layers
+	filter_size = 3 # 3x3 filters
+	filter_stride = 1
+
+	pool_size = 2 # 2x2 max pool
+	pool_stride = 2
+
+	initializer = tf.variance_scaling_initializer(scale=2.0) # initializer for weights
+	activation = tf.nn.relu # ReLU for each Conv layer
+
+	reg_strength = 0.1
+	regularization = tf.contrib.layers.l2_regularizer(reg_strength) # L2 regularization for FC layer
+
+	#print("input shape: ", inputs.get_shape())
+	inputs = tf.reshape(inputs, (-1, W, H, D))
+	#print("input reshaped: ", tf.shape(inputs))
+	conv1 = tf.layers.conv2d(inputs, filters = num_filters[0], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer)
+	bn1 = tf.layers.batch_normalization(conv1, training=True)
+	conv2 = tf.layers.conv2d(bn1, filters = num_filters[0], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer)
+	bn2 = tf.layers.batch_normalization(conv2, training=True)
+	pool1 = tf.layers.max_pooling2d(bn2, pool_size = pool_size, strides = pool_stride, padding = 'valid')
+	drop1 = tf.layers.dropout(pool1, rate=0.2)
+
+	conv3 = tf.layers.conv2d(drop1, filters = num_filters[1], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer)
+	bn3 = tf.layers.batch_normalization(conv3, training=True)
+	conv4 = tf.layers.conv2d(bn3, filters = num_filters[1], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer)
+	bn4 = tf.layers.batch_normalization(conv4, training=True)
+	pool2 = tf.layers.max_pooling2d(bn4, pool_size = pool_size, strides = pool_stride, padding = 'valid')
+	drop2 = tf.layers.dropout(pool2, rate=0.2)
+
+	conv5 = tf.layers.conv2d(drop2, filters = num_filters[2], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer)
+	bn5 = tf.layers.batch_normalization(conv5, training=True)
+	conv6 = tf.layers.conv2d(bn5, filters = num_filters[2], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer)
+	bn6 = tf.layers.batch_normalization(conv6, training=True)
+	conv7 = tf.layers.conv2d(bn6, filters = num_filters[2], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer)
+	bn7 = tf.layers.batch_normalization(conv7, training=True)
+	pool3 = tf.layers.max_pooling2d(bn7, pool_size = pool_size, strides = pool_stride, padding = 'valid')
+	drop3 = tf.layers.dropout(pool3, rate=0.2)
+	
+	# print("drop3 shape: ", tf.shape(drop3))
+	# reshaped = tf.reshape(drop3, (-1, image_set_size, W, H, D))
+	# print("reshaped shape: ", tf.shape(reshaped))
+	# flattened = tf.reshape(reshaped,(-1, image_set_size, -1))
+	# print("flattened shape: ", tf.shape(flattened))
+	# lstm_cell = tf.contrib.rnn.LSTMCell(num_units = 10)
+
+	# outputs, states = tf.nn.dynamic_rnn(lstm_cell, flattened, dtype = tf.float32)
+
+	# output = outputs[-1]
+	# print("shape of output: ", tf.shape(output))
+
+	#flat1 = tf.layers.flatten(drop3)
+	#output = tf.layers.dense(flat1, units = num_classes, kernel_initializer=initializer, kernel_regularizer=regularization)
+	#print("shape of drop3: ", drop3)
+	layers = [
+		#tf.keras.layers.Reshape((-1, image_set_size, 18, 32, 256)),
+		tf.keras.layers.Reshape((image_set_size, 18 * 32 * 256)),
+		tf.keras.layers.LSTM(units = num_classes)
+	]
+	vgg_model = tf.keras.Sequential(layers)
+	return vgg_model(drop3)
+	return output
+
+
+def vgg_model_conv3d_init(inputs):
+
+	'''
+	inputs is a 5-D tensor that we must shape into 4-D before convolutions
+	rehshape back into 5-D and then into 3-D for lstm layer
+
+	'''
+	resize_height, resize_width = 144, 256
+	#image_set_size = 8
+	#FR = image_set_size
+	W = resize_height
+	H = resize_width
+	D = 3
+	num_classes = 10
+	#batch_size = inputs.get_shape()[0]
+	input_shape = (FR, W, H, D)
+
+	num_filters = [64, 128, 256] # number of filters in each set of conv layers
+	filter_size = 3 # 3x3 filters
+	filter_stride = 1
+
+	pool_size = 2 # 2x2 max pool
+	pool_stride = 2
+
+	initializer = tf.variance_scaling_initializer(scale=2.0) # initializer for weights
+	activation = tf.nn.relu # ReLU for each Conv layer
+
+	reg_strength = 0.1
+	regularization = tf.contrib.layers.l2_regularizer(reg_strength) # L2 regularization for FC layer
+
+	#print("input shape: ", inputs.get_shape())
+	#inputs = tf.reshape(inputs, (-1, W, H, D))
+	#print("input reshaped: ", tf.shape(inputs))
+	conv1 = tf.layers.conv3d(inputs, filters = num_filters[0], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer)
+	bn1 = tf.layers.batch_normalization(conv1, training=True)
+	conv2 = tf.layers.conv3d(bn1, filters = num_filters[0], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer)
+	bn2 = tf.layers.batch_normalization(conv2, training=True)
+	pool1 = tf.layers.max_pooling3d(bn2, pool_size = (1, pool_size, pool_size), strides = (1, pool_stride, pool_stride), padding = 'valid')
+	drop1 = tf.layers.dropout(pool1, rate=0.2)
+
+	conv3 = tf.layers.conv3d(drop1, filters = num_filters[1], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer)
+	bn3 = tf.layers.batch_normalization(conv3, training=True)
+	conv4 = tf.layers.conv3d(bn3, filters = num_filters[1], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer)
+	bn4 = tf.layers.batch_normalization(conv4, training=True)
+	pool2 = tf.layers.max_pooling3d(bn4, pool_size = (1, pool_size, pool_size), strides = (1, pool_stride, pool_stride), padding = 'valid')
+	drop2 = tf.layers.dropout(pool2, rate=0.2)
+
+	conv5 = tf.layers.conv3d(drop2, filters = num_filters[2], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer)
+	bn5 = tf.layers.batch_normalization(conv5, training=True)
+	conv6 = tf.layers.conv3d(bn5, filters = num_filters[2], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer)
+	bn6 = tf.layers.batch_normalization(conv6, training=True)
+	conv7 = tf.layers.conv3d(bn6, filters = num_filters[2], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer)
+	bn7 = tf.layers.batch_normalization(conv7, training=True)
+	pool3 = tf.layers.max_pooling3d(bn7, pool_size = (1, pool_size, pool_size), strides = (1, pool_stride, pool_stride), padding = 'valid')
+	drop3 = tf.layers.dropout(pool3, rate=0.2)
+	
+	# print("drop3 shape: ", tf.shape(drop3))
+	# reshaped = tf.reshape(drop3, (-1, image_set_size, W, H, D))
+	# print("reshaped shape: ", tf.shape(reshaped))
+	# flattened = tf.reshape(reshaped,(-1, image_set_size, -1))
+	# print("flattened shape: ", tf.shape(flattened))
+	# lstm_cell = tf.contrib.rnn.LSTMCell(num_units = 10)
+
+	# outputs, states = tf.nn.dynamic_rnn(lstm_cell, flattened, dtype = tf.float32)
+
+	# output = outputs[-1]
+	# print("shape of output: ", tf.shape(output))
+
+	flat1 = tf.layers.flatten(drop3)
+	output = tf.layers.dense(flat1, units = num_classes, kernel_initializer=initializer, kernel_regularizer=regularization)
+	#print("shape of drop3: ", drop3)
+	# layers = [
+	# 	#tf.keras.layers.Reshape((-1, image_set_size, 18, 32, 256)),
+	# 	tf.keras.layers.Reshape((image_set_size, 18 * 32 * 256)),
+	# 	tf.keras.layers.LSTM(units = num_classes)
+	# ]
+	# vgg_model = tf.keras.Sequential(layers)
+	# return vgg_model(drop3)
+	return output
+
+
 
 
 # def train_part34_single_image_non_seq():

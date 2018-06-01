@@ -103,6 +103,13 @@ def main3():
 	dataset = 'train'
 	model_init = vgg.vgg_model_single_image_init
 	vgg.official_evaluation(model_init, model_location , dataset = dataset)
+
+
+def main4():
+	vgg.train_part34(vgg.vgg_model_single_image_init_non_seq_lstm, vgg.optimizer_init_fn, num_epochs = 100)
+
+def main5():
+	vgg.train_part34(vgg.vgg_model_conv3d_init, vgg.optimizer_init_fn, num_epochs = 50)
 # Allows for script to be run as program
 if __name__=="__main__":
-	main2()
+	main5()
