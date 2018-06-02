@@ -19,8 +19,8 @@ import time
 
 device = '/gpu:0'
 
-resize_height, resize_width = 144, 256
-image_set_size = 8
+resize_height, resize_width = 216, 384
+image_set_size = 12
 FR = image_set_size
 W = resize_height
 H = resize_width
@@ -78,7 +78,7 @@ def vgg_model_init(inputs):
 
 	# Define hyperparams, weight initializer, activation, regularization, loss function, and optimizer
 	#FR, W, H, D = input_shape
-	resize_height, resize_width = 144, 256
+	#resize_height, resize_width = 21, 256
 	image_set_size = 8
 	FR = image_set_size
 	W = resize_height
@@ -204,7 +204,7 @@ def vgg_model_single_image_init(inputs):
 
 
 def vgg_model_single_image_init_non_seq(inputs):
-	resize_height, resize_width = 144, 256
+	#resize_height, resize_width = 144, 256
 	#image_set_size = 8
 	#FR = image_set_size
 	W = resize_height
@@ -264,7 +264,7 @@ def vgg_model_single_image_init_non_seq_lstm(inputs):
 	rehshape back into 5-D and then into 3-D for lstm layer
 
 	'''
-	resize_height, resize_width = 144, 256
+	#resize_height, resize_width = 144, 256
 	#image_set_size = 8
 	#FR = image_set_size
 	W = resize_height
@@ -345,7 +345,7 @@ def vgg_model_conv3d_init(inputs):
 	rehshape back into 5-D and then into 3-D for lstm layer
 
 	'''
-	resize_height, resize_width = 144, 256
+	#resize_height, resize_width = 144, 256
 	#image_set_size = 8
 	#FR = image_set_size
 	W = resize_height
@@ -787,7 +787,7 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 			t += 1
 			#print("end of one thing")
 			if epoch % 200 == 0:
-				save_path = saver.save(sess, "model_checkpoints/conv3d_" + str(epoch))
+				save_path = saver.save(sess, "model_checkpoints/conv3d_bigger_image_" + str(epoch))
 
 
 def check_accuracy_entire_dataset(sess, x, scores, dataset, is_training = None):

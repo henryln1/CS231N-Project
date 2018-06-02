@@ -78,7 +78,7 @@ def load_batch(batch_size, image_set_size, skip_frames, dataset = "train"):
 	dataset: which dataset are we drawing this batch from
 	"""
 	print("loading batch...")
-	resize_height, resize_width = 144, 256
+	resize_height, resize_width = 216, 384
 
 	image_paths = read_text_file(dataset + '.txt') #a list of all the possible image files
 
@@ -123,6 +123,9 @@ def load_batch(batch_size, image_set_size, skip_frames, dataset = "train"):
 	#print("Y_train", Y_train)
 	#print("Y_train shape: ", Y_train.shape)
 	X_train = np.stack(list_image_sets, axis = 0)
+	#random_num = random.uniform(0, 1)
+	#if random_num < 0.5:
+	#	X_train = np.tranpose(X_train, (0, 1, 3, 2, 4))
 	#print("shape of X_train: ", X_train.shape)
 	#print("shape of Y_train: ", Y_train.shape)
 	#print("batch loaded")
