@@ -659,8 +659,15 @@ def check_accuracy(sess, x, scores, dataset = 'validation', is_training=None):
 		y_pred = scores_np.argmax(axis=1)
 		num_samples += x_batch.shape[0]
 		num_correct += (y_pred == y_batch).sum()
+		with open("060118_bigger_image_results.txt", "a") as myfile:
+			myfile.write("predicted: ", y_pred)
+			myfile.write("actual: ", y_batch)
 	acc = float(num_correct) / num_samples
 	print('Got %d / %d correct (%.2f%%)' % (num_correct, num_samples, 100 * acc))
+
+	with open("060118_bigger_image_results.txt", "a") as myfile:
+		myfile.write("Accuracy " + str(acc))
+		#myfile.write("")
 
 def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 	"""
