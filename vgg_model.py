@@ -647,7 +647,7 @@ def check_accuracy(sess, x, scores, dataset = 'validation', is_training=None):
 
 	"""
 
-	batch_size = 4
+	batch_size = 2
 	image_set_size = 12
 	skip_frames = 8
 	number_batches_check = 25
@@ -660,8 +660,8 @@ def check_accuracy(sess, x, scores, dataset = 'validation', is_training=None):
 		num_samples += x_batch.shape[0]
 		num_correct += (y_pred == y_batch).sum()
 		with open("060118_bigger_image_results.txt", "a") as myfile:
-			myfile.write("predicted: ", y_pred)
-			myfile.write("actual: ", y_batch)
+			myfile.write("predicted: " + str(y_pred))
+			myfile.write("actual: " + str(y_batch))
 	acc = float(num_correct) / num_samples
 	print('Got %d / %d correct (%.2f%%)' % (num_correct, num_samples, 100 * acc))
 
@@ -686,10 +686,10 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 	Returns: Nothing, but prints progress during trainingn
 	"""
 
-	batch_size = 4
+	batch_size = 2
 	image_set_size = 12
 	skip_frames = 8
-	resize_height, resize_width = 144, 256
+	#iresize_height, resize_width = 216, 
 	tf.reset_default_graph()    
 	with tf.device(device):
 		# Construct the computational graph we will use to train the model. We
