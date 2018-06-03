@@ -365,7 +365,7 @@ def vgg_model_conv3d_init(inputs):
 	initializer = tf.variance_scaling_initializer(scale=2.0) # initializer for weights
 	activation = tf.nn.relu # ReLU for each Conv layer
 
-	reg_strength = 0.1
+	reg_strength = 0.2
 	regularization = tf.contrib.layers.l2_regularizer(reg_strength) # L2 regularization for FC layer
 
 	#print("input shape: ", inputs.get_shape())
@@ -376,14 +376,14 @@ def vgg_model_conv3d_init(inputs):
 	conv2 = tf.layers.conv3d(bn1, filters = num_filters[0], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer)
 	bn2 = tf.layers.batch_normalization(conv2, training=True)
 	pool1 = tf.layers.max_pooling3d(bn2, pool_size = (1, pool_size, pool_size), strides = (1, pool_stride, pool_stride), padding = 'valid')
-	drop1 = tf.layers.dropout(pool1, rate=0.2)
+	drop1 = tf.layers.dropout(pool1, rate=0.3)
 
 	conv3 = tf.layers.conv3d(drop1, filters = num_filters[1], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer)
 	bn3 = tf.layers.batch_normalization(conv3, training=True)
 	conv4 = tf.layers.conv3d(bn3, filters = num_filters[1], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer)
 	bn4 = tf.layers.batch_normalization(conv4, training=True)
 	pool2 = tf.layers.max_pooling3d(bn4, pool_size = (1, pool_size, pool_size), strides = (1, pool_stride, pool_stride), padding = 'valid')
-	drop2 = tf.layers.dropout(pool2, rate=0.2)
+	drop2 = tf.layers.dropout(pool2, rate=0.3)
 
 	conv5 = tf.layers.conv3d(drop2, filters = num_filters[2], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer)
 	bn5 = tf.layers.batch_normalization(conv5, training=True)
@@ -392,7 +392,7 @@ def vgg_model_conv3d_init(inputs):
 	conv7 = tf.layers.conv3d(bn6, filters = num_filters[2], kernel_size = filter_size, strides = filter_stride, padding = 'same', activation = activation, kernel_initializer = initializer)
 	bn7 = tf.layers.batch_normalization(conv7, training=True)
 	pool3 = tf.layers.max_pooling3d(bn7, pool_size = (1, pool_size, pool_size), strides = (1, pool_stride, pool_stride), padding = 'valid')
-	drop3 = tf.layers.dropout(pool3, rate=0.2)
+	drop3 = tf.layers.dropout(pool3, rate=0.3)
 	
 	# print("drop3 shape: ", tf.shape(drop3))
 	# reshaped = tf.reshape(drop3, (-1, image_set_size, W, H, D))
@@ -595,7 +595,7 @@ def train_part34_single_image(model_init_fn, optimizer_init_fn, num_epochs=10):
 
 
 def optimizer_init_fn():
-	learning_rate = 1e-6
+	learning_rate = 1e-5
 	optimizer = tf.train.AdamOptimizer(learning_rate = learning_rate)
 	return optimizer
 
@@ -631,7 +631,7 @@ def train(model, x_train, y_train, num_epochs, x_val=None, y_val=None, batch_siz
 
 
 
-def check_accuracy(sess, x, scores, dataset = 'validation', is_training=None):
+def check_accuracy(sess, x, scores, dataset = 'validation', is_training=None, check_big = False):
 	"""
 	Check accuracy on a classification model.
 	
@@ -651,6 +651,8 @@ def check_accuracy(sess, x, scores, dataset = 'validation', is_training=None):
 	image_set_size = 12
 	skip_frames = 8
 	number_batches_check = 25
+	if check_big:
+		number_batches_to_check = 2500 // 2
 	num_correct, num_samples = 0, 0
 	for i in range(number_batches_check):
 		x_batch, y_batch = load_batch(batch_size, image_set_size, skip_frames, dataset = dataset)
@@ -660,14 +662,23 @@ def check_accuracy(sess, x, scores, dataset = 'validation', is_training=None):
 		num_samples += x_batch.shape[0]
 		num_correct += (y_pred == y_batch).sum()
 		with open("060118_bigger_image_results.txt", "a") as myfile:
+			if check_big:
+				myfile.write("Performing check over a large portion of validation set")	
+				myfile.write("\n")			
 			myfile.write("predicted: " + str(y_pred))
+			myfile.write("\n")
 			myfile.write("actual: " + str(y_batch))
+			myfile.write("\n")
+
 	acc = float(num_correct) / num_samples
 	print('Got %d / %d correct (%.2f%%)' % (num_correct, num_samples, 100 * acc))
 
 	with open("060118_bigger_image_results.txt", "a") as myfile:
 		myfile.write("Accuracy " + str(acc))
+		myfile.write("\n")
 		#myfile.write("")
+	#if check_big:
+	#	return acc
 
 def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 	"""
@@ -792,6 +803,13 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 				new_time = time.time()
 				print("Training Check took: ", new_time - curr_time, " seconds.")
 			t += 1
+			if t % 2000 == 0:
+				print("Performing large validation check and saving to file...")
+				curr_time = time.time()
+				check_accuracy(sess, x, scores, is_training=is_training, check_big = True)
+				new_time = time.time()
+				print("Big Validation Check took: ", new_time - curr_time, " seconds.")
+
 			#print("end of one thing")
 			if epoch % 200 == 0:
 				save_path = saver.save(sess, "model_checkpoints/conv3d_bigger_image_" + str(epoch))

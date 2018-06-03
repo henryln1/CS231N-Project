@@ -123,8 +123,10 @@ def load_batch(batch_size, image_set_size, skip_frames, dataset = "train"):
 	#print("Y_train", Y_train)
 	#print("Y_train shape: ", Y_train.shape)
 	X_train = np.stack(list_image_sets, axis = 0)
-	#random_num = random.uniform(0, 1)
-	#if random_num < 0.5:
+
+	random_num = random.uniform(0, 1)
+	if random_num < 0.5:
+		X_train = np.flip(X_train, axis = 3)
 	#	X_train = np.tranpose(X_train, (0, 1, 3, 2, 4))
 	#print("shape of X_train: ", X_train.shape)
 	#print("shape of Y_train: ", Y_train.shape)
