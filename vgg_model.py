@@ -595,7 +595,7 @@ def train_part34_single_image(model_init_fn, optimizer_init_fn, num_epochs=10):
 
 
 def optimizer_init_fn():
-	learning_rate = 1e-5
+	learning_rate = 3e-6
 	optimizer = tf.train.AdamOptimizer(learning_rate = learning_rate)
 	return optimizer
 
@@ -661,7 +661,7 @@ def check_accuracy(sess, x, scores, dataset = 'validation', is_training=None, ch
 		y_pred = scores_np.argmax(axis=1)
 		num_samples += x_batch.shape[0]
 		num_correct += (y_pred == y_batch).sum()
-		with open("060118_bigger_image_results.txt", "a") as myfile:
+		with open("060318_bigger_image_results.txt", "a") as myfile:
 			if check_big:
 				myfile.write("Performing check over a large portion of validation set")	
 				myfile.write("\n")			
@@ -673,7 +673,7 @@ def check_accuracy(sess, x, scores, dataset = 'validation', is_training=None, ch
 	acc = float(num_correct) / num_samples
 	print('Got %d / %d correct (%.2f%%)' % (num_correct, num_samples, 100 * acc))
 
-	with open("060118_bigger_image_results.txt", "a") as myfile:
+	with open("060318_bigger_image_results.txt", "a") as myfile:
 		myfile.write("Accuracy " + str(acc))
 		myfile.write("\n")
 		#myfile.write("")
@@ -812,7 +812,7 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 
 			#print("end of one thing")
 			if epoch % 200 == 0:
-				save_path = saver.save(sess, "model_checkpoints/conv3d_bigger_image_" + str(epoch))
+				save_path = saver.save(sess, "model_checkpoints/conv3d_bigger_image_060318_data_augmented" + str(epoch))
 
 
 def check_accuracy_entire_dataset(sess, x, scores, dataset, is_training = None):
