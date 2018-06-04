@@ -681,9 +681,9 @@ def check_accuracy(sess, x, scores, dataset = 'validation', is_training=None, ch
 		if check_big:
 			myfile.write("Performing check over a large portion of validation set")	
 			myfile.write("\n")	
-		myfile.write("Predicted: ", pred_cumulative)
+		myfile.write("Predicted: " + pred_cumulative)
 		myfile.write("\n")
-		myfile.write("Actual: ", actual_cumulative)
+		myfile.write("Actual: " + actual_cumulative)
 		myfile.write("\n")
 
 
