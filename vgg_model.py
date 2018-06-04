@@ -896,13 +896,13 @@ def official_evaluation(model_init_fn, model_location, dataset, is_training = No
 	#saver = tf.train.Saver()
 	with tf.Session() as sess:
 		saver = tf.train.import_meta_graph(model_location + '.meta')
+		saver.restore(sess,tf.train.latest_checkpoint(model_location))
 		#tf.initialize_all_variables().run()
 		graph = tf.get_default_graph()
 		x = graph.get_tensor_by_name("x:0")
 		y = graph.get_tensor_by_name("y:0")
 		loss = graph.get_tensor_by_name("loss:0")
 		train_op = graph.get_tensor_by_name("train_op:0")
-		saver.restore(sess,tf.train.latest_checkpoint(model_location))
 
 		x_np, y_np = load_single_frame_batch(batch_size)
 		feed_dict = {x: x_np, y: y_np, is_training:1}
