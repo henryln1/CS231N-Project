@@ -15,9 +15,9 @@ import os
 import time
 
 
-#device = '/cpu:0'
+device = '/cpu:0'
 
-device = '/gpu:0'
+#device = '/gpu:0'
 
 resize_height, resize_width = 216, 384
 image_set_size = 12
@@ -442,18 +442,24 @@ def vgg_model_conv3d_init(inputs):
 # 	extra_step = tf.get_collection(tf.GraphKeys.UPDATE_OPS, 'vgg')
 
 
-def check_accuracy_single_frame(sess, x, scores, dataset = 'validation', is_training = None):
+def check_accuracy_single_frame(sess, x, scores, dataset = 'validation', is_training = None, check_big = False):
 
-	batch_size = 50
+	batch_size = 128
 	number_batches_to_check = 10
+	if check_big:
+		number_batches_check = 100
 	num_correct, num_samples = 0, 0
 
 	all_y_pred = []
 	all_y_actual = []
+	scores_file_name = '060418_single_image_classifier_scores.txt'
 	for i in range(number_batches_to_check):
-		#x_batch, y_batch = load_single_frame_batch(batch_size, dataset = dataset)
+		if check_big:
+			x_batch, y_batch, names = load_single_frame_batch(batch_size, dataset = dataset, return_names = True)
+		else:
+			x_batch, y_batch = load_single_frame_batch(batch_size, dataset = dataset)
 		
-		x_batch, y_batch = load_batch_multiple_frames_into_single(batch_size, dataset = dataset)
+		#x_batch, y_batch = load_batch_multiple_frames_into_single(batch_size, dataset = dataset)
 		feed_dict = {x: x_batch, is_training: 0}
 		scores_np = sess.run(scores, feed_dict=feed_dict)
 		y_pred = scores_np.argmax(axis=1)
@@ -463,16 +469,91 @@ def check_accuracy_single_frame(sess, x, scores, dataset = 'validation', is_trai
 		all_y_pred += y_pred.tolist()
 		all_y_actual += y_batch.tolist()
 
+		if check_big and i == 0:
+			with open(scores_file_name, "a") as myfile:
+				myfile.write("Random scores for a set of images")
+				myfile.write(names)
+				myfile.write("\n")	
+				myfile.write(scores_np)
+
+
+
 	#F1_score = f1_score(all_y_actual, all_y_pred, average = 'micro')
 	precision, recall, F1_score, support = precision_recall_fscore_support(all_y_actual, all_y_pred, average='micro')
 
 
 	acc = num_correct / num_samples
+
+	text_file_name = "060418_single_image_classifier_regularization=0.1,batch_size=128,lr=1e-6,144x256_predictions"
+	if check_big:
+		text_file_name += '_big_check_for_confusion_matrix'
+	text_file_name += '.txt'
+
+	acc = float(num_correct) / num_samples
+	with open(text_file_name, "a") as myfile:
+		if dataset == 'validation':
+			myfile.write("Checking validation set.")
+		else:
+			myfile.write("Checking training set.")
+		myfile.write("\n")
+		myfile.write("Predicted: ")
+		myfile.write("\n")
+		myfile.write(all_y_pred)
+		myfile.write("\n")	
+		myfile.write("Actual: ")
+		myfile.write("\n")
+		myfile.write(all_y_actual)
+		myfile.write("\n")	
+		myfile.write("Accuracy: ")
+		myfile.write("\n")
+		myfile.write(acc)
+		myfile.write("\n")
+		myfile.write("F1 Score: ")
+		myfile.write("\n")
+		myfile.write(F1_score)
+		myfile.write("\n")
+		myfile.write("Precision: ")
+		myfile.write("\n")
+		myfile.write(precision)
+		myfile.write("\n")
+		myfile.write("Recall: ")
+		myfile.write("\n")
+		myfile.write(recall)
+		myfile.write("\n")
+
+
+
 	print("F1 Score: ", F1_score)
 	print("Precision: ", precision)
 	print("Recall: ", recall)
 	print('Got %d / %d correct (%.2f%%)' % (num_correct, num_samples, 100 * acc))
 
+
+	# 	pred_cumulative += str(y_pred)
+	# 	actual_cumulative += str(y_batch)
+
+
+	# with open("060318_bigger_image_results_data_augmented.txt", "a") as myfile:
+	# 	if dataset == 'validation':
+	# 		myfile.write("Checking validation set.")
+	# 	else:
+	# 		myfile.write("Checking training set.")	
+	# 	myfile.write("\n")	
+	# 	if check_big:
+	# 		myfile.write("Performing check over a large portion of validation set")	
+	# 		myfile.write("\n")	
+	# 	myfile.write("Predicted: " + pred_cumulative)
+	# 	myfile.write("\n")
+	# 	myfile.write("Actual: " + actual_cumulative)
+	# 	myfile.write("\n")
+
+
+	# acc = float(num_correct) / num_samples
+	# print('Got %d / %d correct (%.2f%%)' % (num_correct, num_samples, 100 * acc))
+
+	# with open("060318_bigger_image_results_data_augmented.txt", "a") as myfile:
+	# 	myfile.write("Accuracy " + str(acc))
+	# 	myfile.write("\n")
 	return
 
 
@@ -480,7 +561,7 @@ def check_accuracy_single_frame(sess, x, scores, dataset = 'validation', is_trai
 def train_part34_single_image(model_init_fn, optimizer_init_fn, num_epochs=10):
 
 
-	model_run_name = 'single_frames_model_batch_128_reg_strength_0.1_diff_frames'
+	model_run_name = 'single_frames_model_batch_128_reg_strength_0.1_diff_frames_060418'
 	train_model_dir = 'model_checkpoints/' + model_run_name
 	if not os.path.exists(train_model_dir):
 		os.makedirs(train_model_dir)
@@ -553,7 +634,8 @@ def train_part34_single_image(model_init_fn, optimizer_init_fn, num_epochs=10):
 
 	#print_ever = 100
 
-	iterations_per_epoch = 100
+	#iterations_per_epoch = 200
+	iterations_per_epoch = 1
 
 	with tf.Session() as sess:
 
@@ -580,7 +662,10 @@ def train_part34_single_image(model_init_fn, optimizer_init_fn, num_epochs=10):
 				print("Iteration took: ", new_time - curr_time, " seconds.")
 				print("Loss: ", loss_np)
 			curr_time = time.time()
-			check_accuracy_single_frame(sess, x, scores, is_training = is_training)
+			if epoch % 5 == 0:
+				check_accuracy_single_frame(sess, x, scores, is_training = is_training, check_big = True)
+			else:
+				check_accuracy_single_frame(sess, x, scores, is_training = is_training)
 			new_time = time.time()
 			print("Validation Check took: ", new_time - curr_time)
 			curr_time = time.time()

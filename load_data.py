@@ -197,7 +197,7 @@ def load_batch_multiple_frames_into_single(batch_size, image_set_size = 2, skip_
 
 
 
-def load_single_frame_batch(batch_size, image_names = None, dataset = "train"):
+def load_single_frame_batch(batch_size, image_names = None, dataset = "train", return_names = False):
 
 	print("loading batch...")
 	resize_height, resize_width = 144, 256
@@ -218,6 +218,8 @@ def load_single_frame_batch(batch_size, image_names = None, dataset = "train"):
 	#print("Shape of X_train: ", X_train.shape)
 	#print("Shape of Y_train: ", Y_train.shape)
 	#print("Y_train: ", Y_train)
-
-	return X_train, Y_train
+	if return_names:
+		return X_train, Y_train, random_images
+	else:
+		return X_train, Y_train
 
