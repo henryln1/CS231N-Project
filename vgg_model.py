@@ -889,10 +889,6 @@ def official_evaluation(model_init_fn, model_location, dataset, is_training = No
 		# holds the operators that update the states of the network.
 		# For example, the tf.layers.batch_normalization function adds the running mean
 		# and variance update operators to tf.GraphKeys.UPDATE_OPS.
-		optimizer = optimizer_init_fn()
-		update_ops = tf.get_collection(tf.GraphKeys.UPDATE_OPS)
-		with tf.control_dependencies(update_ops):
-			train_op = optimizer.minimize(loss)
 
 	#saver = tf.train.Saver()
 	with tf.Session() as sess:
@@ -904,7 +900,13 @@ def official_evaluation(model_init_fn, model_location, dataset, is_training = No
 		#loss = graph.get_tensor_by_name("Placeholder_2:0")
 #		train_op = graph.get_tensor_by_name("train_op")
 		#saver.restore(sess,tf.train.latest_checkpoint(model_location))
+
 		saver.restore(sess, model_location)
+		optimizer = optimizer_init_fn()
+		update_ops = tf.get_collection(tf.GraphKeys.UPDATE_OPS)
+		with tf.control_dependencies(update_ops):
+			train_op = optimizer.minimize(loss)
+
 		x_np, y_np = load_single_frame_batch(batch_size)
 		feed_dict = {x: x_np, y: y_np, is_training:1}
 		loss_np, _ = sess.run([loss, train_op], feed_dict=feed_dict)			
