@@ -99,7 +99,7 @@ def main2():
 
 def main3():
 	#model_location = 'model_checkpoints/first_model_test/first_model_20'
-	model_location = 'model_checkpoints/model_single_frames_batch_size_128_5100'
+	model_location = 'model_checkpoints/single_frames_model_batch_128_reg_strength_0.1_nonseqtraining_iteration_4800'
 	dataset = 'train'
 	model_init = vgg.vgg_model_single_image_init_non_seq
 	vgg.official_evaluation(model_init, model_location , dataset = dataset)

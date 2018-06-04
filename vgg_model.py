@@ -836,14 +836,14 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 def check_accuracy_entire_dataset(sess, x, scores, dataset, is_training = None):
 
 	image_names = read_text_file(dataset + '.txt')
-
+	#print("hello " + str(image_names))
 	all_y_pred = []
 	all_y_actual = []
 	num_correct, num_total = 0, 0
 	shuffle(image_names)
 	batch_size = 100
 
-	image_names = images_names[:200]
+	image_names = image_names[:200]
 	for i in range(len(image_names) // 100 - 1):
 		image_file_names = image_names[i * 100 : (i + 1) * 100]
 		x_batch, y_batch = load_single_frame_batch(batch_size, image_names = image_file_names, dataset = dataset)
@@ -899,11 +899,12 @@ def official_evaluation(model_init_fn, model_location, dataset, is_training = No
 		saver = tf.train.import_meta_graph(model_location + '.meta')
 		#tf.initialize_all_variables().run()
 		graph = tf.get_default_graph()
-		x = graph.get_tensor_by_name("x:0")
-		y = graph.get_tensor_by_name("y:0")
-		loss = graph.get_tensor_by_name("loss:0")
-		train_op = graph.get_tensor_by_name("train_op:0")
-		saver.restore(sess,tf.train.latest_checkpoint(model_location))
+		x = graph.get_tensor_by_name("Placeholder:0")
+		y = graph.get_tensor_by_name("Placeholder_1:0")
+		#loss = graph.get_tensor_by_name("Placeholder_2:0")
+#		train_op = graph.get_tensor_by_name("train_op")
+		#saver.restore(sess,tf.train.latest_checkpoint(model_location))
+		saver.restore(sess, model_location)
 		x_np, y_np = load_single_frame_batch(batch_size)
 		feed_dict = {x: x_np, y: y_np, is_training:1}
 		loss_np, _ = sess.run([loss, train_op], feed_dict=feed_dict)			
