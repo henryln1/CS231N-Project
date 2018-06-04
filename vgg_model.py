@@ -897,7 +897,6 @@ def official_evaluation(model_init_fn, model_location, dataset, is_training = No
 	with tf.Session() as sess:
 		saver = tf.train.import_meta_graph(model_location + '.meta')
 		#tf.initialize_all_variables().run()
-		saver.restore(sess,tf.train.latest_checkpoint(model_location))
 		graph = tf.get_default_graph()
 		x = graph.get_tensor_by_name("x:0")
 		y = graph.get_tensor_by_name("y:0")
@@ -906,16 +905,26 @@ def official_evaluation(model_init_fn, model_location, dataset, is_training = No
 		x_np, y_np = load_single_frame_batch(batch_size)
 		feed_dict = {x: x_np, y: y_np, is_training:1}
 		loss_np, _ = sess.run([loss, train_op], feed_dict=feed_dict)	
-
+		saver.restore(sess,tf.train.latest_checkpoint(model_location))
+		
 		print("Model restored")
 		check_accuracy_entire_dataset(sess, x, scores, dataset, is_training)
 
-		
 
+# def load_model_checkpoint(model_init_fn, model_location, dataset, is_training = None):
 
+# 	model_location = 'model_checkpoints/first_model_test/first_model_16'
 
+# 	tf.reset_default_graph()
+# 	# saver = tf.train.Saver()
 
+# 	# with tf.Session() as sess:
+# 	# 	saver.restore(sess, model_location)
+# 	# 	print("Model restored")
 
+# 	sess=tf.Session()
+# 	saver = tf.train.import_meta_graph(model_location + '.meta')
+# 	saver.restore(sess,tf.train.latest_checkpoint(model_location))
 
 
 # Function to use given model to predict on given data and return metrics (accuracy for now) on predictions

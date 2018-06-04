@@ -112,4 +112,4 @@ def main5():
 	vgg.train_part34(vgg.vgg_model_conv3d_init, vgg.optimizer_init_fn, num_epochs = 50)
 # Allows for script to be run as program
 if __name__=="__main__":
-	main5()
+	main3()
