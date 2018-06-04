@@ -902,11 +902,11 @@ def official_evaluation(model_init_fn, model_location, dataset, is_training = No
 		y = graph.get_tensor_by_name("y:0")
 		loss = graph.get_tensor_by_name("loss:0")
 		train_op = graph.get_tensor_by_name("train_op:0")
+		saver.restore(sess,tf.train.latest_checkpoint(model_location))
+
 		x_np, y_np = load_single_frame_batch(batch_size)
 		feed_dict = {x: x_np, y: y_np, is_training:1}
-		loss_np, _ = sess.run([loss, train_op], feed_dict=feed_dict)	
-		saver.restore(sess,tf.train.latest_checkpoint(model_location))
-		
+		loss_np, _ = sess.run([loss, train_op], feed_dict=feed_dict)			
 		print("Model restored")
 		check_accuracy_entire_dataset(sess, x, scores, dataset, is_training)
 
