@@ -871,12 +871,12 @@ def official_evaluation(model_init_fn, model_location, dataset, is_training = No
 		# Construct the computational graph we will use to train the model. We
 		# use the model_init_fn to construct the model, declare placeholders for
 		# the data and labels
-		# x = tf.placeholder(tf.float32, [None, resize_height, resize_width, 3])
-		# y = tf.placeholder(tf.int32, [None])
-		# scores = model_init_fn(x)
-		# is_training = tf.placeholder(tf.bool, name='is_training')
-		# loss = tf.nn.sparse_softmax_cross_entropy_with_logits(labels=y, logits=scores)
-		# loss = tf.reduce_mean(loss)
+		x = tf.placeholder(tf.float32, [None, resize_height, resize_width, 3])
+		y = tf.placeholder(tf.int32, [None])
+		scores = model_init_fn(x)
+		is_training = tf.placeholder(tf.bool, name='is_training')
+		loss = tf.nn.sparse_softmax_cross_entropy_with_logits(labels=y, logits=scores)
+		loss = tf.reduce_mean(loss)
 
 		# Use the optimizer_fn to construct an Optimizer, then use the optimizer
 		# to set up the training step. Asking TensorFlow to evaluate the
