@@ -595,7 +595,7 @@ def train_part34_single_image(model_init_fn, optimizer_init_fn, num_epochs=10):
 
 
 def optimizer_init_fn():
-	learning_rate = 3e-6
+	learning_rate = 1e-6
 	optimizer = tf.train.AdamOptimizer(learning_rate = learning_rate)
 	return optimizer
 
@@ -654,6 +654,8 @@ def check_accuracy(sess, x, scores, dataset = 'validation', is_training=None, ch
 	if check_big:
 		number_batches_to_check = 2500 // 2
 	num_correct, num_samples = 0, 0
+	pred_cumulative = ''
+	actual_cumulative = ''
 	for i in range(number_batches_check):
 		x_batch, y_batch = load_batch(batch_size, image_set_size, skip_frames, dataset = dataset)
 		feed_dict = {x: x_batch, is_training: 0}
@@ -661,19 +663,34 @@ def check_accuracy(sess, x, scores, dataset = 'validation', is_training=None, ch
 		y_pred = scores_np.argmax(axis=1)
 		num_samples += x_batch.shape[0]
 		num_correct += (y_pred == y_batch).sum()
-		with open("060318_bigger_image_results.txt", "a") as myfile:
-			if check_big:
-				myfile.write("Performing check over a large portion of validation set")	
-				myfile.write("\n")			
-			myfile.write("predicted: " + str(y_pred))
-			myfile.write("\n")
-			myfile.write("actual: " + str(y_batch))
-			myfile.write("\n")
+		# with open("060318_bigger_image_results.txt", "a") as myfile:	
+		# 	myfile.write("predicted: " + str(y_pred))
+		# 	myfile.write("\n")
+		# 	myfile.write("actual: " + str(y_batch))
+		# 	myfile.write("\n")
+		pred_cumulative += str(y_pred)
+		actual_cumulative += str(y_batch)
+
+
+	with open("060318_bigger_image_results_data_augmented.txt", "a") as myfile:
+		if dataset == 'validation':
+			myfile.write("Checking validation set.")
+		else:
+			myfile.write("Checking training set.")	
+		myfile.write("\n")	
+		if check_big:
+			myfile.write("Performing check over a large portion of validation set")	
+			myfile.write("\n")	
+		myfile.write("Predicted: ", pred_cumulative)
+		myfile.write("\n")
+		myfile.write("Actual: ", actual_cumulative)
+		myfile.write("\n")
+
 
 	acc = float(num_correct) / num_samples
 	print('Got %d / %d correct (%.2f%%)' % (num_correct, num_samples, 100 * acc))
 
-	with open("060318_bigger_image_results.txt", "a") as myfile:
+	with open("060318_bigger_image_results_data_augmented.txt", "a") as myfile:
 		myfile.write("Accuracy " + str(acc))
 		myfile.write("\n")
 		#myfile.write("")
