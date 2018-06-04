@@ -829,7 +829,7 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 
 			#print("end of one thing")
 			if epoch % 200 == 0:
-				save_path = saver.save(sess, "model_checkpoints/conv3d_bigger_image_060318_data_augmented" + str(epoch))
+				save_path = saver.save(sess, "model_checkpoints/conv3d_bigger_image_060318_data_augmented_better_printing" + str(epoch))
 
 
 def check_accuracy_entire_dataset(sess, x, scores, dataset, is_training = None):
