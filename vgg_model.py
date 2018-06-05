@@ -13,11 +13,11 @@ from sklearn.metrics import f1_score
 from sklearn.metrics import precision_recall_fscore_support
 import os
 import time
+np.set_printoptions(threshold=np.nan)
 
+#device = '/cpu:0'
 
-device = '/cpu:0'
-
-#device = '/gpu:0'
+device = '/gpu:0'
 
 resize_height, resize_width = 216, 384
 image_set_size = 12
@@ -447,7 +447,7 @@ def check_accuracy_single_frame(sess, x, scores, dataset = 'validation', is_trai
 	batch_size = 128
 	number_batches_to_check = 10
 	if check_big:
-		number_batches_check = 100
+		number_batches_to_check = 100
 	num_correct, num_samples = 0, 0
 
 	all_y_pred = []
@@ -472,9 +472,9 @@ def check_accuracy_single_frame(sess, x, scores, dataset = 'validation', is_trai
 		if check_big and i == 0:
 			with open(scores_file_name, "a") as myfile:
 				myfile.write("Random scores for a set of images")
-				myfile.write(names)
+				myfile.write(str(names))
 				myfile.write("\n")	
-				myfile.write(scores_np)
+				myfile.write(str(scores_np))
 
 
 
@@ -498,27 +498,27 @@ def check_accuracy_single_frame(sess, x, scores, dataset = 'validation', is_trai
 		myfile.write("\n")
 		myfile.write("Predicted: ")
 		myfile.write("\n")
-		myfile.write(all_y_pred)
+		myfile.write(str(all_y_pred))
 		myfile.write("\n")	
 		myfile.write("Actual: ")
 		myfile.write("\n")
-		myfile.write(all_y_actual)
+		myfile.write(str(all_y_actual))
 		myfile.write("\n")	
 		myfile.write("Accuracy: ")
 		myfile.write("\n")
-		myfile.write(acc)
+		myfile.write(str(acc))
 		myfile.write("\n")
 		myfile.write("F1 Score: ")
 		myfile.write("\n")
-		myfile.write(F1_score)
+		myfile.write(str(F1_score))
 		myfile.write("\n")
 		myfile.write("Precision: ")
 		myfile.write("\n")
-		myfile.write(precision)
+		myfile.write(str(precision))
 		myfile.write("\n")
 		myfile.write("Recall: ")
 		myfile.write("\n")
-		myfile.write(recall)
+		myfile.write(str(recall))
 		myfile.write("\n")
 
 
@@ -634,8 +634,8 @@ def train_part34_single_image(model_init_fn, optimizer_init_fn, num_epochs=10):
 
 	#print_ever = 100
 
-	#iterations_per_epoch = 200
-	iterations_per_epoch = 1
+	iterations_per_epoch = 200
+	#iterations_per_epoch = 1
 
 	with tf.Session() as sess:
 
@@ -674,7 +674,6 @@ def train_part34_single_image(model_init_fn, optimizer_init_fn, num_epochs=10):
 			print("Training Check took: ", new_time - curr_time)
 		#if epoch % 200 == 0:
 			save_path = saver.save(sess, train_model_dir + "training_iteration_" + str((epoch + 1) * 100))
-
 
 
 	return
