@@ -472,6 +472,7 @@ def check_accuracy_single_frame(sess, x, scores, dataset = 'validation', is_trai
 		if check_big and i == 0:
 			with open(scores_file_name, "a") as myfile:
 				myfile.write("Random scores for a set of images")
+				myfile.write("\n")	
 				myfile.write(str(names))
 				myfile.write("\n")	
 				myfile.write(str(scores_np))
@@ -737,12 +738,17 @@ def check_accuracy(sess, x, scores, dataset = 'validation', is_training=None, ch
 	skip_frames = 8
 	number_batches_check = 25
 	if check_big:
-		number_batches_to_check = 2500 // 2
+		number_batches_to_check = 1000 // 2
 	num_correct, num_samples = 0, 0
-	pred_cumulative = ''
-	actual_cumulative = ''
+	pred_cumulative = []
+	actual_cumulative = []
+	scores_file_name = '060518_conv3d_scores.txt'
 	for i in range(number_batches_check):
-		x_batch, y_batch = load_batch(batch_size, image_set_size, skip_frames, dataset = dataset)
+		if check_big:
+			x_batch, y_batch, names = load_batch(batch_size, image_set_size, skip_frames, dataset = dataset, big_check = True)
+
+		else:
+			x_batch, y_batch = load_batch(batch_size, image_set_size, skip_frames, dataset = dataset)
 		feed_dict = {x: x_batch, is_training: 0}
 		scores_np = sess.run(scores, feed_dict=feed_dict)
 		y_pred = scores_np.argmax(axis=1)
@@ -753,11 +759,18 @@ def check_accuracy(sess, x, scores, dataset = 'validation', is_training=None, ch
 		# 	myfile.write("\n")
 		# 	myfile.write("actual: " + str(y_batch))
 		# 	myfile.write("\n")
-		pred_cumulative += str(y_pred)
-		actual_cumulative += str(y_batch)
+		pred_cumulative += y_pred.tolist()
+		actual_cumulative += y_batch.tolist()
+		if check_big and i < 50:
+			with open(scores_file_name, "a") as myfile:
+				myfile.write("Random scores for a set of images")
+				myfile.write("\n")	
+				myfile.write(str(names))
+				myfile.write("\n")	
+				myfile.write(str(scores_np))
 
 
-	with open("060318_bigger_image_results_data_augmented.txt", "a") as myfile:
+	with open("060518_bigger_image_results_conv3d.txt", "a") as myfile:
 		if dataset == 'validation':
 			myfile.write("Checking validation set.")
 		else:
@@ -775,9 +788,72 @@ def check_accuracy(sess, x, scores, dataset = 'validation', is_training=None, ch
 	acc = float(num_correct) / num_samples
 	print('Got %d / %d correct (%.2f%%)' % (num_correct, num_samples, 100 * acc))
 
-	with open("060318_bigger_image_results_data_augmented.txt", "a") as myfile:
+	with open("060518_bigger_image_results_data_augmented_conv3d.txt", "a") as myfile:
 		myfile.write("Accuracy " + str(acc))
 		myfile.write("\n")
+
+
+
+		# if check_big and i == 0:
+		# 	with open(scores_file_name, "a") as myfile:
+		# 		myfile.write("Random scores for a set of images")
+		# 		myfile.write("\n")	
+		# 		myfile.write(str(names))
+		# 		myfile.write("\n")	
+		# 		myfile.write(str(scores_np))
+
+
+
+	#F1_score = f1_score(all_y_actual, all_y_pred, average = 'micro')
+	precision, recall, F1_score, support = precision_recall_fscore_support(all_y_actual, all_y_pred, average='micro')
+
+
+	acc = num_correct / num_samples
+
+	# text_file_name = "060418_single_image_classifier_regularization=0.1,batch_size=128,lr=1e-6,144x256_predictions"
+	# if check_big:
+	# 	text_file_name += '_big_check_for_confusion_matrix'
+	# text_file_name += '.txt'
+
+	# acc = float(num_correct) / num_samples
+	# with open(text_file_name, "a") as myfile:
+	# 	if dataset == 'validation':
+	# 		myfile.write("Checking validation set.")
+	# 	else:
+	# 		myfile.write("Checking training set.")
+	# 	myfile.write("\n")
+	# 	myfile.write("Predicted: ")
+	# 	myfile.write("\n")
+	# 	myfile.write(str(all_y_pred))
+	# 	myfile.write("\n")	
+	# 	myfile.write("Actual: ")
+	# 	myfile.write("\n")
+	# 	myfile.write(str(all_y_actual))
+	# 	myfile.write("\n")	
+	# 	myfile.write("Accuracy: ")
+	# 	myfile.write("\n")
+	# 	myfile.write(str(acc))
+	# 	myfile.write("\n")
+	# 	myfile.write("F1 Score: ")
+	# 	myfile.write("\n")
+	# 	myfile.write(str(F1_score))
+	# 	myfile.write("\n")
+	# 	myfile.write("Precision: ")
+	# 	myfile.write("\n")
+	# 	myfile.write(str(precision))
+	# 	myfile.write("\n")
+	# 	myfile.write("Recall: ")
+	# 	myfile.write("\n")
+	# 	myfile.write(str(recall))
+	# 	myfile.write("\n")
+
+
+
+	# print("F1 Score: ", F1_score)
+	# print("Precision: ", precision)
+	# print("Recall: ", recall)
+	# print('Got %d / %d correct (%.2f%%)' % (num_correct, num_samples, 100 * acc))
+
 		#myfile.write("")
 	#if check_big:
 	#	return acc
@@ -905,7 +981,7 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 				new_time = time.time()
 				print("Training Check took: ", new_time - curr_time, " seconds.")
 			t += 1
-			if t % 2000 == 0:
+			if t % 1 == 0:
 				print("Performing large validation check and saving to file...")
 				curr_time = time.time()
 				check_accuracy(sess, x, scores, is_training=is_training, check_big = True)
@@ -914,7 +990,7 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 
 			#print("end of one thing")
 			if epoch % 200 == 0:
-				save_path = saver.save(sess, "model_checkpoints/conv3d_bigger_image_060318_data_augmented_better_printing" + str(epoch))
+				save_path = saver.save(sess, "model_checkpoints/conv3d_bigger_image_060518_better_printing" + str(epoch))
 
 
 def check_accuracy_entire_dataset(sess, x, scores, dataset, is_training = None):

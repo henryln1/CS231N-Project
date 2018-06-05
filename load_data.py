@@ -70,7 +70,7 @@ def read_all_images(dataset = "train"): #dataset should be train, validation, or
 
 
 
-def load_batch(batch_size, image_set_size, skip_frames, dataset = "train"):
+def load_batch(batch_size, image_set_size, skip_frames, dataset = "train", big_check = False):
 	"""
 	batch size: Number of randomly chosen image sets we want
 	image set size: the number of frames we want per randomly chosen video
@@ -97,6 +97,7 @@ def load_batch(batch_size, image_set_size, skip_frames, dataset = "train"):
 
 	list_image_sets = [] #list that contains each image set, each image set is a image_set_size x H x W x 3 array
 	Y_train = []
+	frames_all = []
 	for video in video_ids:
 		#print("current video id: ", video)
 		image_set = []
@@ -109,6 +110,7 @@ def load_batch(batch_size, image_set_size, skip_frames, dataset = "train"):
 			current_frame = buffer_zeros_curr[-4:]
 			#print("current frame: ", current_frame)
 			image_frame_id = video + current_frame + '.jpg'
+			frames_all.append(image_frame_id)
 			#print("Current Image Name: ", image_frame_id)
 			image_file = read_image_file(image_frame_id)
 			resized_image = scipy.misc.imresize(image_file, (resize_height, resize_width))
@@ -124,14 +126,17 @@ def load_batch(batch_size, image_set_size, skip_frames, dataset = "train"):
 	#print("Y_train shape: ", Y_train.shape)
 	X_train = np.stack(list_image_sets, axis = 0)
 
-	random_num = random.uniform(0, 1)
-	if random_num < 0.5:
-		X_train = np.flip(X_train, axis = 3)
+	# random_num = random.uniform(0, 1)
+	# if random_num < 0.5:
+	# 	X_train = np.flip(X_train, axis = 3)
 	#	X_train = np.tranpose(X_train, (0, 1, 3, 2, 4))
 	#print("shape of X_train: ", X_train.shape)
 	#print("shape of Y_train: ", Y_train.shape)
 	#print("batch loaded")
-	return X_train, Y_train
+	if not big_check:
+		return X_train, Y_train
+	else:
+		return X_train, Y_train, frames_all
 
 
 def load_batch_multiple_frames_into_single(batch_size, image_set_size = 2, skip_frames = 30, dataset = "train"):
