@@ -747,7 +747,7 @@ def check_accuracy(sess, x, scores, dataset = 'validation', is_training=None, ch
 	num_correct, num_samples = 0, 0
 	pred_cumulative = []
 	actual_cumulative = []
-	scores_file_name = '060618_lstm_scores.txt'
+	scores_file_name = '060618_conv3d_scores.txt'
 	for i in range(number_batches_check):
 		print("Batch Number: ", i)
 		if check_big:
@@ -776,14 +776,16 @@ def check_accuracy(sess, x, scores, dataset = 'validation', is_training=None, ch
 				myfile.write(str(scores_np))
 
 
-	with open("060618_bigger_image_results_lstm.txt", "a") as myfile:
+	with open("060618_bigger_image_results_conv3d.txt", "a") as myfile:
 		if dataset == 'validation':
 			myfile.write("Checking validation set.")
+		elif dataset == 'test':
+			myfile.write("Checking test set.")
 		else:
 			myfile.write("Checking training set.")	
 		myfile.write("\n")	
 		if check_big:
-			myfile.write("Performing check over a large portion of validation set")	
+			myfile.write("Performing check over a large portion of validation/test set")	
 			myfile.write("\n")	
 		myfile.write("Predicted: " + str(pred_cumulative))
 		myfile.write("\n")
@@ -794,7 +796,7 @@ def check_accuracy(sess, x, scores, dataset = 'validation', is_training=None, ch
 	acc = float(num_correct) / num_samples
 	print('Got %d / %d correct (%.2f%%)' % (num_correct, num_samples, 100 * acc))
 
-	with open("060618_bigger_image_results_lstm.txt", "a") as myfile:
+	with open("060618_bigger_image_results_conv3d.txt", "a") as myfile:
 		myfile.write("Accuracy " + str(acc))
 		myfile.write("\n")
 
@@ -993,10 +995,14 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 				check_accuracy(sess, x, scores, is_training=is_training, check_big = True)
 				new_time = time.time()
 				print("Big Validation Check took: ", new_time - curr_time, " seconds.")
-
+				print("Performing large test check and saving to file...")
+				curr_time = time.time()
+				check_accuracy(sess, x, scores, dataset = 'test', is_training=is_training, check_big = True)
+				new_time = time.time()
+				print("Big Test Check took: ", new_time - curr_time, " seconds.")
 			#print("end of one thing")
 			if epoch % 200 == 0:
-				save_path = saver.save(sess, "model_checkpoints/lstm_bigger_image_060618_better_printing" + str(epoch))
+				save_path = saver.save(sess, "model_checkpoints/conv3d_bigger_image_060618_better_printing" + str(epoch))
 
 
 def check_accuracy_entire_dataset(sess, x, scores, dataset, is_training = None):
