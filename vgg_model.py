@@ -329,13 +329,17 @@ def vgg_model_single_image_init_non_seq_lstm(inputs):
 	#flat1 = tf.layers.flatten(drop3)
 	#output = tf.layers.dense(flat1, units = num_classes, kernel_initializer=initializer, kernel_regularizer=regularization)
 	#print("shape of drop3: ", drop3)
+	batch_size = 4
 	layers = [
 		#tf.keras.layers.Reshape((-1, image_set_size, 18, 32, 256)),
-		tf.keras.layers.Reshape((image_set_size, 18 * 32 * 256)),
-		tf.keras.layers.LSTM(units = num_classes)
+		#tf.keras.layers.Reshape((image_set_size, 18 * 32 * 256), input_shape = (batch_size * image_set_size, 18 * 32 * 256)),
+		tf.keras.layers.LSTM(units = num_classes, input_shape = (image_set_size, 27 * 48 * 256))
 	]
 	vgg_model = tf.keras.Sequential(layers)
-	return vgg_model(drop3)
+	print(tf.shape(drop3))
+	print(image_set_size)
+	reshaped = tf.reshape(drop3, (batch_size, image_set_size, -1))
+	return vgg_model(reshaped)
 	return output
 
 
@@ -734,16 +738,16 @@ def check_accuracy(sess, x, scores, dataset = 'validation', is_training=None, ch
 
 	"""
 
-	batch_size = 2
+	batch_size = 4
 	image_set_size = 12
 	skip_frames = 8
 	number_batches_check = 25
 	if check_big:
-		number_batches_check = 1000 // 2
+		number_batches_check = 1500 // 2
 	num_correct, num_samples = 0, 0
 	pred_cumulative = []
 	actual_cumulative = []
-	scores_file_name = '060518_conv3d_scores.txt'
+	scores_file_name = '060618_lstm_scores.txt'
 	for i in range(number_batches_check):
 		print("Batch Number: ", i)
 		if check_big:
@@ -772,7 +776,7 @@ def check_accuracy(sess, x, scores, dataset = 'validation', is_training=None, ch
 				myfile.write(str(scores_np))
 
 
-	with open("060518_bigger_image_results_conv3d.txt", "a") as myfile:
+	with open("060618_bigger_image_results_lstm.txt", "a") as myfile:
 		if dataset == 'validation':
 			myfile.write("Checking validation set.")
 		else:
@@ -790,7 +794,7 @@ def check_accuracy(sess, x, scores, dataset = 'validation', is_training=None, ch
 	acc = float(num_correct) / num_samples
 	print('Got %d / %d correct (%.2f%%)' % (num_correct, num_samples, 100 * acc))
 
-	with open("060518_bigger_image_results_conv3d.txt", "a") as myfile:
+	with open("060618_bigger_image_results_lstm.txt", "a") as myfile:
 		myfile.write("Accuracy " + str(acc))
 		myfile.write("\n")
 
@@ -877,7 +881,7 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 	Returns: Nothing, but prints progress during trainingn
 	"""
 
-	batch_size = 2
+	batch_size = 4
 	image_set_size = 12
 	skip_frames = 8
 	#iresize_height, resize_width = 216, 
@@ -943,7 +947,7 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 
 	saver = tf.train.Saver()
 
-	print_every = 50
+	print_every = 100
 
 	num_epochs = 5000
 
@@ -983,7 +987,7 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 				new_time = time.time()
 				print("Training Check took: ", new_time - curr_time, " seconds.")
 			t += 1
-			if t % 500 == 0:
+			if t % 1000 == 0:
 				print("Performing large validation check and saving to file...")
 				curr_time = time.time()
 				check_accuracy(sess, x, scores, is_training=is_training, check_big = True)
@@ -992,7 +996,7 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 
 			#print("end of one thing")
 			if epoch % 200 == 0:
-				save_path = saver.save(sess, "model_checkpoints/conv3d_bigger_image_060518_better_printing" + str(epoch))
+				save_path = saver.save(sess, "model_checkpoints/lstm_bigger_image_060618_better_printing" + str(epoch))
 
 
 def check_accuracy_entire_dataset(sess, x, scores, dataset, is_training = None):

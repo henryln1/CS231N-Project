@@ -1,66 +1,1921 @@
-Random scores for a set of imagesRandom scores for a set of images['../dance_data/validation/break/XnapRl2hHTo_050_0282.jpg', '../dance_data/validation/waltz/AQ-izQC-S1Y_031_0035.jpg', '../dance_data/validation/flamenco/fgN2mMFqjxg_031_0100.jpg', '../dance_data/validation/quickstep/mBt-cEgqPwc_221_0267.jpg', '../dance_data/validation/tango/Ap9Xj0OBgJ8_043_0052.jpg', '../dance_data/validation/swing/HXKqQWy3NMY_105_0109.jpg', '../dance_data/validation/tango/v2Wx2pk2blU_013_0105.jpg', '../dance_data/validation/ballet/u--jDp2Hieg_131_0122.jpg', '../dance_data/validation/waltz/AQmHJlhUhes_022_0043.jpg', '../dance_data/validation/waltz/nuWL11X_wjk_023_0285.jpg', '../dance_data/validation/quickstep/GNOwDih_nsk_011_0262.jpg', '../dance_data/validation/swing/HXKqQWy3NMY_105_0001.jpg', '../dance_data/validation/waltz/q-kL4TPjOcQ_015_0087.jpg', '../dance_data/validation/tango/bFFMIYUEDq4_039_0079.jpg', '../dance_data/validation/flamenco/9U5TNavFpF4_004_0018.jpg', '../dance_data/validation/flamenco/9Y2gICFe9mQ_007_0024.jpg', '../dance_data/validation/square/-v31uYwWz7c_050_0163.jpg', '../dance_data/validation/break/XnapRl2hHTo_050_0029.jpg', '../dance_data/validation/foxtrot/HJyQjQy9n-U_350_0153.jpg', '../dance_data/validation/foxtrot/Md0gzA2n_Mc_006_0288.jpg', '../dance_data/validation/quickstep/84oDmFB2uyk_020_0116.jpg', '../dance_data/validation/swing/HXKqQWy3NMY_105_0247.jpg', '../dance_data/validation/foxtrot/h4LfkNTCJjM_015_0159.jpg', '../dance_data/validation/square/kSNzS9zObCw_002_0114.jpg', '../dance_data/validation/square/Z9vffJJJfNA_027_0124.jpg', '../dance_data/validation/quickstep/X53uafpmFgM_043_0218.jpg', '../dance_data/validation/flamenco/fEqazI4eezQ_216_0013.jpg', '../dance_data/validation/foxtrot/h4LfkNTCJjM_015_0287.jpg', '../dance_data/validation/foxtrot/fg3Wqr8DzSQ_024_0280.jpg', '../dance_data/validation/foxtrot/kQtAMqHke30_043_0161.jpg', '../dance_data/validation/foxtrot/t4xg5_yabdU_015_0276.jpg', '../dance_data/validation/quickstep/_YnwZjcA3X0_024_0145.jpg', '../dance_data/validation/quickstep/kxDdXUiRnYA_040_0285.jpg', '../dance_data/validation/tango/b67jXhRbmh0_030_0251.jpg', '../dance_data/validation/foxtrot/t4xg5_yabdU_015_0192.jpg', '../dance_data/validation/break/S7tQIPMejL8_027_0132.jpg', '../dance_data/validation/ballet/2SMmL6kIx-w_053_0005.jpg', '../dance_data/validation/latin/5HbFic9gDgg_033_0184.jpg', '../dance_data/validation/flamenco/fgN2mMFqjxg_031_0004.jpg', '../dance_data/validation/foxtrot/HJyQjQy9n-U_350_0265.jpg', '../dance_data/validation/waltz/AQmHJlhUhes_022_0117.jpg', '../dance_data/validation/quickstep/_YnwZjcA3X0_024_0010.jpg', '../dance_data/validation/waltz/oikcRADJbDc_036_0011.jpg', '../dance_data/validation/swing/u_z2Tsoa2iE_039_0220.jpg', '../dance_data/validation/waltz/azWcLosbIVY_105_0003.jpg', '../dance_data/validation/flamenco/gxzU5EqNL14_054_0161.jpg', '../dance_data/validation/foxtrot/8uMn7XUF36s_025_0093.jpg', '../dance_data/validation/ballet/-5Yp-vToI2E_016_0264.jpg', '../dance_data/validation/square/CDjIj4vgmvc_008_0046.jpg', '../dance_data/validation/latin/8qAGcFpaUlc_032_0117.jpg', '../dance_data/validation/flamenco/9YJWZDncb3c_124_0007.jpg', '../dance_data/validation/latin/r5X_IkhkquU_040_0017.jpg', '../dance_data/validation/swing/HXKqQWy3NMY_105_0089.jpg', '../dance_data/validation/flamenco/W6_7IG7C3Vk_052_0083.jpg', '../dance_data/validation/quickstep/RMw_7Bs6d8A_038_0001.jpg', '../dance_data/validation/square/Z9vffJJJfNA_027_0056.jpg', '../dance_data/validation/ballet/HfBiMFgM5vU_049_0260.jpg', '../dance_data/validation/break/S7tQIPMejL8_027_0207.jpg', '../dance_data/validation/flamenco/fgN2mMFqjxg_031_0043.jpg', '../dance_data/validation/waltz/AQ-izQC-S1Y_031_0219.jpg', '../dance_data/validation/break/RJnOuAf0cEY_025_0101.jpg', '../dance_data/validation/foxtrot/t4xg5_yabdU_015_0116.jpg', '../dance_data/validation/square/-v31uYwWz7c_050_0095.jpg', '../dance_data/validation/tango/AVaxGhMgHMk_018_0136.jpg', '../dance_data/validation/square/FhcTmd5AiuM_131_0236.jpg', '../dance_data/validation/ballet/zPQp-Re-PlA_235_0261.jpg', '../dance_data/validation/latin/heJXZdT-ne0_358_0155.jpg', '../dance_data/validation/square/FhcTmd5AiuM_131_0260.jpg', '../dance_data/validation/flamenco/gxzU5EqNL14_054_0202.jpg', '../dance_data/validation/swing/naH68eSm2H4_202_0224.jpg', '../dance_data/validation/tango/b67jXhRbmh0_030_0252.jpg', '../dance_data/validation/latin/w2K4A-d1bC4_036_0275.jpg', '../dance_data/validation/latin/sW9TOGfrs8c_202_0097.jpg', '../dance_data/validation/foxtrot/t4xg5_yabdU_015_0118.jpg', '../dance_data/validation/latin/wjG99Kbp1qQ_030_0206.jpg', '../dance_data/validation/swing/aS5DvL8p4I4_011_0216.jpg', '../dance_data/validation/swing/pNcsbZax_OI_015_0087.jpg', '../dance_data/validation/square/BeyaJ1GCcaA_205_0063.jpg', '../dance_data/validation/quickstep/kxDdXUiRnYA_040_0106.jpg', '../dance_data/validation/latin/aKOChOei2JQ_050_0172.jpg', '../dance_data/validation/waltz/qTuBDM63KbA_034_0260.jpg', '../dance_data/validation/latin/5HbFic9gDgg_033_0073.jpg', '../dance_data/validation/swing/DoAIhu_3XR0_045_0218.jpg', '../dance_data/validation/quickstep/Rqs-3N_fl5w_022_0108.jpg', '../dance_data/validation/tango/AQ7HEnCtnJg_012_0257.jpg', '../dance_data/validation/square/fymBcoVn66M_020_0032.jpg', '../dance_data/validation/quickstep/_YnwZjcA3X0_024_0225.jpg', '../dance_data/validation/break/_eqF-TA8TVQ_043_0137.jpg', '../dance_data/validation/waltz/qTuBDM63KbA_034_0263.jpg', '../dance_data/validation/break/XnapRl2hHTo_050_0034.jpg', '../dance_data/validation/break/4SQVm2fyLH0_053_0135.jpg', '../dance_data/validation/break/P17nzRf6HiE_020_0281.jpg', '../dance_data/validation/break/6dbo5GtNnxU_144_0129.jpg', '../dance_data/validation/square/BeyaJ1GCcaA_205_0052.jpg', '../dance_data/validation/quickstep/QDiPQ7uBYY4_734_0092.jpg', '../dance_data/validation/square/kSNzS9zObCw_002_0031.jpg', '../dance_data/validation/waltz/oikcRADJbDc_036_0068.jpg', '../dance_data/validation/latin/8qAGcFpaUlc_032_0226.jpg', '../dance_data/validation/ballet/2SMmL6kIx-w_053_0095.jpg', '../dance_data/validation/waltz/1V02jRprvoI_015_0246.jpg', '../dance_data/validation/waltz/1V02jRprvoI_015_0177.jpg', '../dance_data/validation/ballet/mQMMXBv7hYo_017_0093.jpg', '../dance_data/validation/foxtrot/8uMn7XUF36s_025_0120.jpg', '../dance_data/validation/flamenco/9YJWZDncb3c_124_0009.jpg', '../dance_data/validation/quickstep/uQqUNZS7OK4_011_0138.jpg', '../dance_data/validation/tango/BvTGEgR2_88_025_0294.jpg', '../dance_data/validation/latin/is9wrZ0ShZU_050_0071.jpg', '../dance_data/validation/waltz/xXWPf8wnhdo_033_0079.jpg', '../dance_data/validation/latin/heJXZdT-ne0_358_0038.jpg', '../dance_data/validation/swing/SxMxOa22PlM_050_0129.jpg', '../dance_data/validation/swing/wzf8DqjdyA0_348_0055.jpg', '../dance_data/validation/break/wJ-f773sO-k_040_0069.jpg', '../dance_data/validation/tango/BCIqkUblDpM_026_0145.jpg', '../dance_data/validation/latin/w2K4A-d1bC4_036_0047.jpg', '../dance_data/validation/square/CDjIj4vgmvc_008_0129.jpg', '../dance_data/validation/break/njw1rxDmUU0_025_0284.jpg', '../dance_data/validation/swing/ynp0pfUMRtE_032_0069.jpg', '../dance_data/validation/square/kSNzS9zObCw_002_0163.jpg', '../dance_data/validation/foxtrot/kQtAMqHke30_043_0206.jpg', '../dance_data/validation/foxtrot/kQtAMqHke30_043_0268.jpg', '../dance_data/validation/break/RJnOuAf0cEY_025_0231.jpg', '../dance_data/validation/swing/DoAIhu_3XR0_045_0216.jpg', '../dance_data/validation/latin/r5X_IkhkquU_040_0039.jpg', '../dance_data/validation/tango/bFFMIYUEDq4_039_0282.jpg', '../dance_data/validation/tango/NVtD7I_iKL8_020_0158.jpg', '../dance_data/validation/waltz/AQ-izQC-S1Y_031_0158.jpg', '../dance_data/validation/quickstep/mBt-cEgqPwc_221_0204.jpg', '../dance_data/validation/square/-v31uYwWz7c_050_0156.jpg']
-[[ 1.5594914  -2.4216268   2.232858   ...  2.2883444  -0.4126126
-  -6.113718  ]
- [ 1.3284026   1.2072688   0.83546424 ...  0.9645256  -1.7108842
-   0.3929272 ]
- [ 0.04525135 -1.3189018   1.4798166  ...  2.0792556  -2.4117172
-  -1.8335841 ]
- ...
- [-1.1303838  -2.8311262  -0.50845075 ...  2.5536938   1.3740308
-   0.52028346]
- [ 0.43844163 -0.9380597   1.1561322  ... -0.35472184 -0.07707982
-  -1.030644  ]
- [-1.5254699  -1.8424888   2.2307212  ...  1.2392353  -0.20890957
-  -1.5359077 ]]Random scores for a set of images['../dance_data/validation/square/kSNzS9zObCw_002_0052.jpg', '../dance_data/validation/latin/5HbFic9gDgg_033_0246.jpg', '../dance_data/validation/square/kSNzS9zObCw_002_0206.jpg', '../dance_data/validation/flamenco/9U5TNavFpF4_004_0182.jpg', '../dance_data/validation/swing/ynp0pfUMRtE_032_0176.jpg', '../dance_data/validation/foxtrot/kQtAMqHke30_043_0105.jpg', '../dance_data/validation/quickstep/X53uafpmFgM_043_0097.jpg', '../dance_data/validation/break/S7tQIPMejL8_027_0132.jpg', '../dance_data/validation/tango/NVtD7I_iKL8_020_0115.jpg', '../dance_data/validation/quickstep/RMw_7Bs6d8A_038_0167.jpg', '../dance_data/validation/ballet/HfBiMFgM5vU_049_0045.jpg', '../dance_data/validation/tango/NVtD7I_iKL8_020_0074.jpg', '../dance_data/validation/flamenco/gxzU5EqNL14_054_0071.jpg', '../dance_data/validation/break/tbFKZGzX9Kg_103_0148.jpg', '../dance_data/validation/square/6lV-mH_BSGs_204_0151.jpg', '../dance_data/validation/square/CDjIj4vgmvc_008_0261.jpg', '../dance_data/validation/latin/heJXZdT-ne0_358_0209.jpg', '../dance_data/validation/tango/Ap9Xj0OBgJ8_043_0080.jpg', '../dance_data/validation/foxtrot/kQtAMqHke30_043_0130.jpg', '../dance_data/validation/square/eYjNdnSX1vY_103_0088.jpg', '../dance_data/validation/foxtrot/fg3Wqr8DzSQ_024_0001.jpg', '../dance_data/validation/break/njw1rxDmUU0_025_0015.jpg', '../dance_data/validation/flamenco/VOqaphuiQug_003_0213.jpg', '../dance_data/validation/ballet/-5Yp-vToI2E_016_0230.jpg', '../dance_data/validation/tango/BvTGEgR2_88_025_0224.jpg', '../dance_data/validation/foxtrot/iOCZp-CmW5w_030_0021.jpg', '../dance_data/validation/quickstep/_YnwZjcA3X0_024_0259.jpg', '../dance_data/validation/swing/HXKqQWy3NMY_105_0126.jpg', '../dance_data/validation/quickstep/84oDmFB2uyk_020_0227.jpg', '../dance_data/validation/quickstep/_YnwZjcA3X0_024_0120.jpg', '../dance_data/validation/square/6lV-mH_BSGs_204_0035.jpg', '../dance_data/validation/waltz/AQ-izQC-S1Y_031_0190.jpg', '../dance_data/validation/square/Z9vffJJJfNA_027_0235.jpg', '../dance_data/validation/waltz/X9CqCEo6AAc_003_0256.jpg', '../dance_data/validation/ballet/nM-rm68GyRk_020_0095.jpg', '../dance_data/validation/latin/CU4fkMrgTLk_115_0236.jpg', '../dance_data/validation/flamenco/VOqaphuiQug_003_0300.jpg', '../dance_data/validation/ballet/hqOmSVMgoG0_428_0127.jpg', '../dance_data/validation/break/njw1rxDmUU0_025_0218.jpg', '../dance_data/validation/ballet/-5Yp-vToI2E_016_0036.jpg', '../dance_data/validation/swing/aS5DvL8p4I4_011_0015.jpg', '../dance_data/validation/square/fymBcoVn66M_020_0152.jpg', '../dance_data/validation/foxtrot/h4LfkNTCJjM_015_0046.jpg', '../dance_data/validation/waltz/qTuBDM63KbA_034_0206.jpg', '../dance_data/validation/break/njw1rxDmUU0_025_0050.jpg', '../dance_data/validation/waltz/oikcRADJbDc_036_0298.jpg', '../dance_data/validation/ballet/-5Yp-vToI2E_016_0003.jpg', '../dance_data/validation/break/6dbo5GtNnxU_144_0206.jpg', '../dance_data/validation/flamenco/ErZIG0AWPOw_041_0071.jpg', '../dance_data/validation/swing/aS5DvL8p4I4_011_0298.jpg', '../dance_data/validation/break/4SQVm2fyLH0_053_0244.jpg', '../dance_data/validation/quickstep/RMw_7Bs6d8A_038_0014.jpg', '../dance_data/validation/square/eYjNdnSX1vY_103_0121.jpg', '../dance_data/validation/waltz/AQ-izQC-S1Y_031_0022.jpg', '../dance_data/validation/quickstep/kxDdXUiRnYA_040_0085.jpg', '../dance_data/validation/ballet/u--jDp2Hieg_131_0031.jpg', '../dance_data/validation/break/S7tQIPMejL8_027_0107.jpg', '../dance_data/validation/break/wJ-f773sO-k_040_0060.jpg', '../dance_data/validation/quickstep/uQqUNZS7OK4_011_0229.jpg', '../dance_data/validation/ballet/HfBiMFgM5vU_049_0271.jpg', '../dance_data/validation/quickstep/X53uafpmFgM_043_0252.jpg', '../dance_data/validation/latin/r5X_IkhkquU_040_0039.jpg', '../dance_data/validation/square/fymBcoVn66M_020_0137.jpg', '../dance_data/validation/latin/wjG99Kbp1qQ_030_0194.jpg', '../dance_data/validation/flamenco/9YJWZDncb3c_124_0291.jpg', '../dance_data/validation/waltz/qTuBDM63KbA_034_0282.jpg', '../dance_data/validation/quickstep/mBt-cEgqPwc_221_0071.jpg', '../dance_data/validation/flamenco/fEqazI4eezQ_216_0107.jpg', '../dance_data/validation/latin/8qAGcFpaUlc_032_0148.jpg', '../dance_data/validation/foxtrot/h4LfkNTCJjM_015_0084.jpg', '../dance_data/validation/waltz/azWcLosbIVY_105_0194.jpg', '../dance_data/validation/flamenco/9YJWZDncb3c_124_0017.jpg', '../dance_data/validation/flamenco/gxzU5EqNL14_054_0283.jpg', '../dance_data/validation/ballet/vOxe8Xo15Kg_040_0153.jpg', '../dance_data/validation/latin/8qAGcFpaUlc_032_0179.jpg', '../dance_data/validation/waltz/AQ-izQC-S1Y_031_0122.jpg', '../dance_data/validation/tango/Ap9Xj0OBgJ8_043_0025.jpg', '../dance_data/validation/tango/bFFMIYUEDq4_039_0287.jpg', '../dance_data/validation/swing/HXKqQWy3NMY_105_0099.jpg', '../dance_data/validation/flamenco/ErZIG0AWPOw_041_0006.jpg', '../dance_data/validation/tango/AVaxGhMgHMk_018_0030.jpg', '../dance_data/validation/ballet/u--jDp2Hieg_131_0075.jpg', '../dance_data/validation/tango/b67jXhRbmh0_030_0111.jpg', '../dance_data/validation/latin/is9wrZ0ShZU_050_0278.jpg', '../dance_data/validation/waltz/AQmHJlhUhes_022_0212.jpg', '../dance_data/validation/latin/w2K4A-d1bC4_036_0182.jpg', '../dance_data/validation/flamenco/gxzU5EqNL14_054_0073.jpg', '../dance_data/validation/flamenco/Wy5nqf_WeWk_210_0236.jpg', '../dance_data/validation/break/_eqF-TA8TVQ_043_0271.jpg', '../dance_data/validation/tango/MZ1tmTqt1Kk_031_0199.jpg', '../dance_data/validation/foxtrot/fg3Wqr8DzSQ_024_0155.jpg', '../dance_data/validation/foxtrot/iOCZp-CmW5w_030_0194.jpg', '../dance_data/validation/foxtrot/HJyQjQy9n-U_350_0190.jpg', '../dance_data/validation/square/fymBcoVn66M_020_0174.jpg', '../dance_data/validation/quickstep/uQqUNZS7OK4_011_0234.jpg', '../dance_data/validation/ballet/W6Hxyg5pnSA_028_0036.jpg', '../dance_data/validation/swing/naH68eSm2H4_202_0015.jpg', '../dance_data/validation/tango/BCIqkUblDpM_026_0225.jpg', '../dance_data/validation/latin/r5X_IkhkquU_040_0150.jpg', '../dance_data/validation/square/eYjNdnSX1vY_103_0220.jpg', '../dance_data/validation/flamenco/W6_7IG7C3Vk_052_0096.jpg', '../dance_data/validation/swing/pNcsbZax_OI_015_0118.jpg', '../dance_data/validation/waltz/oikcRADJbDc_036_0130.jpg', '../dance_data/validation/swing/DoAIhu_3XR0_045_0252.jpg', '../dance_data/validation/break/_eqF-TA8TVQ_043_0154.jpg', '../dance_data/validation/flamenco/9Y2gICFe9mQ_007_0173.jpg', '../dance_data/validation/latin/wjG99Kbp1qQ_030_0293.jpg', '../dance_data/validation/foxtrot/q75QSh9M5OI_033_0220.jpg', '../dance_data/validation/latin/8qAGcFpaUlc_032_0147.jpg', '../dance_data/validation/swing/DoAIhu_3XR0_045_0030.jpg', '../dance_data/validation/flamenco/fgN2mMFqjxg_031_0149.jpg', '../dance_data/validation/square/eYjNdnSX1vY_103_0257.jpg', '../dance_data/validation/tango/BCIqkUblDpM_026_0115.jpg', '../dance_data/validation/break/njw1rxDmUU0_025_0254.jpg', '../dance_data/validation/square/-v31uYwWz7c_050_0272.jpg', '../dance_data/validation/foxtrot/Md0gzA2n_Mc_006_0144.jpg', '../dance_data/validation/flamenco/9YJWZDncb3c_124_0236.jpg', '../dance_data/validation/break/4SQVm2fyLH0_053_0116.jpg', '../dance_data/validation/latin/5HbFic9gDgg_033_0054.jpg', '../dance_data/validation/ballet/HfBiMFgM5vU_049_0231.jpg', '../dance_data/validation/foxtrot/keelWKQGWIs_030_0168.jpg', '../dance_data/validation/quickstep/QDiPQ7uBYY4_734_0137.jpg', '../dance_data/validation/quickstep/X53uafpmFgM_043_0059.jpg', '../dance_data/validation/latin/heJXZdT-ne0_358_0204.jpg', '../dance_data/validation/swing/V21PEmv_8yY_029_0113.jpg', '../dance_data/validation/square/BeyaJ1GCcaA_205_0090.jpg', '../dance_data/validation/swing/DoAIhu_3XR0_045_0153.jpg', '../dance_data/validation/latin/is9wrZ0ShZU_050_0109.jpg']
-[[ 0.05674521 -2.3919744  -0.7249106  ...  0.4175162  -1.5010293
-   2.222418  ]
- [-0.4933579  -0.647826    0.95666045 ...  2.3480055  -1.1090081
-   0.5402228 ]
- [-0.7323035  -0.32880223  0.55402833 ...  0.25407556 -0.772821
-   0.76051825]
- ...
- [-0.00994873 -1.8499302  -0.99676913 ...  0.37807107  3.171913
-  -2.7092366 ]
- [-0.56957436  0.9612029  -0.4379792  ...  2.0636327   0.64822245
-  -1.3597249 ]
- [ 0.441502    1.6393758   0.14193293 ... -1.9766024  -1.5793478
-  -1.3018093 ]]Random scores for a set of images['../dance_data/validation/flamenco/fgN2mMFqjxg_031_0080.jpg', '../dance_data/validation/ballet/-5Yp-vToI2E_016_0131.jpg', '../dance_data/validation/break/XnapRl2hHTo_050_0245.jpg', '../dance_data/validation/quickstep/kxDdXUiRnYA_040_0183.jpg', '../dance_data/validation/swing/u_z2Tsoa2iE_039_0141.jpg', '../dance_data/validation/ballet/hqOmSVMgoG0_428_0073.jpg', '../dance_data/validation/break/6dbo5GtNnxU_144_0135.jpg', '../dance_data/validation/flamenco/Wy5nqf_WeWk_210_0178.jpg', '../dance_data/validation/break/6dbo5GtNnxU_144_0188.jpg', '../dance_data/validation/quickstep/_YnwZjcA3X0_024_0192.jpg', '../dance_data/validation/ballet/nM-rm68GyRk_020_0191.jpg', '../dance_data/validation/waltz/AQmHJlhUhes_022_0149.jpg', '../dance_data/validation/latin/5HbFic9gDgg_033_0290.jpg', '../dance_data/validation/foxtrot/kQtAMqHke30_043_0258.jpg', '../dance_data/validation/tango/v2Wx2pk2blU_013_0037.jpg', '../dance_data/validation/latin/CU4fkMrgTLk_115_0174.jpg', '../dance_data/validation/break/_eqF-TA8TVQ_043_0107.jpg', '../dance_data/validation/waltz/azWcLosbIVY_105_0039.jpg', '../dance_data/validation/ballet/nM-rm68GyRk_020_0043.jpg', '../dance_data/validation/quickstep/mBt-cEgqPwc_221_0067.jpg', '../dance_data/validation/tango/MZ1tmTqt1Kk_031_0248.jpg', '../dance_data/validation/foxtrot/fg3Wqr8DzSQ_024_0199.jpg', '../dance_data/validation/ballet/u--jDp2Hieg_131_0036.jpg', '../dance_data/validation/waltz/xXWPf8wnhdo_033_0214.jpg', '../dance_data/validation/flamenco/fgN2mMFqjxg_031_0076.jpg', '../dance_data/validation/tango/bFFMIYUEDq4_039_0254.jpg', '../dance_data/validation/latin/sW9TOGfrs8c_202_0232.jpg', '../dance_data/validation/foxtrot/h4LfkNTCJjM_015_0116.jpg', '../dance_data/validation/latin/is9wrZ0ShZU_050_0105.jpg', '../dance_data/validation/ballet/nM-rm68GyRk_020_0066.jpg', '../dance_data/validation/ballet/vOxe8Xo15Kg_040_0030.jpg', '../dance_data/validation/ballet/u--jDp2Hieg_131_0164.jpg', '../dance_data/validation/swing/SxMxOa22PlM_050_0039.jpg', '../dance_data/validation/waltz/AQ-izQC-S1Y_031_0293.jpg', '../dance_data/validation/latin/wjG99Kbp1qQ_030_0232.jpg', '../dance_data/validation/square/FhcTmd5AiuM_131_0083.jpg', '../dance_data/validation/tango/Ap9Xj0OBgJ8_043_0075.jpg', '../dance_data/validation/break/RJnOuAf0cEY_025_0226.jpg', '../dance_data/validation/swing/ynp0pfUMRtE_032_0198.jpg', '../dance_data/validation/quickstep/QDiPQ7uBYY4_734_0137.jpg', '../dance_data/validation/flamenco/W6_7IG7C3Vk_052_0235.jpg', '../dance_data/validation/tango/v2Wx2pk2blU_013_0064.jpg', '../dance_data/validation/swing/naH68eSm2H4_202_0092.jpg', '../dance_data/validation/tango/AVaxGhMgHMk_018_0059.jpg', '../dance_data/validation/foxtrot/kQtAMqHke30_043_0004.jpg', '../dance_data/validation/break/XnapRl2hHTo_050_0228.jpg', '../dance_data/validation/swing/pNcsbZax_OI_015_0063.jpg', '../dance_data/validation/tango/MZ1tmTqt1Kk_031_0037.jpg', '../dance_data/validation/foxtrot/h4LfkNTCJjM_015_0005.jpg', '../dance_data/validation/break/tbFKZGzX9Kg_103_0048.jpg', '../dance_data/validation/tango/AVaxGhMgHMk_018_0034.jpg', '../dance_data/validation/swing/aS5DvL8p4I4_011_0097.jpg', '../dance_data/validation/tango/BvTGEgR2_88_025_0027.jpg', '../dance_data/validation/tango/b67jXhRbmh0_030_0087.jpg', '../dance_data/validation/flamenco/fEqazI4eezQ_216_0045.jpg', '../dance_data/validation/ballet/2SMmL6kIx-w_053_0112.jpg', '../dance_data/validation/latin/is9wrZ0ShZU_050_0221.jpg', '../dance_data/validation/latin/5HbFic9gDgg_033_0096.jpg', '../dance_data/validation/foxtrot/8uMn7XUF36s_025_0250.jpg', '../dance_data/validation/foxtrot/iOCZp-CmW5w_030_0005.jpg', '../dance_data/validation/latin/wjG99Kbp1qQ_030_0149.jpg', '../dance_data/validation/quickstep/Rqs-3N_fl5w_022_0156.jpg', '../dance_data/validation/latin/sW9TOGfrs8c_202_0228.jpg', '../dance_data/validation/break/6dbo5GtNnxU_144_0269.jpg', '../dance_data/validation/latin/is9wrZ0ShZU_050_0207.jpg', '../dance_data/validation/ballet/HfBiMFgM5vU_049_0058.jpg', '../dance_data/validation/latin/is9wrZ0ShZU_050_0172.jpg', '../dance_data/validation/flamenco/fgN2mMFqjxg_031_0012.jpg', '../dance_data/validation/ballet/nM-rm68GyRk_020_0283.jpg', '../dance_data/validation/latin/is9wrZ0ShZU_050_0246.jpg', '../dance_data/validation/square/Z9vffJJJfNA_027_0277.jpg', '../dance_data/validation/ballet/vOxe8Xo15Kg_040_0225.jpg', '../dance_data/validation/square/kSNzS9zObCw_002_0159.jpg', '../dance_data/validation/break/tbFKZGzX9Kg_103_0187.jpg', '../dance_data/validation/latin/8qAGcFpaUlc_032_0027.jpg', '../dance_data/validation/quickstep/RMw_7Bs6d8A_038_0024.jpg', '../dance_data/validation/break/6dbo5GtNnxU_144_0300.jpg', '../dance_data/validation/ballet/2SMmL6kIx-w_053_0178.jpg', '../dance_data/validation/latin/w2K4A-d1bC4_036_0083.jpg', '../dance_data/validation/foxtrot/kQtAMqHke30_043_0021.jpg', '../dance_data/validation/square/6lV-mH_BSGs_204_0075.jpg', '../dance_data/validation/foxtrot/iOCZp-CmW5w_030_0230.jpg', '../dance_data/validation/quickstep/84oDmFB2uyk_020_0187.jpg', '../dance_data/validation/latin/wjG99Kbp1qQ_030_0297.jpg', '../dance_data/validation/quickstep/mBt-cEgqPwc_221_0095.jpg', '../dance_data/validation/waltz/xXWPf8wnhdo_033_0061.jpg', '../dance_data/validation/tango/bFFMIYUEDq4_039_0195.jpg', '../dance_data/validation/quickstep/RMw_7Bs6d8A_038_0030.jpg', '../dance_data/validation/waltz/q-kL4TPjOcQ_015_0063.jpg', '../dance_data/validation/flamenco/Wy5nqf_WeWk_210_0025.jpg', '../dance_data/validation/quickstep/RMw_7Bs6d8A_038_0213.jpg', '../dance_data/validation/waltz/AQmHJlhUhes_022_0061.jpg', '../dance_data/validation/quickstep/84oDmFB2uyk_020_0028.jpg', '../dance_data/validation/foxtrot/q75QSh9M5OI_033_0102.jpg', '../dance_data/validation/break/tbFKZGzX9Kg_103_0114.jpg', '../dance_data/validation/foxtrot/kQtAMqHke30_043_0139.jpg', '../dance_data/validation/tango/AQ7HEnCtnJg_012_0052.jpg', '../dance_data/validation/ballet/hqOmSVMgoG0_428_0101.jpg', '../dance_data/validation/waltz/AQ-izQC-S1Y_031_0278.jpg', '../dance_data/validation/swing/SxMxOa22PlM_050_0119.jpg', '../dance_data/validation/waltz/nuWL11X_wjk_023_0047.jpg', '../dance_data/validation/foxtrot/t4xg5_yabdU_015_0013.jpg', '../dance_data/validation/tango/BCIqkUblDpM_026_0099.jpg', '../dance_data/validation/quickstep/RMw_7Bs6d8A_038_0261.jpg', '../dance_data/validation/latin/8qAGcFpaUlc_032_0242.jpg', '../dance_data/validation/ballet/2SMmL6kIx-w_053_0114.jpg', '../dance_data/validation/foxtrot/HJyQjQy9n-U_350_0115.jpg', '../dance_data/validation/quickstep/kxDdXUiRnYA_040_0015.jpg', '../dance_data/validation/swing/naH68eSm2H4_202_0067.jpg', '../dance_data/validation/foxtrot/h4LfkNTCJjM_015_0297.jpg', '../dance_data/validation/square/6lV-mH_BSGs_204_0132.jpg', '../dance_data/validation/ballet/W6Hxyg5pnSA_028_0138.jpg', '../dance_data/validation/square/6lV-mH_BSGs_204_0167.jpg', '../dance_data/validation/tango/BCIqkUblDpM_026_0197.jpg', '../dance_data/validation/waltz/AQmHJlhUhes_022_0116.jpg', '../dance_data/validation/tango/Ap9Xj0OBgJ8_043_0238.jpg', '../dance_data/validation/square/kSNzS9zObCw_002_0096.jpg', '../dance_data/validation/ballet/2SMmL6kIx-w_053_0098.jpg', '../dance_data/validation/waltz/azWcLosbIVY_105_0098.jpg', '../dance_data/validation/ballet/HfBiMFgM5vU_049_0003.jpg', '../dance_data/validation/quickstep/RMw_7Bs6d8A_038_0249.jpg', '../dance_data/validation/latin/sW9TOGfrs8c_202_0154.jpg', '../dance_data/validation/quickstep/Rqs-3N_fl5w_022_0072.jpg', '../dance_data/validation/square/AGn_T7u6U2Q_039_0048.jpg', '../dance_data/validation/break/S7tQIPMejL8_027_0095.jpg', '../dance_data/validation/flamenco/9Y2gICFe9mQ_007_0144.jpg', '../dance_data/validation/flamenco/W6_7IG7C3Vk_052_0056.jpg', '../dance_data/validation/break/njw1rxDmUU0_025_0192.jpg']
-[[-2.0440843   0.11888249 -0.7353584  ...  2.352674   -5.289868
-   4.7807    ]
- [-0.21417257 -0.5046145   1.4868193  ... -1.0205736  -1.6094736
-  -0.20379525]
- [-0.48641247  1.3506947   4.282212   ...  3.6298423  -3.6528723
-  -1.6162236 ]
- ...
- [ 2.599834    0.7277425   1.6037389  ... -1.0178745  -4.1586065
-   0.49554533]
- [-4.7044873   5.8528085   3.21601    ... -0.78942305 -0.82443595
-   4.1963077 ]
- [-0.75507176 -0.6290042   0.3729585  ... -3.3027728  -0.09104227
-  -0.72419816]]Random scores for a set of images['../dance_data/validation/latin/r5X_IkhkquU_040_0235.jpg', '../dance_data/validation/square/-v31uYwWz7c_050_0269.jpg', '../dance_data/validation/quickstep/RMw_7Bs6d8A_038_0182.jpg', '../dance_data/validation/break/RJnOuAf0cEY_025_0139.jpg', '../dance_data/validation/flamenco/9Y2gICFe9mQ_007_0155.jpg', '../dance_data/validation/waltz/AQ-izQC-S1Y_031_0112.jpg', '../dance_data/validation/foxtrot/kQtAMqHke30_043_0036.jpg', '../dance_data/validation/flamenco/fgN2mMFqjxg_031_0059.jpg', '../dance_data/validation/break/_eqF-TA8TVQ_043_0255.jpg', '../dance_data/validation/flamenco/9Y2gICFe9mQ_007_0236.jpg', '../dance_data/validation/quickstep/QDiPQ7uBYY4_734_0052.jpg', '../dance_data/validation/foxtrot/kQtAMqHke30_043_0293.jpg', '../dance_data/validation/swing/V21PEmv_8yY_029_0154.jpg', '../dance_data/validation/tango/bFFMIYUEDq4_039_0144.jpg', '../dance_data/validation/ballet/W6Hxyg5pnSA_028_0127.jpg', '../dance_data/validation/tango/AVaxGhMgHMk_018_0147.jpg', '../dance_data/validation/swing/SxMxOa22PlM_050_0250.jpg', '../dance_data/validation/quickstep/_YnwZjcA3X0_024_0279.jpg', '../dance_data/validation/flamenco/9U5TNavFpF4_004_0160.jpg', '../dance_data/validation/latin/r5X_IkhkquU_040_0115.jpg', '../dance_data/validation/square/kSNzS9zObCw_002_0126.jpg', '../dance_data/validation/break/wJ-f773sO-k_040_0253.jpg', '../dance_data/validation/foxtrot/Md0gzA2n_Mc_006_0025.jpg', '../dance_data/validation/waltz/AQmHJlhUhes_022_0223.jpg', '../dance_data/validation/square/FhcTmd5AiuM_131_0298.jpg', '../dance_data/validation/tango/Ap9Xj0OBgJ8_043_0209.jpg', '../dance_data/validation/quickstep/kxDdXUiRnYA_040_0261.jpg', '../dance_data/validation/quickstep/84oDmFB2uyk_020_0163.jpg', '../dance_data/validation/swing/wzf8DqjdyA0_348_0288.jpg', '../dance_data/validation/square/FhcTmd5AiuM_131_0142.jpg', '../dance_data/validation/square/fymBcoVn66M_020_0186.jpg', '../dance_data/validation/flamenco/W6_7IG7C3Vk_052_0230.jpg', '../dance_data/validation/quickstep/_YnwZjcA3X0_024_0231.jpg', '../dance_data/validation/latin/sW9TOGfrs8c_202_0235.jpg', '../dance_data/validation/tango/AVaxGhMgHMk_018_0146.jpg', '../dance_data/validation/latin/aKOChOei2JQ_050_0281.jpg', '../dance_data/validation/waltz/oikcRADJbDc_036_0294.jpg', '../dance_data/validation/square/FhcTmd5AiuM_131_0183.jpg', '../dance_data/validation/latin/wjG99Kbp1qQ_030_0156.jpg', '../dance_data/validation/break/4SQVm2fyLH0_053_0252.jpg', '../dance_data/validation/flamenco/ErZIG0AWPOw_041_0238.jpg', '../dance_data/validation/flamenco/fgN2mMFqjxg_031_0064.jpg', '../dance_data/validation/quickstep/kxDdXUiRnYA_040_0124.jpg', '../dance_data/validation/square/CDjIj4vgmvc_008_0205.jpg', '../dance_data/validation/waltz/AQ-izQC-S1Y_031_0271.jpg', '../dance_data/validation/waltz/oikcRADJbDc_036_0108.jpg', '../dance_data/validation/ballet/vOxe8Xo15Kg_040_0013.jpg', '../dance_data/validation/swing/aS5DvL8p4I4_011_0091.jpg', '../dance_data/validation/quickstep/kxDdXUiRnYA_040_0244.jpg', '../dance_data/validation/latin/heJXZdT-ne0_358_0290.jpg', '../dance_data/validation/waltz/xXWPf8wnhdo_033_0241.jpg', '../dance_data/validation/break/_eqF-TA8TVQ_043_0190.jpg', '../dance_data/validation/swing/naH68eSm2H4_202_0261.jpg', '../dance_data/validation/foxtrot/8uMn7XUF36s_025_0103.jpg', '../dance_data/validation/square/eYjNdnSX1vY_103_0293.jpg', '../dance_data/validation/break/tbFKZGzX9Kg_103_0270.jpg', '../dance_data/validation/square/CDjIj4vgmvc_008_0155.jpg', '../dance_data/validation/flamenco/9Y2gICFe9mQ_007_0166.jpg', '../dance_data/validation/ballet/HfBiMFgM5vU_049_0080.jpg', '../dance_data/validation/ballet/vOxe8Xo15Kg_040_0248.jpg', '../dance_data/validation/square/6lV-mH_BSGs_204_0003.jpg', '../dance_data/validation/tango/MZ1tmTqt1Kk_031_0128.jpg', '../dance_data/validation/waltz/qTuBDM63KbA_034_0214.jpg', '../dance_data/validation/waltz/AQmHJlhUhes_022_0090.jpg', '../dance_data/validation/waltz/xXWPf8wnhdo_033_0088.jpg', '../dance_data/validation/swing/wzf8DqjdyA0_348_0166.jpg', '../dance_data/validation/break/XnapRl2hHTo_050_0126.jpg', '../dance_data/validation/foxtrot/h4LfkNTCJjM_015_0281.jpg', '../dance_data/validation/quickstep/mBt-cEgqPwc_221_0276.jpg', '../dance_data/validation/foxtrot/h4LfkNTCJjM_015_0228.jpg', '../dance_data/validation/break/6dbo5GtNnxU_144_0173.jpg', '../dance_data/validation/tango/bFFMIYUEDq4_039_0108.jpg', '../dance_data/validation/tango/MZ1tmTqt1Kk_031_0017.jpg', '../dance_data/validation/latin/aKOChOei2JQ_050_0218.jpg', '../dance_data/validation/swing/SxMxOa22PlM_050_0271.jpg', '../dance_data/validation/latin/is9wrZ0ShZU_050_0112.jpg', '../dance_data/validation/break/_eqF-TA8TVQ_043_0186.jpg', '../dance_data/validation/flamenco/W6_7IG7C3Vk_052_0211.jpg', '../dance_data/validation/foxtrot/keelWKQGWIs_030_0151.jpg', '../dance_data/validation/waltz/oikcRADJbDc_036_0124.jpg', '../dance_data/validation/break/njw1rxDmUU0_025_0163.jpg', '../dance_data/validation/flamenco/9U5TNavFpF4_004_0270.jpg', '../dance_data/validation/foxtrot/keelWKQGWIs_030_0121.jpg', '../dance_data/validation/quickstep/GNOwDih_nsk_011_0058.jpg', '../dance_data/validation/ballet/W6Hxyg5pnSA_028_0173.jpg', '../dance_data/validation/swing/SxMxOa22PlM_050_0276.jpg', '../dance_data/validation/latin/CU4fkMrgTLk_115_0214.jpg', '../dance_data/validation/square/CDjIj4vgmvc_008_0300.jpg', '../dance_data/validation/break/_eqF-TA8TVQ_043_0298.jpg', '../dance_data/validation/quickstep/uQqUNZS7OK4_011_0211.jpg', '../dance_data/validation/quickstep/_YnwZjcA3X0_024_0246.jpg', '../dance_data/validation/quickstep/QDiPQ7uBYY4_734_0141.jpg', '../dance_data/validation/swing/pNcsbZax_OI_015_0280.jpg', '../dance_data/validation/latin/CU4fkMrgTLk_115_0216.jpg', '../dance_data/validation/square/CDjIj4vgmvc_008_0223.jpg', '../dance_data/validation/waltz/AQmHJlhUhes_022_0031.jpg', '../dance_data/validation/break/XnapRl2hHTo_050_0077.jpg', '../dance_data/validation/latin/aKOChOei2JQ_050_0163.jpg', '../dance_data/validation/latin/aKOChOei2JQ_050_0229.jpg', '../dance_data/validation/waltz/AQmHJlhUhes_022_0015.jpg', '../dance_data/validation/ballet/W6Hxyg5pnSA_028_0134.jpg', '../dance_data/validation/square/-v31uYwWz7c_050_0125.jpg', '../dance_data/validation/ballet/mQMMXBv7hYo_017_0038.jpg', '../dance_data/validation/quickstep/QDiPQ7uBYY4_734_0282.jpg', '../dance_data/validation/tango/AVaxGhMgHMk_018_0237.jpg', '../dance_data/validation/ballet/zPQp-Re-PlA_235_0264.jpg', '../dance_data/validation/swing/naH68eSm2H4_202_0281.jpg', '../dance_data/validation/latin/w2K4A-d1bC4_036_0042.jpg', '../dance_data/validation/flamenco/ErZIG0AWPOw_041_0025.jpg', '../dance_data/validation/foxtrot/HJyQjQy9n-U_350_0171.jpg', '../dance_data/validation/tango/NVtD7I_iKL8_020_0244.jpg', '../dance_data/validation/square/-v31uYwWz7c_050_0139.jpg', '../dance_data/validation/latin/aKOChOei2JQ_050_0160.jpg', '../dance_data/validation/tango/BvTGEgR2_88_025_0232.jpg', '../dance_data/validation/latin/is9wrZ0ShZU_050_0282.jpg', '../dance_data/validation/ballet/-5Yp-vToI2E_016_0290.jpg', '../dance_data/validation/waltz/azWcLosbIVY_105_0041.jpg', '../dance_data/validation/quickstep/84oDmFB2uyk_020_0200.jpg', '../dance_data/validation/ballet/-5Yp-vToI2E_016_0127.jpg', '../dance_data/validation/break/XnapRl2hHTo_050_0221.jpg', '../dance_data/validation/flamenco/fEqazI4eezQ_216_0122.jpg', '../dance_data/validation/swing/wzf8DqjdyA0_348_0085.jpg', '../dance_data/validation/foxtrot/q75QSh9M5OI_033_0193.jpg', '../dance_data/validation/quickstep/mBt-cEgqPwc_221_0075.jpg', '../dance_data/validation/square/fymBcoVn66M_020_0161.jpg', '../dance_data/validation/swing/SxMxOa22PlM_050_0249.jpg', '../dance_data/validation/square/BeyaJ1GCcaA_205_0207.jpg', '../dance_data/validation/quickstep/_YnwZjcA3X0_024_0273.jpg']
-[[ 0.92246747  0.09536637 -1.088528   ... -2.5609808   0.10288963
-   1.3666412 ]
- [ 0.9393589  -2.1401238   0.33907846 ...  0.5903442  -0.9704551
-   0.05761705]
- [-0.98580915  0.21086425  0.72065455 ...  1.2846524  -1.9940174
-   2.9369667 ]
- ...
- [ 1.8761511  -0.91089755  1.9939404  ...  1.2396837  -0.7783046
-   0.4400346 ]
- [ 1.0805552  -0.74571955 -1.6582564  ... -1.3251765  -1.4327705
-   0.37818748]
- [ 0.6230991  -1.4964178   0.22796528 ... -1.637615   -1.0337368
-   1.4911722 ]]Random scores for a set of images['../dance_data/validation/square/6lV-mH_BSGs_204_0299.jpg', '../dance_data/validation/latin/5HbFic9gDgg_033_0175.jpg', '../dance_data/validation/break/S7tQIPMejL8_027_0280.jpg', '../dance_data/validation/waltz/q-kL4TPjOcQ_015_0125.jpg', '../dance_data/validation/ballet/nM-rm68GyRk_020_0242.jpg', '../dance_data/validation/swing/SxMxOa22PlM_050_0123.jpg', '../dance_data/validation/foxtrot/q75QSh9M5OI_033_0180.jpg', '../dance_data/validation/tango/AQ7HEnCtnJg_012_0030.jpg', '../dance_data/validation/swing/aS5DvL8p4I4_011_0235.jpg', '../dance_data/validation/latin/aKOChOei2JQ_050_0117.jpg', '../dance_data/validation/break/P17nzRf6HiE_020_0294.jpg', '../dance_data/validation/swing/pNcsbZax_OI_015_0007.jpg', '../dance_data/validation/quickstep/kxDdXUiRnYA_040_0264.jpg', '../dance_data/validation/tango/NVtD7I_iKL8_020_0222.jpg', '../dance_data/validation/square/BeyaJ1GCcaA_205_0158.jpg', '../dance_data/validation/tango/BvTGEgR2_88_025_0206.jpg', '../dance_data/validation/tango/v2Wx2pk2blU_013_0272.jpg', '../dance_data/validation/tango/bFFMIYUEDq4_039_0179.jpg', '../dance_data/validation/ballet/W6Hxyg5pnSA_028_0288.jpg', '../dance_data/validation/break/_eqF-TA8TVQ_043_0138.jpg', '../dance_data/validation/latin/aKOChOei2JQ_050_0134.jpg', '../dance_data/validation/tango/AQ7HEnCtnJg_012_0180.jpg', '../dance_data/validation/waltz/oikcRADJbDc_036_0067.jpg', '../dance_data/validation/break/P17nzRf6HiE_020_0264.jpg', '../dance_data/validation/foxtrot/iOCZp-CmW5w_030_0284.jpg', '../dance_data/validation/ballet/zPQp-Re-PlA_235_0070.jpg', '../dance_data/validation/latin/r5X_IkhkquU_040_0175.jpg', '../dance_data/validation/latin/sW9TOGfrs8c_202_0167.jpg', '../dance_data/validation/swing/wzf8DqjdyA0_348_0110.jpg', '../dance_data/validation/quickstep/uQqUNZS7OK4_011_0090.jpg', '../dance_data/validation/quickstep/GNOwDih_nsk_011_0189.jpg', '../dance_data/validation/ballet/u--jDp2Hieg_131_0061.jpg', '../dance_data/validation/swing/naH68eSm2H4_202_0026.jpg', '../dance_data/validation/latin/CU4fkMrgTLk_115_0044.jpg', '../dance_data/validation/break/_eqF-TA8TVQ_043_0068.jpg', '../dance_data/validation/break/njw1rxDmUU0_025_0029.jpg', '../dance_data/validation/tango/BCIqkUblDpM_026_0272.jpg', '../dance_data/validation/swing/u_z2Tsoa2iE_039_0289.jpg', '../dance_data/validation/square/BeyaJ1GCcaA_205_0074.jpg', '../dance_data/validation/flamenco/VOqaphuiQug_003_0229.jpg', '../dance_data/validation/quickstep/uQqUNZS7OK4_011_0023.jpg', '../dance_data/validation/swing/ynp0pfUMRtE_032_0082.jpg', '../dance_data/validation/break/RJnOuAf0cEY_025_0140.jpg', '../dance_data/validation/ballet/zPQp-Re-PlA_235_0230.jpg', '../dance_data/validation/foxtrot/h4LfkNTCJjM_015_0068.jpg', '../dance_data/validation/tango/bFFMIYUEDq4_039_0103.jpg', '../dance_data/validation/swing/aS5DvL8p4I4_011_0251.jpg', '../dance_data/validation/ballet/mQMMXBv7hYo_017_0029.jpg', '../dance_data/validation/foxtrot/Md0gzA2n_Mc_006_0054.jpg', '../dance_data/validation/break/6dbo5GtNnxU_144_0181.jpg', '../dance_data/validation/latin/r5X_IkhkquU_040_0030.jpg', '../dance_data/validation/ballet/mQMMXBv7hYo_017_0215.jpg', '../dance_data/validation/square/kSNzS9zObCw_002_0300.jpg', '../dance_data/validation/square/AGn_T7u6U2Q_039_0181.jpg', '../dance_data/validation/latin/wjG99Kbp1qQ_030_0232.jpg', '../dance_data/validation/break/6dbo5GtNnxU_144_0232.jpg', '../dance_data/validation/latin/sW9TOGfrs8c_202_0102.jpg', '../dance_data/validation/foxtrot/t4xg5_yabdU_015_0017.jpg', '../dance_data/validation/square/-v31uYwWz7c_050_0101.jpg', '../dance_data/validation/tango/AQ7HEnCtnJg_012_0079.jpg', '../dance_data/validation/quickstep/Rqs-3N_fl5w_022_0174.jpg', '../dance_data/validation/quickstep/mBt-cEgqPwc_221_0192.jpg', '../dance_data/validation/swing/V21PEmv_8yY_029_0018.jpg', '../dance_data/validation/foxtrot/fg3Wqr8DzSQ_024_0253.jpg', '../dance_data/validation/waltz/AQ-izQC-S1Y_031_0185.jpg', '../dance_data/validation/tango/BCIqkUblDpM_026_0297.jpg', '../dance_data/validation/tango/BCIqkUblDpM_026_0033.jpg', '../dance_data/validation/tango/Ap9Xj0OBgJ8_043_0228.jpg', '../dance_data/validation/flamenco/9Y2gICFe9mQ_007_0184.jpg', '../dance_data/validation/break/6dbo5GtNnxU_144_0051.jpg', '../dance_data/validation/swing/wzf8DqjdyA0_348_0209.jpg', '../dance_data/validation/square/BeyaJ1GCcaA_205_0259.jpg', '../dance_data/validation/latin/5HbFic9gDgg_033_0202.jpg', '../dance_data/validation/quickstep/X53uafpmFgM_043_0294.jpg', '../dance_data/validation/foxtrot/fg3Wqr8DzSQ_024_0029.jpg', '../dance_data/validation/flamenco/VOqaphuiQug_003_0072.jpg', '../dance_data/validation/foxtrot/HJyQjQy9n-U_350_0033.jpg', '../dance_data/validation/quickstep/X53uafpmFgM_043_0125.jpg', '../dance_data/validation/latin/heJXZdT-ne0_358_0293.jpg', '../dance_data/validation/ballet/-5Yp-vToI2E_016_0078.jpg', '../dance_data/validation/foxtrot/8uMn7XUF36s_025_0230.jpg', '../dance_data/validation/ballet/nM-rm68GyRk_020_0245.jpg', '../dance_data/validation/quickstep/84oDmFB2uyk_020_0152.jpg', '../dance_data/validation/waltz/azWcLosbIVY_105_0135.jpg', '../dance_data/validation/flamenco/gxzU5EqNL14_054_0022.jpg', '../dance_data/validation/tango/NVtD7I_iKL8_020_0053.jpg', '../dance_data/validation/tango/Ap9Xj0OBgJ8_043_0055.jpg', '../dance_data/validation/foxtrot/t4xg5_yabdU_015_0092.jpg', '../dance_data/validation/break/XnapRl2hHTo_050_0258.jpg', '../dance_data/validation/ballet/mQMMXBv7hYo_017_0149.jpg', '../dance_data/validation/square/6lV-mH_BSGs_204_0233.jpg', '../dance_data/validation/tango/BCIqkUblDpM_026_0296.jpg', '../dance_data/validation/tango/Ap9Xj0OBgJ8_043_0019.jpg', '../dance_data/validation/square/AGn_T7u6U2Q_039_0082.jpg', '../dance_data/validation/tango/MZ1tmTqt1Kk_031_0099.jpg', '../dance_data/validation/foxtrot/Md0gzA2n_Mc_006_0090.jpg', '../dance_data/validation/tango/NVtD7I_iKL8_020_0096.jpg', '../dance_data/validation/swing/u_z2Tsoa2iE_039_0193.jpg', '../dance_data/validation/waltz/AQ-izQC-S1Y_031_0179.jpg', '../dance_data/validation/ballet/-5Yp-vToI2E_016_0169.jpg', '../dance_data/validation/flamenco/9YJWZDncb3c_124_0161.jpg', '../dance_data/validation/waltz/AQ-izQC-S1Y_031_0065.jpg', '../dance_data/validation/foxtrot/iOCZp-CmW5w_030_0109.jpg', '../dance_data/validation/ballet/mQMMXBv7hYo_017_0284.jpg', '../dance_data/validation/flamenco/Wy5nqf_WeWk_210_0181.jpg', '../dance_data/validation/ballet/HfBiMFgM5vU_049_0263.jpg', '../dance_data/validation/quickstep/mBt-cEgqPwc_221_0045.jpg', '../dance_data/validation/square/-v31uYwWz7c_050_0003.jpg', '../dance_data/validation/quickstep/84oDmFB2uyk_020_0013.jpg', '../dance_data/validation/latin/sW9TOGfrs8c_202_0019.jpg', '../dance_data/validation/ballet/nM-rm68GyRk_020_0151.jpg', '../dance_data/validation/waltz/1V02jRprvoI_015_0218.jpg', '../dance_data/validation/swing/aS5DvL8p4I4_011_0031.jpg', '../dance_data/validation/break/XnapRl2hHTo_050_0010.jpg', '../dance_data/validation/quickstep/QDiPQ7uBYY4_734_0022.jpg', '../dance_data/validation/waltz/AQ-izQC-S1Y_031_0265.jpg', '../dance_data/validation/flamenco/gxzU5EqNL14_054_0132.jpg', '../dance_data/validation/break/4SQVm2fyLH0_053_0255.jpg', '../dance_data/validation/square/BeyaJ1GCcaA_205_0133.jpg', '../dance_data/validation/swing/u_z2Tsoa2iE_039_0095.jpg', '../dance_data/validation/tango/NVtD7I_iKL8_020_0093.jpg', '../dance_data/validation/quickstep/X53uafpmFgM_043_0279.jpg', '../dance_data/validation/flamenco/fEqazI4eezQ_216_0231.jpg', '../dance_data/validation/foxtrot/fg3Wqr8DzSQ_024_0251.jpg', '../dance_data/validation/tango/v2Wx2pk2blU_013_0073.jpg', '../dance_data/validation/tango/b67jXhRbmh0_030_0043.jpg', '../dance_data/validation/foxtrot/h4LfkNTCJjM_015_0259.jpg', '../dance_data/validation/flamenco/ErZIG0AWPOw_041_0219.jpg']
-[[-0.4947682  -0.19627936  2.8520448  ... -1.3341918   0.427412
-  -1.0764035 ]
- [ 0.22602284  2.1664433   0.96470106 ... -2.255378   -2.5661824
-  -1.0091716 ]
- [ 1.7794539  -2.0589201  -0.5456955  ...  2.010622    0.93282926
-   1.7798212 ]
- ...
- [ 0.28524086 -1.0971789   2.8533268  ... -1.9380667  -0.8498752
-  -1.6354166 ]
- [-0.45010617 -1.3876518   2.4507613  ...  0.7921067  -1.8016447
-  -0.38861346]
- [-0.38195485 -0.14617652  1.8408371  ... -1.4725598  -0.7791216
-  -0.5118717 ]]
+Random scores for a set of images['../dance_data/validation/ballet/W6Hxyg5pnSA_028_0118.jpg', '../dance_data/validation/waltz/oikcRADJbDc_036_0124.jpg', '../dance_data/validation/quickstep/RMw_7Bs6d8A_038_0013.jpg', '../dance_data/validation/swing/SxMxOa22PlM_050_0003.jpg', '../dance_data/validation/latin/sW9TOGfrs8c_202_0062.jpg', '../dance_data/validation/quickstep/_YnwZjcA3X0_024_0293.jpg', '../dance_data/validation/ballet/nM-rm68GyRk_020_0126.jpg', '../dance_data/validation/foxtrot/q75QSh9M5OI_033_0113.jpg', '../dance_data/validation/quickstep/kxDdXUiRnYA_040_0267.jpg', '../dance_data/validation/ballet/hqOmSVMgoG0_428_0143.jpg', '../dance_data/validation/tango/AVaxGhMgHMk_018_0250.jpg', '../dance_data/validation/waltz/AQ-izQC-S1Y_031_0226.jpg', '../dance_data/validation/latin/CU4fkMrgTLk_115_0026.jpg', '../dance_data/validation/foxtrot/h4LfkNTCJjM_015_0048.jpg', '../dance_data/validation/tango/MZ1tmTqt1Kk_031_0116.jpg', '../dance_data/validation/swing/aS5DvL8p4I4_011_0103.jpg', '../dance_data/validation/square/eYjNdnSX1vY_103_0103.jpg', '../dance_data/validation/latin/w2K4A-d1bC4_036_0200.jpg', '../dance_data/validation/flamenco/fgN2mMFqjxg_031_0192.jpg', '../dance_data/validation/tango/v2Wx2pk2blU_013_0117.jpg', '../dance_data/validation/waltz/X9CqCEo6AAc_003_0199.jpg', '../dance_data/validation/swing/HXKqQWy3NMY_105_0288.jpg', '../dance_data/validation/break/wJ-f773sO-k_040_0128.jpg', '../dance_data/validation/ballet/2SMmL6kIx-w_053_0040.jpg', '../dance_data/validation/waltz/AQmHJlhUhes_022_0085.jpg', '../dance_data/validation/waltz/1V02jRprvoI_015_0028.jpg', '../dance_data/validation/tango/NVtD7I_iKL8_020_0287.jpg', '../dance_data/validation/square/eYjNdnSX1vY_103_0102.jpg', '../dance_data/validation/break/P17nzRf6HiE_020_0079.jpg', '../dance_data/validation/waltz/xXWPf8wnhdo_033_0057.jpg', '../dance_data/validation/swing/wzf8DqjdyA0_348_0248.jpg', '../dance_data/validation/tango/bFFMIYUEDq4_039_0180.jpg', '../dance_data/validation/tango/NVtD7I_iKL8_020_0258.jpg', '../dance_data/validation/latin/5HbFic9gDgg_033_0031.jpg', '../dance_data/validation/swing/V21PEmv_8yY_029_0028.jpg', '../dance_data/validation/tango/b67jXhRbmh0_030_0128.jpg', '../dance_data/validation/quickstep/QDiPQ7uBYY4_734_0269.jpg', '../dance_data/validation/quickstep/mBt-cEgqPwc_221_0270.jpg', '../dance_data/validation/foxtrot/t4xg5_yabdU_015_0095.jpg', '../dance_data/validation/swing/wzf8DqjdyA0_348_0055.jpg', '../dance_data/validation/waltz/AQ-izQC-S1Y_031_0123.jpg', '../dance_data/validation/break/wJ-f773sO-k_040_0276.jpg', '../dance_data/validation/square/-v31uYwWz7c_050_0058.jpg', '../dance_data/validation/waltz/oikcRADJbDc_036_0081.jpg', '../dance_data/validation/flamenco/W6_7IG7C3Vk_052_0155.jpg', '../dance_data/validation/ballet/mQMMXBv7hYo_017_0223.jpg', '../dance_data/validation/tango/NVtD7I_iKL8_020_0038.jpg', '../dance_data/validation/latin/8qAGcFpaUlc_032_0047.jpg', '../dance_data/validation/ballet/vOxe8Xo15Kg_040_0224.jpg', '../dance_data/validation/waltz/1V02jRprvoI_015_0166.jpg', '../dance_data/validation/square/eYjNdnSX1vY_103_0135.jpg', '../dance_data/validation/tango/b67jXhRbmh0_030_0250.jpg', '../dance_data/validation/latin/is9wrZ0ShZU_050_0122.jpg', '../dance_data/validation/tango/BvTGEgR2_88_025_0258.jpg', '../dance_data/validation/foxtrot/HJyQjQy9n-U_350_0268.jpg', '../dance_data/validation/waltz/AQ-izQC-S1Y_031_0067.jpg', '../dance_data/validation/tango/AQ7HEnCtnJg_012_0081.jpg', '../dance_data/validation/ballet/hqOmSVMgoG0_428_0024.jpg', '../dance_data/validation/flamenco/W6_7IG7C3Vk_052_0146.jpg', '../dance_data/validation/waltz/X9CqCEo6AAc_003_0299.jpg', '../dance_data/validation/ballet/HfBiMFgM5vU_049_0275.jpg', '../dance_data/validation/square/-v31uYwWz7c_050_0220.jpg', '../dance_data/validation/swing/HXKqQWy3NMY_105_0250.jpg', '../dance_data/validation/foxtrot/t4xg5_yabdU_015_0127.jpg', '../dance_data/validation/latin/sW9TOGfrs8c_202_0283.jpg', '../dance_data/validation/square/kSNzS9zObCw_002_0222.jpg', '../dance_data/validation/quickstep/QDiPQ7uBYY4_734_0003.jpg', '../dance_data/validation/break/wJ-f773sO-k_040_0193.jpg', '../dance_data/validation/latin/CU4fkMrgTLk_115_0281.jpg', '../dance_data/validation/tango/AVaxGhMgHMk_018_0131.jpg', '../dance_data/validation/quickstep/uQqUNZS7OK4_011_0115.jpg', '../dance_data/validation/quickstep/mBt-cEgqPwc_221_0183.jpg', '../dance_data/validation/swing/V21PEmv_8yY_029_0178.jpg', '../dance_data/validation/square/FhcTmd5AiuM_131_0072.jpg', '../dance_data/validation/flamenco/ErZIG0AWPOw_041_0067.jpg', '../dance_data/validation/foxtrot/8uMn7XUF36s_025_0247.jpg', '../dance_data/validation/quickstep/QDiPQ7uBYY4_734_0098.jpg', '../dance_data/validation/foxtrot/kQtAMqHke30_043_0230.jpg', '../dance_data/validation/waltz/AQ-izQC-S1Y_031_0261.jpg', '../dance_data/validation/tango/BCIqkUblDpM_026_0274.jpg', '../dance_data/validation/waltz/nuWL11X_wjk_023_0258.jpg', '../dance_data/validation/swing/u_z2Tsoa2iE_039_0186.jpg', '../dance_data/validation/break/4SQVm2fyLH0_053_0218.jpg', '../dance_data/validation/tango/Ap9Xj0OBgJ8_043_0030.jpg', '../dance_data/validation/quickstep/_YnwZjcA3X0_024_0065.jpg', '../dance_data/validation/swing/DoAIhu_3XR0_045_0210.jpg', '../dance_data/validation/waltz/AQmHJlhUhes_022_0284.jpg', '../dance_data/validation/tango/NVtD7I_iKL8_020_0075.jpg', '../dance_data/validation/square/CDjIj4vgmvc_008_0210.jpg', '../dance_data/validation/swing/pNcsbZax_OI_015_0204.jpg', '../dance_data/validation/ballet/W6Hxyg5pnSA_028_0106.jpg', '../dance_data/validation/latin/5HbFic9gDgg_033_0133.jpg', '../dance_data/validation/swing/aS5DvL8p4I4_011_0145.jpg', '../dance_data/validation/waltz/nuWL11X_wjk_023_0144.jpg', '../dance_data/validation/swing/wzf8DqjdyA0_348_0263.jpg', '../dance_data/validation/foxtrot/kQtAMqHke30_043_0061.jpg', '../dance_data/validation/tango/AVaxGhMgHMk_018_0047.jpg', '../dance_data/validation/break/4SQVm2fyLH0_053_0265.jpg', '../dance_data/validation/ballet/-5Yp-vToI2E_016_0060.jpg', '../dance_data/validation/ballet/W6Hxyg5pnSA_028_0300.jpg', '../dance_data/validation/tango/bFFMIYUEDq4_039_0231.jpg', '../dance_data/validation/ballet/nM-rm68GyRk_020_0058.jpg', '../dance_data/validation/latin/aKOChOei2JQ_050_0251.jpg', '../dance_data/validation/waltz/nuWL11X_wjk_023_0188.jpg', '../dance_data/validation/waltz/oikcRADJbDc_036_0064.jpg', '../dance_data/validation/flamenco/9U5TNavFpF4_004_0051.jpg', '../dance_data/validation/flamenco/9YJWZDncb3c_124_0237.jpg', '../dance_data/validation/ballet/-5Yp-vToI2E_016_0204.jpg', '../dance_data/validation/foxtrot/iOCZp-CmW5w_030_0207.jpg', '../dance_data/validation/ballet/HfBiMFgM5vU_049_0258.jpg', '../dance_data/validation/quickstep/RMw_7Bs6d8A_038_0122.jpg', '../dance_data/validation/quickstep/Rqs-3N_fl5w_022_0110.jpg', '../dance_data/validation/break/P17nzRf6HiE_020_0137.jpg', '../dance_data/validation/flamenco/gxzU5EqNL14_054_0008.jpg', '../dance_data/validation/ballet/mQMMXBv7hYo_017_0048.jpg', '../dance_data/validation/tango/BCIqkUblDpM_026_0253.jpg', '../dance_data/validation/break/_eqF-TA8TVQ_043_0118.jpg', '../dance_data/validation/tango/AQ7HEnCtnJg_012_0060.jpg', '../dance_data/validation/break/S7tQIPMejL8_027_0217.jpg', '../dance_data/validation/ballet/zPQp-Re-PlA_235_0052.jpg', '../dance_data/validation/break/_eqF-TA8TVQ_043_0094.jpg', '../dance_data/validation/break/tbFKZGzX9Kg_103_0068.jpg', '../dance_data/validation/swing/HXKqQWy3NMY_105_0144.jpg', '../dance_data/validation/waltz/AQmHJlhUhes_022_0037.jpg', '../dance_data/validation/quickstep/84oDmFB2uyk_020_0137.jpg', '../dance_data/validation/latin/r5X_IkhkquU_040_0052.jpg', '../dance_data/validation/quickstep/kxDdXUiRnYA_040_0237.jpg', '../dance_data/validation/swing/naH68eSm2H4_202_0147.jpg']
+[[ 1.03684640e+00  8.80359948e-01  5.41412383e-02  5.94878197e-01
+  -2.35169387e+00 -1.93459466e-01 -2.26260498e-01  8.85188520e-01
+   5.39299309e-01  1.73030603e+00]
+ [-2.37209141e-01  8.04255784e-01  5.37666142e-01 -4.23460901e-01
+  -1.39084071e-01  1.63958323e+00  2.33451605e+00  7.04005718e-01
+   2.55282259e+00  1.31358731e+00]
+ [-1.15875518e+00  3.63568068e-01  4.60955441e-01 -2.34742612e-02
+  -9.48630497e-02 -7.45963454e-01  3.89192128e+00  5.62109470e-01
+  -4.60157655e-02 -9.27831352e-01]
+ [ 6.41603649e-01  3.28630352e+00  3.51402068e+00 -8.70236754e-01
+   1.35480165e-01  3.89709383e-01 -1.98985767e+00 -2.82309145e-01
+   2.12660646e+00 -8.40248942e-01]
+ [-8.91826987e-01  9.50594664e-01 -2.46622562e-01  5.15660226e-01
+  -9.87356007e-01  9.95785534e-01  4.59627771e+00  9.61884916e-01
+  -6.82609249e-03  5.70707679e-01]
+ [ 5.94690621e-01 -2.38182044e+00 -2.01131415e+00 -7.22314715e-02
+   5.03145516e-01 -1.30816117e-01  1.83230078e+00 -5.72669506e-01
+   2.34437180e+00  1.00793970e+00]
+ [-8.27623725e-01  4.48435545e-01  1.04269397e+00  1.35147178e+00
+   9.43263888e-01  1.44942069e+00 -6.33969665e-01 -8.61845851e-01
+  -5.82282305e-01 -7.49370605e-02]
+ [ 6.76827848e-01  1.11028999e-01 -5.19523323e-01  3.17128897e+00
+  -2.70305347e+00  1.78511715e+00  4.10596639e-01 -1.55176866e+00
+   1.03635061e+00 -4.85088050e-01]
+ [-1.43024123e+00 -6.40500307e-01 -3.37421298e-02  1.60446778e-01
+   5.92367172e-01 -1.95305869e-01  7.84676611e-01 -1.85574695e-01
+  -5.19635856e-01  1.64187551e+00]
+ [ 4.20146990e+00 -2.11191678e+00  1.19274652e+00 -6.21962488e-01
+  -8.56692433e-01  2.13199949e+00 -6.73977062e-02  6.89113319e-01
+   2.18610477e+00 -5.34276962e-01]
+ [-1.07425714e+00 -6.60040736e-01 -1.32555592e+00 -3.85057241e-01
+  -6.83639765e-01  4.39759605e-02 -3.76117378e-01 -4.10124838e-01
+   1.46817994e+00  4.78778154e-01]
+ [-5.14232256e-02  4.05993760e-01 -6.66579187e-01  8.90292287e-01
+  -3.57266292e-02 -2.58864909e-01 -3.89868379e-01  6.25447661e-04
+   1.80169785e+00  1.61361098e+00]
+ [ 9.16499710e+00 -4.11780167e+00  3.65086436e+00 -1.92741239e+00
+   7.59776020e+00 -1.06313384e+00 -1.22461545e+00 -6.01135194e-01
+  -9.03808355e-01  5.72464800e+00]
+ [-1.41640079e+00 -2.56016135e-01 -4.24584818e+00  1.15899718e+00
+  -5.62834293e-02  2.34109350e-02 -3.12347144e-01 -1.88559115e+00
+  -2.04922986e+00  7.97409296e-01]
+ [-1.26288974e+00  1.06900764e+00 -1.28865886e+00  2.00982809e-01
+   1.92464936e+00 -4.06213790e-01 -2.90137959e+00  1.92372835e+00
+   7.80345798e-01  3.52892065e+00]
+ [-5.30554689e-02  9.10483897e-01 -1.34257472e+00 -3.23425412e-01
+   1.31301463e+00  1.30325043e+00  1.53516591e+00 -2.32357907e+00
+   5.92166901e-01 -8.24748352e-03]
+ [-2.33314013e+00  6.29010201e-01  3.08085990e+00 -1.57758605e+00
+  -1.52346027e+00 -2.39630975e-02 -1.11366272e+00  9.30614054e-01
+   1.81705403e+00  5.50621808e-01]
+ [ 6.06775954e-02 -1.04107499e+00 -1.99195290e+00 -4.47745442e-01
+   3.11693922e-02 -1.47815990e+00  6.33171082e-01 -3.36713362e+00
+   1.98239017e+00  4.30115432e-01]
+ [-2.02248311e+00 -1.83022940e+00  8.04332912e-01 -3.09955627e-02
+  -1.46001184e+00  4.54670519e-01 -2.70739079e+00 -2.59637475e+00
+  -5.61627388e-01 -1.91891417e-01]
+ [-2.33686233e+00 -1.39308560e+00 -6.65233314e-01  3.12053740e-01
+  -3.31549978e+00  6.62301660e-01  4.51496206e-02 -3.16623664e+00
+   2.13315055e-01 -3.25983576e-02]
+ [-1.39576936e+00  1.91732600e-01  1.13104336e-01  1.98908746e+00
+  -1.20080411e+00  1.37337375e+00 -3.72402310e-01 -5.23713052e-01
+   4.39755797e-01  1.94221544e+00]
+ [ 1.06894076e+00  1.85126829e+00 -2.69333839e+00  1.39461458e+00
+   5.26636302e-01  1.66599318e-01 -3.14291209e-01 -3.41523027e+00
+   1.24413610e+00  4.21583354e-01]
+ [-1.28059089e-01 -2.19252038e+00  4.21200931e-01  1.62883937e+00
+  -4.72616285e-01 -1.39680886e+00  1.04539120e+00  2.21060777e+00
+   8.63233268e-01  1.19689763e+00]
+ [-1.39221990e+00 -9.81605411e-01 -1.51721847e+00  1.59732789e-01
+   2.96659440e-01  1.35499871e+00 -3.10146064e-01 -1.31380594e+00
+  -2.19890523e+00 -2.71712095e-01]
+ [-3.11284214e-01  1.39888719e-01  1.55142772e+00 -1.91434729e+00
+  -1.75906587e+00 -2.53909206e+00  2.18143153e+00 -1.72862267e+00
+  -7.74859130e-01  2.26941085e+00]
+ [-4.65425760e-01  2.01483250e+00 -4.46309209e-01  1.76372302e+00
+  -3.42340380e-01  1.51065707e+00  1.04535508e+00 -1.05714190e+00
+  -5.73337913e-01 -4.62528616e-01]
+ [-1.96768010e+00 -8.44372392e-01 -2.62270617e+00  3.90590280e-02
+  -8.62580657e-01  6.95954800e-01 -1.19177222e+00 -5.62232435e-01
+   1.66476977e+00 -1.13533711e+00]
+ [-1.97306299e+00 -3.52012217e-01  3.46080947e+00 -1.01851285e+00
+  -2.24867105e+00 -1.02397673e-01 -1.16598690e+00  2.42810154e+00
+   2.27716565e+00  2.51683688e+00]
+ [-7.09791124e-01  1.83010447e+00  1.53696704e+00  1.94141936e+00
+   4.91142750e-01 -1.13810432e+00 -1.70831501e+00 -2.33428001e+00
+  -2.07236362e+00 -6.86485827e-01]
+ [-1.01164412e+00 -5.38630366e-01  5.61440289e-01 -1.21513247e+00
+   8.40165019e-01  4.86533999e-01  1.62991667e+00 -1.65832376e+00
+   2.29492855e+00  1.49756348e+00]
+ [ 7.79457986e-01 -2.00663283e-01  1.80149567e+00  1.07413828e+00
+  -1.78852999e+00  2.35592155e-03  2.65269876e-01  9.81245160e-01
+  -1.07821965e+00  7.90563405e-01]
+ [-1.68172181e+00 -2.05566263e+00 -3.51732993e+00 -4.74752784e-01
+   1.42252356e-01 -9.63041604e-01  1.30009019e+00  8.14471185e-01
+  -1.58821905e+00 -1.33692431e+00]
+ [-3.16688085e+00 -9.71029639e-01 -1.26772094e+00  1.07271099e+00
+  -8.43489349e-01  6.34489775e-01  1.63412368e+00  1.74493265e+00
+   3.38502550e+00 -1.66967952e+00]
+ [-8.40414405e-01  1.64135098e+00 -2.30170608e-01  1.45106649e+00
+  -1.19634438e+00  3.42392534e-01  1.47718322e+00 -1.80195272e+00
+  -7.12908089e-01  6.36407971e-01]
+ [ 2.32770896e+00  2.04269195e+00  1.32864416e-01  2.51960492e+00
+  -8.67725730e-01 -2.21645999e+00 -2.33969480e-01 -7.82893240e-01
+   5.48205078e-01  1.25064349e+00]
+ [-2.10616922e+00  1.38899863e+00 -1.16448843e+00  6.58979535e-01
+   2.03314018e+00 -1.55927384e+00 -2.06623435e+00  7.58931398e-01
+   1.21765292e+00  2.29786348e+00]
+ [-1.01098478e+00 -1.30039585e+00 -1.81040275e+00  2.79614282e+00
+  -7.71423638e-01 -1.06052244e+00  3.13073182e+00 -2.03323102e+00
+   2.42996407e+00 -6.29448891e-01]
+ [-1.70551598e+00 -1.66775823e-01  6.34303808e-01 -1.18394220e+00
+  -1.69943643e+00  2.65006995e+00  1.02453256e+00 -6.13251030e-01
+   9.23599303e-01 -4.29018945e-01]
+ [-4.82795201e-02  2.00698957e-01  9.64315310e-02  1.66714862e-01
+   5.91655791e-01 -1.85436025e-01  1.05769241e+00 -5.77506065e-01
+  -6.95258141e-01 -2.71606654e-01]
+ [-6.35103166e-01  9.53397304e-02  1.19926882e+00 -2.51124054e-01
+  -1.44318390e+00  1.69205233e-01 -7.40858257e-01  1.88716090e+00
+   2.40893036e-01 -6.60359681e-01]
+ [ 9.86966550e-01 -1.16733861e+00 -1.66632664e+00 -2.37010270e-01
+   2.52384067e-01 -6.55286431e-01 -1.45635414e+00 -1.11759508e+00
+   1.51455963e+00  5.47187805e-01]
+ [ 1.68137431e+00 -8.38262200e-01 -1.18548691e+00 -5.80050647e-01
+  -1.11364758e+00  3.77801470e-02 -8.65537941e-01  2.27213636e-01
+  -2.90146756e+00 -1.42794871e+00]
+ [-3.73664230e-01 -1.12852824e+00  1.81090236e+00 -3.58045055e-03
+   1.04516494e+00  5.13289988e-01  2.50399566e+00  1.71908176e+00
+   1.33320355e+00  1.29781759e+00]
+ [-2.01117063e+00  1.95943892e-01  3.18364888e-01  1.52175415e+00
+   1.45452678e-01  8.88474822e-01  1.42236042e+00 -2.90983438e-01
+   1.98059809e+00  2.27096486e+00]
+ [ 6.28839910e-01 -2.86638975e-01  2.54282403e+00 -2.55304193e+00
+  -1.90500402e+00  1.12905931e+00 -3.29824638e+00 -3.50444257e-01
+   3.92767608e-01 -4.85652161e+00]
+ [-6.82883084e-01  1.51551628e+00 -1.93132961e+00  3.80025387e-01
+  -1.70329964e+00  5.40694237e-01  5.10673046e-01 -2.80660748e-01
+   5.03362417e-01  5.72281599e-01]
+ [-2.36941886e+00  9.57658529e-01 -3.15118718e+00  4.39763832e+00
+   1.54734600e+00 -4.04479206e-01 -1.55668938e+00 -1.93756521e+00
+   4.21649158e-01  2.45073390e+00]
+ [ 1.43324649e+00  1.93567887e-01  3.85559112e-01  2.57932186e-01
+  -1.01130593e+00  9.55593169e-01  1.81392956e+00 -1.28445908e-01
+  -1.91795361e+00 -9.87377346e-01]
+ [ 2.27160215e+00 -1.04108918e+00  6.72000349e-01 -8.52752209e-01
+   6.14006817e-01  5.56076527e-01  6.52823374e-02 -5.19756854e-01
+  -7.89807916e-01  3.25104296e-01]
+ [ 2.28116393e-01  1.10218799e+00 -8.60264897e-01  2.93377280e+00
+  -2.74244094e+00 -9.25868154e-01  1.32221198e+00 -1.70945132e+00
+  -1.77385211e-01  6.94121242e-01]
+ [-2.20504332e+00  5.33836544e-01  3.00111890e-01 -9.34086978e-01
+  -1.15730083e+00 -9.65960979e-01  4.84581850e-02  5.07672429e-01
+  -1.54117036e+00  4.42951262e-01]
+ [ 7.25968063e-01  1.37289679e+00  6.22876883e-01  7.60621607e-01
+   4.50276911e-01 -8.22169542e-01  1.89696467e+00 -8.28882396e-01
+   1.57147789e+00  1.89379191e+00]
+ [ 4.22209978e+00  1.65761936e+00 -2.16205597e+00 -6.90851688e-01
+  -5.04484057e-01 -3.61281693e-01  2.50110412e+00  3.40073675e-01
+   2.13617325e+00  2.42689681e+00]
+ [-3.45323658e+00  1.30413640e+00 -1.31844425e+00  2.00701284e+00
+   3.54005861e+00 -3.15899283e-01 -1.10016584e+00  2.31453389e-01
+   2.18774748e+00  8.79112631e-04]
+ [-4.17704433e-01  1.32590413e+00 -2.92876124e+00 -7.00458169e-01
+  -5.32955348e-01  3.64602327e-01 -5.39362848e-01  9.93288219e-01
+  -7.37428308e-01  2.37784791e+00]
+ [ 2.02519484e-02 -9.44416583e-01  1.66870928e+00  1.08005702e+00
+  -1.91862151e-01  4.93271470e-01 -9.96753812e-01 -1.35971546e+00
+   1.96367526e+00  3.36302310e-01]
+ [-1.27539611e+00 -4.46072131e-01  2.68314928e-02 -7.25683093e-01
+  -1.34725845e+00 -1.14042830e+00  3.74592632e-01 -8.45536366e-02
+   1.20477617e+00 -9.37167585e-01]
+ [-4.76210386e-01 -1.59271455e+00  4.74114835e-01  1.14463580e+00
+   1.87592065e+00  4.08771187e-01  1.48992229e+00 -2.22470951e+00
+   1.48035693e+00 -4.88817036e-01]
+ [ 3.28625393e+00 -1.62072086e+00  5.79661071e-01  1.50504816e+00
+  -4.36382914e+00 -2.83575368e+00 -5.27466965e+00 -1.33239639e+00
+   5.42317092e-01 -2.85516310e+00]
+ [-1.00774336e+00  3.46750319e-01 -1.91779721e+00  2.15639377e+00
+   1.06087372e-01  5.98505557e-01  1.71582013e-01 -2.54717946e+00
+   1.90897536e+00  1.51990199e+00]
+ [ 4.28805165e-02 -1.14663601e+00  1.48565030e+00  1.33233535e+00
+  -1.37928903e+00  9.60651338e-01 -1.04078698e+00 -3.87531459e-01
+   5.12314737e-01 -6.85883820e-01]
+ [-8.16746533e-01 -1.96670163e+00  5.30070588e-02  6.14317775e-01
+   4.39921409e-01 -1.45328283e+00 -1.41815114e+00 -3.09480608e-01
+   6.23801768e-01 -7.11725771e-01]
+ [ 2.65968680e+00  1.23846912e+00 -2.23911023e+00  9.23317969e-01
+  -9.28189158e-01 -4.30594057e-01  1.31991506e+00 -2.68269753e+00
+   2.39740372e+00 -2.08461940e-01]
+ [ 1.57557678e+00  1.02426612e+00 -2.85895586e-01 -5.41369259e-01
+  -5.14923513e-01 -7.07696140e-01  2.25283313e+00  1.92457631e-01
+  -1.58255851e+00 -1.47214174e+00]
+ [-4.45812754e-02  9.07651007e-01  9.02893841e-01 -2.14008257e-01
+  -4.85005230e-01  3.73799413e-01  6.56532228e-01  5.75966358e-01
+  -1.10283291e+00 -1.41158074e-01]
+ [-8.60261023e-01 -9.11755264e-01 -1.14023840e+00 -2.45111689e-01
+  -1.61451399e+00  1.54642677e+00  9.67398345e-01 -1.05379868e+00
+  -1.20985162e+00  5.30015171e-01]
+ [-1.47680044e+00 -1.19544113e+00 -1.16392505e+00  2.59708238e+00
+  -2.76041359e-01 -1.67537355e+00  3.98674655e+00 -1.40991521e+00
+   1.85197818e+00 -2.15996552e+00]
+ [ 2.50744987e+00  9.16930735e-01 -1.08391559e+00 -5.25996447e-01
+  -1.00495350e+00 -3.71096462e-01  1.13968635e+00  6.02974236e-01
+   1.53648090e+00 -1.19097400e+00]
+ [-5.73418200e-01 -4.56067133e+00  2.08753943e+00  2.54577804e+00
+   4.96940345e-01  1.31722701e+00 -4.52329665e-01  1.51650167e+00
+   2.58119392e+00  3.28131527e-01]
+ [-1.16439831e+00 -5.93618095e-01 -6.70143440e-02  5.44600844e-01
+   7.24552095e-01  8.17780137e-01 -2.41159558e-01 -1.76389730e+00
+   4.34381306e-01 -1.37585312e-01]
+ [-1.21661198e+00  1.87598479e+00  1.20361602e+00  5.74786234e+00
+  -1.47634351e+00  2.00666595e+00  2.16191769e+00 -2.78118277e+00
+  -1.93045604e+00  1.65845656e+00]
+ [-7.19197989e-01  5.75450361e-01  1.32173598e+00  8.78645837e-01
+  -1.18180573e+00  1.73992455e+00  5.17146349e-01 -1.01582766e+00
+  -3.89754564e-01 -6.50088370e-01]
+ [-1.20634019e+00 -1.38398826e-01  5.65607786e-01  2.39020991e+00
+  -1.47049594e+00 -2.08043265e+00 -7.47520626e-01 -1.01100242e+00
+  -8.13268661e-01 -5.60764432e-01]
+ [-4.80783701e-01 -1.09381819e+00  1.48607624e+00  8.86006713e-01
+   1.35509014e-01 -4.56479818e-01  3.99984765e+00 -2.43709937e-01
+  -5.75492419e-02 -1.45310616e+00]
+ [-8.57424080e-01 -8.44038069e-01 -3.17154825e-01  1.14870822e+00
+  -1.54026604e+00  9.48978841e-01  2.21828318e+00 -1.66332269e+00
+   8.08885872e-01  2.28943266e-02]
+ [-9.08578753e-01  1.79629767e+00 -1.08550012e+00  9.13031399e-02
+   6.00897491e-01  3.28716904e-01  1.60357642e+00 -8.28602314e-02
+   9.26524282e-01 -5.53718865e-01]
+ [ 6.67166412e-01 -1.18635297e+00 -2.07375860e+00  2.76534843e+00
+  -1.95290971e+00  6.33787215e-01  1.08941066e+00 -1.30787599e+00
+   4.98742223e-01 -1.00656939e+00]
+ [-2.23698545e+00 -1.94929075e+00  1.58110785e+00  1.06914425e+00
+  -1.55851746e+00 -1.02049625e+00 -1.57429844e-01  1.29732382e+00
+   7.24943697e-01  1.95851755e+00]
+ [-1.12596162e-01 -1.92317939e+00 -3.45200968e+00 -7.42520332e-01
+   2.75504261e-01 -1.17082751e+00  3.27819729e+00  7.80851394e-02
+   1.38236976e+00 -2.85436124e-01]
+ [-8.73990431e-02  3.76262498e+00 -9.35183406e-01  1.54637766e+00
+  -8.92807484e-01  1.73600435e+00 -3.91260833e-01 -5.80327213e-01
+   5.14627278e-01  1.34619248e+00]
+ [-1.44668651e+00 -4.57991421e-01 -5.39819360e-01  2.57761478e+00
+  -1.22760153e+00  2.36663985e+00 -6.17082834e-01 -2.46794367e+00
+   2.63981628e+00  6.94282949e-01]
+ [ 6.68389261e-01  1.11794508e+00 -2.01502800e+00 -1.09625900e+00
+   3.41907531e-01  1.59360445e+00 -2.00749969e+00 -2.51209068e+00
+  -1.87614572e+00  1.03171802e+00]
+ [ 3.24732566e+00  3.21969938e+00 -5.22112370e-01 -1.76364064e+00
+  -4.61367941e+00 -4.25454235e+00 -7.03713417e+00 -7.00961411e-01
+   2.54607582e+00 -1.25023139e+00]
+ [-1.17863417e+00  9.16807830e-01 -7.30121076e-01  2.69426331e-02
+  -6.55553818e-01 -1.54378235e+00  2.39820123e+00  2.01846480e-01
+   4.32513654e-01  8.32566559e-01]
+ [-1.32143176e+00 -2.31175303e-01 -1.10908186e+00  1.55359745e+00
+  -2.97267389e+00 -9.04686093e-01 -1.56777716e+00  3.77171755e-01
+   3.54412287e-01 -1.13136442e-02]
+ [ 8.40909362e-01  9.03107464e-01 -5.69232523e-01  3.09644270e+00
+  -9.62182224e-01 -2.00638771e+00 -6.99634433e-01 -9.58159328e-01
+   1.23176050e+00  5.82488716e-01]
+ [-2.14738894e+00  1.05914497e+00 -1.73467433e+00  1.71370998e-01
+   8.84259462e-01 -5.84679723e-01 -7.81388521e-01 -1.77281463e+00
+   7.51288891e-01  9.04568374e-01]
+ [-1.56695640e+00  7.62276292e-01 -2.04753995e+00 -5.07371575e-02
+   1.45080316e+00  8.44680429e-01  1.40810895e+00  8.64067018e-01
+   1.79669583e+00  9.01561975e-01]
+ [-6.30432069e-01 -6.00068390e-01  4.17906135e-01  6.46729350e-01
+  -1.62856162e+00 -1.43322933e+00 -1.23944151e+00  1.09013639e-01
+  -2.92076349e-01  3.34207010e+00]
+ [ 1.14267612e+00 -2.05707717e+00 -2.48003674e+00  1.46402645e+00
+  -3.24096632e+00  4.91126895e-01 -1.24583602e+00 -2.60015756e-01
+   2.98894167e+00  6.82517827e-01]
+ [ 1.33007669e+00  1.16491891e-01  3.38724434e-01 -1.33868366e-01
+  -2.36532402e+00  5.65893888e-01 -2.38067910e-01  6.44657314e-01
+  -3.10967922e-01  1.01424336e+00]
+ [ 7.71902084e-01  8.37567210e-01 -2.06015897e+00  1.52893674e+00
+  -1.12377003e-01  2.96054935e+00  9.86889973e-02 -1.26257086e+00
+   1.81168526e-01 -1.06078637e+00]
+ [ 6.54570937e-01  6.67507946e-01 -2.55045962e+00  1.65211499e+00
+  -6.72854364e-01  4.63020563e-01 -3.83704990e-01 -9.73998249e-01
+   7.19056070e-01 -5.03283799e-01]
+ [-4.42355901e-01 -1.07190156e+00 -2.27504969e+00  1.75080836e+00
+  -1.93552077e+00  1.28578770e+00  2.31177360e-01 -2.43945360e+00
+   3.17503542e-01  1.89663917e-01]
+ [ 5.81928454e-02  1.34604371e+00  2.12529254e+00  2.53365159e-01
+  -1.59804082e+00 -1.60724714e-01 -5.03005803e-01  8.62718046e-01
+  -9.40385401e-01 -2.05271825e-01]
+ [ 1.15036106e+00  8.08512151e-01 -1.20972919e+00  1.28298318e+00
+   1.72946322e+00  6.23933256e-01  3.28261167e-01 -1.71195078e+00
+   1.23268950e+00  6.68257058e-01]
+ [-2.51741916e-01 -4.94299084e-01 -2.11906719e+00  9.72491682e-01
+  -4.90723997e-01  2.34195635e-01 -1.47673285e+00 -2.38810468e+00
+   1.75169587e+00 -3.83378446e-01]
+ [ 2.63200188e+00  2.44660187e+00 -1.97206235e+00  7.94124424e-01
+  -6.10872984e+00 -2.91438484e+00 -6.38447142e+00 -3.30802417e+00
+   4.80813265e+00  5.97442426e-02]
+ [ 1.06112778e+00  3.39248180e-01  1.01874816e+00 -3.85798484e-01
+   7.71776915e-01  1.51585937e+00 -5.32177806e-01 -4.62265730e-01
+   2.42756948e-01 -1.11743502e-01]
+ [ 9.89670694e-01  1.43477112e-01  6.83817446e-01 -9.21321273e-01
+  -1.37234378e+00  1.59508631e-01 -5.09738564e-01 -1.82375565e-01
+   9.21327889e-01  9.28817987e-01]
+ [-1.86210430e+00 -5.06566316e-02 -5.46390295e-01  7.70093918e-01
+  -5.96575141e-01 -1.43286872e+00  2.10013509e-01  3.54622245e-01
+   8.62970650e-02  1.47942412e+00]
+ [-1.26948547e+00  3.83430779e-01  2.80672014e-02  4.72083092e-01
+   1.00517261e+00  1.16246784e+00 -3.26293916e-01 -1.26160467e+00
+   3.00180942e-01  1.01826870e+00]
+ [ 8.03049564e-01  3.46524954e-01 -1.90513358e-01 -2.40830138e-01
+   1.62738907e+00 -9.52029288e-01 -2.04388070e+00 -1.85608757e+00
+   1.50963712e+00 -4.89450961e-01]
+ [-7.18812168e-01 -1.15410292e+00 -1.95352423e+00  1.11245060e+00
+  -9.84383285e-01  6.63424730e-01 -2.59762597e+00 -1.10455120e+00
+   1.94590962e+00  1.67307520e+00]
+ [-1.27714586e+00 -4.70165312e-01 -9.16262388e-01  7.35311568e-01
+  -9.00069773e-01 -1.34830922e-01  2.03685308e+00  1.31143630e-01
+   2.43233824e+00  2.30833483e+00]
+ [ 1.89364028e+00  1.08136833e+00 -2.51392698e+00  2.46277714e+00
+   3.42598748e+00 -2.34960628e+00  5.42146873e+00 -6.16397476e+00
+  -7.94269621e-01  4.96750450e+00]
+ [-6.32769108e-01  1.98891914e+00  1.33356369e+00 -1.20711255e+00
+   9.23587859e-01 -3.03044868e+00 -2.90930104e+00 -1.74872947e+00
+   1.63724616e-01  1.95742941e+00]
+ [-7.05117285e-01  4.20821935e-01  2.66334486e+00  5.11761427e-01
+   1.69652557e+00 -2.43723691e-01 -6.57973766e-01  1.74106336e+00
+   1.49785197e+00  8.09933484e-01]
+ [-2.82814360e+00 -7.73027897e-01 -2.40948653e+00  3.21088219e+00
+  -1.03727996e+00 -9.36477900e-01 -4.36060041e-01 -1.79905593e-01
+   1.79031551e+00 -6.36477530e-01]
+ [-7.37169862e-01  1.98341623e-01 -2.24005759e-01  1.27722454e+00
+  -5.04816532e-01  7.67958164e-01 -8.29622626e-01 -6.87676311e-01
+   1.69171412e-02 -3.89733911e-01]
+ [-3.05734575e-01  3.15191925e-01 -1.39055586e+00 -2.21077278e-01
+   1.01799655e+00 -1.01370215e+00  1.59295011e+00 -6.46884680e-01
+   3.16456705e-01 -1.31377995e+00]
+ [-9.64191496e-01 -1.07539284e+00 -1.29801953e+00 -7.58301377e-01
+  -1.49758410e+00 -1.17342520e+00  9.05553460e-01 -1.16596973e+00
+   1.94259357e+00 -6.11340463e-01]
+ [-7.50394249e+00  8.75611365e-01 -2.96154761e+00  1.23800802e+00
+   2.78695536e+00  4.27837163e-01 -1.49562573e+00 -3.55052352e+00
+  -5.76517057e+00  2.15065217e+00]
+ [ 1.11561954e+00 -6.03089094e+00  6.38718891e+00 -7.91875601e+00
+  -3.21251869e+00  7.25760281e-01 -8.77724266e+00  5.16962004e+00
+  -1.13314095e+01  9.69132233e+00]
+ [-1.10688007e+00  1.44328320e+00 -1.50004745e+00 -5.65296650e-01
+  -5.68777263e-01  2.44659856e-01  7.84812987e-01 -1.53000867e+00
+   6.29244387e-01  4.81416583e-01]
+ [-2.02656364e+00  3.11907911e+00 -2.15171742e+00  8.15208793e-01
+  -9.97851253e-01  1.36111784e+00 -1.44592178e+00 -1.10037029e+00
+  -1.28518315e-02  9.87548411e-01]
+ [ 3.12335730e+00 -1.48332751e+00  3.62708777e-01 -5.68374395e-02
+   5.20147848e+00 -1.04450369e+00 -1.00967178e+01 -5.24773657e-01
+  -4.33762789e+00 -5.74643277e-02]
+ [-3.54916640e-02  2.12792888e-01 -2.88801098e+00 -4.14356381e-01
+  -9.43548977e-01 -1.30964124e+00  1.79538512e+00 -9.46686924e-01
+   1.28683913e+00  5.21806896e-01]
+ [-1.03927158e-01  2.35351348e+00  4.07677859e-01 -2.12699199e+00
+  -7.29874074e-01 -1.51926148e+00 -3.05145311e+00 -5.62880695e-01
+   1.34559917e+00  2.38767838e+00]
+ [-1.18955386e+00  1.15696035e-01 -9.52500999e-01  4.50610727e-01
+   2.19032660e-01  1.04122865e+00 -4.76442903e-01  1.00006890e+00
+   8.34495008e-01 -2.03001127e-02]
+ [ 3.64392805e+00 -3.36070776e+00  5.24255180e+00  3.11908889e+00
+  -1.06569548e+01 -2.45206523e+00 -8.01617718e+00  2.21954036e+00
+   8.57969284e+00  7.88429320e-01]
+ [-6.92735851e-01  1.07466422e-01 -1.15616834e+00 -1.06830859e+00
+  -6.91606164e-01 -2.01938295e+00  1.69911778e+00  1.32112789e+00
+   1.58202976e-01  4.32360083e-01]
+ [ 1.40847790e+00  1.03710711e+00 -1.35945511e+00  2.12534046e+00
+   1.59260958e-01  8.54283631e-01 -1.43212426e+00 -2.72113752e+00
+   1.90226293e+00 -1.94621772e-01]
+ [-8.21338594e-01  5.71726501e-01  1.19967973e+00  1.60565829e+00
+   5.39305091e-01  1.48012841e+00  1.69858587e+00 -7.67145082e-02
+   1.24711740e+00  9.94383812e-01]
+ [ 1.55917734e-01 -8.56691360e-01  6.56626523e-01  1.59295273e+00
+   7.87646294e-01  9.37954485e-01  1.59362376e+00 -2.77885228e-01
+   1.11005092e+00  1.18130398e+00]
+ [-2.44127624e-02 -1.15974295e+00  3.88795209e+00 -1.92956555e+00
+   1.56241536e-01 -4.51371044e-01 -2.23469877e+00 -6.72493637e-01
+  -3.21797490e-01  6.97248578e-01]
+ [-3.28626561e+00 -1.03157532e+00  9.42504480e-02  5.74398413e-02
+  -2.14040184e+00  9.83611166e-01  2.35713983e+00  2.57970095e-01
+   9.41657960e-01  3.00658846e+00]
+ [ 5.67441344e-01  8.10714960e-02  1.51504457e+00  1.25012445e+00
+   9.02856708e-01 -3.25494552e+00 -4.51446438e+00  1.14624739e+00
+  -1.41786742e+00 -1.32332814e+00]]Random scores for a set of images['../dance_data/validation/quickstep/kxDdXUiRnYA_040_0211.jpg', '../dance_data/validation/ballet/HfBiMFgM5vU_049_0204.jpg', '../dance_data/validation/tango/AQ7HEnCtnJg_012_0098.jpg', '../dance_data/validation/flamenco/Wy5nqf_WeWk_210_0073.jpg', '../dance_data/validation/quickstep/X53uafpmFgM_043_0284.jpg', '../dance_data/validation/ballet/u--jDp2Hieg_131_0067.jpg', '../dance_data/validation/foxtrot/q75QSh9M5OI_033_0148.jpg', '../dance_data/validation/quickstep/X53uafpmFgM_043_0083.jpg', '../dance_data/validation/ballet/2SMmL6kIx-w_053_0007.jpg', '../dance_data/validation/swing/wzf8DqjdyA0_348_0095.jpg', '../dance_data/validation/waltz/AQ-izQC-S1Y_031_0003.jpg', '../dance_data/validation/waltz/qTuBDM63KbA_034_0210.jpg', '../dance_data/validation/waltz/qTuBDM63KbA_034_0195.jpg', '../dance_data/validation/latin/CU4fkMrgTLk_115_0051.jpg', '../dance_data/validation/swing/HXKqQWy3NMY_105_0094.jpg', '../dance_data/validation/ballet/-5Yp-vToI2E_016_0105.jpg', '../dance_data/validation/waltz/qTuBDM63KbA_034_0119.jpg', '../dance_data/validation/square/FhcTmd5AiuM_131_0026.jpg', '../dance_data/validation/break/XnapRl2hHTo_050_0260.jpg', '../dance_data/validation/tango/NVtD7I_iKL8_020_0116.jpg', '../dance_data/validation/square/BeyaJ1GCcaA_205_0031.jpg', '../dance_data/validation/flamenco/Wy5nqf_WeWk_210_0145.jpg', '../dance_data/validation/waltz/oikcRADJbDc_036_0161.jpg', '../dance_data/validation/swing/DoAIhu_3XR0_045_0136.jpg', '../dance_data/validation/tango/BvTGEgR2_88_025_0262.jpg', '../dance_data/validation/waltz/AQ-izQC-S1Y_031_0125.jpg', '../dance_data/validation/foxtrot/Md0gzA2n_Mc_006_0217.jpg', '../dance_data/validation/break/njw1rxDmUU0_025_0292.jpg', '../dance_data/validation/break/RJnOuAf0cEY_025_0019.jpg', '../dance_data/validation/square/Z9vffJJJfNA_027_0140.jpg', '../dance_data/validation/latin/w2K4A-d1bC4_036_0187.jpg', '../dance_data/validation/swing/pNcsbZax_OI_015_0061.jpg', '../dance_data/validation/flamenco/9U5TNavFpF4_004_0204.jpg', '../dance_data/validation/square/AGn_T7u6U2Q_039_0119.jpg', '../dance_data/validation/swing/u_z2Tsoa2iE_039_0114.jpg', '../dance_data/validation/break/njw1rxDmUU0_025_0275.jpg', '../dance_data/validation/square/6lV-mH_BSGs_204_0081.jpg', '../dance_data/validation/tango/MZ1tmTqt1Kk_031_0165.jpg', '../dance_data/validation/square/fymBcoVn66M_020_0076.jpg', '../dance_data/validation/waltz/azWcLosbIVY_105_0019.jpg', '../dance_data/validation/tango/AVaxGhMgHMk_018_0038.jpg', '../dance_data/validation/latin/sW9TOGfrs8c_202_0081.jpg', '../dance_data/validation/quickstep/mBt-cEgqPwc_221_0126.jpg', '../dance_data/validation/flamenco/9U5TNavFpF4_004_0035.jpg', '../dance_data/validation/ballet/W6Hxyg5pnSA_028_0163.jpg', '../dance_data/validation/break/RJnOuAf0cEY_025_0144.jpg', '../dance_data/validation/break/6dbo5GtNnxU_144_0020.jpg', '../dance_data/validation/tango/bFFMIYUEDq4_039_0068.jpg', '../dance_data/validation/flamenco/Wy5nqf_WeWk_210_0020.jpg', '../dance_data/validation/tango/bFFMIYUEDq4_039_0081.jpg', '../dance_data/validation/latin/aKOChOei2JQ_050_0119.jpg', '../dance_data/validation/waltz/azWcLosbIVY_105_0136.jpg', '../dance_data/validation/tango/bFFMIYUEDq4_039_0216.jpg', '../dance_data/validation/break/wJ-f773sO-k_040_0047.jpg', '../dance_data/validation/waltz/oikcRADJbDc_036_0297.jpg', '../dance_data/validation/break/tbFKZGzX9Kg_103_0129.jpg', '../dance_data/validation/latin/8qAGcFpaUlc_032_0128.jpg', '../dance_data/validation/quickstep/RMw_7Bs6d8A_038_0088.jpg', '../dance_data/validation/waltz/X9CqCEo6AAc_003_0026.jpg', '../dance_data/validation/tango/NVtD7I_iKL8_020_0044.jpg', '../dance_data/validation/square/FhcTmd5AiuM_131_0112.jpg', '../dance_data/validation/quickstep/RMw_7Bs6d8A_038_0128.jpg', '../dance_data/validation/break/RJnOuAf0cEY_025_0185.jpg', '../dance_data/validation/ballet/zPQp-Re-PlA_235_0224.jpg', '../dance_data/validation/latin/is9wrZ0ShZU_050_0210.jpg', '../dance_data/validation/swing/SxMxOa22PlM_050_0143.jpg', '../dance_data/validation/square/kSNzS9zObCw_002_0258.jpg', '../dance_data/validation/waltz/azWcLosbIVY_105_0137.jpg', '../dance_data/validation/ballet/W6Hxyg5pnSA_028_0118.jpg', '../dance_data/validation/swing/aS5DvL8p4I4_011_0167.jpg', '../dance_data/validation/square/kSNzS9zObCw_002_0231.jpg', '../dance_data/validation/break/tbFKZGzX9Kg_103_0122.jpg', '../dance_data/validation/swing/pNcsbZax_OI_015_0038.jpg', '../dance_data/validation/waltz/1V02jRprvoI_015_0165.jpg', '../dance_data/validation/flamenco/gxzU5EqNL14_054_0277.jpg', '../dance_data/validation/quickstep/uQqUNZS7OK4_011_0261.jpg', '../dance_data/validation/waltz/X9CqCEo6AAc_003_0194.jpg', '../dance_data/validation/waltz/1V02jRprvoI_015_0126.jpg', '../dance_data/validation/tango/v2Wx2pk2blU_013_0227.jpg', '../dance_data/validation/flamenco/ErZIG0AWPOw_041_0021.jpg', '../dance_data/validation/quickstep/kxDdXUiRnYA_040_0201.jpg', '../dance_data/validation/ballet/vOxe8Xo15Kg_040_0046.jpg', '../dance_data/validation/waltz/q-kL4TPjOcQ_015_0212.jpg', '../dance_data/validation/flamenco/gxzU5EqNL14_054_0194.jpg', '../dance_data/validation/square/FhcTmd5AiuM_131_0080.jpg', '../dance_data/validation/latin/CU4fkMrgTLk_115_0271.jpg', '../dance_data/validation/swing/naH68eSm2H4_202_0157.jpg', '../dance_data/validation/square/BeyaJ1GCcaA_205_0107.jpg', '../dance_data/validation/swing/ynp0pfUMRtE_032_0029.jpg', '../dance_data/validation/foxtrot/8uMn7XUF36s_025_0163.jpg', '../dance_data/validation/foxtrot/HJyQjQy9n-U_350_0020.jpg', '../dance_data/validation/swing/SxMxOa22PlM_050_0026.jpg', '../dance_data/validation/break/P17nzRf6HiE_020_0184.jpg', '../dance_data/validation/ballet/vOxe8Xo15Kg_040_0198.jpg', '../dance_data/validation/foxtrot/keelWKQGWIs_030_0168.jpg', '../dance_data/validation/quickstep/uQqUNZS7OK4_011_0047.jpg', '../dance_data/validation/latin/wjG99Kbp1qQ_030_0101.jpg', '../dance_data/validation/waltz/q-kL4TPjOcQ_015_0199.jpg', '../dance_data/validation/waltz/1V02jRprvoI_015_0055.jpg', '../dance_data/validation/swing/DoAIhu_3XR0_045_0268.jpg', '../dance_data/validation/quickstep/84oDmFB2uyk_020_0124.jpg', '../dance_data/validation/latin/r5X_IkhkquU_040_0159.jpg', '../dance_data/validation/ballet/mQMMXBv7hYo_017_0081.jpg', '../dance_data/validation/break/_eqF-TA8TVQ_043_0228.jpg', '../dance_data/validation/waltz/AQmHJlhUhes_022_0246.jpg', '../dance_data/validation/waltz/azWcLosbIVY_105_0146.jpg', '../dance_data/validation/square/eYjNdnSX1vY_103_0162.jpg', '../dance_data/validation/foxtrot/fg3Wqr8DzSQ_024_0225.jpg', '../dance_data/validation/break/wJ-f773sO-k_040_0012.jpg', '../dance_data/validation/foxtrot/q75QSh9M5OI_033_0264.jpg', '../dance_data/validation/tango/Ap9Xj0OBgJ8_043_0008.jpg', '../dance_data/validation/quickstep/mBt-cEgqPwc_221_0268.jpg', '../dance_data/validation/ballet/W6Hxyg5pnSA_028_0023.jpg', '../dance_data/validation/ballet/-5Yp-vToI2E_016_0071.jpg', '../dance_data/validation/waltz/oikcRADJbDc_036_0117.jpg', '../dance_data/validation/square/eYjNdnSX1vY_103_0227.jpg', '../dance_data/validation/tango/v2Wx2pk2blU_013_0229.jpg', '../dance_data/validation/tango/b67jXhRbmh0_030_0177.jpg', '../dance_data/validation/latin/is9wrZ0ShZU_050_0165.jpg', '../dance_data/validation/square/6lV-mH_BSGs_204_0176.jpg', '../dance_data/validation/quickstep/RMw_7Bs6d8A_038_0094.jpg', '../dance_data/validation/tango/AQ7HEnCtnJg_012_0026.jpg', '../dance_data/validation/swing/u_z2Tsoa2iE_039_0255.jpg', '../dance_data/validation/tango/AQ7HEnCtnJg_012_0189.jpg', '../dance_data/validation/square/FhcTmd5AiuM_131_0004.jpg', '../dance_data/validation/square/AGn_T7u6U2Q_039_0064.jpg', '../dance_data/validation/quickstep/X53uafpmFgM_043_0263.jpg', '../dance_data/validation/swing/HXKqQWy3NMY_105_0151.jpg']
+[[-3.16229868e+00  1.07663643e+00 -1.55322301e+00  1.04934394e+00
+  -1.76636124e+00  6.03961706e-01  1.73651755e-01 -2.45583296e-01
+   1.12669671e+00  1.48059083e-02]
+ [-5.59065044e-01 -9.03946280e-01  9.20233786e-01  1.33281499e-01
+  -2.25428391e+00  2.30054998e+00 -1.72351420e+00 -2.17761564e+00
+   9.93568540e-01 -3.99749488e-01]
+ [-8.94157737e-02  1.15833402e+00 -1.92139173e+00  1.63236225e+00
+  -1.04903316e+00 -4.93834078e-01  3.09931099e-01  9.25957203e-01
+   1.24628687e+00 -1.03716969e+00]
+ [ 1.14088631e+00  1.61302876e+00  2.96600628e+00  2.96656370e+00
+  -5.74375200e+00 -3.13638926e-01 -5.29222107e+00 -4.83349562e+00
+  -1.81704891e+00  1.37823656e-01]
+ [-1.37606990e+00  1.24966657e+00  3.27592969e-01  5.05300343e-01
+  -7.65325010e-01  6.96096897e-01  1.57414794e-01 -2.28962317e-01
+  -2.33289629e-01  1.06133842e+00]
+ [ 1.08504522e+00  1.49665606e+00  1.74448133e+00  1.74423265e+00
+  -2.68464774e-01 -1.45862961e+00 -2.36254692e+00 -2.59531927e+00
+   1.05241565e-02  2.93447047e-01]
+ [-1.02271712e+00  4.63556319e-01 -4.29350227e-01  1.36316705e+00
+  -2.10993981e+00  5.82850039e-01 -1.66670251e+00 -5.74851096e-01
+   1.95668864e+00 -1.78047895e+00]
+ [-3.39741945e+00  2.18386841e+00 -9.31209922e-01  1.46171236e+00
+   1.33694023e-01 -2.89894998e-01 -5.70367813e-01  8.64557549e-02
+  -1.54742992e+00  7.04880893e-01]
+ [-1.08159065e+00 -3.27235794e+00 -3.79992032e+00  1.34580183e+00
+  -2.02049780e+00  4.03559923e+00 -8.84485841e-01 -1.17325819e+00
+  -1.48165360e-01  1.82858241e+00]
+ [-8.90899077e-02  1.50497472e+00  2.81490475e-01  2.09725752e-01
+   1.65691748e-01 -8.84302706e-02 -1.44274306e+00  1.89519131e+00
+   5.01561582e-01 -1.27342927e+00]
+ [-3.06591129e+00  2.73321247e+00 -1.90808281e-01  3.83553982e-01
+  -1.88564599e+00  1.10076845e+00 -9.80331421e-01 -1.91063845e+00
+   5.86598255e-02  9.08643365e-01]
+ [-3.16272640e+00 -1.40787944e-01 -7.31068313e-01  6.15473390e-01
+   1.87958345e-01  1.19382799e+00 -1.36521280e-01 -1.39268363e+00
+   1.20185101e+00  7.24551141e-01]
+ [-4.46455050e+00 -3.46542835e-01 -2.10597467e+00  2.92576700e-01
+  -1.14591491e+00  2.75364399e+00 -3.01295817e-01 -2.17211699e+00
+   1.00306427e+00  1.35610163e+00]
+ [ 8.59249294e-01  4.39471930e-01  3.61538005e+00  6.64996147e-01
+   3.45690060e+00  1.14049518e+00 -3.90685248e+00  8.61966431e-01
+   2.11322570e+00  3.74412155e+00]
+ [ 1.37512565e+00  1.35869110e+00 -2.07487321e+00  1.96666920e+00
+  -1.84190774e+00  1.54192293e+00 -1.47129536e+00 -3.86392927e+00
+   1.35253763e+00  9.31820393e-01]
+ [ 1.98379660e+00  1.46455061e+00  1.84512365e+00  2.03066134e+00
+  -1.94489026e+00  8.78411949e-01 -5.06067085e+00 -2.64699876e-01
+   2.10519099e+00  4.22325581e-01]
+ [-3.37397075e+00  3.20028687e+00 -6.97504282e-01  1.16857457e+00
+  -2.72470713e-01  1.12205327e+00 -2.36132526e+00 -2.73457670e+00
+   1.89524615e+00 -7.51277626e-01]
+ [-1.47643483e+00 -1.06342137e+00 -1.96431589e+00 -1.07384741e+00
+  -1.40870917e+00 -1.17521453e+00  2.28625679e+00 -9.43458751e-02
+  -3.33541572e-01 -1.05881965e+00]
+ [ 8.01403332e+00  3.66330886e+00  3.07833195e+00 -3.85234427e+00
+  -1.62575746e+00 -3.44120288e+00 -1.80200636e+00  2.06840897e+00
+  -6.67581081e+00  4.27992201e+00]
+ [-1.17867863e+00  1.12456369e+00  8.03241909e-01  1.14355540e+00
+  -1.82594836e+00 -1.21205777e-01 -7.60118961e-01 -2.57215929e+00
+   1.93851948e+00 -1.40328014e+00]
+ [ 1.59289384e+00  2.43941545e+00 -7.19759881e-01  2.47696972e+00
+  -7.37214386e-01 -1.29082358e+00 -4.85890478e-01 -7.10928142e-01
+   6.58908486e-02 -6.31057322e-01]
+ [ 1.24706137e+00  2.78010249e+00 -2.82315898e+00  5.39780664e+00
+  -4.91918468e+00  1.08895695e+00 -6.50730562e+00 -2.64383030e+00
+  -2.32846761e+00  9.10216749e-01]
+ [-2.69153237e+00  1.06689107e+00  7.35770345e-01  1.21986365e+00
+   1.58269212e-01  3.47017497e-01 -4.23377872e-01 -1.54759312e+00
+   1.90236425e+00  1.11647630e+00]
+ [ 6.85470462e-01  4.31428611e-01  8.96539569e-01  1.83067751e+00
+   1.78270981e-01 -1.75095415e+00 -1.31857860e+00 -3.90487850e-01
+   3.73234111e-03 -2.12269481e-02]
+ [-4.06843805e+00  3.90051770e+00 -2.06932592e+00  3.01383901e+00
+   1.62035954e+00  2.58051068e-01 -1.46085322e+00 -4.49760497e-01
+   8.50458801e-01  1.22752249e+00]
+ [ 5.48363328e-02 -1.10111654e+00 -7.23375499e-01 -1.44344306e+00
+   8.82523775e-01  9.44179475e-01 -1.06832612e+00  1.39327431e+00
+   1.56403768e+00  1.24673218e-01]
+ [-2.94433570e+00  4.77631390e-01 -1.98248029e+00 -3.47218096e-01
+  -3.10480267e-01 -7.01374292e-01  9.42708552e-01  1.47108781e+00
+   2.62745571e+00  2.23695531e-01]
+ [-1.03374827e+00  2.39516044e+00  2.62772465e+00  2.96437353e-01
+  -1.91311884e+00  1.14892769e+00  1.78069091e+00  2.67740250e+00
+   2.05397058e+00 -1.01311159e+00]
+ [-2.29169345e+00  4.28244591e+00 -4.01307225e-01  1.06532121e+00
+  -1.96849394e+00 -1.74459589e+00  2.22478315e-01 -6.99635088e-01
+  -2.03324482e-01  9.95424807e-01]
+ [-2.32245374e+00 -1.46402091e-01  2.69053864e+00  7.97852397e-01
+  -1.37505651e+00  1.78285408e+00 -2.65485700e-02 -1.35452616e+00
+   1.93671644e+00  2.53628463e-01]
+ [-3.49181461e+00  1.89249706e+00 -1.72751248e+00 -1.82214653e+00
+  -2.42357779e+00  1.48394215e+00  5.36380887e-01 -1.08216143e+00
+   2.79820466e+00 -4.96381074e-01]
+ [-3.47229719e-01  1.46885133e+00 -1.42829335e+00  4.71969426e-01
+  -3.11180902e+00  1.51184648e-01 -3.34136820e+00 -1.45191324e+00
+   2.39777350e+00  1.22632742e-01]
+ [-1.72347558e+00  2.92784071e+00 -2.08908725e+00  1.24677074e+00
+  -2.61665225e+00  5.34192920e-01 -8.49440917e-02 -5.29985332e+00
+   8.44198227e-01  3.14813018e+00]
+ [-9.03594792e-01  3.27861738e+00 -3.73860925e-01  2.45955753e+00
+  -6.04609132e-01 -2.52650268e-02 -2.80449772e+00  5.43302596e-01
+   1.23176968e+00 -4.47737604e-01]
+ [-5.61152399e-01  2.83969331e+00 -4.05646181e+00 -5.64337826e+00
+  -2.80051708e+00 -1.63675046e+00 -5.04414034e+00  1.16958642e+00
+  -9.52810124e-02 -2.11951089e+00]
+ [-7.42502391e-01  2.15284657e+00  2.45580506e+00  3.77659351e-01
+  -2.54064441e+00 -1.21894920e+00 -9.06006217e-01  1.45363820e+00
+   8.20323169e-01 -1.69195390e+00]
+ [-1.95370150e+00  1.07417524e+00 -1.71336651e+00 -9.01471153e-02
+  -6.30348742e-01  8.53871942e-01  1.25616952e-03 -4.80452836e-01
+  -1.47037387e-01 -3.34600866e-01]
+ [-3.16556245e-01 -5.31638384e-01  3.33282328e+00 -3.47278833e-01
+  -1.85136449e+00 -1.33077896e+00 -5.67175674e+00 -1.03429389e+00
+  -1.92179471e-01  1.45551309e-01]
+ [-5.70546269e-01  7.72817433e-01  8.18116844e-01  4.84842747e-01
+  -1.56788945e+00 -1.77002959e-02  9.74051356e-01 -6.41626678e-03
+   5.61446726e-01  5.94377220e-01]
+ [ 3.05504739e-01  1.29529607e+00 -3.05152029e-01 -8.30086470e-02
+   7.41729379e-01 -6.26125157e-01 -4.29644346e-01 -3.18969393e+00
+   1.22500050e+00 -2.36101222e+00]
+ [-1.55302155e+00  6.51610851e-01 -2.18804693e+00  1.55275273e+00
+  -1.88686860e+00  7.60583580e-01 -1.15416062e+00 -1.43742013e+00
+   2.00931334e+00  1.09791934e+00]
+ [ 1.26513302e-01  1.82497001e+00  9.50791597e-01  1.76644361e+00
+  -8.33499312e-01  4.07388926e-01  3.53170228e+00 -1.46023190e+00
+  -7.70328999e-01  6.68617412e-02]
+ [-2.78285742e-01  3.19884372e+00 -2.80221522e-01 -7.29866147e-01
+  -1.63224685e+00  1.11604862e-01 -2.66104460e+00 -3.24748814e-01
+   7.01126456e-02 -9.27553535e-01]
+ [-9.89097655e-01 -5.50761342e-01 -1.54819369e+00  1.21121228e+00
+  -1.12602437e+00  4.06293049e-02 -2.11097908e+00 -3.68086290e+00
+   1.12445772e+00  4.64026928e+00]
+ [-6.35965824e-01  8.14292192e-01  4.45749015e-01 -9.92191136e-02
+  -1.36482072e+00 -7.99927711e-01 -1.00792336e+00 -8.86562765e-01
+  -7.00684547e-01  7.05489099e-01]
+ [-2.52071905e+00  4.18006420e+00 -3.47544283e-01 -1.24469173e+00
+  -1.32017064e+00 -1.14236939e+00 -8.35088611e-01  3.99889022e-01
+   2.22370386e+00 -1.76515847e-01]
+ [ 4.59569931e+00 -3.78172827e+00  1.87111473e+00 -1.48168170e+00
+  -5.13811588e+00 -2.85059285e+00  8.05686235e-01  1.56487811e+00
+   1.74227691e+00 -1.74696565e+00]
+ [-2.65782881e+00  2.62943769e+00  4.23872799e-01 -4.98767555e-01
+   2.60904849e-01  1.45203531e+00 -3.76286530e+00  6.39556170e-01
+   1.00945771e+00  5.86484186e-02]
+ [ 6.79767430e-02 -7.13312805e-01 -3.07708025e-01  2.62636876e+00
+  -3.66414499e+00  2.22643584e-01 -5.13852930e+00 -2.79547381e+00
+  -1.28453684e+00  1.67300189e+00]
+ [-1.78104174e+00  4.43912715e-01 -7.49621987e-01  1.03544509e+00
+   7.52414763e-01  3.27403128e-01 -1.19083261e+00  3.60984862e-01
+   1.45637691e+00 -3.62222105e-01]
+ [ 1.21300435e+00  6.45717382e-01  3.47376966e+00 -9.66482162e-01
+   1.67593479e+00 -1.90929818e+00 -4.30507135e+00 -2.10897970e+00
+   7.66879976e-01  4.74739939e-01]
+ [ 1.28976738e+00  1.34702766e+00  1.06364644e+00  3.37867546e+00
+   1.33042872e+00 -9.37119186e-01 -1.91756940e+00 -2.21260381e+00
+   2.42495298e-01  9.58844006e-01]
+ [-1.65313399e+00  5.36185741e-01 -1.69804811e-01  1.27094102e+00
+  -2.50433683e-01  1.61571634e+00 -1.76217735e-01  6.96345568e-01
+   6.24306202e-01 -6.00759387e-01]
+ [-9.71698225e-01 -6.59390613e-02  7.77282417e-01  2.90859413e+00
+  -2.15001971e-01 -1.49511456e+00  3.41109067e-01  3.62337470e+00
+  -4.52896744e-01  3.36972356e-01]
+ [-3.44800329e+00  1.72928059e+00 -7.17730045e-01  6.79226279e-01
+  -2.01690364e+00  1.87053406e+00  2.10913137e-01 -3.57808232e-01
+   1.77897429e+00  1.43548055e-02]
+ [-1.25432408e+00 -4.39091213e-02 -4.77281183e-01  1.49084580e+00
+  -1.18558598e+00  1.28114951e+00 -5.25079370e-01  1.27278340e+00
+  -7.25425303e-01 -5.77766657e-01]
+ [ 1.81947684e+00  1.89515579e+00 -1.51802433e+00  4.53705490e-01
+  -2.10482979e+00 -4.64702964e-01 -3.09718466e+00 -1.33285904e+00
+  -6.33309364e-01 -1.72742820e+00]
+ [ 5.83665073e-01  1.05533373e+00  1.61628759e+00  1.59547246e+00
+   1.71487772e+00  1.48054227e-01  3.85018635e+00  7.98852026e-01
+  -2.04526114e+00 -4.19819243e-02]
+ [-4.88325834e+00  1.37134016e+00 -1.37495506e+00  2.07305765e+00
+  -2.38058472e+00 -7.25748420e-01 -1.16216671e+00 -1.08869326e+00
+   1.01041651e+00  7.08471715e-01]
+ [-2.31430149e+00  1.52296579e+00 -1.92408466e+00  1.50398433e+00
+  -7.24987090e-01  1.03807604e+00 -3.61716568e-01 -2.26684499e+00
+  -2.52572279e-02  9.79389250e-01]
+ [-1.57698989e+00  7.94648677e-02 -1.97986817e+00  2.32084322e+00
+  -1.06705260e+00 -2.28725329e-01  3.44815016e+00 -8.49208057e-01
+   5.16745150e-01 -1.13444531e+00]
+ [-1.25910711e+00  9.86861348e-01 -1.67564964e+00  1.64971828e+00
+   1.73541069e+00 -4.54420090e-01  1.49934590e+00  1.39381695e+00
+   5.08256197e-01 -1.15627217e+00]
+ [-2.17636204e+00  4.60690784e+00 -1.42384279e+00  2.21016860e+00
+  -1.11974180e+00 -1.63423944e+00 -1.29451704e+00 -1.11238338e-01
+   9.90583360e-01 -3.01269501e-01]
+ [ 3.14950562e+00  1.06536195e-01 -2.18828574e-01 -4.67679310e+00
+  -5.05751324e+00 -7.93197966e+00 -2.13632631e+00  1.46954179e+00
+   1.79057682e+00 -2.97611284e+00]
+ [ 2.25338936e+00  1.37790310e+00  2.40971875e+00 -7.01476932e-01
+   5.03557026e-01 -1.27666926e+00  1.18463904e-01 -2.10071826e+00
+   1.49735975e+00  1.65540802e+00]
+ [ 5.54699945e+00  3.71030903e+00  2.71868634e+00  2.09277678e+00
+  -7.95912027e-01 -4.30777431e-01 -3.10088634e+00 -4.47086900e-01
+   1.37554252e+00  8.34291041e-01]
+ [-1.84336603e+00  2.01191023e-01 -3.00816631e+00  1.40360072e-01
+  -2.30775595e+00  2.07754284e-01  1.71365321e+00  1.42885041e+00
+   5.90402305e-01  7.99490958e-02]
+ [ 1.14045918e+00  1.30318749e+00  1.01946700e+00  1.93522727e+00
+  -1.11225411e-01 -1.03335440e+00 -1.84667790e+00 -1.85960042e+00
+  -2.12383717e-01  6.18837953e-01]
+ [-8.91224444e-02  1.32760406e+00  7.64756620e-01  8.67653251e-01
+  -1.44157374e+00 -8.26116621e-01 -3.93341541e-01  2.38037288e-01
+  -7.18922913e-02  4.91586328e-01]
+ [-3.64299393e+00  9.39780474e-01 -2.14697456e+00 -8.08668062e-02
+  -1.57476974e+00  2.96378374e-01  1.30676901e+00 -2.76634669e+00
+   9.82982099e-01 -1.48769140e+00]
+ [-2.46592379e+00 -7.28120446e-01 -3.00531363e+00  2.68326879e+00
+  -2.63978457e+00 -9.18082774e-01  3.96610332e+00  1.66308045e+00
+   9.41556036e-01 -7.34078825e-01]
+ [-1.55484867e+00  7.61731565e-01 -1.13861644e+00 -1.76913798e+00
+  -1.35171854e+00 -4.58532006e-01  1.40678716e+00  1.90508151e+00
+   2.74729747e-02 -1.89310268e-01]
+ [-2.41620731e+00 -8.03448260e-01 -1.41911638e+00  1.88900805e+00
+  -2.31585479e+00  1.64183569e+00 -2.10825539e+00 -1.87014925e+00
+   1.99293733e+00 -7.02974379e-01]
+ [-1.39875865e+00  7.92140067e-01 -7.08254516e-01  4.50248528e+00
+  -3.33619356e+00 -3.49147081e-01 -1.41922224e+00 -8.58979404e-01
+   6.87755525e-01 -7.40696847e-01]
+ [ 2.67815065e+00 -1.16050959e+01  1.12229906e-01 -3.09698105e+00
+   6.59262943e+00  1.36182380e+00 -2.62940788e+01 -7.67948675e+00
+   2.83807707e+00  5.12759066e+00]
+ [-2.84648657e+00  2.39650893e+00 -5.12831628e-01  8.76831949e-01
+  -2.10261106e+00  3.16401124e+00 -3.76252317e+00 -2.11125755e+00
+  -5.23779213e-01 -3.30462307e-01]
+ [-2.89803767e+00 -9.93221849e-02 -2.27061182e-01  2.84986186e+00
+  -1.32082546e+00  9.62312281e-01 -6.27758801e-01 -1.57478881e+00
+   1.61036849e+00 -1.30105829e+00]
+ [-2.29513073e+00  5.29256999e-01 -1.70528889e+00  1.06609976e+00
+  -4.19246626e+00 -4.11499798e-01  8.32614481e-01 -1.52960861e+00
+   3.76557082e-01  2.13266730e+00]
+ [-1.83356643e+00  1.12292719e+00 -9.43817556e-01  1.78480077e+00
+  -3.23346639e+00  2.99311352e+00 -2.16249681e+00 -1.05908871e+00
+   6.32538199e-01 -2.05711627e+00]
+ [-6.67229056e-01 -1.27683723e+00 -6.71503603e-01  1.25955737e+00
+  -3.37686133e+00  1.25790179e+00  1.12450314e+00 -1.94694746e+00
+   1.29588020e+00  8.00166905e-01]
+ [-3.14750957e+00  1.04659426e+00 -1.20226049e+00  9.28697884e-02
+  -2.79546332e+00  1.46638548e+00  8.43606889e-02  1.20207779e-01
+   7.38893867e-01 -8.44892681e-01]
+ [ 2.34393626e-01 -2.43277216e+00  8.60715449e-01 -1.27713501e+00
+   1.82615131e-01  5.93195200e-01 -1.73123312e+00 -2.73862171e+00
+   5.38723350e-01  7.18361855e-01]
+ [-4.58217716e+00 -8.47857475e-01 -2.05785608e+00  4.92128372e-01
+  -1.50945008e+00  1.14129162e+00 -4.19046640e+00 -5.66455007e-01
+   3.32195592e+00  2.44700933e+00]
+ [ 2.17396274e-01 -6.68415689e+00  2.88696575e+00  4.58711982e-01
+   1.65295875e+00 -1.79811609e+00 -2.27309780e+01 -2.61183834e+00
+   5.59395790e-01  3.33052921e+00]
+ [-2.09855056e+00 -1.12902570e+00 -1.76409400e+00  5.45586944e-01
+  -1.03762531e+00  2.74822116e-01  3.61037445e+00  1.54849875e+00
+  -8.93542349e-01 -2.44116497e+00]
+ [ 3.53613973e+00  1.13093495e+00 -4.79918391e-01  3.40489578e+00
+   1.08833921e+00 -2.07894240e-02 -3.84631300e+00 -1.70421326e+00
+  -5.87248743e-01 -3.59906840e+00]
+ [ 5.65207660e-01 -3.13064265e+00  4.17465115e+00 -1.37233365e+00
+   1.03200769e+00 -2.73428607e+00 -8.11101341e+00  1.53400004e+00
+  -2.34074116e+00  7.07196414e-01]
+ [ 1.60140350e-01  2.74611306e+00 -1.05476010e+00  8.73219788e-01
+   8.27015489e-02 -1.56183672e+00  2.20110416e+00  9.73380327e-01
+   3.11632305e-01 -4.70216364e-01]
+ [ 6.36199951e+00  7.22538948e+00 -1.96031356e+00 -1.64938331e-01
+  -6.57567358e+00 -2.23198915e+00 -9.78227520e+00 -3.39612484e+00
+   5.23253918e+00  1.18210387e+00]
+ [-1.17277408e+00  2.68860674e+00 -2.24655807e-01  1.37033749e+00
+   6.65180266e-01 -2.16020966e+00  8.42067599e-01  2.33647323e+00
+   1.69040605e-01 -1.02100563e+00]
+ [-3.50899863e+00  1.30942965e+00 -2.29764318e+00 -2.41856769e-01
+  -4.28303510e-01  4.12679970e-01 -3.72254515e+00  7.10276723e-01
+   6.70330048e-01  3.55986714e+00]
+ [ 2.13400221e+00 -4.81527820e-02  6.27886963e+00  8.04793909e-02
+  -3.46209788e+00  2.92101836e+00 -2.21047187e+00 -5.19866765e-01
+   3.05981135e+00 -9.86112237e-01]
+ [ 9.17007122e-03 -1.63481903e+00  1.37533605e+00  2.40349650e+00
+   2.88573575e+00 -2.43380114e-01 -2.42447114e+00 -1.90373290e+00
+   2.95977426e+00 -2.47059274e+00]
+ [ 1.47706378e+00 -2.03990173e+00  1.99426293e+00 -1.71825743e+00
+   5.12829602e-01  5.03783941e-01 -1.77447021e+00 -3.18920732e+00
+  -1.84011012e-01  2.02414656e+00]
+ [ 3.88216451e-02  1.08771026e+00  9.59641099e-01 -6.84291184e-01
+  -4.61229473e-01  2.33256906e-01 -1.04320180e+00 -1.13579905e+00
+  -5.62529564e-01 -5.92627347e-01]
+ [-2.59368086e+00 -9.47154999e-01 -7.55359411e-01  3.13235474e+00
+  -1.49172068e+00 -8.97353649e-01 -3.05761909e+00 -2.44056058e+00
+   1.28013790e+00 -2.65114546e+00]
+ [ 3.21420884e+00 -3.39044899e-01  1.15523744e+00 -1.95028436e+00
+   4.51751739e-01 -4.51866537e-01 -2.60038900e+00 -4.12436008e+00
+  -1.66735935e+00  1.55761576e+00]
+ [-4.29900646e+00 -9.65869665e-01  6.86915517e-01  1.10332704e+00
+   1.20090806e+00  6.76362991e-01 -1.68836725e+00  9.13588464e-01
+   2.32372820e-01 -1.94560981e+00]
+ [-3.10724545e+00  1.95725381e+00 -1.29005241e+00  1.65321445e+00
+  -1.39979506e+00  8.79894435e-01 -1.03280997e+00 -3.09200907e+00
+  -1.63488114e+00 -7.70221353e-01]
+ [ 1.93065786e+00  2.70158720e+00  1.65657997e+00  1.49521112e+00
+  -1.26983953e+00 -2.77936649e+00 -3.02827263e+00 -1.57900345e+00
+   2.10115582e-01  7.69841373e-01]
+ [-3.16555548e+00  1.76705563e+00 -1.49210727e+00  1.43424523e+00
+  -9.10148621e-01  6.73223197e-01  1.02429104e+00 -1.51853013e+00
+   2.02277446e+00 -1.08422112e+00]
+ [ 9.54553783e-01  9.05012667e-01  2.20953131e+00 -1.35716712e+00
+  -6.40583932e-01  6.54683173e-01 -7.18395233e+00 -2.70928478e+00
+   7.57889867e-01 -1.67342812e-01]
+ [ 9.51036692e-01  4.39593047e-01  9.07142460e-01  5.66586792e-01
+  -1.89627683e+00  3.72398317e-01 -3.44193488e-01 -2.60020518e+00
+   1.11890924e+00  4.74725902e-01]
+ [ 6.73265028e+00 -6.58313155e-01  4.71061325e+00  3.99726462e+00
+  -1.68078756e+00 -7.69056034e+00 -1.95385742e+01  3.74423504e+00
+   3.40533423e+00 -6.45373154e+00]
+ [-2.65321374e+00  1.69101012e+00  5.22294408e-03  1.21608377e+00
+   2.55612791e-01  1.45459914e+00  6.26912475e-01 -5.75635493e-01
+   8.98082793e-01  2.46737623e+00]
+ [ 1.23283386e+00  8.08684587e-01  6.64715469e-01  2.03519917e+00
+   5.35659730e-01  3.39374185e-01  5.73777705e-02 -4.97080624e-01
+   9.34623778e-01  8.39703619e-01]
+ [ 3.59092295e-01  1.28879642e+00  3.15019631e+00 -1.07211566e+00
+  -1.44838643e+00 -4.06524301e-01 -4.65292358e+00  5.03968358e-01
+  -6.12577498e-01 -1.21740520e+00]
+ [-1.12001824e+00  4.61852217e+00 -1.83228385e+00  3.49947429e+00
+  -1.48643458e+00 -7.17815816e-01  9.93148923e-01 -3.48226845e-01
+  -3.40228498e-01  1.21677719e-01]
+ [ 1.37414455e+00  1.74338901e+00 -2.34083444e-01 -1.92380035e+00
+   1.51079810e+00 -1.46110678e+00  1.64102387e+00  2.54980206e+00
+   1.82688105e+00 -1.20674694e+00]
+ [-5.31565249e-01  1.76454771e+00 -4.94612724e-01  1.27313471e+00
+  -3.57566476e+00  1.06548774e+00 -3.23884058e+00 -6.35272443e-01
+  -2.79265910e-01 -2.16828537e+00]
+ [-2.64320707e+00  1.57133055e+00 -7.83223689e-01 -9.47060347e-01
+  -1.70924738e-01 -1.55059671e+00  1.58520150e+00 -6.92547485e-02
+   1.88847053e+00 -7.42016435e-01]
+ [-2.36948594e-01 -3.56352448e-01 -2.71709949e-01  2.96312809e-01
+  -2.46514845e+00  2.23060846e+00 -2.78470778e+00  8.30581635e-02
+  -6.15796089e-01 -1.10948074e+00]
+ [-3.91510636e-01  3.20500284e-01  9.00113702e-01  1.34399140e+00
+  -1.06543100e+00 -4.37073410e-01  5.29923320e-01 -8.37284267e-01
+  -6.64026201e-01 -9.35124159e-01]
+ [ 1.83206165e+00  1.72636855e+00 -1.59245834e-01  4.95218009e-01
+  -3.06158948e+00  1.45797223e-01 -4.89526129e+00  2.04252213e-01
+   2.29485941e+00 -6.69521034e-01]
+ [-1.66994619e+00  7.98548281e-01  1.21419752e+00 -7.57330775e-01
+  -2.03674507e+00  1.90831769e+00  1.88887334e+00  1.91209927e-01
+   2.08605146e+00  1.13080430e+00]
+ [-1.31955397e+00  1.05480945e+00  9.35561776e-01 -1.30191112e+00
+   1.04976046e+00 -1.42297757e+00  2.41022352e-02  1.83850777e+00
+   5.08235872e-01 -1.16007507e+00]
+ [-3.79306841e+00  1.49227965e+00 -2.32852650e+00  2.82306075e+00
+  -1.82779217e+00  2.19388199e+00 -2.89966106e+00 -1.20282792e-01
+   7.66508460e-01 -1.34535539e+00]
+ [-1.85759997e+00 -5.83167195e-01  6.23124599e-01  1.30887270e+00
+  -6.44697696e-02  4.25921530e-01 -2.90333390e-01 -2.30569243e+00
+   7.33179629e-01  5.36494792e-01]
+ [ 3.37309742e+00  9.53780472e-01  1.00912333e+00 -8.67948353e-01
+  -1.17528582e+00  9.18424606e-01 -1.73379338e+00 -8.69934857e-01
+   2.28769493e+00  2.39405608e+00]
+ [-3.24586916e+00  4.21326041e-01 -3.74349952e-01  7.50115633e-01
+   1.96500137e-01  5.93776047e-01  1.16309452e+00  4.72396314e-01
+   2.96089709e-01 -5.84244020e-02]
+ [-3.04394722e-01  1.21401060e+00  1.57898247e-01  2.06140375e+00
+  -5.49057499e-02  1.87105060e-01  2.58155322e+00  3.98648769e-01
+  -1.34356976e-01 -8.41636181e-01]
+ [-8.31841826e-01  8.31077620e-02 -4.30581141e+00  1.15397418e+00
+  -3.15367794e+00 -3.81193995e-01 -5.68069339e-01 -1.16417134e+00
+   2.81754708e+00 -1.32353258e+00]
+ [ 6.93590287e-03  2.61696053e+00 -3.93466783e+00 -2.49490952e+00
+  -4.43601191e-01 -4.46042567e-01 -1.00088954e+00  2.64103323e-01
+  -1.34066474e+00 -3.32737279e+00]
+ [ 6.87192287e-03 -8.40632558e-01  4.67376739e-01  1.70258427e+00
+  -2.61050165e-01  1.47618067e+00  2.39345223e-01  1.14672160e+00
+   8.50373924e-01  2.28934929e-01]
+ [-2.54588413e+00 -2.21838549e-01 -1.92189658e+00 -2.33046770e+00
+  -1.34332025e+00  1.02265465e+00  3.46341133e+00  6.45276368e-01
+   9.25172746e-01 -1.16421126e-01]
+ [-2.79843193e-02  2.68686700e+00  9.86498356e-01  9.77514684e-01
+   1.02456617e+00  2.40186140e-01 -1.72966337e+00  1.86112618e+00
+   9.54957664e-01 -1.48470032e+00]
+ [-9.39037025e-01 -1.57046184e-01  1.17353213e+00  9.80632544e-01
+  -5.47550201e-01 -9.89014208e-01  1.12355506e+00 -3.59581932e-02
+   1.76931119e+00  2.46491596e-01]
+ [ 1.17055857e+00  3.07696629e+00 -2.26355314e+00  1.74483597e+00
+  -1.68199742e+00  7.77758300e-01 -1.40608609e+00 -3.76243281e+00
+   8.48385453e-01  2.55090714e-01]]Random scores for a set of images['../dance_data/validation/ballet/mQMMXBv7hYo_017_0178.jpg', '../dance_data/validation/quickstep/RMw_7Bs6d8A_038_0087.jpg', '../dance_data/validation/break/4SQVm2fyLH0_053_0041.jpg', '../dance_data/validation/swing/aS5DvL8p4I4_011_0109.jpg', '../dance_data/validation/tango/BCIqkUblDpM_026_0072.jpg', '../dance_data/validation/square/-v31uYwWz7c_050_0233.jpg', '../dance_data/validation/swing/HXKqQWy3NMY_105_0062.jpg', '../dance_data/validation/waltz/nuWL11X_wjk_023_0179.jpg', '../dance_data/validation/quickstep/X53uafpmFgM_043_0107.jpg', '../dance_data/validation/quickstep/QDiPQ7uBYY4_734_0128.jpg', '../dance_data/validation/swing/SxMxOa22PlM_050_0151.jpg', '../dance_data/validation/swing/SxMxOa22PlM_050_0053.jpg', '../dance_data/validation/waltz/AQmHJlhUhes_022_0176.jpg', '../dance_data/validation/quickstep/QDiPQ7uBYY4_734_0018.jpg', '../dance_data/validation/ballet/hqOmSVMgoG0_428_0113.jpg', '../dance_data/validation/square/-v31uYwWz7c_050_0166.jpg', '../dance_data/validation/break/njw1rxDmUU0_025_0228.jpg', '../dance_data/validation/flamenco/9U5TNavFpF4_004_0179.jpg', '../dance_data/validation/swing/SxMxOa22PlM_050_0169.jpg', '../dance_data/validation/tango/b67jXhRbmh0_030_0094.jpg', '../dance_data/validation/break/P17nzRf6HiE_020_0257.jpg', '../dance_data/validation/foxtrot/HJyQjQy9n-U_350_0097.jpg', '../dance_data/validation/waltz/X9CqCEo6AAc_003_0239.jpg', '../dance_data/validation/swing/aS5DvL8p4I4_011_0220.jpg', '../dance_data/validation/ballet/nM-rm68GyRk_020_0291.jpg', '../dance_data/validation/swing/naH68eSm2H4_202_0125.jpg', '../dance_data/validation/swing/HXKqQWy3NMY_105_0017.jpg', '../dance_data/validation/swing/aS5DvL8p4I4_011_0201.jpg', '../dance_data/validation/waltz/AQ-izQC-S1Y_031_0283.jpg', '../dance_data/validation/ballet/zPQp-Re-PlA_235_0066.jpg', '../dance_data/validation/quickstep/mBt-cEgqPwc_221_0180.jpg', '../dance_data/validation/swing/DoAIhu_3XR0_045_0033.jpg', '../dance_data/validation/flamenco/VOqaphuiQug_003_0114.jpg', '../dance_data/validation/break/S7tQIPMejL8_027_0088.jpg', '../dance_data/validation/swing/SxMxOa22PlM_050_0020.jpg', '../dance_data/validation/foxtrot/HJyQjQy9n-U_350_0264.jpg', '../dance_data/validation/square/FhcTmd5AiuM_131_0079.jpg', '../dance_data/validation/latin/5HbFic9gDgg_033_0193.jpg', '../dance_data/validation/latin/aKOChOei2JQ_050_0145.jpg', '../dance_data/validation/ballet/u--jDp2Hieg_131_0132.jpg', '../dance_data/validation/swing/naH68eSm2H4_202_0212.jpg', '../dance_data/validation/square/Z9vffJJJfNA_027_0110.jpg', '../dance_data/validation/latin/CU4fkMrgTLk_115_0059.jpg', '../dance_data/validation/flamenco/9YJWZDncb3c_124_0152.jpg', '../dance_data/validation/foxtrot/q75QSh9M5OI_033_0098.jpg', '../dance_data/validation/flamenco/fgN2mMFqjxg_031_0110.jpg', '../dance_data/validation/tango/MZ1tmTqt1Kk_031_0283.jpg', '../dance_data/validation/swing/wzf8DqjdyA0_348_0092.jpg', '../dance_data/validation/waltz/AQ-izQC-S1Y_031_0108.jpg', '../dance_data/validation/ballet/W6Hxyg5pnSA_028_0174.jpg', '../dance_data/validation/latin/w2K4A-d1bC4_036_0243.jpg', '../dance_data/validation/swing/u_z2Tsoa2iE_039_0132.jpg', '../dance_data/validation/break/6dbo5GtNnxU_144_0236.jpg', '../dance_data/validation/swing/HXKqQWy3NMY_105_0089.jpg', '../dance_data/validation/waltz/1V02jRprvoI_015_0183.jpg', '../dance_data/validation/ballet/W6Hxyg5pnSA_028_0132.jpg', '../dance_data/validation/latin/CU4fkMrgTLk_115_0266.jpg', '../dance_data/validation/foxtrot/kQtAMqHke30_043_0045.jpg', '../dance_data/validation/latin/CU4fkMrgTLk_115_0060.jpg', '../dance_data/validation/latin/is9wrZ0ShZU_050_0226.jpg', '../dance_data/validation/break/njw1rxDmUU0_025_0299.jpg', '../dance_data/validation/waltz/azWcLosbIVY_105_0157.jpg', '../dance_data/validation/foxtrot/t4xg5_yabdU_015_0281.jpg', '../dance_data/validation/square/Z9vffJJJfNA_027_0047.jpg', '../dance_data/validation/break/6dbo5GtNnxU_144_0035.jpg', '../dance_data/validation/swing/V21PEmv_8yY_029_0106.jpg', '../dance_data/validation/flamenco/ErZIG0AWPOw_041_0073.jpg', '../dance_data/validation/square/CDjIj4vgmvc_008_0131.jpg', '../dance_data/validation/tango/v2Wx2pk2blU_013_0090.jpg', '../dance_data/validation/flamenco/9Y2gICFe9mQ_007_0120.jpg', '../dance_data/validation/swing/HXKqQWy3NMY_105_0005.jpg', '../dance_data/validation/tango/AQ7HEnCtnJg_012_0158.jpg', '../dance_data/validation/waltz/xXWPf8wnhdo_033_0277.jpg', '../dance_data/validation/tango/AVaxGhMgHMk_018_0197.jpg', '../dance_data/validation/tango/BCIqkUblDpM_026_0191.jpg', '../dance_data/validation/foxtrot/8uMn7XUF36s_025_0230.jpg', '../dance_data/validation/tango/MZ1tmTqt1Kk_031_0098.jpg', '../dance_data/validation/swing/V21PEmv_8yY_029_0243.jpg', '../dance_data/validation/latin/wjG99Kbp1qQ_030_0256.jpg', '../dance_data/validation/latin/8qAGcFpaUlc_032_0070.jpg', '../dance_data/validation/foxtrot/q75QSh9M5OI_033_0079.jpg', '../dance_data/validation/swing/naH68eSm2H4_202_0201.jpg', '../dance_data/validation/waltz/oikcRADJbDc_036_0209.jpg', '../dance_data/validation/break/6dbo5GtNnxU_144_0233.jpg', '../dance_data/validation/flamenco/Wy5nqf_WeWk_210_0092.jpg', '../dance_data/validation/square/kSNzS9zObCw_002_0153.jpg', '../dance_data/validation/tango/b67jXhRbmh0_030_0067.jpg', '../dance_data/validation/ballet/nM-rm68GyRk_020_0175.jpg', '../dance_data/validation/latin/is9wrZ0ShZU_050_0038.jpg', '../dance_data/validation/foxtrot/keelWKQGWIs_030_0142.jpg', '../dance_data/validation/quickstep/GNOwDih_nsk_011_0064.jpg', '../dance_data/validation/flamenco/gxzU5EqNL14_054_0166.jpg', '../dance_data/validation/waltz/q-kL4TPjOcQ_015_0071.jpg', '../dance_data/validation/waltz/oikcRADJbDc_036_0074.jpg', '../dance_data/validation/swing/V21PEmv_8yY_029_0094.jpg', '../dance_data/validation/foxtrot/h4LfkNTCJjM_015_0080.jpg', '../dance_data/validation/waltz/AQmHJlhUhes_022_0016.jpg', '../dance_data/validation/break/XnapRl2hHTo_050_0114.jpg', '../dance_data/validation/quickstep/GNOwDih_nsk_011_0132.jpg', '../dance_data/validation/latin/heJXZdT-ne0_358_0105.jpg', '../dance_data/validation/tango/MZ1tmTqt1Kk_031_0186.jpg', '../dance_data/validation/latin/w2K4A-d1bC4_036_0215.jpg', '../dance_data/validation/latin/heJXZdT-ne0_358_0069.jpg', '../dance_data/validation/waltz/AQ-izQC-S1Y_031_0292.jpg', '../dance_data/validation/latin/5HbFic9gDgg_033_0070.jpg', '../dance_data/validation/square/eYjNdnSX1vY_103_0054.jpg', '../dance_data/validation/break/tbFKZGzX9Kg_103_0086.jpg', '../dance_data/validation/waltz/X9CqCEo6AAc_003_0016.jpg', '../dance_data/validation/flamenco/ErZIG0AWPOw_041_0246.jpg', '../dance_data/validation/foxtrot/iOCZp-CmW5w_030_0118.jpg', '../dance_data/validation/quickstep/X53uafpmFgM_043_0028.jpg', '../dance_data/validation/break/6dbo5GtNnxU_144_0290.jpg', '../dance_data/validation/tango/AQ7HEnCtnJg_012_0026.jpg', '../dance_data/validation/flamenco/9U5TNavFpF4_004_0033.jpg', '../dance_data/validation/tango/AQ7HEnCtnJg_012_0282.jpg', '../dance_data/validation/latin/is9wrZ0ShZU_050_0239.jpg', '../dance_data/validation/flamenco/gxzU5EqNL14_054_0032.jpg', '../dance_data/validation/waltz/AQmHJlhUhes_022_0141.jpg', '../dance_data/validation/waltz/qTuBDM63KbA_034_0296.jpg', '../dance_data/validation/latin/sW9TOGfrs8c_202_0086.jpg', '../dance_data/validation/break/RJnOuAf0cEY_025_0202.jpg', '../dance_data/validation/ballet/mQMMXBv7hYo_017_0199.jpg', '../dance_data/validation/foxtrot/h4LfkNTCJjM_015_0292.jpg', '../dance_data/validation/break/XnapRl2hHTo_050_0106.jpg', '../dance_data/validation/latin/r5X_IkhkquU_040_0078.jpg', '../dance_data/validation/latin/sW9TOGfrs8c_202_0258.jpg', '../dance_data/validation/latin/is9wrZ0ShZU_050_0274.jpg', '../dance_data/validation/quickstep/84oDmFB2uyk_020_0011.jpg']
+[[-4.51095432e-01  7.74606109e-01  2.79099166e-01  6.87640071e-01
+  -3.61802649e+00 -7.51822233e-01 -6.37691557e-01 -2.79542398e+00
+   3.99041831e-01 -2.57572792e-02]
+ [ 5.94827950e-01  9.13042426e-01  1.42237294e+00  1.48057377e+00
+   1.78253067e+00 -6.62670955e-02  4.18507671e+00  8.24726343e-01
+  -2.66258025e+00  2.69103378e-01]
+ [ 7.40577412e+00  1.30030811e+00  5.28736448e+00 -4.23606491e+00
+  -4.34752226e+00 -3.00499630e+00 -1.70448170e+01 -1.66455662e+00
+   4.89053583e+00 -8.02588844e+00]
+ [-2.49135876e+00  1.58332145e+00 -1.52314353e+00 -1.62359595e+00
+  -5.53977370e-01 -1.44673729e+00  2.07742900e-01  3.39481264e-01
+   5.01280606e-01 -4.38317657e-01]
+ [-1.73385000e+00  2.16430926e+00 -3.22606468e+00  3.44895816e+00
+  -3.00246406e+00  2.82087743e-01  3.21415626e-02 -5.03302753e-01
+   2.15784740e+00  1.59206533e+00]
+ [-2.40093255e+00 -9.30201590e-01 -9.72499490e-01  1.19510436e+00
+   9.52377796e-01  2.75896192e-01 -2.50636387e+00  7.21098900e-01
+   3.72303557e+00  3.35158706e-01]
+ [ 7.38583922e-01  2.72071528e+00 -2.90943742e+00  1.68413317e+00
+  -4.11016083e+00  8.62878501e-01 -2.40514889e-01 -4.64541245e+00
+   1.24175990e+00 -7.74289131e-01]
+ [-4.81343746e+00  3.60726982e-01 -2.36525130e+00  3.46294260e+00
+  -2.54132318e+00  2.49014091e+00 -3.91344023e+00 -3.13977265e+00
+   4.67360020e+00  3.48973513e+00]
+ [-4.77828884e+00  1.13120091e+00 -1.60469341e+00  6.96025908e-01
+   9.70327854e-01 -3.18791300e-01  1.63773549e+00  7.67058074e-01
+  -4.64355260e-01  6.91001654e-01]
+ [-2.61067629e+00 -1.79286504e+00 -2.87918568e+00  2.94143105e+00
+  -2.77760506e+00  6.05083883e-01  3.65698266e+00 -2.39695334e+00
+   1.50377169e-01  8.92855108e-01]
+ [ 2.19029045e+00  3.58354306e+00  3.36827934e-01 -4.96015698e-01
+  -1.48515391e+00 -2.64443064e+00 -2.86281729e+00  5.99555552e-01
+  -5.65326154e-01 -2.95355558e+00]
+ [ 1.42565453e+00  5.00970459e+00  3.48810506e+00 -1.36458111e+00
+  -2.74051785e+00  2.39277959e+00 -6.44839764e+00 -1.00330710e+00
+   2.02463889e+00 -2.72142315e+00]
+ [-2.63734722e+00  4.70365858e+00  7.99723506e-01  1.39178002e+00
+   1.39787233e+00 -2.67078191e-01  7.14516044e-01 -9.47439075e-01
+  -9.87855271e-02 -1.08331656e+00]
+ [-2.87027431e+00 -1.43266872e-01 -2.39202189e+00  2.59692192e+00
+  -2.87309647e+00  2.21652126e+00  3.40635347e+00 -1.49648881e+00
+  -5.89352027e-02 -1.72662342e+00]
+ [-6.06333613e-01 -1.26458958e-01  1.03146446e+00  8.95870388e-01
+  -2.89673805e-01  2.60066032e+00  1.30517280e+00 -7.28567421e-01
+   1.35254169e+00 -3.26539695e-01]
+ [-2.20539570e+00 -1.43468428e+00  1.24710500e+00  9.79047358e-01
+   5.28068095e-02  3.83710504e+00 -2.53669977e+00  6.08240783e-01
+   1.75221455e+00 -1.36411130e-01]
+ [ 1.07337153e+00  4.11668444e+00  1.92642045e+00 -8.06376159e-01
+   4.05803800e-01  8.66194516e-02  4.75138873e-01  2.89812660e+00
+   4.96117681e-01 -3.95182705e+00]
+ [-3.14192891e+00  4.53553975e-01  6.42212749e-01  6.47222996e-01
+  -8.82750034e-01  1.80853438e+00 -3.90548849e+00 -4.63440371e+00
+   6.22106552e-01  5.53085184e+00]
+ [ 2.77839279e+00  5.86723566e+00  1.11467928e-01 -1.37063468e+00
+  -1.98698580e-01  2.29259312e-01 -2.55091500e+00 -8.17289889e-01
+  -1.43966603e+00 -1.08500516e+00]
+ [-1.51790750e+00  8.85203779e-01 -1.42552793e+00  1.92833579e+00
+  -2.28795123e+00 -3.65845233e-01 -7.89721727e-01 -1.82999825e+00
+   2.30736876e+00  9.33153152e-01]
+ [ 3.52362692e-02 -3.87016988e+00  5.86318588e+00  2.59751701e+00
+   5.76146841e+00 -1.02554297e+00 -3.95001531e+00 -2.52126288e+00
+  -1.56419683e+00 -2.94452786e+00]
+ [-3.86232138e+00  3.76142144e-01 -6.20550334e-01  7.75961280e-01
+  -2.70867133e+00  6.40761614e-01 -6.79323733e-01 -1.39264429e+00
+   8.46110210e-02  3.54523230e+00]
+ [-2.40242553e+00  6.49943352e-01 -2.27897310e+00  2.78205347e+00
+  -1.75534713e+00 -8.03357482e-01 -4.47414994e-01 -1.48843896e+00
+   3.24554014e+00  1.79631516e-01]
+ [-3.69354439e+00  3.06890059e+00 -1.45057237e+00 -7.48071149e-02
+  -2.36560273e+00 -1.49213195e+00  1.47954381e+00 -1.16072977e+00
+   7.06884503e-01 -1.36432636e+00]
+ [-1.72126651e+00  1.76252770e+00  3.45751166e-01  8.61966133e-01
+   1.72956741e+00  9.11904395e-01  4.19523805e-01 -1.19633973e+00
+  -6.89985394e-01 -8.32594812e-01]
+ [ 4.49948072e+00  6.13133252e-01  4.90066004e+00 -1.93688178e+00
+   1.04163361e+00 -2.29858947e+00 -8.20085526e+00 -4.49380827e+00
+   1.48846960e+00  6.48320973e-01]
+ [ 1.00054212e-01  2.35825348e+00 -2.27148628e+00  3.08784068e-01
+  -2.05427909e+00  8.90604734e-01 -2.12602377e+00 -4.75479221e+00
+   1.96370041e+00  4.52579498e-01]
+ [-3.55430627e+00  2.00561881e+00 -5.94649494e-01  1.87223184e+00
+  -4.05738163e+00  1.58357486e-01  1.95671976e+00 -4.56829548e-01
+   7.71836936e-01 -1.75328720e+00]
+ [-2.54466081e+00  3.25871736e-01 -1.73933411e+00 -6.79138422e-01
+  -1.16340923e+00  2.09453249e+00  4.85070169e-01  2.95874234e-02
+   1.12272479e-01 -9.67140317e-01]
+ [-1.69752157e+00 -2.57895917e-01  2.09824157e+00 -1.14622749e-01
+  -2.43996978e-02  1.45382059e+00  1.48956180e-01 -1.22586489e+00
+  -3.86457592e-02  5.57400472e-02]
+ [-9.13217127e-01  1.93404913e+00  1.22340274e+00  4.37060744e-01
+  -1.88488424e+00  6.62729561e-01 -1.51722670e+00  1.27476180e+00
+  -2.08273426e-01 -2.18261170e+00]
+ [ 1.19255817e+00 -8.00444424e-01  1.21305573e+00 -9.81846452e-02
+  -1.36425626e+00 -5.58403909e-01 -1.14378321e+00 -8.50338399e-01
+   3.85878325e-01 -1.26640469e-01]
+ [-2.30165148e+00  4.92473453e-01  3.29552841e+00  1.53552306e+00
+  -1.84767818e+00  6.12307608e-01 -1.28166944e-01  5.44814646e-01
+  -1.94564581e-01  8.00120890e-01]
+ [ 4.83371019e+00  5.81370257e-02  1.46443558e+00  2.69405007e-01
+  -1.92746127e+00 -3.64871907e+00 -8.55557919e+00 -5.91673851e-01
+   1.19544946e-01  4.19551164e-01]
+ [ 1.88694024e+00  1.69212401e+00  4.74515820e+00  4.88283694e-01
+  -4.62280893e+00  7.46410668e-01 -3.96259236e+00 -1.89688593e-01
+   3.41611814e+00 -1.78777599e+00]
+ [-3.98376441e+00  2.61960566e-01 -3.03536415e+00  1.95534289e+00
+  -8.98547888e-01  9.66437161e-01  1.47240922e-01  4.16174769e-01
+   9.67437565e-01  4.82550430e+00]
+ [-3.72894192e+00  2.60077506e-01  1.72568113e-01  7.70750403e-01
+  -9.47181106e-01  1.28855050e+00  3.73340392e+00  2.37233892e-01
+   2.04320505e-01 -1.42173665e-02]
+ [-2.57592130e+00 -2.98887253e+00 -2.99568653e+00  4.82094812e+00
+  -3.54619145e+00  3.20236945e+00  5.95128059e-01 -3.67389297e+00
+  -1.25551963e+00  3.96432430e-01]
+ [-4.74186778e-01  2.18669152e+00  2.88810277e+00 -9.95081007e-01
+   9.03772175e-01 -1.87904939e-01 -2.58703256e+00 -8.41036558e-01
+   3.79255861e-01 -1.38627219e+00]
+ [ 6.52976692e-01  2.57320070e+00  2.60122633e+00 -1.33400834e+00
+   3.15430999e-01 -2.26120964e-01 -1.95523751e+00 -2.01570249e+00
+   7.40153432e-01  1.24516475e+00]
+ [ 3.09244251e+00  1.75672913e+00  3.56764174e+00 -2.73384333e-01
+  -6.73737109e-01 -2.22809792e+00 -1.19597902e+01 -1.59923363e+00
+   2.73340082e+00 -2.15954471e+00]
+ [ 1.24199355e+00 -1.70999312e+00  2.23451996e+00  1.57906103e+00
+  -2.46237397e+00 -2.31982350e+00  1.72855884e-01 -4.19368029e+00
+   2.48904562e+00 -8.79772827e-02]
+ [ 7.38994122e+00  1.63447595e+00  3.35330606e+00 -8.98165643e-01
+   6.29061413e+00 -4.32892227e+00 -1.23814840e+01  1.94064987e+00
+   1.63221490e+00 -2.02268481e+00]
+ [ 1.25543451e+00  3.88876796e+00  8.06984425e-01 -2.44387579e+00
+  -3.44895124e+00 -2.69269753e+00 -2.45390916e+00 -2.11215019e+00
+   1.11452647e-01 -5.28846741e-01]
+ [-6.67435884e-01  1.29552507e+00 -1.96033549e+00  4.28125334e+00
+  -1.43522978e+00  1.44022393e+00 -1.58479309e+00 -2.12547302e+00
+   1.81946051e+00 -7.80196726e-01]
+ [ 2.13371468e+00  1.32322991e+00  4.20353222e+00 -2.41979814e+00
+  -3.78144771e-01 -2.80854654e+00 -7.78792334e+00 -7.07306385e+00
+  -4.31029707e-01  8.83169591e-01]
+ [ 4.29203987e-01  2.68069291e+00  1.11150944e+00 -1.39129475e-01
+  -5.66529930e-01 -7.39188790e-01 -2.92413306e+00 -1.50829226e-01
+   1.28406036e+00 -1.95541203e+00]
+ [ 1.31382072e+00  2.22349954e+00  1.15363514e+00  1.25833988e-01
+   1.08690906e+00 -1.19119191e+00 -3.59564853e+00  6.57603979e-01
+  -4.10406888e-01 -2.29222822e+00]
+ [-3.29941130e+00  1.82340288e+00 -8.97474408e-01  3.12310386e+00
+  -1.37290013e+00  1.83074546e+00  9.60115731e-01 -1.61489844e+00
+   6.79375172e-01 -2.07575250e+00]
+ [-2.41942978e+00  1.52232087e+00  1.53966761e+00 -1.14243031e-01
+  -1.72871685e+00 -3.40222210e-01  4.31434393e-01 -1.13769066e+00
+  -9.79374945e-01 -1.45282343e-01]
+ [-4.14882183e+00  3.09730864e+00 -1.18851197e+00 -9.53740895e-01
+  -2.48720512e-01  3.11798781e-01 -6.27639592e-01 -2.09830475e+00
+   4.16381925e-01 -1.86642766e+00]
+ [ 1.64636683e+00  2.90734482e+00 -1.86877048e+00 -3.03794312e+00
+  -3.35999799e+00 -3.20327258e+00 -1.40248024e+00  7.66144872e-01
+  -4.14412642e+00 -4.44955444e+00]
+ [-2.44987082e+00  3.40416692e-02  2.51955390e+00  7.39914000e-01
+   8.95592093e-01 -2.12997723e+00 -3.00681796e-02 -2.31835055e+00
+   6.22485161e-01 -1.51859903e+00]
+ [ 1.49627638e+00  3.71028876e+00 -2.62094545e+00  1.51625454e+00
+  -2.85189271e+00 -5.06744608e-02 -1.63793671e+00 -4.71630764e+00
+   1.25637686e+00  1.13081932e+00]
+ [-5.44794559e+00  8.85279775e-01 -1.26977682e+00  3.62300563e+00
+  -2.44388580e+00  2.25458860e+00 -1.57291067e+00 -9.24661577e-01
+   1.72475338e+00  2.42910719e+00]
+ [-1.23927379e+00  1.77975357e+00  1.66940451e+00  5.33205032e-01
+  -1.88656271e-01 -1.74355090e-01 -4.75130439e-01 -7.68109933e-02
+  -1.17390609e+00 -4.38730568e-01]
+ [ 2.88775635e+00  2.51339674e+00 -2.23677874e+00  2.56870461e+00
+   1.37738860e+00 -1.90040755e+00 -2.94403243e+00 -1.08282840e+00
+  -3.75058889e+00 -2.09723139e+00]
+ [-8.80571231e-02  2.52683729e-01 -8.08925152e-01  1.84854019e+00
+   1.02360260e+00  1.10289142e-01 -6.27864182e-01 -3.63352013e+00
+   1.32890499e+00 -8.41805398e-01]
+ [ 6.32036018e+00  3.55292273e+00  7.80666113e-01 -1.87872708e+00
+   1.10334473e+01 -4.07469893e+00 -1.50838737e+01  3.89626288e+00
+  -2.78276277e+00 -3.73263955e+00]
+ [ 3.52618718e+00  1.04081422e-01  1.43445289e+00  4.44637388e-02
+   5.52111447e-01 -5.86680055e-01 -8.96067441e-01 -1.54164588e+00
+   2.49166250e+00  3.82113010e-01]
+ [-4.01909262e-01  2.10366893e+00  2.70080161e+00  7.90198565e-01
+  -6.88132703e-01  7.89225280e-01 -3.81146483e-02  2.41061211e+00
+   4.17963713e-01 -2.25357175e+00]
+ [-1.55470580e-01  2.28329277e+00  5.20479083e-02  1.48124182e+00
+  -1.40478456e+00 -1.68957150e+00  7.36500025e-01 -3.64143611e-03
+  -6.61013544e-01  7.80920625e-01]
+ [-2.00555801e+00  2.04327178e+00  1.42147303e+00 -1.07103753e+00
+  -1.14047122e+00 -1.47014880e+00  2.63886571e+00  1.36101782e+00
+  -1.31771612e+00 -3.33115506e+00]
+ [-2.12650016e-01 -1.21961701e+00  2.67573071e+00 -3.53334934e-01
+  -1.55281711e+00  5.58094859e-01  1.81004775e+00 -1.64078057e+00
+   1.80359304e+00 -1.33694494e+00]
+ [ 3.79022312e+00 -3.09262872e+00 -1.40536735e-02 -2.55136681e+00
+  -5.24207067e+00 -5.31546116e+00  2.16790035e-01  2.95976949e+00
+   2.10632133e+00 -7.88011491e-01]
+ [ 9.36730623e-01  1.54399753e+00 -1.19899285e+00  3.44815755e+00
+  -2.11598039e+00 -1.35070026e+00 -3.42008901e+00 -1.38115895e+00
+   6.08715832e-01  8.49729627e-02]
+ [-1.41251540e+00 -3.19460966e-02 -2.19616127e+00  1.90748155e+00
+  -3.43472981e+00  3.54319549e+00  2.36149359e+00 -2.24385929e+00
+   1.40436292e+00  1.92880857e+00]
+ [ 4.46957201e-01  2.37700626e-01  8.89281034e-01 -9.04329121e-01
+  -2.82526541e+00 -9.08788562e-01 -2.59667546e-01 -1.19585681e+00
+   4.65467423e-01  1.47216713e+00]
+ [-4.20626831e+00  1.43530929e+00 -3.01809001e+00  1.71273315e+00
+  -2.69400597e+00  1.64732265e+00  2.10778570e+00 -2.28142118e+00
+   3.83979380e-01  1.31542909e+00]
+ [ 2.52391911e+00  1.29394138e+00  7.33014047e-01  1.68289542e+00
+  -1.73238385e+00 -3.20085377e-01 -2.07935286e+00  1.27279496e+00
+   1.64214492e+00 -1.22799170e+00]
+ [ 7.83848822e-01  2.67167234e+00 -1.74565578e+00  1.21748662e+00
+  -2.26417708e+00 -3.68074067e-02 -4.23022926e-01 -4.40080500e+00
+   2.43582678e+00 -3.76569897e-01]
+ [-3.11532044e+00 -4.45936210e-02 -1.82111001e+00 -1.45777941e+00
+   9.67541039e-01 -1.20553029e+00 -4.28435147e-01  1.33872938e+00
+   5.27238965e-01 -1.07036078e+00]
+ [-3.85250044e+00 -3.63072962e-01 -9.98526931e-01  6.99114799e-01
+  -2.75143909e+00  1.90955460e+00  1.03614402e+00 -5.54411411e-01
+   1.00462151e+00  3.08024669e+00]
+ [-3.33502340e+00  1.33426785e+00 -2.91907954e+00  1.18692863e+00
+  -1.41212916e+00  8.40876222e-01 -1.12426408e-01 -2.29262233e+00
+   2.00212574e+00  1.43739149e-01]
+ [-1.71811795e+00  2.71599889e+00 -5.74460745e+00  4.40159655e+00
+  -3.59299517e+00  1.33241439e+00 -2.04016473e-02 -3.02285171e+00
+   1.25027204e+00  9.19526398e-01]
+ [-2.38315511e+00  1.76083803e+00 -1.31037772e+00  2.03046632e+00
+   2.99752682e-01 -1.15574753e+00 -1.45215407e-01  4.49470341e-01
+  -8.37197185e-01 -1.34048843e+00]
+ [ 8.91215980e-01  6.30376458e-01  7.07470894e-01 -8.27080727e-01
+   2.11476469e+00 -2.42027450e+00 -3.39154172e+00  5.09870112e-01
+   1.89312145e-01 -1.55455065e+00]
+ [ 1.12356317e+00  3.60716641e-01  3.78977031e-01  2.21324229e+00
+  -1.44064820e+00  9.21952844e-01 -2.81306076e+00 -9.82541561e-01
+  -4.75320488e-01 -2.71527112e-01]
+ [ 1.80619955e-01  2.06233215e+00 -1.32871449e+00  1.14051902e+00
+  -3.28616357e+00 -8.88473615e-02 -4.18675518e+00 -2.35238934e+00
+  -4.97409016e-01 -2.89274383e+00]
+ [ 8.94177258e-01  5.29617691e+00  4.30010632e-02 -3.24020982e-01
+  -2.13169265e+00 -7.32881784e-01 -2.12362766e+00  1.10830474e+00
+  -3.15614629e+00 -4.44255543e+00]
+ [-1.60021973e+00  6.87188566e-01 -1.36236012e+00  2.04850531e+00
+  -2.47319126e+00 -6.05150983e-02 -2.07392144e+00 -2.89514732e+00
+   2.94941258e+00 -3.28475803e-01]
+ [ 4.17806292e+00  3.25436115e+00  6.13247108e+00 -2.21954918e+00
+  -1.36271811e+00 -1.38300204e+00 -1.00107489e+01 -1.66162050e+00
+  -8.13033998e-01 -2.80692720e+00]
+ [-2.30211782e+00  1.55939054e+00 -1.24842548e+00  1.48603952e+00
+  -8.19588721e-01  9.50173795e-01  1.76075971e+00  8.08182657e-01
+   1.96575177e+00  3.47254694e-01]
+ [-1.76079965e+00 -2.07936382e+00  3.64219165e+00 -7.72366166e-01
+   8.08080912e-01 -2.10910940e+00  1.29158586e-01 -1.01398861e+00
+  -5.61254565e-03 -2.09150243e+00]
+ [ 4.79608655e-01  3.39881921e+00  2.22539753e-02  1.47206342e+00
+  -3.08066225e+00 -8.59655797e-01 -7.02454567e+00 -8.54313076e-01
+  -1.94334960e+00 -1.02640808e+00]
+ [-1.78900599e+00 -7.69883037e-01 -5.30502558e-01 -4.19997871e-01
+  -2.35850000e+00  2.21089816e+00  4.50603932e-01 -3.32127064e-01
+   6.41188383e-01 -1.96132600e+00]
+ [ 7.08854795e-02  3.98240119e-01 -1.09379303e+00  1.68220854e+00
+  -1.89134860e+00 -9.51908052e-01 -1.77602458e+00  1.06737661e+00
+   1.21351731e+00  9.23541427e-01]
+ [-1.75791824e+00  2.93013096e+00  2.21266240e-01  1.14088929e+00
+   1.78095448e+00  2.07912588e+00  2.01589927e-01  2.19989613e-01
+  -9.20800805e-01 -1.09281647e+00]
+ [ 1.92536592e+00  3.79539222e-01  1.45644760e+00 -1.83818388e+00
+   8.80311549e-01 -2.63884336e-01  1.57205716e-01 -1.52066362e+00
+   1.47097909e+00  1.79030168e+00]
+ [ 8.85442913e-01  1.78677571e+00  1.32026568e-01  7.78776348e-01
+  -2.63218805e-02 -1.21856821e+00 -1.31702244e+00 -5.61324358e-01
+   6.85698867e-01  5.08635223e-01]
+ [-1.48954678e+00  2.40712714e+00 -3.46067548e-01  4.27829415e-01
+   1.61426291e-01  7.87885964e-01  1.03789115e+00 -1.81387112e-01
+   1.88902259e-01  1.04784286e+00]
+ [ 5.79128933e+00 -5.08711195e+00  3.15559220e+00  1.83465970e+00
+  -5.68475294e+00 -3.35116124e+00 -2.43811131e+01 -4.96339655e+00
+   5.14357865e-01  1.02647133e+01]
+ [-4.97694349e+00 -2.05464745e+00 -1.47570717e+00  1.56987023e+00
+  -3.49243951e+00  6.03541017e-01  4.43090320e-01 -6.02362812e-01
+   7.03156471e-01  1.04457617e+00]
+ [-3.22195935e+00  1.67810276e-01  1.41308054e-01 -4.00293827e-01
+  -1.77704072e+00  8.73213947e-01  1.79887497e+00  1.16056442e+00
+   2.62085676e+00 -9.35628235e-01]
+ [ 6.41218007e-01  1.28890574e+00 -1.14128768e+00  3.29633141e+00
+  -1.93653691e+00 -2.96795106e+00 -2.80732846e+00 -1.42853808e+00
+  -9.05542672e-01  2.82190442e-01]
+ [ 1.18775761e+00 -2.30444983e-01 -1.61646700e+00 -1.38918459e+00
+  -1.12051404e+00 -5.44332452e-02 -8.16682756e-01 -3.70170617e+00
+  -1.29203641e+00  3.88368845e+00]
+ [-5.68139839e+00  4.67777640e-01 -1.18678641e+00  9.94452775e-01
+  -3.09842873e+00  1.94315898e+00  2.37142533e-01  9.21498761e-02
+   1.00658190e+00  3.39468098e+00]
+ [ 1.71376491e+00 -5.16677332e+00  8.37065029e+00 -4.23755836e+00
+   3.07244992e+00 -3.12553239e+00 -1.23393602e+01 -1.42445445e+00
+  -3.74218726e+00 -1.06217480e+00]
+ [-3.22986031e+00  3.11515379e+00 -1.18329954e+00  1.56066072e+00
+  -1.92222309e+00  1.47462106e+00 -3.00952220e+00 -1.12019193e+00
+   4.09479767e-01  1.28801894e+00]
+ [-1.01011491e+00 -5.88915348e-01 -1.57982898e+00  8.62422705e-01
+  -1.81665450e-01  5.23111403e-01 -1.26103783e+00 -2.32259560e+00
+  -3.97546172e-01  2.48752213e+00]
+ [-4.00617197e-02 -9.50491846e-01  6.81256711e-01 -1.61751795e+00
+   4.61725664e+00 -1.06315374e+00 -4.07161283e+00  8.47974598e-01
+   1.03138077e+00 -1.66427121e-01]
+ [-3.49199367e+00  2.93925405e+00 -2.52030110e+00 -8.97057652e-01
+  -8.20176184e-01  8.78068447e-01 -1.04765666e+00 -3.06495094e+00
+   1.38863289e+00 -2.08360910e+00]
+ [-1.46089697e+00 -1.96649146e+00 -1.62670791e+00  4.34430540e-02
+  -4.59311306e-01  1.68898404e+00 -7.35400140e-01 -1.30712807e+00
+   1.67048961e-01  1.45437515e+00]
+ [-2.59603786e+00 -2.08794236e-01 -1.67598593e+00  3.05314064e+00
+  -1.31952560e+00  9.27915037e-01 -3.14557284e-01  5.34817696e-01
+   1.60633194e+00 -8.69528055e-02]
+ [-1.94620979e+00 -2.66063064e-01 -7.36409664e-01  1.60451794e+00
+  -4.55884886e+00  5.79765379e-01  3.11882234e+00 -3.49036050e+00
+  -1.36142597e-01 -1.52082336e+00]
+ [-3.99723530e+00  1.21853828e+00  1.91285431e+00 -2.32318297e-01
+   2.03640580e+00  1.18645024e+00 -2.81791401e+00  1.49631691e+00
+  -1.54574382e+00 -8.49673331e-01]
+ [-4.39191294e+00  1.11510587e+00 -2.09383905e-01 -1.69012278e-01
+   2.42826864e-01 -8.19209144e-02  1.90173221e+00  1.36304057e+00
+   6.53058410e-01  1.30021524e+00]
+ [-4.29704523e+00  1.11037683e+00 -5.18127143e-01  2.63014579e+00
+  -2.23268414e+00  9.44687426e-01 -1.08651388e+00  2.75391508e-02
+   2.06184578e+00  6.97873533e-01]
+ [-2.71666718e+00 -6.61803544e-01 -1.57804203e+00  2.12025118e+00
+  -2.66816497e+00  2.65244102e+00  1.68637168e+00 -3.29218411e+00
+   1.07383025e+00  2.45328832e+00]
+ [-3.04526782e+00  1.73018622e+00 -4.24463129e+00  3.43286705e+00
+  -3.44162893e+00 -1.88348442e-01  1.42757499e+00 -1.73054421e+00
+   1.95188892e+00  1.45075309e+00]
+ [-4.62469912e+00  2.22057557e+00 -3.24066377e+00  9.17679131e-01
+  -1.06026900e+00 -1.82524228e+00  1.12828553e+00  3.91245604e-01
+   6.90507770e-01 -1.58431625e+00]
+ [-2.06665918e-01 -1.89963937e+00  3.71209407e+00  3.24586201e+00
+   1.33063823e-01 -4.21716261e+00  1.01137495e+00 -6.08245730e-01
+  -9.33029875e-02 -4.79922199e+00]
+ [-9.47845101e-01 -4.90689605e-01 -4.91706324e+00  5.74683368e-01
+  -3.31287861e+00 -7.72382736e-01  6.76400423e-01 -8.84437203e-01
+   3.18304801e+00 -2.07052016e+00]
+ [-7.48481870e-01  4.77515012e-01 -5.46657562e-01  2.00493932e+00
+  -1.29591036e+00  9.15721118e-01 -2.68307090e-01 -1.87409067e+00
+  -2.05863848e-01  2.66618919e+00]
+ [ 2.74729013e-01 -7.76163518e-01 -5.08205414e-01  1.33919203e+00
+  -1.81355268e-01  9.11493361e-01  2.61512369e-01 -3.04506987e-01
+  -1.13474824e-01  1.30102992e+00]
+ [ 3.63642287e+00  8.43014121e-01  2.36360550e+00 -8.08057785e-01
+   1.66634142e-01 -1.29788250e-01 -2.99070358e-01 -2.22732615e+00
+   2.31450057e+00  4.54231232e-01]
+ [ 8.20234680e+00 -1.13115158e+01  3.16303432e-01 -1.48917031e+00
+  -2.10579419e+00  6.14738417e+00 -2.36313019e+01 -7.65239620e+00
+  -4.58194971e+00  1.01133499e+01]
+ [-4.73747253e+00  1.49257624e+00 -2.59188151e+00 -2.73030668e-01
+   1.13245733e-01  6.96342468e-01 -4.96266246e-01  7.45995119e-02
+   7.06874609e-01  8.44733119e-01]
+ [-4.40691710e+00  1.26641679e+00 -2.11225581e+00  2.15131283e+00
+  -1.60720265e+00  7.17658103e-01  3.18957424e+00 -8.75014544e-01
+   2.38543677e+00  4.24636096e-01]
+ [-2.80576944e+00  3.74173880e-01 -5.39558947e-01  2.83797669e+00
+  -1.48353970e+00  9.40089166e-01  5.67109156e+00  3.31802577e-01
+  -2.81161908e-03  5.99029601e-01]
+ [-3.05751157e+00  4.97877216e+00 -1.99575734e+00  1.70010900e+00
+  -1.12291622e+00 -9.39059794e-01 -1.33381844e+00  5.60684383e-01
+  -4.53787088e-01  2.42140949e-01]
+ [-9.78528678e-01  4.63492393e-01 -7.32584774e-01 -9.19981539e-01
+  -2.83261919e+00  1.54533714e-01  7.59638622e-02 -2.46993995e+00
+   5.03061593e-01  1.05378330e-01]
+ [-1.05261183e+00  3.88651609e-01 -7.21663356e-01  1.99266410e+00
+  -2.39408255e+00 -1.74827933e+00  2.62092495e+00 -3.19604367e-01
+  -7.36843944e-01  7.87466228e-01]
+ [ 1.10611553e+01  3.96288347e+00  2.88015747e+00  2.19673538e+00
+   7.63036346e+00 -3.14202785e+00 -1.15315790e+01 -1.00211086e+01
+  -7.73065901e+00 -3.29081702e+00]
+ [ 1.79418576e+00  8.32189739e-01  1.16816914e+00  2.99678836e-02
+  -5.17702699e-01  1.48067936e-01 -5.72643280e+00 -2.40442443e+00
+   1.29727268e+00 -1.39366829e+00]
+ [-2.11614275e+00  2.54369736e+00 -2.16953611e+00  3.27854127e-01
+  -1.01370525e+00  1.72263360e+00  2.40109420e+00  1.07415044e+00
+   4.21239644e-01 -1.06628016e-01]
+ [ 3.87755418e+00  7.15856552e-01  1.59692931e+00 -3.33765149e-01
+   2.99017042e-01  9.20478523e-01  3.91560316e-01 -2.32959056e+00
+   1.41093779e+00  2.30286026e+00]
+ [-2.35047507e+00 -9.79545176e-01 -5.70523441e-01  1.04658949e+00
+  -4.10716712e-01  1.12034488e+00  1.91819763e+00  3.69104207e-01
+   6.18279934e-01  1.30697250e+00]]Random scores for a set of images['../dance_data/validation/tango/b67jXhRbmh0_030_0285.jpg', '../dance_data/validation/latin/heJXZdT-ne0_358_0243.jpg', '../dance_data/validation/square/CDjIj4vgmvc_008_0028.jpg', '../dance_data/validation/quickstep/84oDmFB2uyk_020_0012.jpg', '../dance_data/validation/swing/u_z2Tsoa2iE_039_0120.jpg', '../dance_data/validation/swing/SxMxOa22PlM_050_0108.jpg', '../dance_data/validation/tango/BCIqkUblDpM_026_0173.jpg', '../dance_data/validation/foxtrot/q75QSh9M5OI_033_0292.jpg', '../dance_data/validation/swing/pNcsbZax_OI_015_0163.jpg', '../dance_data/validation/square/eYjNdnSX1vY_103_0010.jpg', '../dance_data/validation/latin/CU4fkMrgTLk_115_0003.jpg', '../dance_data/validation/ballet/hqOmSVMgoG0_428_0128.jpg', '../dance_data/validation/ballet/nM-rm68GyRk_020_0038.jpg', '../dance_data/validation/latin/aKOChOei2JQ_050_0273.jpg', '../dance_data/validation/quickstep/uQqUNZS7OK4_011_0046.jpg', '../dance_data/validation/latin/wjG99Kbp1qQ_030_0081.jpg', '../dance_data/validation/foxtrot/h4LfkNTCJjM_015_0206.jpg', '../dance_data/validation/waltz/azWcLosbIVY_105_0145.jpg', '../dance_data/validation/foxtrot/HJyQjQy9n-U_350_0145.jpg', '../dance_data/validation/ballet/mQMMXBv7hYo_017_0152.jpg', '../dance_data/validation/break/wJ-f773sO-k_040_0252.jpg', '../dance_data/validation/flamenco/fgN2mMFqjxg_031_0106.jpg', '../dance_data/validation/break/_eqF-TA8TVQ_043_0122.jpg', '../dance_data/validation/swing/naH68eSm2H4_202_0064.jpg', '../dance_data/validation/break/tbFKZGzX9Kg_103_0115.jpg', '../dance_data/validation/quickstep/Rqs-3N_fl5w_022_0192.jpg', '../dance_data/validation/tango/v2Wx2pk2blU_013_0133.jpg', '../dance_data/validation/break/_eqF-TA8TVQ_043_0255.jpg', '../dance_data/validation/latin/is9wrZ0ShZU_050_0286.jpg', '../dance_data/validation/foxtrot/kQtAMqHke30_043_0109.jpg', '../dance_data/validation/latin/is9wrZ0ShZU_050_0078.jpg', '../dance_data/validation/waltz/X9CqCEo6AAc_003_0156.jpg', '../dance_data/validation/quickstep/X53uafpmFgM_043_0194.jpg', '../dance_data/validation/tango/BCIqkUblDpM_026_0227.jpg', '../dance_data/validation/square/CDjIj4vgmvc_008_0175.jpg', '../dance_data/validation/foxtrot/h4LfkNTCJjM_015_0238.jpg', '../dance_data/validation/waltz/xXWPf8wnhdo_033_0037.jpg', '../dance_data/validation/latin/CU4fkMrgTLk_115_0064.jpg', '../dance_data/validation/waltz/X9CqCEo6AAc_003_0211.jpg', '../dance_data/validation/foxtrot/8uMn7XUF36s_025_0211.jpg', '../dance_data/validation/ballet/vOxe8Xo15Kg_040_0174.jpg', '../dance_data/validation/break/P17nzRf6HiE_020_0264.jpg', '../dance_data/validation/tango/NVtD7I_iKL8_020_0036.jpg', '../dance_data/validation/tango/Ap9Xj0OBgJ8_043_0269.jpg', '../dance_data/validation/waltz/nuWL11X_wjk_023_0256.jpg', '../dance_data/validation/tango/Ap9Xj0OBgJ8_043_0076.jpg', '../dance_data/validation/swing/pNcsbZax_OI_015_0169.jpg', '../dance_data/validation/foxtrot/fg3Wqr8DzSQ_024_0221.jpg', '../dance_data/validation/square/6lV-mH_BSGs_204_0268.jpg', '../dance_data/validation/swing/naH68eSm2H4_202_0211.jpg', '../dance_data/validation/quickstep/GNOwDih_nsk_011_0086.jpg', '../dance_data/validation/swing/aS5DvL8p4I4_011_0081.jpg', '../dance_data/validation/swing/wzf8DqjdyA0_348_0261.jpg', '../dance_data/validation/latin/sW9TOGfrs8c_202_0063.jpg', '../dance_data/validation/ballet/mQMMXBv7hYo_017_0180.jpg', '../dance_data/validation/ballet/W6Hxyg5pnSA_028_0220.jpg', '../dance_data/validation/waltz/nuWL11X_wjk_023_0066.jpg', '../dance_data/validation/latin/5HbFic9gDgg_033_0237.jpg', '../dance_data/validation/tango/MZ1tmTqt1Kk_031_0188.jpg', '../dance_data/validation/flamenco/ErZIG0AWPOw_041_0116.jpg', '../dance_data/validation/square/6lV-mH_BSGs_204_0216.jpg', '../dance_data/validation/quickstep/_YnwZjcA3X0_024_0125.jpg', '../dance_data/validation/latin/sW9TOGfrs8c_202_0190.jpg', '../dance_data/validation/tango/Ap9Xj0OBgJ8_043_0158.jpg', '../dance_data/validation/ballet/HfBiMFgM5vU_049_0277.jpg', '../dance_data/validation/latin/r5X_IkhkquU_040_0245.jpg', '../dance_data/validation/foxtrot/t4xg5_yabdU_015_0255.jpg', '../dance_data/validation/flamenco/ErZIG0AWPOw_041_0112.jpg', '../dance_data/validation/flamenco/9Y2gICFe9mQ_007_0136.jpg', '../dance_data/validation/quickstep/84oDmFB2uyk_020_0077.jpg', '../dance_data/validation/square/BeyaJ1GCcaA_205_0274.jpg', '../dance_data/validation/foxtrot/keelWKQGWIs_030_0148.jpg', '../dance_data/validation/swing/HXKqQWy3NMY_105_0008.jpg', '../dance_data/validation/foxtrot/keelWKQGWIs_030_0198.jpg', '../dance_data/validation/quickstep/QDiPQ7uBYY4_734_0211.jpg', '../dance_data/validation/square/FhcTmd5AiuM_131_0187.jpg', '../dance_data/validation/swing/HXKqQWy3NMY_105_0214.jpg', '../dance_data/validation/quickstep/X53uafpmFgM_043_0037.jpg', '../dance_data/validation/foxtrot/HJyQjQy9n-U_350_0054.jpg', '../dance_data/validation/flamenco/gxzU5EqNL14_054_0059.jpg', '../dance_data/validation/square/-v31uYwWz7c_050_0167.jpg', '../dance_data/validation/foxtrot/keelWKQGWIs_030_0092.jpg', '../dance_data/validation/flamenco/9Y2gICFe9mQ_007_0265.jpg', '../dance_data/validation/swing/HXKqQWy3NMY_105_0188.jpg', '../dance_data/validation/foxtrot/iOCZp-CmW5w_030_0208.jpg', '../dance_data/validation/waltz/oikcRADJbDc_036_0018.jpg', '../dance_data/validation/square/FhcTmd5AiuM_131_0204.jpg', '../dance_data/validation/tango/v2Wx2pk2blU_013_0109.jpg', '../dance_data/validation/flamenco/W6_7IG7C3Vk_052_0009.jpg', '../dance_data/validation/flamenco/ErZIG0AWPOw_041_0293.jpg', '../dance_data/validation/ballet/HfBiMFgM5vU_049_0163.jpg', '../dance_data/validation/flamenco/gxzU5EqNL14_054_0285.jpg', '../dance_data/validation/quickstep/mBt-cEgqPwc_221_0159.jpg', '../dance_data/validation/latin/8qAGcFpaUlc_032_0222.jpg', '../dance_data/validation/waltz/qTuBDM63KbA_034_0210.jpg', '../dance_data/validation/square/6lV-mH_BSGs_204_0158.jpg', '../dance_data/validation/waltz/oikcRADJbDc_036_0029.jpg', '../dance_data/validation/swing/HXKqQWy3NMY_105_0289.jpg', '../dance_data/validation/latin/wjG99Kbp1qQ_030_0096.jpg', '../dance_data/validation/quickstep/84oDmFB2uyk_020_0144.jpg', '../dance_data/validation/square/6lV-mH_BSGs_204_0047.jpg', '../dance_data/validation/foxtrot/8uMn7XUF36s_025_0118.jpg', '../dance_data/validation/ballet/u--jDp2Hieg_131_0141.jpg', '../dance_data/validation/flamenco/Wy5nqf_WeWk_210_0051.jpg', '../dance_data/validation/quickstep/kxDdXUiRnYA_040_0190.jpg', '../dance_data/validation/flamenco/fEqazI4eezQ_216_0002.jpg', '../dance_data/validation/waltz/nuWL11X_wjk_023_0076.jpg', '../dance_data/validation/latin/sW9TOGfrs8c_202_0083.jpg', '../dance_data/validation/foxtrot/keelWKQGWIs_030_0060.jpg', '../dance_data/validation/swing/pNcsbZax_OI_015_0094.jpg', '../dance_data/validation/flamenco/9Y2gICFe9mQ_007_0012.jpg', '../dance_data/validation/waltz/q-kL4TPjOcQ_015_0042.jpg', '../dance_data/validation/quickstep/Rqs-3N_fl5w_022_0117.jpg', '../dance_data/validation/flamenco/VOqaphuiQug_003_0142.jpg', '../dance_data/validation/latin/8qAGcFpaUlc_032_0013.jpg', '../dance_data/validation/tango/AQ7HEnCtnJg_012_0177.jpg', '../dance_data/validation/waltz/q-kL4TPjOcQ_015_0031.jpg', '../dance_data/validation/quickstep/mBt-cEgqPwc_221_0092.jpg', '../dance_data/validation/swing/ynp0pfUMRtE_032_0187.jpg', '../dance_data/validation/foxtrot/keelWKQGWIs_030_0225.jpg', '../dance_data/validation/break/tbFKZGzX9Kg_103_0173.jpg', '../dance_data/validation/latin/8qAGcFpaUlc_032_0283.jpg', '../dance_data/validation/latin/r5X_IkhkquU_040_0184.jpg', '../dance_data/validation/square/fymBcoVn66M_020_0071.jpg', '../dance_data/validation/flamenco/gxzU5EqNL14_054_0098.jpg', '../dance_data/validation/break/tbFKZGzX9Kg_103_0229.jpg', '../dance_data/validation/tango/bFFMIYUEDq4_039_0246.jpg', '../dance_data/validation/quickstep/84oDmFB2uyk_020_0078.jpg']
+[[-7.39539623e-01  1.55953038e+00  3.78531277e-01  3.06910396e+00
+  -3.79557920e+00 -9.78627264e-01 -2.57872844e+00  9.01465297e-01
+   1.25229120e+00  2.12155771e+00]
+ [ 1.24787915e+00 -3.50673288e-01 -2.71485710e+00 -2.92765409e-01
+  -1.81129789e+00  2.56247610e-01 -3.08641911e+00 -1.64053750e+00
+   6.14078462e-01  1.26555192e+00]
+ [-5.81219494e-01  9.33714390e-01 -6.19877994e-01  1.31039953e+00
+  -2.66233182e+00 -1.02451503e+00 -4.94669169e-01 -2.07486582e+00
+   1.18536584e-01  1.40707290e+00]
+ [-2.46837974e+00 -4.47856575e-01 -7.04100370e-01  1.84712052e+00
+   3.53030972e-02  2.97036719e+00  1.36784792e+00  1.80155993e-01
+   1.21347916e+00  1.74427509e+00]
+ [-8.94301474e-01  1.88309777e+00 -1.03380156e+00 -2.86606193e+00
+  -3.05956054e+00  3.73851478e-01 -3.67955297e-01 -7.07040906e-01
+  -2.72047782e+00 -3.00997663e+00]
+ [ 2.10111046e+00  3.30851626e+00  1.85140407e+00 -2.85499424e-01
+  -1.67465591e+00 -1.61355984e+00 -3.13311124e+00  5.43212116e-01
+  -2.07745194e+00 -1.64898872e+00]
+ [-2.41973138e+00  3.72235560e+00 -4.52656317e+00  4.18379116e+00
+  -3.14640570e+00  1.08549166e+00  1.43446028e-01 -4.20088977e-01
+   2.23216629e+00 -4.49760169e-01]
+ [-1.63678932e+00  1.57770669e+00 -2.52729845e+00  1.08000553e+00
+  -1.28519464e+00  1.72930288e+00 -4.65154552e+00 -1.46367240e+00
+   1.28445661e+00 -2.81911850e+00]
+ [-3.41306472e+00  1.46629775e+00 -2.02867031e+00  3.22550106e+00
+  -4.55272770e+00  4.65039521e-01 -7.51647234e-01 -9.08661902e-01
+   2.73122692e+00 -1.66057020e-01]
+ [-2.01029062e+00  3.00868082e+00  1.68752754e+00 -2.69922781e+00
+   1.55100179e+00 -1.92431009e+00 -3.91343403e+00  2.38822818e+00
+  -6.74374327e-02 -4.14298391e+00]
+ [ 5.33422518e+00  1.51951611e+00 -1.30216837e+00 -5.85921335e+00
+  -6.78785086e-01 -5.15633440e+00 -1.36267662e+01  6.71971893e+00
+  -9.23753262e+00 -5.48190689e+00]
+ [-1.07250333e+00  9.38274264e-01  1.67787170e+00 -5.42562187e-01
+  -1.66483080e+00  2.90512252e+00 -8.96955609e-01 -3.92237812e-01
+   3.28394264e-01 -1.50040492e-01]
+ [-1.86602950e+00  2.38352275e+00 -1.65754721e-01 -2.84840465e-01
+   2.27920723e+00  9.09653127e-01  1.42558587e+00 -1.74485326e-01
+  -1.26527548e+00 -1.82852304e+00]
+ [-7.74341822e-01 -1.91228616e+00  2.41642904e+00  8.03721964e-01
+  -1.30277663e-01 -1.92169510e-02 -3.06099939e+00 -1.74998271e+00
+   1.66796100e+00  1.02396595e+00]
+ [-5.31610441e+00 -2.99938023e-01 -8.14808980e-02  5.84512651e-01
+   1.79819548e+00 -1.69551003e+00 -6.03217304e-01 -9.86616075e-01
+   7.62255967e-01 -3.40014458e+00]
+ [ 2.68256497e+00  9.95716989e-01  1.40207291e+00 -1.73547602e+00
+   3.32829863e-01 -9.15575624e-01 -3.75392222e+00 -1.81702697e+00
+  -2.30350590e+00 -6.45469189e-01]
+ [-1.35802674e+00 -5.69624722e-01 -2.53264451e+00 -1.34396780e+00
+  -5.59570074e-01  5.85424125e-01 -6.12917781e-01 -5.53377986e-01
+  -1.45283771e+00 -9.28441942e-01]
+ [ 1.99974254e-01  8.36320877e-01  1.51511323e+00  1.83441234e+00
+   1.03988409e+00 -1.11765015e+00  3.78416270e-01 -1.30847132e+00
+   3.30779403e-01 -8.49284291e-01]
+ [-5.14708567e+00  5.95789909e-01 -1.76689041e+00  1.85229242e+00
+  -2.50711060e+00 -1.14950195e-01 -9.93585527e-01 -2.72199035e-01
+   9.24306631e-01  3.77744126e+00]
+ [-2.02073932e-01  1.95297971e-01  7.65253901e-01 -6.31556213e-01
+  -3.04604316e+00 -9.21729282e-02 -5.15682757e-01 -1.90631342e+00
+   2.76330203e-01 -5.42784989e-01]
+ [ 1.36282706e+00  3.28128129e-01  1.89243451e-01  2.85249257e+00
+  -3.73965740e+00 -4.81024414e-01 -9.40387607e-01 -1.42011130e+00
+  -3.04712560e-02 -2.27209473e+00]
+ [ 2.16467929e+00  2.24325037e+00  3.46209788e+00 -1.36420846e+00
+   1.69080150e+00 -3.57990885e+00 -7.02432156e+00 -5.38230896e+00
+  -4.45190519e-01  3.01237106e-01]
+ [ 2.68517637e+00 -8.04656029e-01  6.10175467e+00 -2.52965379e+00
+   7.25888872e+00  4.17465679e-02 -1.78147926e+01  3.63297629e+00
+  -6.87231445e+00 -4.51510286e+00]
+ [ 1.27855599e+00 -1.28538847e+00  1.45984626e+00 -1.05486858e+00
+  -2.24300551e+00  2.58247399e+00 -1.07033453e+01 -1.64434636e+00
+   1.79428971e+00 -2.44635105e+00]
+ [-3.71345019e+00  1.32396951e-01  9.94738281e-01 -5.37913591e-02
+  -1.84571669e-01  2.83835739e-01  1.68795693e+00  1.23141038e+00
+   6.74224794e-01 -2.89315313e-01]
+ [-2.69186878e+00  3.55945635e+00 -1.04489696e+00  1.15903223e+00
+   8.73389423e-01 -8.01255822e-01 -6.71360314e-01 -5.40388942e-01
+  -7.45980442e-01 -2.07995391e+00]
+ [-5.19218683e+00 -7.95195222e-01  7.40223169e-01  4.47384000e-01
+  -3.87364483e+00  9.59059715e-01  7.03658104e-01 -1.02604198e+00
+  -3.69099081e-01 -5.90637147e-01]
+ [ 4.48928452e+00 -4.46615130e-01  1.19567311e+00  2.88725996e+00
+  -5.15683508e+00 -2.79928207e+00 -2.29067421e+01  4.65149593e+00
+   1.02321339e+00 -8.30701542e+00]
+ [ 2.05431271e+00 -1.06061912e+00  1.99426925e+00 -5.73240161e-01
+   1.16331089e+00  1.02734411e+00  5.15940487e-01 -1.47543120e+00
+   1.90265775e+00  1.93280888e+00]
+ [ 2.33920902e-01 -4.00926530e-01 -3.75752807e-01  1.82740700e+00
+  -1.52497101e+00  4.77318794e-01 -1.19699574e+00 -8.43524933e-01
+   3.06587189e-01 -8.91373277e-01]
+ [ 2.35507631e+00 -8.60505641e-01  1.85128224e+00 -2.13423133e+00
+   1.35649228e+00  1.02848685e+00 -1.05174482e+00 -1.86980009e+00
+   8.36198151e-01  1.97490048e+00]
+ [-4.78799582e+00  1.29811883e+00 -2.52030849e+00  4.55016804e+00
+  -3.09871268e+00  8.84635568e-01 -2.05008841e+00 -2.39940381e+00
+   1.24725211e+00 -8.61766282e-03]
+ [-2.92063761e+00  6.82997942e-01 -1.59985435e+00 -6.40657544e-01
+  -1.62635267e+00  1.17501378e+00  1.38181543e+00 -3.65593374e-01
+  -2.75196671e-01 -2.44914576e-01]
+ [-2.44341898e+00  3.66439843e+00 -4.43260384e+00  4.62489367e+00
+  -3.76582170e+00  1.44059098e+00 -1.46148098e+00 -9.19933200e-01
+   2.53339434e+00  1.50954282e+00]
+ [ 9.46518108e-02  2.68670893e+00 -6.84121922e-02  1.01853538e+00
+  -1.78940654e+00 -8.99547935e-01 -4.08734083e+00 -1.43994999e+00
+  -5.57235396e-03 -2.28753066e+00]
+ [-3.16757655e+00 -3.54019701e-01 -2.20393348e+00  1.83240533e+00
+  -1.87810099e+00 -9.80411828e-01 -5.05093157e-01 -1.13218689e+00
+  -2.99371004e-01 -6.76209256e-02]
+ [-3.83543730e+00  1.68478632e+00  8.86827290e-01  1.26825273e+00
+  -1.42921817e+00  8.35472941e-01  1.55680525e+00  7.28419602e-01
+   4.43952513e+00 -1.65721369e+00]
+ [ 9.48789883e+00  1.54160261e-02  3.22358847e+00  1.16331744e+00
+   3.54822636e+00 -5.52712297e+00 -1.30100260e+01 -6.99619412e-01
+  -8.28390062e-01 -6.14780474e+00]
+ [-5.41328192e+00 -1.85722125e+00 -7.84422278e-01  3.99409175e+00
+   1.52751613e+00 -8.59010696e-01 -1.83425558e+00  9.61526155e-01
+   2.62912607e+00  1.99080360e+00]
+ [-2.19574070e+00  2.48047137e+00 -4.00830626e-01  1.46170974e+00
+   1.80743921e+00 -1.99817038e+00 -1.00227916e+00  8.06942403e-01
+  -8.62100959e-01  5.68347275e-01]
+ [-6.18084490e-01 -3.04581380e+00  2.08079028e+00 -2.71813107e+00
+   1.67473540e-01  4.88546401e-01  1.41280615e+00 -2.30287361e+00
+   4.71986085e-01  1.33900440e+00]
+ [ 1.64199352e+00 -9.40619111e-01  6.93394566e+00  2.56866384e+00
+   6.30048370e+00 -4.53804159e+00 -3.42205358e+00 -5.23273420e+00
+  -3.47828627e+00 -5.11665869e+00]
+ [-6.24494553e+00  1.30826998e+00 -2.65309548e+00  2.07898879e+00
+   2.47488213e+00 -1.02945280e+00  7.80505389e-02 -2.28662801e+00
+   7.24252522e-01  1.04858792e+00]
+ [-1.23974633e+00  8.94350886e-01 -8.87199283e-01  1.74244142e+00
+  -2.29792762e+00  6.44581854e-01  8.84763360e-01 -3.17074716e-01
+  -2.52584275e-02 -1.78595889e+00]
+ [-7.29257107e+00 -7.53505647e-01 -7.24261776e-02  4.47185087e+00
+  -1.46087074e+00  3.75429869e-01 -2.14117575e+00 -8.44418466e-01
+   5.25988007e+00  1.66521382e+00]
+ [-2.04702926e+00  2.30593371e+00  2.19143584e-01  3.74921179e+00
+  -1.01838946e+00 -3.71539742e-01 -7.67198265e-01 -2.03397441e+00
+   1.20286119e+00 -2.04143572e+00]
+ [-3.50722361e+00  1.15414238e+00 -2.72850823e+00  3.07516742e+00
+  -4.60645580e+00  9.94746327e-01 -1.16598117e+00 -4.77909356e-01
+   3.29707980e+00  1.89107973e-02]
+ [-1.14042604e+00  5.40317392e+00 -8.06403399e-01  2.78214931e+00
+  -1.20389199e+00  4.84162658e-01  5.50295055e-01  4.82050866e-01
+  -5.55024564e-01 -2.09637022e+00]
+ [-2.55131006e+00  2.27996445e+00 -3.23850140e-02 -9.80633423e-02
+   1.73138893e+00  1.85075605e+00  1.27073240e+00 -1.38751435e+00
+  -1.95450878e+00 -3.20634007e+00]
+ [ 2.61139560e+00  7.07269013e-01  2.54020166e+00 -1.21980786e+00
+   9.59208701e-03 -1.83268976e+00 -1.07654963e+01 -1.90198779e+00
+   1.35338628e+00 -3.35600209e+00]
+ [-3.22639728e+00  1.23034286e+00 -4.70325261e-01  8.30212414e-01
+  -9.39817965e-01  1.02123094e+00  8.29059958e-01 -3.89967710e-01
+  -1.00453842e+00  1.93327022e+00]
+ [-4.18201590e+00  2.85154581e+00 -1.61229241e+00 -1.45188105e+00
+  -7.64872074e-01 -1.01658177e+00  1.13022637e+00 -1.43504405e+00
+   1.23822594e+00 -1.58726323e+00]
+ [ 2.02511907e+00  4.09415913e+00  2.37084651e+00  5.30747771e-01
+  -3.53548020e-01 -4.04315621e-01 -4.02958345e+00  1.67243087e+00
+  -2.92702508e+00 -5.00963783e+00]
+ [-1.41810429e+00  7.20417023e-01 -1.71800315e+00  8.26441526e-01
+  -2.19755673e+00  3.34294289e-01  5.21986246e+00  1.00453019e+00
+   6.31905735e-01 -3.66018504e-01]
+ [-1.32783368e-01  8.37232322e-02  1.58851123e+00  5.07989824e-01
+  -3.58358312e+00 -1.02951205e+00 -2.15476975e-01 -3.60480595e+00
+  -5.43019809e-02 -2.24225178e-01]
+ [-2.23339438e+00  1.37904727e+00  1.70824301e+00  1.80471182e-01
+   2.13998064e-01 -1.44248199e+00 -7.59937763e-01 -3.14851670e-04
+  -1.45767248e+00 -2.14050746e+00]
+ [-4.37701559e+00  1.00906384e+00 -3.25714231e+00  1.89372456e+00
+  -1.90006840e+00 -3.85875314e-01 -5.98206425e+00  9.79827762e-01
+   3.45413446e+00  2.16149044e+00]
+ [-4.47928572e+00 -1.31403422e+00 -1.93917739e+00  4.90792084e+00
+  -4.65874761e-01  1.38645446e+00  9.82943654e-01 -5.76324987e+00
+  -1.25982654e+00  7.87513554e-01]
+ [ 1.09197438e+00 -2.16570449e+00  3.92293781e-01  1.29607010e+00
+   4.31828117e+00 -2.79218769e+00 -1.47369337e+00  6.87911928e-01
+   1.91938436e+00 -2.55721241e-01]
+ [-1.68284309e+00 -5.36496520e-01 -1.84699476e+00  2.03078651e+00
+  -4.11653852e+00  4.14133930e+00  2.07586122e+00 -3.37222767e+00
+   7.63289034e-01  2.65172267e+00]
+ [-2.36797094e+00  1.93753695e+00  1.21968114e+00 -2.95012683e-01
+   1.36008692e+00  8.57163489e-01  2.06846142e+00  1.36977648e-02
+  -1.37470329e+00 -1.59598505e+00]
+ [ 3.22454858e+00  4.12787151e+00  2.17223787e+00  1.53502965e+00
+   1.26156226e-01 -3.16300464e+00 -3.74312520e+00 -2.13375330e+00
+  -6.78604066e-01 -3.84139371e+00]
+ [-2.03708839e+00  3.46259499e+00  3.41471285e-02 -2.09393218e-01
+  -1.85396647e+00  9.69168365e-01  1.57398140e+00  6.73165858e-01
+   8.38779926e-01 -1.34731817e+00]
+ [-2.11409545e+00  8.38802040e-01 -6.91681266e-01  3.01855326e+00
+  -3.83094931e+00  5.86006381e-02 -1.06312907e+00 -1.13978982e+00
+   1.45943689e+00 -2.11199737e+00]
+ [-1.28196418e+00 -3.01273704e-01  1.86356854e+00  2.24640894e+00
+  -1.76785195e+00  3.26217151e+00 -4.24714661e+00 -1.52182722e+00
+   1.50583804e+00 -9.25055504e-01]
+ [ 4.66741800e+00  9.79287803e-01  1.86162400e+00 -2.61354476e-01
+  -1.89063668e+00 -8.27806830e-01 -6.36590958e+00 -5.35313082e+00
+   1.18436468e+00 -1.03148305e+00]
+ [-2.99631071e+00  2.17171097e+00 -1.25626409e+00  2.24008158e-01
+   2.49871269e-01 -9.35364246e-01  1.45378697e+00  3.07603979e+00
+  -2.48899245e+00 -2.26768470e+00]
+ [-1.51911771e+00 -4.76326764e-01 -1.74033141e+00  1.75885332e+00
+  -4.26962233e+00  3.46273899e+00  1.55322456e+00 -3.53609848e+00
+   7.05859661e-01  2.22912455e+00]
+ [ 1.87417269e+00  2.21726704e+00 -2.28632241e-01  1.14054155e+00
+  -2.16311502e+00 -8.26903060e-02 -4.66988468e+00  5.14255822e-01
+   6.43584013e-01 -1.80689824e+00]
+ [-2.37394071e+00 -2.14216545e-01 -1.09718882e-01 -6.77741319e-02
+  -1.17066458e-01  1.40284956e+00  1.48167002e+00 -1.89459935e-01
+   1.10209894e+00 -1.28486380e-01]
+ [-2.08727777e-01  4.85191441e+00  1.49349689e+00  9.98325884e-01
+  -8.91672969e-01 -1.53933525e+00 -1.41655803e-01  4.64922637e-01
+  -1.88978231e+00 -1.29934788e+00]
+ [ 1.83652592e+00  2.65118027e+00  2.21496865e-01  1.59296584e+00
+  -2.92145491e-01 -2.07060471e-01 -7.30762959e-01 -6.97170421e-02
+   2.54263067e+00  1.02027035e+00]
+ [ 1.17264318e+00  3.17634916e+00 -6.90016985e-01  1.46807837e+00
+  -2.73076701e+00  1.16596365e+00 -9.31889236e-01 -4.49303722e+00
+   2.34631419e+00 -1.46052301e+00]
+ [ 1.98644960e+00  5.84371053e-02 -2.43063346e-01  1.86194026e+00
+  -1.55291402e+00  1.31122315e+00 -3.75731015e+00 -1.36750484e+00
+   2.23211694e+00 -1.73189890e+00]
+ [-1.80665576e+00 -6.05287790e-01 -1.51547050e+00  2.56063747e+00
+  -3.41644955e+00  1.76418610e-02  4.96075583e+00 -1.32724285e+00
+  -1.24016004e-02  3.24875981e-01]
+ [-5.08170462e+00  1.73492086e+00 -1.83266550e-01  1.43050408e+00
+  -1.56182182e+00  3.02991319e+00  3.83343339e+00 -6.04603350e-01
+   8.33279252e-01 -1.14325595e+00]
+ [ 1.14651896e-01  2.54308772e+00 -1.50347316e+00  2.19429588e+00
+  -3.61897397e+00  6.60123453e-02 -9.18619752e-01 -4.18307495e+00
+   1.53950512e+00 -2.01263165e+00]
+ [-5.06594992e+00  3.44139290e+00 -2.07143545e+00  5.37907422e-01
+  -1.53014565e+00 -1.13764536e+00  1.71058047e+00 -1.94899365e-01
+   7.98655391e-01 -9.24498737e-01]
+ [-3.82864761e+00 -1.05492115e+00 -4.32222986e+00  1.58210301e+00
+  -1.91399789e+00 -3.23807955e-01 -7.00403631e-01  1.05740857e+00
+   2.98194814e+00  3.11534190e+00]
+ [ 5.27847195e+00 -5.39428806e+00 -1.69763494e+00  6.25815094e-01
+  -6.02586746e+00 -2.77429914e+00 -2.49036388e+01 -4.37652063e+00
+  -5.31323147e+00  6.24615955e+00]
+ [-2.24242449e+00 -7.05116168e-02  2.27136183e+00  1.45473742e+00
+  -2.60963321e-01  2.11509418e+00 -3.23061800e+00 -2.33021006e-01
+   2.85713887e+00 -5.27907789e-01]
+ [ 1.42329335e+00  3.53082156e+00 -1.18983698e+00 -9.03768003e-01
+   1.15484560e+00  1.55221879e+00 -1.07249916e+00 -2.67894506e-01
+  -5.41891813e-01 -7.21835732e-01]
+ [ 1.16041851e+00 -2.06469274e+00  2.24707633e-01  1.18748689e+00
+  -1.12139428e+00 -7.27326512e-01 -3.84605241e+00 -5.41350961e-01
+  -2.36696076e+00 -4.96836138e+00]
+ [ 1.42637923e-01  2.73285127e+00 -1.46499097e+00  1.88345850e+00
+  -3.28808284e+00 -2.01673120e-01 -1.48230314e+00 -4.58286285e+00
+   1.62856114e+00 -2.86737061e+00]
+ [-2.61709547e+00  7.10894525e-01 -2.76602364e+00  3.98213983e+00
+  -2.81608939e+00  4.92323749e-02 -2.88546383e-01 -1.53306806e+00
+   2.71796751e+00 -1.77950048e+00]
+ [-3.00941372e+00  2.52965546e+00 -5.03904223e-01  1.28187048e+00
+  -1.46119022e+00  4.86275107e-01  9.86471653e-01 -1.75036263e+00
+   3.18227506e+00  1.77816451e-01]
+ [-5.92510462e+00  1.16628802e+00 -3.01034760e+00 -8.85563552e-01
+  -3.49645519e+00  4.91583169e-01  4.10909605e+00 -8.52016926e-01
+   9.35540378e-01 -2.85771996e-01]
+ [-4.15056467e+00  1.07232583e+00 -1.15167284e+00  2.57697582e+00
+  -4.04976892e+00  1.25304639e+00  1.69778526e+00 -7.03059435e-01
+  -3.23604852e-01 -9.76290926e-02]
+ [ 1.94212091e+00  1.44224024e+00  2.03276992e+00 -1.92683831e-01
+  -4.59570217e+00 -1.11029053e+00 -7.87065363e+00 -3.30748653e+00
+   1.23482227e+00 -1.65699685e+00]
+ [-1.87057531e+00 -1.96851170e+00 -1.48222589e+00  2.06049418e+00
+  -3.72109771e+00  3.92734075e+00  1.23979366e+00 -3.77585816e+00
+   1.97381780e-01  2.15316987e+00]
+ [-3.92020077e-01 -5.75701773e-01  1.61000764e+00  1.24743271e+00
+  -3.17206597e+00  1.13475096e+00 -1.70412421e+00 -3.51382732e+00
+   1.75804257e+00 -4.50117975e-01]
+ [ 2.50780678e+00 -7.47791576e+00  1.72810495e+00 -1.50456667e+00
+   5.88614798e+00 -1.58434856e+00 -2.89981136e+01 -9.76476765e+00
+   9.98683453e-01  7.99706268e+00]
+ [ 3.73013526e-01  3.11851525e+00  3.65609622e+00  6.69597328e-01
+  -2.00827575e+00 -1.57072246e-01 -1.76926684e+00  5.39409876e-01
+  -1.90048650e-01 -3.42548919e+00]
+ [-3.22551638e-01  4.31120920e+00  2.15479660e+00 -8.24631929e-01
+  -1.56709224e-01 -5.55217676e-02 -3.51042032e+00  1.10876155e+00
+  -1.62133956e+00 -3.97658920e+00]
+ [-4.78783894e+00  5.05311668e-01 -1.01434219e+00  6.92003906e-01
+  -4.12394367e-02  1.39632881e+00 -5.07861823e-02 -1.30139202e-01
+   1.48944402e+00 -2.81189501e-01]
+ [-1.52514207e+00  2.29704833e+00  8.53481650e-01  1.44271076e+00
+  -3.35095137e-01  1.24884105e+00  1.17244577e+00  1.55620903e-01
+  -1.87499094e+00 -2.22702646e+00]
+ [-1.69910502e+00  6.29854202e-01 -1.47043407e+00  2.28181434e+00
+  -1.76476848e+00  1.94542325e+00  8.63282323e-01 -2.92242098e+00
+   1.74735713e+00  1.24495938e-01]
+ [ 2.37700213e-02  3.07069993e+00 -2.80834746e+00  1.64561725e+00
+  -2.38550973e+00  5.05316198e-01 -2.16538978e+00 -4.84590101e+00
+   1.62288582e+00 -1.41445363e+00]
+ [ 3.54284215e+00  9.07420754e-01  1.70200849e+00 -9.95421708e-01
+   4.42579538e-01 -4.98508424e-01 -2.31447625e+00 -2.56594276e+00
+  -2.30398917e+00 -1.27866590e+00]
+ [-7.96156585e-01  2.42648649e+00 -8.46881092e-01  1.36696672e+00
+  -5.01299202e-01 -1.68349695e+00  7.17951477e-01  4.56045866e-01
+  -1.62984097e+00 -3.76325995e-01]
+ [-2.06762314e+00  3.27705908e+00 -6.67961165e-02 -1.26218811e-01
+   2.00909540e-01  8.51902544e-01  8.94672632e-01 -5.92062831e-01
+  -2.31227374e+00 -1.66445088e+00]
+ [-2.08248049e-01  1.25710702e+00  2.07094145e+00 -4.47679251e-01
+   8.52481902e-01 -7.12445155e-02  7.20663965e-01  1.16317141e+00
+  -1.11331391e+00 -1.30502701e+00]
+ [ 3.63286167e-01  2.66209316e+00  3.49683356e+00 -1.04997492e+00
+   1.33130535e-01 -1.03912592e+00 -1.72301602e+00 -4.00489283e+00
+   2.04976797e+00 -8.18751454e-01]
+ [ 2.99993062e+00  1.39917171e+00 -6.18059516e-01  3.38413811e+00
+  -5.10597086e+00  3.24023426e-01 -8.79239941e+00 -3.46297598e+00
+  -4.33047265e-01 -1.18289292e+00]
+ [-3.78062963e+00  1.85431719e+00 -1.89710605e+00  1.83455002e+00
+  -8.40682864e-01 -1.52960722e-03  1.07846427e+00  2.98108846e-01
+   2.62740254e-01 -1.64495456e+00]
+ [-2.32087040e+00  2.20557261e+00  1.16739595e+00  7.64295042e-01
+   1.24641097e+00 -6.10858977e-01 -4.69467020e+00  3.05495739e+00
+  -2.28051329e+00  5.15246570e-01]
+ [-4.42058420e+00  8.47400844e-01 -3.45471835e+00  1.78302121e+00
+  -7.82430649e-01  9.82685268e-01 -3.71979547e+00  5.78865528e-01
+   2.07149029e+00  3.47867441e+00]
+ [-1.62816525e+00  1.36503768e+00 -4.39698428e-01  2.22674179e+00
+  -7.57098138e-01 -5.87774336e-01  4.92110872e+00  7.42129385e-01
+  -9.95084465e-01  1.36194661e-01]
+ [-2.01180965e-01  3.26166463e+00  8.63251626e-01  2.41809177e+00
+  -7.28644192e-01  3.04527909e-01 -2.25857329e+00 -5.04539788e-01
+   2.07150674e+00 -1.42234886e+00]
+ [-2.75494838e+00  1.28241420e-01 -1.85399032e+00  2.07285380e+00
+  -3.84332800e+00  8.02586138e-01 -1.07095706e+00 -8.71281683e-01
+   3.54196143e+00  6.49494212e-03]
+ [ 5.66620350e-01 -2.40089846e+00  2.20645380e+00  2.13760090e+00
+   1.27289307e+00  1.84367096e+00 -7.96646261e+00 -4.22683287e+00
+   2.25028706e+00  8.05913210e-01]
+ [-6.17826509e+00 -1.23803842e+00 -2.08091903e+00  2.62904286e+00
+  -2.14954662e+00  1.41993129e+00  1.13134440e-02 -1.85776508e+00
+   3.54913020e+00  2.98415279e+00]
+ [-3.22184253e+00  8.94720793e-01 -2.40788293e+00  1.83762622e+00
+  -2.63231540e+00 -1.39645958e+00  5.68442583e-01  1.75810233e-01
+   1.19642472e+00 -1.14598429e+00]
+ [-9.35920656e-01  3.46283615e-01  3.31556559e+00  1.14928544e+00
+  -5.37269592e-01  6.83939219e-01 -9.49163139e-01  1.09512401e+00
+  -2.73816139e-01 -8.69140744e-01]
+ [-1.40199709e+00  4.53776360e+00 -5.30992389e-01 -1.49088621e+00
+  -7.26167560e-01 -1.63044536e+00 -2.15648866e+00 -1.60606372e+00
+  -1.59992743e+00 -4.84025383e+00]
+ [-3.02380729e+00 -2.14283442e+00 -2.38843948e-01  3.49158120e+00
+   8.05437803e-01 -3.13275367e-01  9.53287721e-01  7.47476697e-01
+  -4.01866920e-02  1.20248210e+00]
+ [-4.37773800e+00 -2.92096674e-01 -7.46144593e-01  1.67086959e+00
+  -8.94453287e-01  1.00123143e+00 -2.04309320e+00 -7.71304727e-01
+   5.66019058e+00  2.48800683e+00]
+ [-4.19433862e-01  3.33746338e+00  1.54540694e+00  1.59881330e+00
+  -2.50611281e+00  1.15698829e-01 -1.20589900e+00  1.24230134e+00
+  -4.23990965e-01 -4.42326832e+00]
+ [ 2.11113095e+00  5.38515615e+00 -5.74840546e-01  1.14975941e+00
+  -3.47526741e+00  1.22936392e+00 -8.59005642e+00 -1.36674440e+00
+   9.84245896e-01 -8.39799881e-01]
+ [ 1.74346220e+00  1.92399418e+00 -1.53192580e-01  2.19229221e+00
+  -6.82747066e-01 -3.37197453e-01 -3.05641317e+00 -9.31240916e-01
+   3.29445004e+00  1.68438601e+00]
+ [-5.01918459e+00  1.85037446e+00  2.32398137e-01  1.30748749e+00
+  -5.80752015e-01  1.01785374e+00  1.01207232e+00  1.63819301e+00
+   5.83268464e-01 -1.26416731e+00]
+ [ 8.72437119e-01  3.93916392e+00  2.03269172e+00  5.55343814e-02
+  -2.44103685e-01 -5.41476846e-01 -5.31280422e+00 -2.14792848e+00
+   1.15332687e+00 -3.66678500e+00]
+ [ 1.82652152e+00  5.88685453e-01  9.39485312e-01  6.84672832e-01
+  -1.13702275e-01 -5.08930348e-02 -5.19460201e+00 -3.42128229e+00
+   2.29281712e+00 -2.20892286e+00]
+ [-3.31924248e+00  1.74886775e+00 -3.01893562e-01 -1.23588264e+00
+  -1.35397458e+00  1.09651053e+00  1.37508309e+00 -1.61614835e-01
+   1.71856928e+00 -1.20716918e+00]
+ [ 4.79394436e+00 -7.24894094e+00  2.17688441e+00  3.76986980e+00
+   1.96891695e-01 -5.00243759e+00 -2.72722321e+01 -4.21068478e+00
+   6.85173452e-01  3.79690671e+00]
+ [-3.05822802e+00 -7.66569436e-01  8.66969764e-01 -3.68296593e-01
+   2.75338423e-02  1.42598116e+00  1.44540220e-01  2.76737094e-01
+   2.48086482e-01 -3.65649074e-01]
+ [-4.05846691e+00 -4.86110039e-02  2.59080791e+00  1.63886234e-01
+  -3.70092452e-01  3.43110353e-01 -2.42045975e+00 -2.48468518e+00
+  -1.42695737e+00 -1.03163159e+00]
+ [-3.10986090e+00 -2.59614259e-01 -4.09360826e-01  3.38852644e-01
+  -5.27102686e-02  2.29798651e+00  8.90285254e-01 -1.52103335e-01
+   1.20939136e+00  1.47705361e-01]]Random scores for a set of images['../dance_data/validation/waltz/AQmHJlhUhes_022_0194.jpg', '../dance_data/validation/break/S7tQIPMejL8_027_0113.jpg', '../dance_data/validation/waltz/nuWL11X_wjk_023_0098.jpg', '../dance_data/validation/break/P17nzRf6HiE_020_0113.jpg', '../dance_data/validation/ballet/nM-rm68GyRk_020_0109.jpg', '../dance_data/validation/latin/is9wrZ0ShZU_050_0236.jpg', '../dance_data/validation/ballet/HfBiMFgM5vU_049_0051.jpg', '../dance_data/validation/foxtrot/q75QSh9M5OI_033_0051.jpg', '../dance_data/validation/square/AGn_T7u6U2Q_039_0148.jpg', '../dance_data/validation/ballet/HfBiMFgM5vU_049_0262.jpg', '../dance_data/validation/square/BeyaJ1GCcaA_205_0047.jpg', '../dance_data/validation/foxtrot/q75QSh9M5OI_033_0096.jpg', '../dance_data/validation/tango/BCIqkUblDpM_026_0282.jpg', '../dance_data/validation/foxtrot/fg3Wqr8DzSQ_024_0207.jpg', '../dance_data/validation/quickstep/kxDdXUiRnYA_040_0194.jpg', '../dance_data/validation/tango/NVtD7I_iKL8_020_0122.jpg', '../dance_data/validation/square/fymBcoVn66M_020_0051.jpg', '../dance_data/validation/waltz/AQ-izQC-S1Y_031_0273.jpg', '../dance_data/validation/tango/BvTGEgR2_88_025_0203.jpg', '../dance_data/validation/quickstep/QDiPQ7uBYY4_734_0199.jpg', '../dance_data/validation/waltz/oikcRADJbDc_036_0163.jpg', '../dance_data/validation/square/CDjIj4vgmvc_008_0225.jpg', '../dance_data/validation/latin/5HbFic9gDgg_033_0237.jpg', '../dance_data/validation/break/njw1rxDmUU0_025_0181.jpg', '../dance_data/validation/quickstep/QDiPQ7uBYY4_734_0170.jpg', '../dance_data/validation/foxtrot/t4xg5_yabdU_015_0017.jpg', '../dance_data/validation/square/CDjIj4vgmvc_008_0297.jpg', '../dance_data/validation/foxtrot/keelWKQGWIs_030_0224.jpg', '../dance_data/validation/foxtrot/HJyQjQy9n-U_350_0071.jpg', '../dance_data/validation/ballet/nM-rm68GyRk_020_0120.jpg', '../dance_data/validation/ballet/nM-rm68GyRk_020_0152.jpg', '../dance_data/validation/ballet/W6Hxyg5pnSA_028_0224.jpg', '../dance_data/validation/break/njw1rxDmUU0_025_0255.jpg', '../dance_data/validation/tango/bFFMIYUEDq4_039_0068.jpg', '../dance_data/validation/foxtrot/t4xg5_yabdU_015_0195.jpg', '../dance_data/validation/square/fymBcoVn66M_020_0145.jpg', '../dance_data/validation/square/CDjIj4vgmvc_008_0192.jpg', '../dance_data/validation/waltz/AQ-izQC-S1Y_031_0091.jpg', '../dance_data/validation/latin/w2K4A-d1bC4_036_0025.jpg', '../dance_data/validation/waltz/AQmHJlhUhes_022_0215.jpg', '../dance_data/validation/ballet/-5Yp-vToI2E_016_0022.jpg', '../dance_data/validation/latin/CU4fkMrgTLk_115_0270.jpg', '../dance_data/validation/waltz/nuWL11X_wjk_023_0054.jpg', '../dance_data/validation/break/P17nzRf6HiE_020_0145.jpg', '../dance_data/validation/swing/aS5DvL8p4I4_011_0138.jpg', '../dance_data/validation/flamenco/gxzU5EqNL14_054_0248.jpg', '../dance_data/validation/quickstep/RMw_7Bs6d8A_038_0159.jpg', '../dance_data/validation/square/eYjNdnSX1vY_103_0087.jpg', '../dance_data/validation/quickstep/GNOwDih_nsk_011_0048.jpg', '../dance_data/validation/flamenco/9U5TNavFpF4_004_0066.jpg', '../dance_data/validation/swing/aS5DvL8p4I4_011_0224.jpg', '../dance_data/validation/swing/HXKqQWy3NMY_105_0121.jpg', '../dance_data/validation/break/S7tQIPMejL8_027_0079.jpg', '../dance_data/validation/waltz/AQ-izQC-S1Y_031_0007.jpg', '../dance_data/validation/foxtrot/kQtAMqHke30_043_0030.jpg', '../dance_data/validation/break/njw1rxDmUU0_025_0275.jpg', '../dance_data/validation/break/4SQVm2fyLH0_053_0094.jpg', '../dance_data/validation/ballet/u--jDp2Hieg_131_0228.jpg', '../dance_data/validation/ballet/-5Yp-vToI2E_016_0186.jpg', '../dance_data/validation/quickstep/GNOwDih_nsk_011_0123.jpg', '../dance_data/validation/flamenco/Wy5nqf_WeWk_210_0046.jpg', '../dance_data/validation/flamenco/9U5TNavFpF4_004_0007.jpg', '../dance_data/validation/quickstep/mBt-cEgqPwc_221_0032.jpg', '../dance_data/validation/swing/SxMxOa22PlM_050_0192.jpg', '../dance_data/validation/waltz/azWcLosbIVY_105_0191.jpg', '../dance_data/validation/square/kSNzS9zObCw_002_0206.jpg', '../dance_data/validation/ballet/vOxe8Xo15Kg_040_0098.jpg', '../dance_data/validation/swing/HXKqQWy3NMY_105_0259.jpg', '../dance_data/validation/waltz/qTuBDM63KbA_034_0110.jpg', '../dance_data/validation/latin/CU4fkMrgTLk_115_0134.jpg', '../dance_data/validation/flamenco/W6_7IG7C3Vk_052_0039.jpg', '../dance_data/validation/quickstep/_YnwZjcA3X0_024_0099.jpg', '../dance_data/validation/square/AGn_T7u6U2Q_039_0051.jpg', '../dance_data/validation/latin/CU4fkMrgTLk_115_0077.jpg', '../dance_data/validation/quickstep/QDiPQ7uBYY4_734_0098.jpg', '../dance_data/validation/waltz/nuWL11X_wjk_023_0072.jpg', '../dance_data/validation/square/6lV-mH_BSGs_204_0267.jpg', '../dance_data/validation/ballet/nM-rm68GyRk_020_0229.jpg', '../dance_data/validation/swing/DoAIhu_3XR0_045_0248.jpg', '../dance_data/validation/quickstep/_YnwZjcA3X0_024_0231.jpg', '../dance_data/validation/latin/5HbFic9gDgg_033_0062.jpg', '../dance_data/validation/break/tbFKZGzX9Kg_103_0166.jpg', '../dance_data/validation/tango/MZ1tmTqt1Kk_031_0015.jpg', '../dance_data/validation/foxtrot/keelWKQGWIs_030_0018.jpg', '../dance_data/validation/break/4SQVm2fyLH0_053_0011.jpg', '../dance_data/validation/break/RJnOuAf0cEY_025_0133.jpg', '../dance_data/validation/ballet/W6Hxyg5pnSA_028_0179.jpg', '../dance_data/validation/foxtrot/Md0gzA2n_Mc_006_0218.jpg', '../dance_data/validation/ballet/HfBiMFgM5vU_049_0276.jpg', '../dance_data/validation/waltz/q-kL4TPjOcQ_015_0297.jpg', '../dance_data/validation/ballet/W6Hxyg5pnSA_028_0185.jpg', '../dance_data/validation/flamenco/ErZIG0AWPOw_041_0260.jpg', '../dance_data/validation/waltz/xXWPf8wnhdo_033_0241.jpg', '../dance_data/validation/waltz/AQ-izQC-S1Y_031_0244.jpg', '../dance_data/validation/break/S7tQIPMejL8_027_0145.jpg', '../dance_data/validation/tango/Ap9Xj0OBgJ8_043_0103.jpg', '../dance_data/validation/waltz/AQmHJlhUhes_022_0173.jpg', '../dance_data/validation/square/AGn_T7u6U2Q_039_0293.jpg', '../dance_data/validation/break/6dbo5GtNnxU_144_0082.jpg', '../dance_data/validation/ballet/vOxe8Xo15Kg_040_0033.jpg', '../dance_data/validation/break/6dbo5GtNnxU_144_0008.jpg', '../dance_data/validation/flamenco/gxzU5EqNL14_054_0184.jpg', '../dance_data/validation/latin/CU4fkMrgTLk_115_0156.jpg', '../dance_data/validation/foxtrot/t4xg5_yabdU_015_0115.jpg', '../dance_data/validation/tango/BCIqkUblDpM_026_0095.jpg', '../dance_data/validation/foxtrot/HJyQjQy9n-U_350_0016.jpg', '../dance_data/validation/foxtrot/t4xg5_yabdU_015_0106.jpg', '../dance_data/validation/square/-v31uYwWz7c_050_0162.jpg', '../dance_data/validation/swing/V21PEmv_8yY_029_0113.jpg', '../dance_data/validation/tango/BCIqkUblDpM_026_0127.jpg', '../dance_data/validation/foxtrot/kQtAMqHke30_043_0148.jpg', '../dance_data/validation/ballet/nM-rm68GyRk_020_0126.jpg', '../dance_data/validation/flamenco/Wy5nqf_WeWk_210_0076.jpg', '../dance_data/validation/waltz/AQ-izQC-S1Y_031_0044.jpg', '../dance_data/validation/swing/aS5DvL8p4I4_011_0016.jpg', '../dance_data/validation/waltz/nuWL11X_wjk_023_0059.jpg', '../dance_data/validation/latin/5HbFic9gDgg_033_0014.jpg', '../dance_data/validation/break/njw1rxDmUU0_025_0179.jpg', '../dance_data/validation/waltz/1V02jRprvoI_015_0249.jpg', '../dance_data/validation/latin/r5X_IkhkquU_040_0299.jpg', '../dance_data/validation/latin/aKOChOei2JQ_050_0214.jpg', '../dance_data/validation/latin/is9wrZ0ShZU_050_0208.jpg', '../dance_data/validation/break/4SQVm2fyLH0_053_0216.jpg', '../dance_data/validation/break/njw1rxDmUU0_025_0206.jpg', '../dance_data/validation/latin/sW9TOGfrs8c_202_0287.jpg', '../dance_data/validation/swing/V21PEmv_8yY_029_0291.jpg', '../dance_data/validation/foxtrot/t4xg5_yabdU_015_0021.jpg', '../dance_data/validation/break/tbFKZGzX9Kg_103_0260.jpg']
+[[-6.67533350e+00 -5.73733374e-02 -5.58638871e-01  1.04125106e+00
+   2.46087164e-01  6.48843229e-01  3.64203334e+00  1.57692516e+00
+   1.41738570e+00 -1.63959348e+00]
+ [ 6.00464964e+00  4.78916550e+00  2.41157007e+00 -4.95153219e-02
+  -1.44926286e+00 -3.15857792e+00 -8.08434296e+00 -2.94016147e+00
+   1.51693034e+00 -5.69666982e-01]
+ [-6.31192160e+00  7.54326165e-01 -3.47152042e+00  2.91733956e+00
+  -2.71416450e+00  1.98415303e+00 -3.71437454e+00 -1.28301108e+00
+   3.44521999e+00  2.79261518e+00]
+ [-2.57177067e+00 -3.17490864e+00  5.60615301e+00 -3.65280342e+00
+   3.56269932e+00 -4.59920120e+00 -4.54678106e+00 -2.19200683e+00
+  -6.62523079e+00 -5.72882128e+00]
+ [-2.89633203e+00  3.44067907e+00 -1.21228047e-01  8.91905725e-01
+   2.51602936e+00  1.44192362e+00 -3.35005701e-01 -3.69170725e-01
+  -1.49537396e+00 -1.70411086e+00]
+ [ 2.87269044e+00 -1.25723588e+00  2.48807502e+00 -8.04751635e-01
+   9.55992997e-01  3.24934125e-01 -1.29647362e+00 -1.86504698e+00
+   3.20248103e+00  5.79820216e-01]
+ [-3.76557298e-02  3.08257360e-02  1.89111695e-01  2.43347836e+00
+  -3.91672921e+00  1.72470391e+00 -3.14696956e+00 -3.81517386e+00
+   2.14339590e+00 -1.48316455e+00]
+ [-2.25644565e+00  6.37794971e-01 -1.22692563e-01  2.44683027e+00
+  -2.01963234e+00 -7.11197793e-01 -3.74005699e+00 -2.39761424e+00
+   2.67139912e+00 -2.65092015e+00]
+ [ 1.87749997e-01  4.43817043e+00  8.87812555e-01  1.74144983e+00
+   3.17544788e-01 -6.54646575e-01 -3.05366254e+00  2.13062927e-01
+  -4.60233569e-01 -3.18422031e+00]
+ [-2.01746154e+00 -1.84123218e+00 -4.34721977e-01  1.91311204e+00
+  -3.43973970e+00  2.56350994e+00 -2.25262952e+00 -2.55382800e+00
+   1.66442406e+00  2.28216931e-01]
+ [-4.40207243e-01  4.33420277e+00 -6.24408364e-01  7.47469766e-03
+  -1.94054532e+00 -3.23609996e+00 -1.17000735e+00  1.99060273e+00
+  -5.47800660e-01 -4.45275450e+00]
+ [-1.10855830e+00  8.57116222e-01 -9.14223313e-01  2.24024415e+00
+  -2.29750800e+00  1.32661009e+00 -1.76616681e+00 -1.60933733e+00
+   1.33312225e+00 -4.29376662e-01]
+ [-3.30720878e+00  3.96573448e+00 -4.44145632e+00  3.14813566e+00
+  -2.44166899e+00  2.02957487e+00 -1.20341194e+00  1.76219046e+00
+   2.73894787e+00 -3.42810065e-01]
+ [-3.98410678e+00  3.59845352e+00 -1.68258369e+00  3.71859670e+00
+  -3.43095446e+00 -8.64997268e-01  6.34218454e-01  3.18865967e+00
+  -1.43689489e+00 -3.40180606e-01]
+ [-5.80401373e+00  4.61498141e-01 -1.55840409e+00  1.48313451e+00
+  -1.54588521e+00 -3.83097798e-01  5.54069877e-01  3.94178003e-01
+   3.54594052e-01 -1.75825119e+00]
+ [-3.28916216e+00  1.42966914e+00  1.59981501e+00  2.47133866e-01
+   1.92711338e-01 -8.35331529e-02 -1.57324088e+00 -2.37472081e+00
+   3.61489058e+00 -6.70990467e-01]
+ [-2.97070956e+00  1.57456040e+00 -1.40183699e+00 -1.03962505e+00
+  -1.14699066e+00  1.22432029e+00  3.24689507e+00 -2.98830420e-01
+  -1.12947404e+00 -2.35685968e+00]
+ [-3.42622304e+00 -3.38031083e-01  5.91940386e-03  2.42579162e-01
+   9.68959987e-01  1.00171053e+00 -2.04755473e+00  5.07373095e-01
+   1.40247595e+00 -3.03550325e-02]
+ [-2.11857772e+00  3.14998889e+00  2.00763297e+00 -8.64932239e-01
+  -1.85444486e+00 -1.47336602e+00  3.81183147e-01 -4.00436401e-01
+   1.35673094e+00 -8.07108641e-01]
+ [-3.03470063e+00 -1.48096776e+00 -1.96649110e+00  3.15584302e+00
+  -3.06618571e+00  1.23102844e+00  4.04339218e+00 -2.66850185e+00
+   1.48243511e+00  1.60983875e-01]
+ [-4.68210602e+00  1.43856823e+00  2.42439210e-01  7.39830732e-01
+  -3.55933189e-01 -5.61797759e-03 -1.83785713e+00 -2.07973027e+00
+   1.90028989e+00 -7.31774867e-01]
+ [-1.46879375e+00  2.32732487e+00 -1.11764109e+00  1.71012211e+00
+  -2.58530426e+00 -2.16687679e+00 -1.10856462e+00 -3.47110939e+00
+   7.01971292e-01  6.58119321e-01]
+ [-4.41229677e+00 -1.52376604e+00 -2.11644268e+00  5.39425278e+00
+  -9.75080669e-01  1.16475964e+00  4.99001533e-01 -6.12481165e+00
+  -1.19313240e+00  9.88656342e-01]
+ [-3.52199435e-01  4.31595802e+00  6.00884557e-01  1.70355511e+00
+   1.68639570e-01  8.47010240e-02 -7.46336102e-01  9.12763953e-01
+  -1.07903235e-01 -3.01805043e+00]
+ [-3.57977891e+00 -2.61624193e+00 -1.96589196e+00  3.31673908e+00
+  -3.73274159e+00  1.36939788e+00  3.29793763e+00 -2.42937946e+00
+   1.42608619e+00 -6.00324981e-02]
+ [-2.99053860e+00  2.34194374e+00  1.31414640e+00 -3.47253710e-01
+  -9.14370537e-01 -2.70923638e+00  2.85986376e+00  3.06234622e+00
+  -3.93110180e+00 -3.52436185e+00]
+ [-3.86478096e-01 -1.41716516e+00  1.68798792e+00 -9.29842412e-01
+  -3.29432702e+00 -2.52537870e+00 -1.69199765e+00 -1.71549749e+00
+   2.49350190e+00  2.21819639e+00]
+ [ 9.22085762e-01  1.25689358e-01 -7.81293213e-02  5.65469980e-01
+  -4.49195784e-03  6.10255718e-01 -4.29844904e+00 -1.50038791e+00
+   3.41032743e+00  2.10742426e+00]
+ [-5.23170328e+00 -1.66947353e+00 -3.74582386e+00  1.19644177e+00
+  -2.97820520e+00  1.00765538e+00  3.11707944e-01  3.60667348e-01
+   2.72053409e+00  2.94500136e+00]
+ [-2.78335524e+00  3.31572986e+00  3.02972555e-01  6.93040729e-01
+   2.95805717e+00  2.13301706e+00  5.16175389e-01  4.27648932e-01
+  -1.70218599e+00 -2.06780791e+00]
+ [-2.57468510e+00  3.69838834e+00  1.14200406e-01  1.37487745e+00
+   2.72077036e+00  2.29650164e+00 -3.55574578e-01 -1.51292309e-01
+  -1.41414452e+00 -3.12178707e+00]
+ [-2.58488202e+00  1.53246009e+00  6.30714715e-01  2.44727105e-01
+  -4.10276681e-01 -1.27093816e+00  7.18759373e-02  2.11713478e-01
+  -2.49511862e+00 -2.40049911e+00]
+ [-6.62970662e-01  2.85847402e+00  1.08442581e+00 -5.07963836e-01
+  -2.11700752e-01  3.36263895e-01 -1.91098225e+00  7.30713946e-04
+   1.77220869e+00 -4.86521363e-01]
+ [-2.65716076e+00  2.73931837e+00  1.16678154e+00 -8.79998446e-01
+   8.22171509e-01  9.92989242e-02 -4.85476923e+00 -1.01092234e-01
+   1.16705203e+00 -2.20722413e+00]
+ [-1.56207967e+00  3.84267211e-01  2.33105683e+00 -1.18465328e+00
+   1.58545840e+00 -2.53998899e+00  2.19387865e+00  3.22670484e+00
+  -9.17105615e-01 -2.17607641e+00]
+ [-1.93099642e+00  1.61085463e+00 -7.65618443e-01 -1.00194693e+00
+  -1.73484707e+00 -9.29471493e-01  2.27830672e+00  1.00034721e-01
+  -5.76113760e-01 -1.40847778e+00]
+ [-2.13992167e+00  5.84124804e-01  1.31760788e+00 -2.05840528e-01
+  -2.80122781e+00  1.20352581e-01 -3.66491628e+00 -3.01113415e+00
+  -1.50046968e+00 -5.86104810e-01]
+ [-5.35066223e+00 -3.10234100e-01 -1.50582826e+00  1.99212968e+00
+  -6.20886862e-01  3.74563026e+00 -1.31265259e+00 -1.11096382e+00
+   7.30320334e-01  1.13285220e+00]
+ [-7.12109089e+00  1.52570307e+00  5.08149147e-01 -2.03220105e+00
+  -1.01000953e+00 -1.85987517e-01  3.42547745e-01  2.08982855e-01
+   1.39163941e-01 -1.95492601e+00]
+ [-6.46881628e+00  1.47714749e-01 -1.59426057e+00  6.86742187e-01
+  -3.53036499e+00  9.78508592e-01  4.25196081e-01  9.37902704e-02
+  -1.52039719e+00  1.86504519e+00]
+ [ 3.99490666e+00  5.95260501e-01  4.53671360e+00  1.86794221e+00
+  -1.74294972e+00  3.18384469e-01 -6.49928570e+00 -7.76619315e-02
+   3.79064918e+00  4.67908740e-01]
+ [ 7.36557722e+00 -7.13237762e-01  1.26399207e+00  2.67695189e+00
+   2.85473728e+00  1.18282452e-01 -4.01279020e+00 -1.89730370e+00
+  -1.32140994e+00 -4.24508810e+00]
+ [-4.74817753e+00  7.02975512e-01 -1.57960105e+00  2.30150080e+00
+  -1.06229770e+00 -5.43748140e-01 -2.58502412e+00 -9.46576536e-01
+   1.90317369e+00  1.13170016e+00]
+ [ 8.18503320e-01 -8.55322719e-01  5.99015045e+00  1.00133634e+00
+   2.31959057e+00 -6.46996450e+00 -3.34192061e+00 -2.14181399e+00
+  -2.78817844e+00 -6.73560858e+00]
+ [-3.94377255e+00  1.52726865e+00 -1.27066457e+00 -5.96524537e-01
+  -1.14085841e+00 -7.54787683e-01 -6.61024094e-01 -6.59713447e-01
+   1.15720356e+00 -1.72666883e+00]
+ [ 4.34447670e+00 -1.04862108e+01  3.42565984e-01 -1.06404209e+01
+   4.40240908e+00 -2.97561228e-01 -3.28554726e+01 -6.58121395e+00
+   4.22619343e+00  8.39625740e+00]
+ [-2.21535206e+00  1.53952706e+00 -1.47950077e+00  3.93542975e-01
+  -5.34554720e-01 -1.79411709e+00  2.02605247e+00  4.32977200e-01
+  -5.86491823e-01 -1.30489039e+00]
+ [-2.54815078e+00 -1.39488244e+00  3.67579389e+00  2.38475561e-01
+   5.83507895e-01 -1.69003463e+00 -2.03926158e+00  1.44217944e+00
+   9.90661263e-01 -3.15913796e+00]
+ [ 1.00165028e-02  1.06343508e+00  7.80812681e-01  1.71202362e+00
+   1.35552049e+00  1.57186556e+00 -1.71599627e-01 -2.37750504e-02
+  -1.20271444e+00 -1.57626927e+00]
+ [-4.22563648e+00  1.30637169e+00 -1.73305881e+00 -7.01161504e-01
+  -7.65431643e-01  6.44397140e-01  6.53881729e-01 -3.06970692e+00
+   1.23673357e-01  1.51191974e+00]
+ [-3.78230810e+00  2.39732552e+00 -4.87219781e-01 -2.07945481e-02
+  -3.21737504e+00 -5.61669767e-01  1.48560953e+00 -1.58589995e+00
+  -3.15276623e-01 -2.54443502e+00]
+ [ 8.06507766e-01  4.19706392e+00 -9.63226259e-01  2.54806757e+00
+  -1.87230229e+00  9.69393313e-01 -2.66238451e+00 -7.05684805e+00
+   7.20650673e-01 -6.10086434e-02]
+ [ 6.01621199e+00  9.55283046e-01  1.36506057e+00  1.53966069e+00
+  -1.85933542e+00 -2.31998515e+00 -1.01275473e+01 -1.90469134e+00
+   1.66626000e+00 -3.90156895e-01]
+ [-5.71804762e+00  1.08529520e+00 -1.85631067e-02  1.02513039e+00
+  -8.65701139e-01  1.58336020e+00 -2.43753934e+00 -1.63267457e+00
+  -6.06333613e-01  3.23201001e-01]
+ [ 3.41214895e-01 -9.58547175e-01 -1.53463137e+00  4.18759060e+00
+  -9.02242720e-01  1.66044497e+00  3.33910406e-01 -2.34978366e+00
+   1.91143107e+00  1.13843346e+00]
+ [-1.22835934e+00  2.50918245e+00  2.63337588e+00  3.12380850e-01
+  -1.78246653e+00 -1.14352429e+00 -1.68400216e+00  1.67696214e+00
+   1.49720395e-02 -2.78700805e+00]
+ [ 3.85557175e+00  4.76872742e-01  2.42791224e+00 -4.33782625e+00
+  -3.99239612e+00 -2.75878477e+00 -2.05632210e+01 -5.23967123e+00
+   3.27103066e+00 -7.24397087e+00]
+ [ 1.04237580e+00 -4.01490718e-01 -9.78230119e-01 -9.83330667e-01
+  -2.29544044e+00  2.26620898e-01 -3.78198051e+00 -4.37404537e+00
+   2.15524697e+00  3.38765907e+00]
+ [ 2.93109918e+00 -7.60101140e-01  2.27575421e+00  1.50388527e+00
+  -3.56725082e-02  2.17911625e+00 -9.22980022e+00 -3.36940646e-01
+   2.95764947e+00  2.43904635e-01]
+ [-2.43583179e+00  2.58354899e-02 -6.51520014e-01  1.87080622e+00
+  -2.02172256e+00  2.78206491e+00 -2.17645812e+00 -1.01878715e+00
+   3.08890581e-01  2.27980494e+00]
+ [ 1.81245995e+00  1.83564627e+00  1.99769899e-01  1.63307059e+00
+  -5.19284296e+00 -8.92381310e-01 -8.46400070e+00 -2.57767653e+00
+  -2.42295456e+00 -1.87505651e+00]
+ [-5.61665773e+00  3.38153553e+00  4.26145762e-01 -3.08807045e-01
+  -1.18594849e+00 -1.22957572e-01  7.12123990e-01 -2.48357868e+00
+  -1.68520093e+00  2.89390039e+00]
+ [-1.58856082e+00  3.51920748e+00  1.23659658e+00  1.45019925e+00
+  -2.65536690e+00 -4.08537179e-01 -2.44379091e+00  5.68677187e-01
+   9.44323316e-02 -2.48764420e+00]
+ [ 5.12929320e-01  4.55673122e+00  2.93820071e+00 -1.47047126e+00
+  -2.01681435e-01  1.23770583e+00 -5.89360142e+00 -3.00440699e-01
+  -1.01913214e+00 -3.10205913e+00]
+ [ 1.03784251e+00  2.84904194e+00  1.69766986e+00  3.16087699e+00
+  -2.25882840e+00 -1.15576696e+00 -1.18978488e+00 -1.27188608e-01
+  -5.95825255e-01 -2.96657395e+00]
+ [-3.81123519e+00 -6.74873233e-01  1.60425675e+00 -1.47231686e+00
+   5.21085501e-01 -9.78234172e-01  2.20945454e+00 -5.04573703e-01
+   5.19674838e-01 -2.45995140e+00]
+ [-1.21138620e+00 -2.83985877e+00 -1.42531669e+00 -2.17077541e+00
+   1.48621058e+00  2.52557826e+00  4.51727301e-01 -2.68049765e+00
+   2.39511624e-01  8.83137524e-01]
+ [ 2.41018009e+00  2.14018488e+00 -2.09190083e+00  2.24876761e+00
+  -1.96248960e+00  2.67852247e-01 -2.52007198e+00 -6.56420183e+00
+   3.03004050e+00 -2.96032929e+00]
+ [-4.71081352e+00  2.20779252e+00 -2.72810125e+00  1.24272275e+00
+  -3.72841209e-01  1.05533826e+00 -1.21246755e+00  4.13448870e-01
+   9.60507214e-01 -1.64564788e+00]
+ [ 4.00456190e-01  7.14166760e-01 -2.87388325e+00 -4.54701573e-01
+  -2.96662509e-01  8.06149691e-02  1.64338660e+00  4.17989635e+00
+  -2.11547136e+00 -7.79066420e+00]
+ [ 4.70212030e+00  1.03155529e+00  1.49018836e+00 -2.65381503e+00
+  -4.73531771e+00 -2.03812689e-01 -1.07113838e+01 -2.76240540e+00
+  -1.29358202e-01 -1.54534411e+00]
+ [ 3.54022789e+00  5.74821568e+00 -5.96780360e-01  2.89884949e+00
+   9.52553451e-01 -4.21815300e+00 -4.11289597e+00  2.21590266e-01
+   1.11984015e+00 -5.21639252e+00]
+ [ 1.01509726e+00  3.99463367e+00  2.73213768e+00 -6.71241358e-02
+  -3.53672862e-01  9.12694484e-02 -2.28743625e+00  2.30857658e+00
+  -4.43310365e-02 -3.53451729e+00]
+ [ 2.13891602e+00 -1.07536244e+00  4.45825481e+00 -3.32418537e+00
+   5.28422880e+00 -1.10696917e+01 -6.85755968e+00  2.34456635e+00
+   5.83938777e-01 -9.57133293e+00]
+ [-2.50653863e+00 -2.47511530e+00 -2.07251930e+00  2.73489428e+00
+  -4.44218159e+00  3.04590821e+00  2.72064352e+00 -2.74012399e+00
+   6.40689909e-01 -9.50100780e-01]
+ [-4.50528193e+00  1.27615070e+00 -2.07686901e+00  2.53581834e+00
+  -1.85129333e+00  1.10031140e+00 -4.77381372e+00 -2.13759094e-01
+   2.25050020e+00  1.52446735e+00]
+ [-3.23328710e+00  2.35237074e+00  1.47200000e+00 -5.15889168e-01
+   9.96625602e-01  1.02242529e+00  1.93532896e+00  5.68250895e-01
+  -1.04749906e+00 -2.52167702e+00]
+ [-2.85595703e+00  4.09537220e+00  6.98067725e-01  1.75191033e+00
+   2.59605575e+00  2.33335471e+00  1.11077571e+00  5.59319615e-01
+  -1.00176620e+00 -1.89780283e+00]
+ [ 4.45985317e+00  1.83463418e+00 -6.62183240e-02  1.50879705e+00
+  -1.62946081e+00 -3.07477570e+00 -5.29776382e+00 -5.49568772e-01
+  -1.20223904e+00 -1.41217399e+00]
+ [ 1.64345300e+00  3.97907305e+00  1.35234571e+00  1.64288545e+00
+  -1.26351333e+00 -2.43714595e+00 -5.89403772e+00 -1.65533125e+00
+  -2.33543110e+00 -3.54191375e+00]
+ [-1.49846935e+00 -1.38116431e+00 -1.07369184e+00  3.61589241e+00
+  -2.46760106e+00  5.70404410e-01  1.59167337e+00 -3.83315849e+00
+   1.33713317e+00  6.44363463e-02]
+ [-5.11426640e+00  1.59927404e+00 -6.05588794e-01  1.01313698e+00
+  -1.06064212e+00  2.99695104e-01  1.94673508e-01  1.35497272e+00
+   1.06754768e+00 -1.83463907e+00]
+ [-9.47464824e-01 -4.21677446e+00  2.03902435e+00  2.87260127e+00
+  -7.50507295e-01 -2.65346289e+00 -2.58316708e+00  3.24542344e-01
+  -8.81905973e-01 -3.09791756e+00]
+ [ 6.64811802e+00  7.44158089e-01  2.96826768e+00  1.78019059e+00
+  -3.49949837e+00 -3.96027780e+00 -4.33864927e+00 -4.21776676e+00
+   3.04498219e+00 -2.14421225e+00]
+ [ 4.40911245e+00  1.00519347e+00  4.35725880e+00 -4.14111042e+00
+  -3.32359719e+00 -3.06605768e+00 -2.11894627e+01 -2.73019505e+00
+   4.89497709e+00 -6.73377800e+00]
+ [-3.80033994e+00  4.07116652e+00 -1.18185937e+00  1.07750225e+00
+  -1.08582366e+00 -1.56926048e+00 -2.31682196e-01 -1.04348755e+00
+   7.75897622e-01 -2.77808338e-01]
+ [-2.00591588e+00  2.33315516e+00  2.00776315e+00 -1.33058310e-01
+  -8.07181656e-01  3.14788640e-01  4.28763509e-01 -4.26451862e-01
+  -1.84399796e+00 -1.36151290e+00]
+ [-3.03175902e+00  1.05117869e+00 -1.49029326e+00 -1.28167617e+00
+   6.80592537e-01 -7.64423013e-01 -6.26066923e-01  2.07096100e+00
+   8.56212020e-01 -2.71496749e+00]
+ [-1.94727623e+00 -4.36594129e-01  1.87277234e+00  2.26977777e+00
+  -2.68183613e+00  3.19474506e+00 -3.86841655e+00 -3.45481014e+00
+   1.59219551e+00  1.23314746e-02]
+ [-5.59284163e+00 -2.35750943e-01 -1.42668629e+00  2.14926481e+00
+  -1.39895594e+00 -7.47048318e-01 -3.74348235e+00 -1.09901440e+00
+   2.48425794e+00  2.58725476e+00]
+ [-2.30381632e+00  2.22228384e+00  5.26212335e-01 -2.39954621e-01
+   6.52972758e-02 -2.40189046e-01  6.11388624e-01 -6.82345964e-03
+  -1.08828592e+00 -2.19580030e+00]
+ [-2.38470507e+00 -1.29756129e+00 -2.41098952e+00  1.92595875e+00
+  -4.39417744e+00  3.92182469e+00  2.03135681e+00 -3.10861492e+00
+  -3.16268834e-03  3.81093144e+00]
+ [-4.98846579e+00  7.55154863e-02 -2.23580194e+00  2.14893651e+00
+  -2.17650247e+00  2.65099335e+00 -5.95621943e-01 -9.28974211e-01
+   1.10651195e+00  1.58742040e-01]
+ [-3.67286897e+00 -5.54727197e-01 -1.28728509e+00  3.56398988e+00
+  -1.91465724e+00  1.04628170e+00  6.13896489e-01  4.20440435e-01
+   1.07132578e+00  8.44204873e-02]
+ [ 5.98906898e+00  4.13890934e+00  1.70118499e+00 -8.35891724e-01
+   1.73647162e-02 -1.92515278e+00 -3.81205130e+00 -2.34543777e+00
+  -7.41346717e-01 -8.51300716e-01]
+ [-2.26374054e+00  3.81883907e+00 -1.94829667e+00  3.02541685e+00
+  -1.53867567e+00 -8.40494394e-01 -1.89966905e+00 -9.16349471e-01
+   1.08404362e+00 -1.93955791e+00]
+ [-2.66975951e+00  3.97942972e+00  7.45856464e-01  7.72161901e-01
+  -6.74843132e-01 -1.37921000e+00 -4.45664495e-01 -1.40417945e+00
+  -1.45421720e+00 -5.97798824e-01]
+ [-7.76351333e-01  3.42745185e+00  1.31170869e+00  2.10853291e+00
+  -5.05839050e-01 -1.63177586e+00 -2.43539906e+00  2.08886266e+00
+  -1.38610387e+00 -4.21517467e+00]
+ [ 5.71531343e+00 -3.33459616e+00  3.35719681e+00 -2.76950145e+00
+   7.96540916e-01  1.56054091e+00 -2.51311755e+00  6.30346298e-01
+   4.73320961e-01 -9.59467292e-01]
+ [-1.69295776e+00 -2.39242744e+00  3.33258733e-02 -1.65731609e+00
+   8.40988338e-01  1.78667426e+00 -5.49245834e-01 -3.25082922e+00
+   1.71993315e+00 -7.90983886e-02]
+ [ 4.27134991e+00 -5.67172050e+00  8.25610816e-01 -1.66604209e+00
+  -5.75745726e+00 -5.34389925e+00 -2.04499054e+00 -7.78493762e-01
+  -1.32206786e+00 -1.92295766e+00]
+ [ 3.45497704e+00 -9.63933372e+00 -5.46647596e+00  1.86854517e+00
+  -7.44717494e-02 -3.46408844e-01 -2.87891026e+01 -1.08527145e+01
+   3.01043868e-01  1.27548800e+01]
+ [-6.10374868e-01 -2.91646528e+00  2.09230614e+00 -1.66968569e-01
+   1.49257445e+00 -5.06651497e+00 -6.97922111e-01 -1.25390220e+00
+  -5.67284632e+00 -6.26900482e+00]
+ [-1.91346633e+00  1.72317815e+00  1.52292562e+00 -1.13235734e-01
+  -6.68847322e-01 -2.44127059e+00  3.08905840e+00  3.15878129e+00
+  -4.03740072e+00 -2.96563268e+00]
+ [-2.89992762e+00  2.60721874e+00 -4.45233727e+00  3.12827873e+00
+  -4.70299244e+00  1.33478916e+00 -2.81768709e-01 -2.16504836e+00
+   1.83989751e+00  2.18940806e+00]
+ [-5.41143990e+00  2.20992163e-01 -4.16407728e+00  1.03075373e+00
+  -1.85962141e-01  1.32016242e-01 -3.51138496e+00 -2.76092947e-01
+   3.26987576e+00  5.24707222e+00]
+ [-2.48100257e+00  1.68478990e+00  1.62840629e+00 -1.47032082e+00
+  -4.20717955e-01 -1.21278203e+00  2.73598862e+00  1.35818434e+00
+  -7.86091447e-01 -3.73249221e+00]
+ [-1.72204113e+00 -4.09297895e+00  1.80684817e+00  1.96010649e+00
+   2.00935674e+00  2.48062158e+00 -4.03022480e+00  6.93128780e-02
+   4.36388731e+00  1.23607934e+00]
+ [ 2.50004840e+00 -2.94560641e-01 -1.51641619e+00  3.56822252e+00
+  -1.13154209e+00 -2.24221873e+00 -4.82233524e+00 -2.43822503e+00
+  -1.22648740e+00 -6.74394131e-01]
+ [-3.12755704e+00  3.45209742e+00 -4.70941925e+00  3.62460327e+00
+  -3.42492127e+00  9.08954322e-01 -6.04841948e-01 -1.85957980e+00
+   1.70879018e+00  1.48506856e+00]
+ [-5.16327739e-01 -3.90162945e-01  5.21377549e-02 -6.46912754e-01
+   4.13534492e-02  1.65297008e+00 -7.69726634e-01  4.16103214e-01
+  -2.31374487e-01 -1.21941030e+00]
+ [-2.46111512e+00  3.50630093e+00  3.97789091e-01  1.19340253e+00
+   2.35282254e+00  2.05468059e+00 -1.63615525e-01  1.91779956e-01
+  -1.71234214e+00 -2.57616568e+00]
+ [ 2.50923729e+00  2.87978220e+00 -6.03083789e-01  1.08475471e+00
+  -3.71212220e+00 -7.26573467e-02 -3.62167645e+00 -3.08169007e+00
+  -1.92701483e+00 -2.56972694e+00]
+ [-4.08308649e+00 -4.91165787e-01 -6.99659824e-01  2.40347385e+00
+  -1.15828049e+00  2.25588512e+00 -1.71576345e+00 -3.11273783e-01
+   8.93033072e-02  1.06520283e+00]
+ [-4.51141310e+00  1.57187068e+00 -2.03079319e+00 -1.37562573e+00
+  -2.72676086e+00  5.13996124e-01 -5.05616903e-01 -2.88150120e+00
+   1.18134689e+00 -1.08185017e+00]
+ [-4.61894274e+00 -4.98794854e-01 -2.38444281e+00  1.12493515e+00
+  -1.03629267e+00 -8.81703198e-01 -3.56803393e+00 -1.44885778e-01
+   2.69320297e+00  1.41074646e+00]
+ [-4.52405691e+00 -1.61294878e+00 -1.72354901e+00  2.12132215e+00
+  -3.88005185e+00  1.43847311e+00  5.32447338e-01 -3.62397432e+00
+   1.65676188e+00 -5.32065570e-01]
+ [ 2.66736317e-02  3.04497862e+00  3.16725492e-01  7.12730408e-01
+  -8.85235488e-01  3.83067608e-01 -1.38237238e+00  2.58436990e+00
+  -1.52581021e-01 -2.11650777e+00]
+ [-4.28349495e+00  3.78577232e-01 -1.31486130e+00  2.38507938e+00
+  -1.22039497e+00  8.83775055e-01 -1.10045671e+00  8.24266374e-01
+   7.03263581e-01 -2.64819362e-03]
+ [ 3.26529002e+00 -1.63842812e-01  1.95008719e+00 -1.90747201e-01
+  -1.99836576e+00  6.83942258e-01 -5.36396694e+00 -4.65692711e+00
+   3.53064847e+00 -1.10120440e+00]
+ [-9.03164208e-01 -8.38585436e-01  4.23145962e+00  2.78232008e-01
+  -1.40237719e-01  1.23819840e+00 -2.61849165e+00 -2.86717629e+00
+   2.01516032e+00 -1.11276364e+00]
+ [ 1.32064283e+00 -9.83110070e-01  3.43807125e+00 -7.44973779e-01
+   1.76204002e+00 -4.49914873e-01 -4.02446240e-01 -3.44404912e+00
+   1.62359750e+00 -5.18799186e-01]
+ [ 6.11135483e+00  4.26138639e-02  4.35697794e+00 -2.85362339e+00
+  -3.93259358e+00 -2.90564990e+00 -2.26395111e+01 -3.54616761e+00
+   2.50204110e+00 -6.22434330e+00]
+ [-1.03349224e-01  3.68531632e+00 -2.40771487e-01  8.35087970e-02
+  -3.66306782e-01 -1.23455322e+00  5.71583360e-02  2.16748571e+00
+   8.92344654e-01 -4.17655277e+00]
+ [-1.52945292e+00  1.39038873e+00 -1.22986090e+00  6.54466271e-01
+  -1.67262781e+00  7.44995654e-01  1.81128311e+00  9.30848062e-01
+  -3.10845584e-01  1.58089712e-01]
+ [ 3.06721807e+00  5.78617752e-01  1.49867341e-01  3.89319062e+00
+   8.09717417e-01 -2.04719186e-01 -6.46616983e+00 -4.34252739e+00
+  -9.17098343e-01 -2.80230427e+00]
+ [-2.59882760e+00  2.61679769e+00  1.42921758e+00 -7.01741993e-01
+  -4.60637510e-02 -2.88430238e+00  3.63665867e+00  3.44046664e+00
+  -3.50494075e+00 -3.36372352e+00]
+ [-5.06534100e+00  1.55421412e+00 -1.62889171e+00  8.59920144e-01
+   6.02660239e-01  6.19833529e-01 -2.65269303e+00  2.40887094e+00
+   6.30420506e-01 -1.59211755e+00]]
