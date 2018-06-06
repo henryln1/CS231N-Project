@@ -738,12 +738,13 @@ def check_accuracy(sess, x, scores, dataset = 'validation', is_training=None, ch
 	skip_frames = 8
 	number_batches_check = 25
 	if check_big:
-		number_batches_to_check = 1000 // 2
+		number_batches_check = 1000 // 2
 	num_correct, num_samples = 0, 0
 	pred_cumulative = []
 	actual_cumulative = []
 	scores_file_name = '060518_conv3d_scores.txt'
 	for i in range(number_batches_check):
+		print("Batch Number: ", i)
 		if check_big:
 			x_batch, y_batch, names = load_batch(batch_size, image_set_size, skip_frames, dataset = dataset, big_check = True)
 
@@ -779,16 +780,16 @@ def check_accuracy(sess, x, scores, dataset = 'validation', is_training=None, ch
 		if check_big:
 			myfile.write("Performing check over a large portion of validation set")	
 			myfile.write("\n")	
-		myfile.write("Predicted: " + pred_cumulative)
+		myfile.write("Predicted: " + str(pred_cumulative))
 		myfile.write("\n")
-		myfile.write("Actual: " + actual_cumulative)
+		myfile.write("Actual: " + str(actual_cumulative))
 		myfile.write("\n")
 
 
 	acc = float(num_correct) / num_samples
 	print('Got %d / %d correct (%.2f%%)' % (num_correct, num_samples, 100 * acc))
 
-	with open("060518_bigger_image_results_data_augmented_conv3d.txt", "a") as myfile:
+	with open("060518_bigger_image_results_conv3d.txt", "a") as myfile:
 		myfile.write("Accuracy " + str(acc))
 		myfile.write("\n")
 
@@ -805,7 +806,7 @@ def check_accuracy(sess, x, scores, dataset = 'validation', is_training=None, ch
 
 
 	#F1_score = f1_score(all_y_actual, all_y_pred, average = 'micro')
-	precision, recall, F1_score, support = precision_recall_fscore_support(all_y_actual, all_y_pred, average='micro')
+	precision, recall, F1_score, support = precision_recall_fscore_support(actual_cumulative, pred_cumulative, average='micro')
 
 
 	acc = num_correct / num_samples
@@ -981,7 +982,7 @@ def train_part34(model_init_fn, optimizer_init_fn, num_epochs=10):
 				new_time = time.time()
 				print("Training Check took: ", new_time - curr_time, " seconds.")
 			t += 1
-			if t % 1 == 0:
+			if t % 500 == 0:
 				print("Performing large validation check and saving to file...")
 				curr_time = time.time()
 				check_accuracy(sess, x, scores, is_training=is_training, check_big = True)
